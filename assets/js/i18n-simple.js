@@ -64,6 +64,8 @@
       "contact.cta": "Scrivimi",
       
       // Footer
+      "footer.nav_title": "Navigazione",
+      "footer.description": "Arte contemporanea con la tecnica brevettata. Un viaggio unico tra luce e ombra, tra ciò che appare e ciò che si rivela.",
       "footer.quick_links": "Link Rapidi",
       "footer.contact_info": "Contatti",
       "footer.follow": "Seguici",
@@ -126,6 +128,8 @@
       "contact.cta": "Write Me",
       
       // Footer
+      "footer.nav_title": "Navigation",
+      "footer.description": "Contemporary art with patented technique. A unique journey between light and shadow, between what appears and what is revealed.",
       "footer.quick_links": "Quick Links",
       "footer.contact_info": "Contact",
       "footer.follow": "Follow Us",
@@ -175,6 +179,8 @@
       "contact.title": "Interessiert an einem Kunstwerk?",
       "contact.description": "Jedes Kunstwerk ist einzigartig und handgefertigt. Kontaktieren Sie mich für Informationen, individuelle Aufträge oder um das Studio zu besuchen.",
       "contact.cta": "Schreiben Sie mir",
+      "footer.nav_title": "Navigation",
+      "footer.description": "Zeitgenössische Kunst mit patentierter Technik. Eine einzigartige Reise zwischen Licht und Schatten, zwischen dem, was erscheint und dem, was sich offenbart.",
       "footer.quick_links": "Schnelllinks",
       "footer.contact_info": "Kontakt",
       "footer.follow": "Folgen Sie uns",
@@ -224,6 +230,8 @@
       "contact.title": "Intéressé par une Œuvre ?",
       "contact.description": "Chaque œuvre est unique et faite à la main. Contactez-moi pour des informations, des commissions personnalisées ou pour visiter l'atelier.",
       "contact.cta": "Écrivez-moi",
+      "footer.nav_title": "Navigation",
+      "footer.description": "Art contemporain avec technique brevetée. Un voyage unique entre lumière et ombre, entre ce qui apparaît et ce qui se révèle.",
       "footer.quick_links": "Liens Rapides",
       "footer.contact_info": "Contact",
       "footer.follow": "Suivez-nous",
@@ -273,6 +281,8 @@
       "contact.title": "¿Interesado en una Obra?",
       "contact.description": "Cada obra es única y hecha a mano. Contáctame para información, encargos personalizados o para visitar el estudio.",
       "contact.cta": "Escríbeme",
+      "footer.nav_title": "Navegación",
+      "footer.description": "Arte contemporáneo con técnica patentada. Un viaje único entre luz y sombra, entre lo que aparece y lo que se revela.",
       "footer.quick_links": "Enlaces Rápidos",
       "footer.contact_info": "Contacto",
       "footer.follow": "Síguenos",
