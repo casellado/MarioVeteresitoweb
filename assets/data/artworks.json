@@ -1,0 +1,360 @@
+{
+  "artworks": [
+    {
+      "id": 1,
+      "title": "Tramonto Calabrese",
+      "slug": "tramonto-calabrese",
+      "year": 2024,
+      "category": "paesaggi",
+      "technique": "Crete colorate su cartoncino",
+      "dimensions": {
+        "width": 70,
+        "height": 50,
+        "unit": "cm"
+      },
+      "price": 1200,
+      "currency": "EUR",
+      "status": "available",
+      "featured": true,
+      "description": {
+        "short": "Un tramonto mozzafiato sulle coste calabresi",
+        "full": "Quest'opera cattura la magica atmosfera di un tramonto calabrese, dove il mare incontra il cielo in una danza di colori. Realizzata con la tecnica #negativoèpositivo®, rivela sfumature sorprendenti quando osservata in positivo.",
+        "technique": "L'opera è stata dipinta interamente a mano con i polpastrelli usando crete colorate, creando prima il negativo cromatico e poi rivelando il positivo attraverso fotografia professionale."
+      },
+      "images": {
+        "negative": {
+          "main": "assets/images/opere/gallery/1-tramonto-negative-main.jpg",
+          "detail": "assets/images/opere/gallery/1-tramonto-negative-detail.jpg",
+          "process": "assets/images/opere/gallery/1-tramonto-negative-process.jpg"
+        },
+        "positive": {
+          "main": "assets/images/opere/gallery/1-tramonto-positive-main.jpg",
+          "detail": "assets/images/opere/gallery/1-tramonto-positive-detail.jpg"
+        },
+        "thumbnail": "assets/images/opere/featured/opera-1.jpg"
+      },
+      "tags": ["paesaggio", "mare", "tramonto", "calabria", "natura"],
+      "seo": {
+        "metaTitle": "Tramonto Calabrese - Opera #negativoèpositivo® | Mario Vetere",
+        "metaDescription": "Acquista 'Tramonto Calabrese', opera unica realizzata con la tecnica brevettata #negativoèpositivo®. Crete colorate su cartoncino 70x50cm.",
+        "keywords": "tramonto calabrese, arte contemporanea, mario vetere, negativo positivo"
+      },
+      "certificate": {
+        "number": "MV-2024-001",
+        "authenticity": true,
+        "signed": true,
+        "edition": "Pezzo Unico"
+      },
+      "shipping": {
+        "italy": 25,
+        "europe": 50,
+        "worldwide": 100,
+        "freeShippingOver": 2000
+      }
+    },
+    {
+      "id": 2,
+      "title": "Riflessi Urbani",
+      "slug": "riflessi-urbani",
+      "year": 2024,
+      "category": "urbano",
+      "technique": "Crete colorate su cartoncino",
+      "dimensions": {
+        "width": 60,
+        "height": 80,
+        "unit": "cm"
+      },
+      "price": 1500,
+      "currency": "EUR",
+      "status": "available",
+      "featured": true,
+      "description": {
+        "short": "La città moderna attraverso lo specchio della tecnica negativo-positivo",
+        "full": "Un'esplorazione dei contrasti urbani moderni, dove luci e ombre si fondono in una danza ipnotica. L'opera cattura l'essenza della vita metropolitana attraverso la lente unica della tecnica #negativoèpositivo®.",
+        "technique": "Realizzata con crete colorate su cartoncino, ogni pennellata è stata applicata pensando all'inversione finale, creando un gioco di luci e ombre che prende vita nel processo fotografico."
+      },
+      "images": {
+        "negative": {
+          "main": "assets/images/opere/gallery/2-urbano-negative-main.jpg",
+          "detail": "assets/images/opere/gallery/2-urbano-negative-detail.jpg",
+          "process": "assets/images/opere/gallery/2-urbano-negative-process.jpg"
+        },
+        "positive": {
+          "main": "assets/images/opere/gallery/2-urbano-positive-main.jpg",
+          "detail": "assets/images/opere/gallery/2-urbano-positive-detail.jpg"
+        },
+        "thumbnail": "assets/images/opere/featured/opera-2.jpg"
+      },
+      "tags": ["urbano", "città", "moderno", "architettura", "contrasti"],
+      "seo": {
+        "metaTitle": "Riflessi Urbani - Opera Unica #negativoèpositivo® | Mario Vetere",
+        "metaDescription": "Scopri 'Riflessi Urbani', capolavoro urbano con tecnica brevettata. Crete colorate su cartoncino 60x80cm.",
+        "keywords": "arte urbana, città, mario vetere, negativo positivo, arte contemporanea"
+      },
+      "certificate": {
+        "number": "MV-2024-002",
+        "authenticity": true,
+        "signed": true,
+        "edition": "Pezzo Unico"
+      },
+      "shipping": {
+        "italy": 25,
+        "europe": 50,
+        "worldwide": 100,
+        "freeShippingOver": 2000
+      }
+    },
+    {
+      "id": 3,
+      "title": "Natura Silenziosa",
+      "slug": "natura-silenziosa",
+      "year": 2024,
+      "category": "paesaggi",
+      "technique": "Crete colorate su cartoncino",
+      "dimensions": {
+        "width": 50,
+        "height": 70,
+        "unit": "cm"
+      },
+      "price": 980,
+      "currency": "EUR",
+      "status": "available",
+      "featured": true,
+      "description": {
+        "short": "La quiete della natura catturata nell'inversione cromatica",
+        "full": "Un bosco silenzioso che rivela i suoi segreti solo a chi sa guardare oltre le apparenze. L'opera invita lo spettatore in un viaggio meditativo attraverso la natura, dove ogni foglia e ogni ombra nasconde una storia da scoprire.",
+        "technique": "Le crete colorate sono state stratificate con cura su cartoncino, creando profondità e texture che emergono magnificamente nel processo di inversione fotografica."
+      },
+      "images": {
+        "negative": {
+          "main": "assets/images/opere/gallery/3-natura-negative-main.jpg",
+          "detail": "assets/images/opere/gallery/3-natura-negative-detail.jpg",
+          "process": "assets/images/opere/gallery/3-natura-negative-process.jpg"
+        },
+        "positive": {
+          "main": "assets/images/opere/gallery/3-natura-positive-main.jpg",
+          "detail": "assets/images/opere/gallery/3-natura-positive-detail.jpg"
+        },
+        "thumbnail": "assets/images/opere/featured/opera-3.jpg"
+      },
+      "tags": ["natura", "bosco", "silenzio", "meditazione", "paesaggio"],
+      "seo": {
+        "metaTitle": "Natura Silenziosa - Opera d'Arte Contemporanea | Mario Vetere",
+        "metaDescription": "Acquista 'Natura Silenziosa', opera in crete colorate 50x70cm con tecnica #negativoèpositivo®.",
+        "keywords": "arte natura, paesaggio, bosco, mario vetere art"
+      },
+      "certificate": {
+        "number": "MV-2024-003",
+        "authenticity": true,
+        "signed": true,
+        "edition": "Pezzo Unico"
+      },
+      "shipping": {
+        "italy": 25,
+        "europe": 50,
+        "worldwide": 100,
+        "freeShippingOver": 2000
+      }
+    },
+    {
+      "id": 4,
+      "title": "Volto nell'Ombra",
+      "slug": "volto-nellombra",
+      "year": 2024,
+      "category": "ritratti",
+      "technique": "Crete colorate su cartoncino",
+      "dimensions": {
+        "width": 40,
+        "height": 50,
+        "unit": "cm"
+      },
+      "price": 1800,
+      "currency": "EUR",
+      "status": "available",
+      "featured": false,
+      "description": {
+        "short": "Un ritratto che emerge dall'oscurità per rivelare l'anima",
+        "full": "Questo ritratto esplora la dualità dell'essere umano, nascosto nell'ombra ma rivelato nella luce. La tecnica #negativoèpositivo® enfatizza il contrasto emotivo tra ciò che mostriamo e ciò che siamo realmente.",
+        "technique": "Ogni tratto del volto è stato studiato e dipinto in negativo con crete colorate, prestando particolare attenzione alle zone d'ombra che diventeranno luce nel positivo."
+      },
+      "images": {
+        "negative": {
+          "main": "assets/images/opere/gallery/4-volto-negative-main.jpg",
+          "detail": "assets/images/opere/gallery/4-volto-negative-detail.jpg",
+          "process": "assets/images/opere/gallery/4-volto-negative-process.jpg"
+        },
+        "positive": {
+          "main": "assets/images/opere/gallery/4-volto-positive-main.jpg",
+          "detail": "assets/images/opere/gallery/4-volto-positive-detail.jpg"
+        },
+        "thumbnail": "assets/images/opere/gallery/4-volto-thumb.jpg"
+      },
+      "tags": ["ritratto", "volto", "ombra", "luce", "emozione"],
+      "seo": {
+        "metaTitle": "Volto nell'Ombra - Ritratto Contemporaneo | Mario Vetere",
+        "metaDescription": "Ritratto unico con tecnica #negativoèpositivo®. Crete colorate 40x50cm.",
+        "keywords": "ritratto contemporaneo, arte ritratti, mario vetere"
+      },
+      "certificate": {
+        "number": "MV-2024-004",
+        "authenticity": true,
+        "signed": true,
+        "edition": "Pezzo Unico"
+      },
+      "shipping": {
+        "italy": 20,
+        "europe": 45,
+        "worldwide": 90,
+        "freeShippingOver": 2000
+      }
+    },
+    {
+      "id": 5,
+      "title": "Alba Mediterranea",
+      "slug": "alba-mediterranea",
+      "year": 2023,
+      "category": "paesaggi",
+      "technique": "Crete colorate su cartoncino",
+      "dimensions": {
+        "width": 80,
+        "height": 60,
+        "unit": "cm"
+      },
+      "price": 1600,
+      "currency": "EUR",
+      "status": "available",
+      "featured": false,
+      "description": {
+        "short": "I primi raggi del sole sul mare Mediterraneo",
+        "full": "L'alba sul Mediterraneo è un momento magico che questa opera cattura in tutta la sua essenza. I colori caldi dell'aurora si riflettono sull'acqua calma, creando un'atmosfera di pace e rinascita.",
+        "technique": "Le crete colorate sono state applicate con tecnica a strati, creando sfumature delicate che si rivelano magnificamente nell'inversione positiva."
+      },
+      "images": {
+        "negative": {
+          "main": "assets/images/opere/gallery/5-alba-negative-main.jpg",
+          "detail": "assets/images/opere/gallery/5-alba-negative-detail.jpg",
+          "process": "assets/images/opere/gallery/5-alba-negative-process.jpg"
+        },
+        "positive": {
+          "main": "assets/images/opere/gallery/5-alba-positive-main.jpg",
+          "detail": "assets/images/opere/gallery/5-alba-positive-detail.jpg"
+        },
+        "thumbnail": "assets/images/opere/gallery/5-alba-thumb.jpg"
+      },
+      "tags": ["alba", "mare", "mediterraneo", "sole", "paesaggio"],
+      "seo": {
+        "metaTitle": "Alba Mediterranea - Paesaggio Marino | Mario Vetere",
+        "metaDescription": "Opera marina unica 80x60cm con tecnica brevettata #negativoèpositivo®.",
+        "keywords": "paesaggio marino, alba, mediterraneo, arte mare"
+      },
+      "certificate": {
+        "number": "MV-2023-015",
+        "authenticity": true,
+        "signed": true,
+        "edition": "Pezzo Unico"
+      },
+      "shipping": {
+        "italy": 30,
+        "europe": 55,
+        "worldwide": 110,
+        "freeShippingOver": 2000
+      }
+    }
+  ],
+  "categories": [
+    {
+      "id": "paesaggi",
+      "name": "Paesaggi",
+      "slug": "paesaggi",
+      "description": "Opere ispirate alla natura e ai paesaggi italiani",
+      "count": 15,
+      "icon": "bi-tree"
+    },
+    {
+      "id": "ritratti",
+      "name": "Ritratti",
+      "slug": "ritratti",
+      "description": "Volti che raccontano storie",
+      "count": 8,
+      "icon": "bi-person"
+    },
+    {
+      "id": "astratto",
+      "name": "Astratto",
+      "slug": "astratto",
+      "description": "Espressioni pure di forma e colore",
+      "count": 12,
+      "icon": "bi-droplet"
+    },
+    {
+      "id": "urbano",
+      "name": "Urbano",
+      "slug": "urbano",
+      "description": "La città e la sua anima",
+      "count": 10,
+      "icon": "bi-building"
+    }
+  ],
+  "stats": {
+    "totalArtworks": 45,
+    "availableArtworks": 32,
+    "soldArtworks": 13,
+    "averagePrice": 1500,
+    "priceRange": {
+      "min": 800,
+      "max": 5000
+    }
+  },
+  "filters": {
+    "priceRanges": [
+      {
+        "id": "0-1000",
+        "label": "€ 0 - 1.000",
+        "min": 0,
+        "max": 1000
+      },
+      {
+        "id": "1000-2000",
+        "label": "€ 1.000 - 2.000",
+        "min": 1000,
+        "max": 2000
+      },
+      {
+        "id": "2000-3000",
+        "label": "€ 2.000 - 3.000",
+        "min": 2000,
+        "max": 3000
+      },
+      {
+        "id": "3000+",
+        "label": "€ 3.000+",
+        "min": 3000,
+        "max": 999999
+      }
+    ],
+    "sortOptions": [
+      {
+        "id": "newest",
+        "label": "Più Recenti",
+        "default": true
+      },
+      {
+        "id": "oldest",
+        "label": "Più Antiche"
+      },
+      {
+        "id": "price-low",
+        "label": "Prezzo: Basso-Alto"
+      },
+      {
+        "id": "price-high",
+        "label": "Prezzo: Alto-Basso"
+      },
+      {
+        "id": "title",
+        "label": "Titolo A-Z"
+      }
+    ]
+  }
+}
+

@@ -1,0 +1,20 @@
+<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow-white">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- MV Monogram Circle -->
+  <circle cx="30" cy="30" r="25" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.3"/>
+  <text x="30" y="38" font-family="Playfair Display, Georgia, serif" font-size="28" font-weight="700" fill="#ffffff" text-anchor="middle" filter="url(#glow-white)">MV</text>
+  
+  <!-- Brand Text -->
+  <text x="65" y="28" font-family="Playfair Display, Georgia, serif" font-size="18" font-weight="700" fill="#ffffff">Mario Vetere</text>
+  <text x="65" y="44" font-family="Inter, Arial, sans-serif" font-size="9" font-weight="400" fill="#e0e0e0" letter-spacing="0.5">#negativoèpositivo®</text>
+</svg>
+
