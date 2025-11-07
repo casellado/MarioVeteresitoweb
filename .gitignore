@@ -1,0 +1,118 @@
+# ==========================================
+# .gitignore - Mario Vetere Website
+# ==========================================
+
+# === Dipendenze ===
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# === File di Ambiente ===
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+
+# === Build e Cache ===
+dist/
+build/
+.cache/
+.parcel-cache/
+.vite/
+*.log
+
+# === Sistema Operativo ===
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# === Editor e IDE ===
+# VS Code
+.vscode/
+*.code-workspace
+
+# JetBrains (WebStorm, PHPStorm, etc.)
+.idea/
+*.iml
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# === File Temporanei ===
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+*.orig
+
+# === Database Locale (futuro) ===
+*.sqlite
+*.sqlite3
+*.db
+
+# === Upload e Media Temporanei ===
+uploads/temp/
+temp/
+tmp/
+
+# === Test e Coverage ===
+coverage/
+.nyc_output/
+*.test.js.snap
+
+# === Certificati SSL Locali ===
+*.pem
+*.key
+*.crt
+ssl/
+
+# === Log Files ===
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# === File di Configurazione Locale ===
+config.local.js
+*.local.js
+
+# === Backup Automatici ===
+*_backup_*
+backup/
+
+# === File di Sistema Git ===
+.git/
+.gitattributes
+
+# === Altro ===
+.sass-cache/
+*.css.map
+*.js.map
+
