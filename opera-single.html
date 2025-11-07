@@ -121,10 +121,15 @@
                   <span id="revealText">Rivela l'Opera</span>
                 </button>
                 
-                <!-- Zoom Button -->
-                <button class="zoom-btn btn btn-outline-light btn-sm position-absolute top-0 end-0 m-3" id="zoomBtn" aria-label="Zoom 5x per dettagli" title="Zoom dettagli">
-                  <i class="bi bi-zoom-in"></i>
+                <!-- Fullscreen Button (mobile) -->
+                <button class="fullscreen-btn btn btn-outline-light btn-sm position-absolute top-0 end-0 m-3" id="fullscreenBtn" aria-label="Visualizza a schermo intero" title="Schermo intero">
+                  <i class="bi bi-arrows-fullscreen"></i>
                 </button>
+                
+                <!-- Zoom Info Badge -->
+                <div class="zoom-info badge bg-dark position-absolute top-0 start-0 m-3" id="zoomInfo" style="display: none; opacity: 0.8;">
+                  Zoom: <span id="zoomLevel">100</span>%
+                </div>
                 
               </div>
               

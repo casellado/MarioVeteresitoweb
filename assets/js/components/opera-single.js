@@ -153,135 +153,179 @@ class OperaSingle {
   }
   
   setupRevealEffect() {
-    // Reveal effect identico homepage (con bottone)
+    // Reveal effect con zoom moderno
     const revealBtn = document.getElementById('revealBtn');
     const positiveImage = document.getElementById('positiveImage');
     const negativeImage = document.getElementById('negativeImage');
-    const revealText = document.getElementById('revealText');
-    const zoomBtn = document.getElementById('zoomBtn');
     const revealWrapper = document.querySelector('.reveal-canvas-wrapper');
+    const fullscreenBtn = document.getElementById('fullscreenBtn');
+    const zoomInfo = document.getElementById('zoomInfo');
+    const zoomLevelSpan = document.getElementById('zoomLevel');
     
-    if (!revealBtn || !positiveImage) return;
+    if (!revealBtn || !positiveImage || !revealWrapper) return;
     
     let isRevealed = false;
-    let isZoomed = false;
+    let currentZoom = 1;
     let isDragging = false;
     let startX = 0;
     let startY = 0;
     let translateX = 0;
     let translateY = 0;
     
+    // Touch pinch variables
+    let initialDistance = 0;
+    let initialZoom = 1;
+    
     // Reveal toggle
     revealBtn.addEventListener('click', () => {
       isRevealed = !isRevealed;
       
       if (isRevealed) {
-        // Show positive
         positiveImage.style.opacity = '1';
-        revealText.textContent = 'Nascondi Opera';
-        revealBtn.innerHTML = '<i class="bi bi-eye-slash me-2" aria-hidden="true"></i><span id="revealText">Nascondi Opera</span>';
+        revealBtn.innerHTML = '<i class="bi bi-eye-slash me-2"></i><span>Nascondi Opera</span>';
       } else {
-        // Show negative
         positiveImage.style.opacity = '0';
-        revealText.textContent = 'Rivela l\'Opera';
-        revealBtn.innerHTML = '<i class="bi bi-eye me-2" aria-hidden="true"></i><span id="revealText">Rivela l\'Opera</span>';
+        revealBtn.innerHTML = '<i class="bi bi-eye me-2"></i><span>Rivela l\'Opera</span>';
       }
     });
     
-    // Zoom functionality
-    if (zoomBtn && revealWrapper) {
-      zoomBtn.addEventListener('click', () => {
-        isZoomed = !isZoomed;
-        
-        if (isZoomed) {
-          // Enable zoom
-          revealWrapper.style.cursor = 'move';
-          revealWrapper.style.overflow = 'hidden';
-          negativeImage.style.transform = 'scale(5)';
-          positiveImage.style.transform = 'scale(5)';
-          negativeImage.style.transformOrigin = 'center center';
-          positiveImage.style.transformOrigin = 'center center';
-          zoomBtn.innerHTML = '<i class="bi bi-zoom-out"></i>';
-          zoomBtn.title = 'Disattiva zoom';
-          
-          // Enable dragging
-          revealWrapper.addEventListener('mousedown', startDrag);
-          revealWrapper.addEventListener('touchstart', startDragTouch);
+    // Fullscreen toggle
+    if (fullscreenBtn) {
+      fullscreenBtn.addEventListener('click', () => {
+        if (!document.fullscreenElement) {
+          revealWrapper.requestFullscreen().catch(err => {
+            console.log('Fullscreen error:', err);
+          });
+          fullscreenBtn.innerHTML = '<i class="bi bi-fullscreen-exit"></i>';
         } else {
-          // Disable zoom
-          revealWrapper.style.cursor = 'default';
-          negativeImage.style.transform = 'scale(1)';
-          positiveImage.style.transform = 'scale(1)';
-          negativeImage.style.transformOrigin = 'center center';
-          positiveImage.style.transformOrigin = 'center center';
-          zoomBtn.innerHTML = '<i class="bi bi-zoom-in"></i>';
-          zoomBtn.title = 'Zoom dettagli';
-          translateX = 0;
-          translateY = 0;
-          
-          // Disable dragging
-          revealWrapper.removeEventListener('mousedown', startDrag);
-          revealWrapper.removeEventListener('touchstart', startDragTouch);
+          document.exitFullscreen();
+          fullscreenBtn.innerHTML = '<i class="bi bi-arrows-fullscreen"></i>';
         }
       });
       
-      // Drag functions
-      function startDrag(e) {
-        if (!isZoomed) return;
+      document.addEventListener('fullscreenchange', () => {
+        if (!document.fullscreenElement) {
+          fullscreenBtn.innerHTML = '<i class="bi bi-arrows-fullscreen"></i>';
+        }
+      });
+    }
+    
+    // Mouse wheel zoom (PC)
+    revealWrapper.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      
+      const delta = e.deltaY > 0 ? -0.1 : 0.1;
+      const newZoom = Math.max(1, Math.min(5, currentZoom + delta));
+      
+      if (newZoom !== currentZoom) {
+        currentZoom = newZoom;
+        updateZoom();
+      }
+    }, { passive: false });
+    
+    // Mouse drag (PC)
+    revealWrapper.addEventListener('mousedown', (e) => {
+      if (currentZoom > 1) {
         isDragging = true;
         startX = e.clientX - translateX;
         startY = e.clientY - translateY;
+        revealWrapper.style.cursor = 'grabbing';
         e.preventDefault();
       }
+    });
+    
+    document.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
       
-      function startDragTouch(e) {
-        if (!isZoomed) return;
+      translateX = e.clientX - startX;
+      translateY = e.clientY - startY;
+      
+      const maxTranslate = 100 * currentZoom;
+      translateX = Math.max(-maxTranslate, Math.min(maxTranslate, translateX));
+      translateY = Math.max(-maxTranslate, Math.min(maxTranslate, translateY));
+      
+      updateTransform();
+    });
+    
+    document.addEventListener('mouseup', () => {
+      if (isDragging) {
+        isDragging = false;
+        revealWrapper.style.cursor = currentZoom > 1 ? 'grab' : 'default';
+      }
+    });
+    
+    // Touch pinch zoom (Mobile)
+    revealWrapper.addEventListener('touchstart', (e) => {
+      if (e.touches.length === 2) {
+        // Pinch start
+        e.preventDefault();
+        initialDistance = getDistance(e.touches[0], e.touches[1]);
+        initialZoom = currentZoom;
+      } else if (e.touches.length === 1 && currentZoom > 1) {
+        // Drag start
         isDragging = true;
-        const touch = e.touches[0];
-        startX = touch.clientX - translateX;
-        startY = touch.clientY - translateY;
-        e.preventDefault();
+        startX = e.touches[0].clientX - translateX;
+        startY = e.touches[0].clientY - translateY;
       }
-      
-      document.addEventListener('mousemove', (e) => {
-        if (!isDragging || !isZoomed) return;
-        
-        translateX = e.clientX - startX;
-        translateY = e.clientY - startY;
-        
-        // Limit pan to reasonable bounds
-        const maxTranslate = 200;
-        translateX = Math.max(-maxTranslate, Math.min(maxTranslate, translateX));
-        translateY = Math.max(-maxTranslate, Math.min(maxTranslate, translateY));
-        
-        negativeImage.style.transform = `scale(5) translate(${translateX / 5}px, ${translateY / 5}px)`;
-        positiveImage.style.transform = `scale(5) translate(${translateX / 5}px, ${translateY / 5}px)`;
-      });
-      
-      document.addEventListener('touchmove', (e) => {
-        if (!isDragging || !isZoomed) return;
-        
-        const touch = e.touches[0];
-        translateX = touch.clientX - startX;
-        translateY = touch.clientY - startY;
-        
-        // Limit pan to reasonable bounds
-        const maxTranslate = 200;
-        translateX = Math.max(-maxTranslate, Math.min(maxTranslate, translateX));
-        translateY = Math.max(-maxTranslate, Math.min(maxTranslate, translateY));
-        
-        negativeImage.style.transform = `scale(5) translate(${translateX / 5}px, ${translateY / 5}px)`;
-        positiveImage.style.transform = `scale(5) translate(${translateX / 5}px, ${translateY / 5}px)`;
+    }, { passive: false });
+    
+    revealWrapper.addEventListener('touchmove', (e) => {
+      if (e.touches.length === 2) {
+        // Pinch zoom
         e.preventDefault();
-      });
-      
-      document.addEventListener('mouseup', () => {
+        const currentDistance = getDistance(e.touches[0], e.touches[1]);
+        const scale = currentDistance / initialDistance;
+        currentZoom = Math.max(1, Math.min(5, initialZoom * scale));
+        updateZoom();
+      } else if (e.touches.length === 1 && isDragging) {
+        // Drag
+        e.preventDefault();
+        translateX = e.touches[0].clientX - startX;
+        translateY = e.touches[0].clientY - startY;
+        
+        const maxTranslate = 100 * currentZoom;
+        translateX = Math.max(-maxTranslate, Math.min(maxTranslate, translateX));
+        translateY = Math.max(-maxTranslate, Math.min(maxTranslate, translateY));
+        
+        updateTransform();
+      }
+    }, { passive: false });
+    
+    revealWrapper.addEventListener('touchend', (e) => {
+      if (e.touches.length === 0) {
         isDragging = false;
-      });
+      }
+    });
+    
+    // Helper functions
+    function getDistance(touch1, touch2) {
+      const dx = touch2.clientX - touch1.clientX;
+      const dy = touch2.clientY - touch1.clientY;
+      return Math.sqrt(dx * dx + dy * dy);
+    }
+    
+    function updateZoom() {
+      updateTransform();
       
-      document.addEventListener('touchend', () => {
-        isDragging = false;
-      });
+      // Show/hide zoom info
+      if (currentZoom > 1) {
+        zoomInfo.style.display = 'block';
+        zoomLevelSpan.textContent = Math.round(currentZoom * 100);
+        revealWrapper.style.cursor = 'grab';
+      } else {
+        zoomInfo.style.display = 'none';
+        revealWrapper.style.cursor = 'default';
+        translateX = 0;
+        translateY = 0;
+      }
+    }
+    
+    function updateTransform() {
+      const transform = `scale(${currentZoom}) translate(${translateX / currentZoom}px, ${translateY / currentZoom}px)`;
+      negativeImage.style.transform = transform;
+      positiveImage.style.transform = transform;
+      negativeImage.style.transformOrigin = 'center center';
+      positiveImage.style.transformOrigin = 'center center';
     }
   }
   
