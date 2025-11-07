@@ -1,106 +1,36 @@
 /**
- * Auto-apply i18n attributes on page load
- * This script automatically translates key elements
+ * i18n Debug & Auto-reapply on language change
+ * Monitors translation system and reapplies when language changes
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('🔧 Applicazione automatica i18n...');
+  console.log('🔧 i18n Debug System attivo');
   
-  // Mapping: Testo Italiano → Chiave Traduzione
-  const textMapping = {
-    // Navigation
-    'Home': 'nav.home',
-    'Opere': 'nav.artworks',
-    'Tecnica': 'nav.technique',
-    'Chi Sono': 'nav.about',
-    'Contatti': 'nav.contact',
-    
-    // Hero Section
-    'Tecnica Brevettata': 'hero.subtitle',
-    'Arte Contemporanea': 'hero.title',
-    'Esplora le Opere': 'hero.cta_explore',
-    'Scopri la Tecnica': 'hero.cta_technique',
-    'Unico': 'hero.unique_badge',
-    
-    // Artworks Section
-    'Opere Selezionate': 'artworks.featured_title',
-    'Disponibile': 'artworks.available',
-    'Venduta': 'artworks.sold',
-    'In Evidenza': 'artworks.featured',
-    'Acquista Ora': 'artworks.buy_now',
-    'Scopri': 'artworks.details',
-    'Vedi Tutte le Opere': 'artworks.view_all',
-    
-    // Contact
-    'Mettiamoci in Contatto': 'contact.title',
-    'Nome e Cognome': 'contact.name',
-    'Email': 'contact.email',
-    'Telefono': 'contact.phone',
-    'Oggetto': 'contact.subject',
-    'Messaggio': 'contact.message',
-    'Invia Messaggio': 'contact.send',
-    
-    // Footer
-    'Link Rapidi': 'footer.quick_links',
-    'Contatti': 'footer.contact_info',
-    'Seguici sui Social': 'footer.follow_us',
-    
-    // Common
-    'Caricamento...': 'common.loading',
-    'Chiudi': 'common.close',
-    'Indietro': 'common.back',
-    'Avanti': 'common.next',
-    'Cerca': 'common.search',
-    'Filtra': 'common.filter',
-    'Ordina': 'common.sort'
+  // Count elements with data-i18n
+  const countTranslatableElements = () => {
+    const elements = document.querySelectorAll('[data-i18n]');
+    console.log(`📊 Elementi traducibili trovati: ${elements.length}`);
+    return elements.length;
   };
   
-  // Function to apply i18n to elements
-  function applyI18nToElements() {
-    // Get all text nodes
-    const walker = document.createTreeWalker(
-      document.body,
-      NodeFilter.SHOW_TEXT,
-      null,
-      false
-    );
-    
-    const nodes = [];
-    let node;
-    while (node = walker.nextNode()) {
-      if (node.nodeValue.trim().length > 0) {
-        nodes.push(node);
-      }
-    }
-    
-    // Apply translations
-    nodes.forEach(textNode => {
-      const text = textNode.nodeValue.trim();
-      const parent = textNode.parentElement;
-      
-      if (textMapping[text] && parent && !parent.hasAttribute('data-i18n')) {
-        parent.setAttribute('data-i18n', textMapping[text]);
-        parent.setAttribute('data-i18n-original', text);
-      }
-    });
-    
-    console.log(`✅ ${Object.keys(textMapping).length} mappature i18n disponibili`);
-  }
+  // Initial count
+  setTimeout(() => {
+    countTranslatableElements();
+  }, 500);
   
-  // Apply mappings
-  applyI18nToElements();
-  
-  // Re-apply translations after adding attributes
-  if (window.i18n) {
+  // Listen for language changes and re-count
+  window.addEventListener('languageChanged', (e) => {
+    console.log(`🔄 Lingua cambiata in: ${e.detail.language}`);
     setTimeout(() => {
-      window.i18n.applyTranslations();
-      console.log('✅ Traduzioni applicate automaticamente');
-    }, 200);
-  }
-  
-  // Listen for language changes and re-apply
-  window.addEventListener('languageChanged', () => {
-    console.log('🔄 Lingua cambiata, ri-applicazione traduzioni...');
+      countTranslatableElements();
+    }, 100);
   });
+  
+  // Debug: log when i18n is ready
+  if (window.i18n) {
+    console.log('✅ Sistema i18n caricato correttamente');
+  } else {
+    console.error('❌ Sistema i18n NON caricato');
+  }
 });
 
