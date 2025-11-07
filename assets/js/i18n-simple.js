@@ -23,9 +23,11 @@
       "hero.description": "Scopri l'unica tecnica al mondo che trasforma il modo di creare e vivere l'arte contemporanea. Ogni opera è un viaggio sensoriale tra luce e ombra.",
       "hero.cta_explore": "Esplora le Opere",
       "hero.cta_technique": "Scopri la Tecnica",
-      "hero.stats_artworks": "Opere Create",
+      "hero.stats_artworks": "Opere Realizzate",
       "hero.stats_collectors": "Collezionisti",
       "hero.stats_exhibitions": "Esposizioni",
+      "hero.stats_patent": "Anno del Brevetto",
+      "hero.cta_story": "Scopri la Storia Completa",
       "hero.scroll": "Scorri per esplorare",
       
       // Artworks Section
@@ -86,6 +88,8 @@
       "hero.stats_artworks": "Artworks Created",
       "hero.stats_collectors": "Collectors",
       "hero.stats_exhibitions": "Exhibitions",
+      "hero.stats_patent": "Patent Year",
+      "hero.cta_story": "Discover the Full Story",
       "hero.scroll": "Scroll to explore",
       
       // Artworks Section
@@ -143,6 +147,8 @@
       "hero.stats_artworks": "Geschaffene Kunstwerke",
       "hero.stats_collectors": "Sammler",
       "hero.stats_exhibitions": "Ausstellungen",
+      "hero.stats_patent": "Patentjahr",
+      "hero.cta_story": "Die ganze Geschichte entdecken",
       "hero.scroll": "Scrollen um zu erkunden",
       "artworks.badge": "Ausgewählte Kunstwerke",
       "artworks.title": "Eine kuratierte Auswahl der bedeutendsten Werke",
@@ -190,6 +196,8 @@
       "hero.stats_artworks": "Œuvres Créées",
       "hero.stats_collectors": "Collectionneurs",
       "hero.stats_exhibitions": "Expositions",
+      "hero.stats_patent": "Année du Brevet",
+      "hero.cta_story": "Découvrir l'Histoire Complète",
       "hero.scroll": "Défiler pour explorer",
       "artworks.badge": "Œuvres Sélectionnées",
       "artworks.title": "Une sélection soignée des œuvres les plus significatives",
@@ -237,6 +245,8 @@
       "hero.stats_artworks": "Obras Creadas",
       "hero.stats_collectors": "Coleccionistas",
       "hero.stats_exhibitions": "Exposiciones",
+      "hero.stats_patent": "Año de la Patente",
+      "hero.cta_story": "Descubre la Historia Completa",
       "hero.scroll": "Desplázate para explorar",
       "artworks.badge": "Obras Seleccionadas",
       "artworks.title": "Una selección curada de las obras más significativas",
