@@ -16,6 +16,11 @@
       "nav.about": "Chi Sono",
       "nav.contact": "Contatti",
       
+      // Mobile Menu
+      "mobile.menu": "Menu",
+      "mobile.follow": "Seguimi su",
+      "mobile.contact_me": "Contattami",
+      
       // Hero Section
       "hero.badge": "Tecnica Brevettata",
       "hero.artist_name": "Mario Vetere",
@@ -79,7 +84,11 @@
       
       // Technique Section
       "technique.badge": "La Tecnica Brevettata",
-      "technique.title": "Inversione Cromatica",
+      "technique.patent_badge": "Brevetto Internazionale",
+      "technique.title": "La Tecnica",
+      "technique.title_alt": "Inversione Cromatica",
+      "technique.intro_title": "Una rivoluzione artistica che trasforma completamente il modo di concepire e creare l'arte contemporanea.",
+      "technique.intro_desc": "La tecnica è l'unica al mondo che permette di dipingere un'opera in negativo cromatico, per poi rivelarla in positivo attraverso un processo fotografico innovativo.",
       "technique.subtitle": "La prima e unica tecnica al mondo che trasforma la percezione dell'arte",
       "technique.description": "Dipingo in negativo con i polpastrelli, senza pennelli. La fotografia professionale rivela poi l'opera in positivo, creando colori e atmosfere impossibili da ottenere con tecniche tradizionali.",
       "technique.point1_title": "100% Manuale",
@@ -97,6 +106,9 @@
       "artist.badge": "L'Artista",
       "artist.title": "Mario Vetere",
       "artist.subtitle": "Un percorso artistico che unisce tradizione e innovazione, trasformando una tecnica leonardesca in arte contemporanea.",
+      "artist.bio_p1": "Nato a Torino da genitori calabresi, Mario Vetere scopre il suo talento artistico già all'età di 6 anni. Dopo oltre 30 anni, durante un periodo di forte crisi lavorativa, decide di dedicarsi completamente all'arte, creando la sua prima opera con il caffè della moglie.",
+      "artist.bio_p2": "Da autodidatta, studia e perfeziona una delle tecniche care a Leonardo Da Vinci: il disegno su cartoncino con crete colorate, sfumate esclusivamente con i polpastrelli. Nel 2016, dopo intensi studi sui colori, crea la rivoluzionaria tecnica, la prima nel suo genere in Italia.",
+      "artist.achievement_exhibitions": "Mostre Internazionali",
       "artist.description": "Da oltre 20 anni dedico la mia vita all'arte e alla ricerca. La tecnica #negativoèpositivo® nasce dalla passione per la sperimentazione e dalla volontà di creare qualcosa di veramente unico.",
       "artist.quote": "L'arte è ciò che appare e ciò che si rivela",
       "artist.portrait_alt": "Mario Vetere nel suo studio",
@@ -116,11 +128,22 @@
       // Footer
       "footer.nav_title": "Navigazione",
       "footer.description": "Arte contemporanea con la tecnica brevettata. Un viaggio unico tra luce e ombra, tra ciò che appare e ciò che si rivela.",
+      "footer.info_title": "Informazioni",
+      "footer.faq": "FAQ",
+      "footer.shipping": "Spedizioni",
+      "footer.privacy": "Privacy Policy",
+      "footer.terms": "Termini",
+      "footer.newsletter_title": "Resta Aggiornato",
+      "footer.newsletter_desc": "Iscriviti alla newsletter per ricevere aggiornamenti su nuove opere, mostre ed eventi esclusivi.",
+      "footer.newsletter_placeholder": "La tua email",
+      "footer.newsletter_button": "Iscriviti",
       "footer.quick_links": "Link Rapidi",
       "footer.contact_info": "Contatti",
       "footer.follow": "Seguici",
       "footer.rights": "Tutti i diritti riservati",
-      "footer.trademark": "è un marchio registrato"
+      "footer.trademark": "è un marchio registrato",
+      "footer.made_with": "Made with",
+      "footer.in_italy": "in Italy"
     },
     en: {
       // Navigation
@@ -129,6 +152,11 @@
       "nav.technique": "Technique",
       "nav.about": "About",
       "nav.contact": "Contact",
+      
+      // Mobile Menu
+      "mobile.menu": "Menu",
+      "mobile.follow": "Follow me on",
+      "mobile.contact_me": "Contact Me",
       
       // Hero Section
       "hero.badge": "Patented Technique",
@@ -193,7 +221,11 @@
       
       // Technique Section
       "technique.badge": "The Patented Technique",
-      "technique.title": "Chromatic Inversion",
+      "technique.patent_badge": "International Patent",
+      "technique.title": "The Technique",
+      "technique.title_alt": "Chromatic Inversion",
+      "technique.intro_title": "An artistic revolution that completely transforms the way of conceiving and creating contemporary art.",
+      "technique.intro_desc": "The technique is the only one in the world that allows to paint an artwork in chromatic negative, then reveal it in positive through an innovative photographic process.",
       "technique.subtitle": "The first and only technique in the world that transforms the perception of art",
       "technique.description": "I paint in negative with my fingertips, without brushes. Professional photography then reveals the artwork in positive, creating colors and atmospheres impossible to achieve with traditional techniques.",
       "technique.point1_title": "100% Manual",
@@ -211,6 +243,9 @@
       "artist.badge": "The Artist",
       "artist.title": "Mario Vetere",
       "artist.subtitle": "An artistic journey that combines tradition and innovation, transforming a Leonardesque technique into contemporary art.",
+      "artist.bio_p1": "Born in Turin to Calabrian parents, Mario Vetere discovered his artistic talent at the age of 6. After over 30 years, during a period of severe work crisis, he decided to dedicate himself completely to art, creating his first work with his wife's coffee.",
+      "artist.bio_p2": "Self-taught, he studied and perfected one of Leonardo Da Vinci's favorite techniques: drawing on cardboard with colored chalks, blended exclusively with fingertips. In 2016, after intense color studies, he created the revolutionary technique, the first of its kind in Italy.",
+      "artist.achievement_exhibitions": "International Exhibitions",
       "artist.description": "For over 20 years I have dedicated my life to art and research. The #negativoèpositivo® technique was born from a passion for experimentation and the desire to create something truly unique.",
       "artist.quote": "Art is what appears and what is revealed",
       "artist.portrait_alt": "Mario Vetere in his studio",
@@ -230,11 +265,22 @@
       // Footer
       "footer.nav_title": "Navigation",
       "footer.description": "Contemporary art with patented technique. A unique journey between light and shadow, between what appears and what is revealed.",
+      "footer.info_title": "Information",
+      "footer.faq": "FAQ",
+      "footer.shipping": "Shipping",
+      "footer.privacy": "Privacy Policy",
+      "footer.terms": "Terms",
+      "footer.newsletter_title": "Stay Updated",
+      "footer.newsletter_desc": "Subscribe to the newsletter to receive updates on new artworks, exhibitions and exclusive events.",
+      "footer.newsletter_placeholder": "Your email",
+      "footer.newsletter_button": "Subscribe",
       "footer.quick_links": "Quick Links",
       "footer.contact_info": "Contact",
       "footer.follow": "Follow Us",
       "footer.rights": "All rights reserved",
-      "footer.trademark": "is a registered trademark"
+      "footer.trademark": "is a registered trademark",
+      "footer.made_with": "Made with",
+      "footer.in_italy": "in Italy"
     },
     de: {
       "nav.home": "Startseite",
