@@ -178,26 +178,42 @@ class ArtworksGallery {
     col.className = 'col-lg-4 col-md-6';
     col.setAttribute('data-aos', 'fade-up');
     
-    const statusBadge = artwork.status === 'available' ? 
-      '<span class="badge bg-success position-absolute m-2" style="top: 8px; right: 8px; z-index: 10;">Disponibile</span>' :
-      '<span class="badge bg-danger position-absolute m-2" style="top: 8px; right: 8px; z-index: 10;">Venduta</span>';
+    // Determine badge based on status and featured
+    let badge = '';
+    if (artwork.featured) {
+      badge = '<span class="badge bg-warning text-dark position-absolute" style="top: 8px; right: 8px; z-index: 10; box-shadow: 0 2px 8px rgba(0,0,0,0.3); font-weight: 600;">In Evidenza</span>';
+    } else if (artwork.status === 'available') {
+      badge = '<span class="badge bg-success position-absolute" style="top: 8px; right: 8px; z-index: 10; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">Disponibile</span>';
+    } else {
+      badge = '<span class="badge bg-danger position-absolute" style="top: 8px; right: 8px; z-index: 10; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">Venduta</span>';
+    }
     
-    const featuredBadge = artwork.featured ? 
-      '<span class="badge bg-warning text-dark position-absolute m-2" style="top: 8px; left: 8px; z-index: 10;">In Evidenza</span>' : '';
+    // Parse technique to separate material and support
+    const techniqueParts = artwork.technique.split(' su ');
+    const material = techniqueParts[0] || 'Crete colorate';
+    const support = techniqueParts[1] || 'Cartoncino';
     
     col.innerHTML = `
-      <article class="artwork-card glass-card h-100 rounded-4 overflow-hidden">
+      <article class="artwork-card glass-card h-100 rounded-4 overflow-hidden" role="article">
         
         <!-- Image -->
         <div class="artwork-image position-relative">
           <img src="${artwork.images.thumbnail}" 
-               alt="${artwork.title}" 
+               alt="Opera d'arte" 
                class="img-fluid w-100" 
                style="aspect-ratio: 4/3; object-fit: cover;"
                loading="lazy">
           
-          ${statusBadge}
-          ${featuredBadge}
+          <!-- Quick View Overlay -->
+          <div class="image-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center opacity-0">
+            <a href="opera-single.html?id=${artwork.id}" class="btn btn-primary btn-sm" aria-label="Vedi dettagli opera">
+              <i class="bi bi-eye me-2"></i>
+              Vedi Dettagli
+            </a>
+          </div>
+          
+          <!-- Badge -->
+          ${badge}
         </div>
         
         <!-- Card Body -->
@@ -206,26 +222,26 @@ class ArtworksGallery {
             ${artwork.title}
           </h3>
           <p class="text-secondary small mb-3" style="line-height: 1.5;">
-            ${artwork.technique} | ${artwork.year}
+            Tecnica: #<span style="color: #0099FF;">negativo</span><span style="color: #FFD700;">è</span><span style="color: #FF6600;">positivo</span>® | ${artwork.year}
           </p>
           
           <!-- Details -->
           <div class="artwork-details d-flex flex-wrap gap-2 mb-4">
             <span class="badge bg-dark-subtle text-white-50">${artwork.dimensions.width}×${artwork.dimensions.height} cm</span>
-            <span class="badge bg-dark-subtle text-white-50">${this.getCategoryName(artwork.category)}</span>
+            <span class="badge bg-dark-subtle text-white-50">${material}</span>
+            <span class="badge bg-dark-subtle text-white-50">${support}</span>
           </div>
           
           <!-- Price & CTA -->
           <div class="d-flex align-items-center justify-content-between">
             <div class="price">
               ${artwork.status === 'available' ?
-                `<span class="h4 mb-0 text-gradient fw-bold">€ ${artwork.price.toLocaleString()}</span>` :
+                `<span class="h4 mb-0 text-gradient fw-bold">€ ${artwork.price.toLocaleString('it-IT')}</span>` :
                 `<span class="h5 mb-0 text-danger">Venduta</span>`
               }
             </div>
             <a href="opera-single.html?id=${artwork.id}" class="btn btn-outline-light btn-sm">
-              <i class="bi bi-eye me-1"></i>
-              Dettagli
+              Scopri
             </a>
           </div>
         </div>
