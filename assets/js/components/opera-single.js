@@ -33,6 +33,9 @@ class OperaSingle {
     // Setup form
     this.setupForm();
     
+    // Load related artworks
+    this.loadRelatedArtworks();
+    
     // Init AOS
     if (typeof AOS !== 'undefined') {
       AOS.init({ duration: 800, once: true });
@@ -228,6 +231,97 @@ class OperaSingle {
       // Reset form
       form.reset();
     });
+  }
+  
+  async loadRelatedArtworks() {
+    try {
+      const response = await fetch('assets/data/artworks.json');
+      const data = await response.json();
+      
+      // Get related artworks (same category, excluding current)
+      const related = data.artworks
+        .filter(a => a.category === this.artwork.category && a.id !== this.artwork.id)
+        .slice(0, 3);
+      
+      // If not enough, add others
+      if (related.length < 3) {
+        const others = data.artworks
+          .filter(a => a.id !== this.artwork.id && !related.find(r => r.id === a.id))
+          .slice(0, 3 - related.length);
+        related.push(...others);
+      }
+      
+      const container = document.getElementById('relatedArtworksContainer');
+      if (!container) return;
+      
+      container.innerHTML = '';
+      related.forEach((art, index) => {
+        container.appendChild(this.createRelatedCard(art, index));
+      });
+      
+      // Re-init AOS
+      if (typeof AOS !== 'undefined') {
+        AOS.refresh();
+      }
+      
+    } catch (error) {
+      console.error('❌ Errore caricamento opere correlate:', error);
+    }
+  }
+  
+  createRelatedCard(artwork, index) {
+    const col = document.createElement('div');
+    col.className = 'col-lg-4 col-md-6';
+    col.setAttribute('data-aos', 'fade-up');
+    col.setAttribute('data-aos-delay', (index * 100).toString());
+    
+    const techniqueParts = artwork.technique.split(' su ');
+    const material = techniqueParts[0] || 'Crete colorate';
+    const support = techniqueParts[1] || 'Cartoncino';
+    
+    let badge = '';
+    if (artwork.featured) {
+      badge = '<span class="badge bg-warning text-dark position-absolute" style="top: 8px; right: 8px; z-index: 10;">In Evidenza</span>';
+    } else if (artwork.status === 'available') {
+      badge = '<span class="badge bg-success position-absolute" style="top: 8px; right: 8px; z-index: 10;">Disponibile</span>';
+    }
+    
+    col.innerHTML = `
+      <article class="artwork-card glass-card h-100 rounded-4 overflow-hidden" role="article">
+        <div class="artwork-image position-relative">
+          <img src="${artwork.images.thumbnail}" alt="Opera d'arte" class="img-fluid w-100" style="aspect-ratio: 4/3; object-fit: cover;" loading="lazy">
+          <div class="image-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center opacity-0">
+            <a href="opera-single.html?id=${artwork.id}" class="btn btn-primary btn-sm">
+              <i class="bi bi-eye me-2"></i>
+              Vedi Dettagli
+            </a>
+          </div>
+          ${badge}
+        </div>
+        <div class="card-body p-4">
+          <h3 class="h5 mb-3 text-white" style="line-height: 1.4;">${artwork.title}</h3>
+          <p class="text-secondary small mb-3" style="line-height: 1.5;">
+            Tecnica: #<span style="color: #0099FF;">negativo</span><span style="color: #FFD700;">è</span><span style="color: #FF6600;">positivo</span>® | ${artwork.year}
+          </p>
+          <div class="artwork-details d-flex flex-wrap gap-2 mb-4">
+            <span class="badge bg-dark-subtle text-white-50">${artwork.dimensions.width}×${artwork.dimensions.height} cm</span>
+            <span class="badge bg-dark-subtle text-white-50">${material}</span>
+            <span class="badge bg-dark-subtle text-white-50">${support}</span>
+          </div>
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="price">
+              ${artwork.status === 'available' ? 
+                `<span class="h4 mb-0 text-gradient fw-bold">€ ${artwork.price.toLocaleString('it-IT')}</span>` :
+                `<span class="h5 mb-0 text-danger">Venduta</span>`
+              }
+            </div>
+            <a href="opera-single.html?id=${artwork.id}" class="btn btn-outline-light btn-sm">Scopri</a>
+          </div>
+        </div>
+      </article>
+    `;
+    
+    return col;
   }
 }
 
