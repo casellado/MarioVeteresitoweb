@@ -3,34 +3,36 @@
  * Monitors translation system and reapplies when language changes
  */
 
+// Count elements with data-i18n
+const countTranslatableElements = () => {
+  const elements = document.querySelectorAll('[data-i18n]');
+  console.log(`📊 Elementi traducibili trovati: ${elements.length}`);
+  return elements.length;
+};
+
+// Wait for i18n to be ready
+window.addEventListener('i18nReady', (e) => {
+  console.log(`✅ i18n PRONTO - Lingua attiva: ${e.detail.language.toUpperCase()}`);
+  countTranslatableElements();
+});
+
+// Listen for language changes
+window.addEventListener('languageChanged', (e) => {
+  console.log(`🔄 Lingua cambiata in: ${e.detail.language.toUpperCase()}`);
+  setTimeout(() => {
+    countTranslatableElements();
+  }, 100);
+});
+
+// Initial check
 document.addEventListener('DOMContentLoaded', () => {
   console.log('🔧 i18n Debug System attivo');
   
-  // Count elements with data-i18n
-  const countTranslatableElements = () => {
-    const elements = document.querySelectorAll('[data-i18n]');
-    console.log(`📊 Elementi traducibili trovati: ${elements.length}`);
-    return elements.length;
-  };
-  
-  // Initial count
-  setTimeout(() => {
-    countTranslatableElements();
-  }, 500);
-  
-  // Listen for language changes and re-count
-  window.addEventListener('languageChanged', (e) => {
-    console.log(`🔄 Lingua cambiata in: ${e.detail.language}`);
-    setTimeout(() => {
-      countTranslatableElements();
-    }, 100);
-  });
-  
-  // Debug: log when i18n is ready
+  // Check if i18n instance exists
   if (window.i18n) {
-    console.log('✅ Sistema i18n caricato correttamente');
+    console.log('✅ i18n istanza disponibile');
   } else {
-    console.error('❌ Sistema i18n NON caricato');
+    console.error('❌ i18n istanza NON disponibile');
   }
 });
 

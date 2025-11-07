@@ -30,7 +30,12 @@ class I18n {
     // Update HTML lang attribute
     document.documentElement.lang = this.currentLang;
     
-    console.log(`✅ Lingua attiva: ${this.currentLang.toUpperCase()}`);
+    console.log(`✅ Sistema i18n pronto - Lingua: ${this.currentLang.toUpperCase()}`);
+    
+    // Dispatch ready event
+    window.dispatchEvent(new CustomEvent('i18nReady', { 
+      detail: { language: this.currentLang } 
+    }));
   }
   
   getSavedLanguage() {
@@ -197,8 +202,13 @@ uage(lang) {
   }
 }
 
-// Create global instance
-window.i18n = new I18n();
+// Create global instance and make it available immediately
+// Note: The init() is async, so translations will be applied after loading
+const i18nInstance = new I18n();
+window.i18n = i18nInstance;
+
+// Mark as ready when init completes
+console.log('⏳ i18n istanza creata, in attesa di inizializzazione...');
 
 // Export for module systems
 if (typeof module !== 'undefined' && module.exports) {
