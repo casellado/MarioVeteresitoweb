@@ -55,6 +55,14 @@
       "artworks.technique_label": "Tecnica:",
       "artworks.dimensions": "Dimensioni",
       "artworks.price": "Prezzo",
+      "artworks.artwork_alt": "Opera d'arte",
+      "artworks.material_colored_chalks": "Crete colorate",
+      "artworks.material_cardboard": "Cartoncino",
+      "artworks.material_full": "Crete colorate su cartoncino",
+      // Specific artworks titles
+      "artworks.artwork1_title": "Tramonto Calabrese",
+      "artworks.artwork2_title": "Riflessi Urbani",
+      "artworks.artwork3_title": "Natura Silenziosa",
       
       // Opere Page
       "opere.badge": "Collezione Completa",
@@ -197,6 +205,14 @@
       "artworks.technique_label": "Technique:",
       "artworks.dimensions": "Dimensions",
       "artworks.price": "Price",
+      "artworks.artwork_alt": "Artwork",
+      "artworks.material_colored_chalks": "Colored chalks",
+      "artworks.material_cardboard": "Cardboard",
+      "artworks.material_full": "Colored chalks on cardboard",
+      // Specific artworks titles
+      "artworks.artwork1_title": "Calabrian Sunset",
+      "artworks.artwork2_title": "Urban Reflections",
+      "artworks.artwork3_title": "Silent Nature",
       
       // Opere Page
       "opere.badge": "Complete Collection",
