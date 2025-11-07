@@ -9,6 +9,9 @@
   // Translations embedded (best practice: external files loaded sync)
   const translations = {
     it: {
+      // General
+      "skip_link": "Salta al contenuto principale",
+      
       // Navigation
       "nav.home": "Home",
       "nav.artworks": "Opere",
@@ -166,6 +169,9 @@
       "modal.video_title": "La Tecnica"
     },
     en: {
+      // General
+      "skip_link": "Skip to main content",
+      
       // Navigation
       "nav.home": "Home",
       "nav.artworks": "Artworks",
@@ -323,6 +329,9 @@
       "modal.video_title": "The Technique"
     },
     de: {
+      // General
+      "skip_link": "Zum Hauptinhalt springen",
+      
       "nav.home": "Startseite",
       "nav.artworks": "Kunstwerke",
       "nav.technique": "Technik",
@@ -465,6 +474,9 @@
       "modal.video_title": "Die Technik"
     },
     fr: {
+      // General
+      "skip_link": "Aller au contenu principal",
+      
       "nav.home": "Accueil",
       "nav.artworks": "Œuvres",
       "nav.technique": "Technique",
@@ -607,6 +619,9 @@
       "modal.video_title": "La Technique"
     },
     es: {
+      // General
+      "skip_link": "Saltar al contenido principal",
+      
       "nav.home": "Inicio",
       "nav.artworks": "Obras",
       "nav.technique": "Técnica",
