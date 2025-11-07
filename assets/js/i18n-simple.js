@@ -166,7 +166,45 @@
       
       // Modals
       "modal.search_placeholder": "Cerca opere, artista, tecnica...",
-      "modal.video_title": "La Tecnica"
+      "modal.video_title": "La Tecnica",
+      
+      // Opera Single Page
+      "opera.breadcrumb_opera": "Opera",
+      "opera.reveal_button": "Rivela l'Opera",
+      "opera.fullscreen": "Schermo intero",
+      "opera.zoom": "Zoom",
+      "opera.status_available": "Disponibile",
+      "opera.status_featured": "In Evidenza",
+      "opera.loading": "Caricamento...",
+      "opera.short_desc": "Descrizione breve dell'opera",
+      "opera.price_label": "Prezzo:",
+      "opera.shipping": "Spedizione",
+      "opera.shipping_insured": "Assicurata",
+      "opera.certificate": "Certificato",
+      "opera.certificate_auth": "Autenticità",
+      "opera.guarantee": "Garanzia",
+      "opera.guarantee_100": "100%",
+      "opera.technical_details": "Dettagli Tecnici",
+      "opera.technique_label": "Tecnica:",
+      "opera.material_label": "Materiale:",
+      "opera.support_label": "Supporto:",
+      "opera.dimensions_label": "Dimensioni:",
+      "opera.year_label": "Anno:",
+      "opera.certificate_number": "Certificato N°:",
+      "opera.buy_now": "Acquista Ora",
+      "opera.request_info": "Richiedi Informazioni",
+      "opera.contact_whatsapp": "Contatta via WhatsApp",
+      "opera.share": "Condividi:",
+      "opera.description_title": "Descrizione",
+      "opera.description_loading": "Caricamento descrizione...",
+      "opera.related_title": "Opere Correlate",
+      "opera.related_desc": "Altre opere che potrebbero interessarti",
+      "opera.modal_title": "Richiedi Informazioni",
+      "opera.modal_name": "Nome Completo",
+      "opera.modal_email": "Email",
+      "opera.modal_message": "Messaggio",
+      "opera.modal_submit": "Invia Richiesta",
+      "opera.modal_close": "Chiudi"
     },
     en: {
       // General
@@ -326,7 +364,45 @@
       
       // Modals
       "modal.search_placeholder": "Search artworks, artist, technique...",
-      "modal.video_title": "The Technique"
+      "modal.video_title": "The Technique",
+      
+      // Opera Single Page
+      "opera.breadcrumb_opera": "Artwork",
+      "opera.reveal_button": "Reveal the Artwork",
+      "opera.fullscreen": "Fullscreen",
+      "opera.zoom": "Zoom",
+      "opera.status_available": "Available",
+      "opera.status_featured": "Featured",
+      "opera.loading": "Loading...",
+      "opera.short_desc": "Short artwork description",
+      "opera.price_label": "Price:",
+      "opera.shipping": "Shipping",
+      "opera.shipping_insured": "Insured",
+      "opera.certificate": "Certificate",
+      "opera.certificate_auth": "Authenticity",
+      "opera.guarantee": "Guarantee",
+      "opera.guarantee_100": "100%",
+      "opera.technical_details": "Technical Details",
+      "opera.technique_label": "Technique:",
+      "opera.material_label": "Material:",
+      "opera.support_label": "Support:",
+      "opera.dimensions_label": "Dimensions:",
+      "opera.year_label": "Year:",
+      "opera.certificate_number": "Certificate No:",
+      "opera.buy_now": "Buy Now",
+      "opera.request_info": "Request Information",
+      "opera.contact_whatsapp": "Contact via WhatsApp",
+      "opera.share": "Share:",
+      "opera.description_title": "Description",
+      "opera.description_loading": "Loading description...",
+      "opera.related_title": "Related Artworks",
+      "opera.related_desc": "Other artworks you might like",
+      "opera.modal_title": "Request Information",
+      "opera.modal_name": "Full Name",
+      "opera.modal_email": "Email",
+      "opera.modal_message": "Message",
+      "opera.modal_submit": "Send Request",
+      "opera.modal_close": "Close"
     },
     de: {
       // General
