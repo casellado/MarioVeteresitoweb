@@ -143,7 +143,11 @@
       "footer.rights": "Tutti i diritti riservati",
       "footer.trademark": "è un marchio registrato",
       "footer.made_with": "Made with",
-      "footer.in_italy": "in Italy"
+      "footer.in_italy": "in Italy",
+      
+      // Modals
+      "modal.search_placeholder": "Cerca opere, artista, tecnica...",
+      "modal.video_title": "La Tecnica"
     },
     en: {
       // Navigation
@@ -280,7 +284,11 @@
       "footer.rights": "All rights reserved",
       "footer.trademark": "is a registered trademark",
       "footer.made_with": "Made with",
-      "footer.in_italy": "in Italy"
+      "footer.in_italy": "in Italy",
+      
+      // Modals
+      "modal.search_placeholder": "Search artworks, artist, technique...",
+      "modal.video_title": "The Technique"
     },
     de: {
       "nav.home": "Startseite",
