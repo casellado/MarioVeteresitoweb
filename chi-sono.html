@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="it" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Chi Sono | Mario Vetere Art</title>
+  <meta name="description" content="Scopri la storia di Mario Vetere, artista calabrese innovatore della tecnica #negativoèpositivo®">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo/favicon.svg">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5.3.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+  <!-- Skip to Main Content -->
+  <a href="#main-content" class="skip-link visually-hidden-focusable">Salta al contenuto principale</a>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark glass-navbar fixed-top" id="mainNavbar">
+    <div class="container-fluid px-4 px-lg-6">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="assets/images/logo/logo-gold.svg" alt="Mario Vetere" height="40">
+      </a>
+      
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="opere.html">Opere</a></li>
+          <li class="nav-item"><a class="nav-link" href="tecnica.html">Tecnica</a></li>
+          <li class="nav-item"><a class="nav-link active" href="chi-sono.html">Chi Sono</a></li>
+          <li class="nav-item"><a class="nav-link" href="contatti.html">Contatti</a></li>
+        </ul>
+        
+        <div class="navbar-actions d-flex align-items-center gap-3">
+          <button class="btn btn-icon" id="colorModeToggle" title="Cambia tema">
+            <i class="bi bi-moon-stars" id="colorModeIcon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main-content">
+
+    <!-- Hero Section -->
+    <section class="page-hero min-vh-100 d-flex align-items-center position-relative" style="padding-top: 80px;">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6" data-aos="fade-right">
+            <span class="badge glass-badge mb-3">Chi Sono</span>
+            <h1 class="display-1 fw-bold mb-4">
+              Mario <span class="text-gradient">Vetere</span>
+            </h1>
+            <p class="lead fs-3 text-secondary mb-4">
+              Artista contemporaneo, innovatore della tecnica #negativoèpositivo®
+            </p>
+            <p class="fs-5 text-secondary mb-5" style="line-height: 1.8;">
+              Nato in Calabria, la mia arte nasce dall'incontro tra tradizione mediterranea 
+              e sperimentazione moderna. Dipingo con i polpastrelli, creando opere in negativo 
+              che si rivelano attraverso la fotografia. Ogni opera è un viaggio tra ciò che vedi 
+              e ciò che immagini.
+            </p>
+            
+            <div class="d-flex gap-4 flex-wrap mb-5">
+              <div>
+                <div class="h2 text-gradient mb-0">15+</div>
+                <div class="small text-secondary">Anni di Esperienza</div>
+              </div>
+              <div>
+                <div class="h2 text-gradient mb-0">200+</div>
+                <div class="small text-secondary">Opere Create</div>
+              </div>
+              <div>
+                <div class="h2 text-gradient mb-0">50+</div>
+                <div class="small text-secondary">Mostre</div>
+              </div>
+            </div>
+            
+            <div class="d-flex gap-3 flex-wrap">
+              <a href="#percorso" class="btn btn-primary btn-lg px-5">
+                <i class="bi bi-arrow-down me-2"></i>
+                Il Mio Percorso
+              </a>
+              <a href="contatti.html" class="btn btn-outline-light btn-lg px-5">
+                <i class="bi bi-envelope me-2"></i>
+                Contattami
+              </a>
+            </div>
+          </div>
+          
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+            <div class="artist-photo-wrapper position-relative">
+              <div class="glass-card rounded-4 overflow-hidden p-3">
+                <img src="assets/images/opere/featured/negative-1.jpg" 
+                     alt="Mario Vetere al lavoro nel suo studio" 
+                     class="img-fluid rounded-3 w-100" 
+                     style="aspect-ratio: 3/4; object-fit: cover;">
+              </div>
+              <!-- Floating badge -->
+              <div class="position-absolute top-0 end-0 m-3">
+                <div class="glass-card rounded-3 p-3 text-center">
+                  <i class="bi bi-award-fill text-gradient fs-1"></i>
+                  <div class="small fw-bold mt-2">Tecnica Brevettata</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bio Timeline Section -->
+    <section class="bio-timeline-section py-6 bg-surface" id="percorso">
+      <div class="container">
+        <div class="text-center mb-6" data-aos="fade-up">
+          <span class="badge glass-badge mb-3">Il Percorso</span>
+          <h2 class="display-4 fw-bold mb-4">
+            La Mia <span class="text-gradient">Storia</span>
+          </h2>
+          <p class="lead text-secondary mb-0">
+            Dalle prime pennellate all'innovazione della tecnica #negativoèpositivo®
+          </p>
+        </div>
+
+        <!-- Timeline Events -->
+        <div class="bio-timeline position-relative">
+          
+          <!-- Event 1 -->
+          <div class="timeline-event row align-items-center mb-5" data-aos="fade-up">
+            <div class="col-lg-2 text-center mb-4 mb-lg-0">
+              <div class="year-badge glass-card rounded-3 p-3 d-inline-block">
+                <span class="h3 mb-0 text-gradient fw-bold">2008</span>
+              </div>
+            </div>
+            <div class="col-lg-10">
+              <div class="glass-card p-5 rounded-4">
+                <h3 class="h4 fw-bold mb-3">Gli Inizi</h3>
+                <p class="text-secondary mb-0">
+                  Primi esperimenti con la pittura tradizionale. Scopro la passione per i colori 
+                  e le tecniche non convenzionali. Inizio a sperimentare dipingendo con le dita 
+                  invece che con i pennelli, sentendo un legame più diretto con la tela.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 2 -->
+          <div class="timeline-event row align-items-center mb-5" data-aos="fade-up">
+            <div class="col-lg-2 text-center mb-4 mb-lg-0">
+              <div class="year-badge glass-card rounded-3 p-3 d-inline-block">
+                <span class="h3 mb-0 text-gradient fw-bold">2012</span>
+              </div>
+            </div>
+            <div class="col-lg-10">
+              <div class="glass-card p-5 rounded-4">
+                <h3 class="h4 fw-bold mb-3">L'Intuizione</h3>
+                <p class="text-secondary mb-0">
+                  Durante un esperimento fotografico, scopro per caso l'effetto dell'inversione 
+                  cromatica. Quella che sembrava un'opera astratta in negativo, si rivela un 
+                  paesaggio realistico in positivo. È l'inizio della rivoluzione.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 3 -->
+          <div class="timeline-event row align-items-center mb-5" data-aos="fade-up">
+            <div class="col-lg-2 text-center mb-4 mb-lg-0">
+              <div class="year-badge glass-card rounded-3 p-3 d-inline-block">
+                <span class="h3 mb-0 text-gradient fw-bold">2015</span>
+              </div>
+            </div>
+            <div class="col-lg-10">
+              <div class="glass-card p-5 rounded-4">
+                <h3 class="h4 fw-bold mb-3">Prima Mostra</h3>
+                <p class="text-secondary mb-0">
+                  Presento ufficialmente la tecnica #negativoèpositivo® alla prima mostra personale 
+                  "L'Arte dell'Inversione". Il pubblico rimane stupefatto dalla trasformazione 
+                  delle opere. Vendute 15 opere su 20 esposte.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 4 -->
+          <div class="timeline-event row align-items-center mb-5" data-aos="fade-up">
+            <div class="col-lg-2 text-center mb-4 mb-lg-0">
+              <div class="year-badge glass-card rounded-3 p-3 d-inline-block">
+                <span class="h3 mb-0 text-gradient fw-bold">2018</span>
+              </div>
+            </div>
+            <div class="col-lg-10">
+              <div class="glass-card p-5 rounded-4">
+                <h3 class="h4 fw-bold mb-3">Brevetto & Riconoscimenti</h3>
+                <p class="text-secondary mb-0">
+                  Deposito il marchio #negativoèpositivo® e ricevo il primo riconoscimento 
+                  internazionale al "Contemporary Art Awards" di Milano. La tecnica viene 
+                  studiata e riconosciuta nel panorama artistico italiano.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 5 -->
+          <div class="timeline-event row align-items-center mb-5" data-aos="fade-up">
+            <div class="col-lg-2 text-center mb-4 mb-lg-0">
+              <div class="year-badge glass-card rounded-3 p-3 d-inline-block">
+                <span class="h3 mb-0 text-gradient fw-bold">2021</span>
+              </div>
+            </div>
+            <div class="col-lg-10">
+              <div class="glass-card p-5 rounded-4">
+                <h3 class="h4 fw-bold mb-3">Espansione Digitale</h3>
+                <p class="text-secondary mb-0">
+                  Lancio il primo corso online sulla tecnica #negativoèpositivo®. 
+                  Oltre 500 studenti da tutto il mondo imparano i segreti dell'inversione cromatica. 
+                  Apro il mio studio permanente in Calabria.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 6 -->
+          <div class="timeline-event row align-items-center" data-aos="fade-up">
+            <div class="col-lg-2 text-center mb-4 mb-lg-0">
+              <div class="year-badge glass-card rounded-3 p-3 d-inline-block">
+                <span class="h3 mb-0 text-gradient fw-bold">2024</span>
+              </div>
+            </div>
+            <div class="col-lg-10">
+              <div class="glass-card p-5 rounded-4">
+                <h3 class="h4 fw-bold mb-3">Oggi</h3>
+                <p class="text-secondary mb-0">
+                  Continuo a sperimentare e innovare. Le mie opere sono esposte in gallerie 
+                  private in Italia e all'estero. Organizzo workshop e collaboro con altri 
+                  artisti per diffondere l'arte dell'inversione cromatica.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Studio Gallery Section -->
+    <section class="studio-gallery-section py-6">
+      <div class="container">
+        <div class="text-center mb-6" data-aos="fade-up">
+          <span class="badge glass-badge mb-3">Il Mio Studio</span>
+          <h2 class="display-4 fw-bold mb-4">
+            Dove Nasce la <span class="text-gradient">Magia</span>
+          </h2>
+          <p class="lead text-secondary mb-0">
+            Il mio atelier in Calabria, dove ogni opera prende vita
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Studio Photo 1 -->
+          <div class="col-lg-6" data-aos="fade-up">
+            <div class="glass-card rounded-4 overflow-hidden">
+              <img src="assets/images/opere/featured/negative-1.jpg" 
+                   alt="Studio Mario Vetere - Area lavoro" 
+                   class="img-fluid w-100" 
+                   style="aspect-ratio: 16/10; object-fit: cover;">
+              <div class="p-4">
+                <h3 class="h5 fw-bold mb-2">Area di Lavoro</h3>
+                <p class="text-secondary small mb-0">
+                  Lo spazio dove dipingo, circondato da crete colorate e opere in corso
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Studio Photo 2 -->
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="glass-card rounded-4 overflow-hidden">
+              <img src="assets/images/opere/featured/positive-1.jpg" 
+                   alt="Studio Mario Vetere - Setup fotografico" 
+                   class="img-fluid w-100" 
+                   style="aspect-ratio: 16/10; object-fit: cover;">
+              <div class="p-4">
+                <h3 class="h5 fw-bold mb-2">Setup Fotografico</h3>
+                <p class="text-secondary small mb-0">
+                  L'area dedicata alla fotografia professionale per rivelare il positivo
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Studio Photo 3 -->
+          <div class="col-lg-4" data-aos="fade-up">
+            <div class="glass-card rounded-4 overflow-hidden h-100">
+              <img src="assets/images/opere/featured/negative-1.jpg" 
+                   alt="Dettaglio materiali" 
+                   class="img-fluid w-100" 
+                   style="aspect-ratio: 1; object-fit: cover;">
+              <div class="p-3">
+                <h3 class="h6 fw-bold mb-1">Materiali</h3>
+                <p class="text-secondary small mb-0">Crete colorate selezionate</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Studio Photo 4 -->
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="glass-card rounded-4 overflow-hidden h-100">
+              <img src="assets/images/opere/featured/positive-1.jpg" 
+                   alt="Opera in corso" 
+                   class="img-fluid w-100" 
+                   style="aspect-ratio: 1; object-fit: cover;">
+              <div class="p-3">
+                <h3 class="h6 fw-bold mb-1">In Lavorazione</h3>
+                <p class="text-secondary small mb-0">Opera in fase di negativo</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Studio Photo 5 -->
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="glass-card rounded-4 overflow-hidden h-100">
+              <img src="assets/images/opere/featured/negative-1.jpg" 
+                   alt="Vista studio" 
+                   class="img-fluid w-100" 
+                   style="aspect-ratio: 1; object-fit: cover;">
+              <div class="p-3">
+                <h3 class="h6 fw-bold mb-1">Vista Studio</h3>
+                <p class="text-secondary small mb-0">Il mio spazio creativo</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="achievements-section py-6 bg-surface">
+      <div class="container">
+        <div class="text-center mb-6" data-aos="fade-up">
+          <span class="badge glass-badge mb-3">Riconoscimenti</span>
+          <h2 class="display-4 fw-bold mb-4">
+            Mostre e <span class="text-gradient">Premi</span>
+          </h2>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="achievement-card glass-card p-5 rounded-4 h-100">
+              <i class="bi bi-trophy-fill text-gradient fs-1 mb-3"></i>
+              <h3 class="h4 fw-bold mb-3">Premi & Riconoscimenti</h3>
+              <ul class="list-unstyled text-secondary">
+                <li class="mb-2">🏆 <strong>2023</strong> - Premio Innovazione Artistica, Roma</li>
+                <li class="mb-2">🏆 <strong>2022</strong> - Menzione d'Onore, Biennale d'Arte Contemporanea</li>
+                <li class="mb-2">🏆 <strong>2020</strong> - Best Emerging Artist, Art Fair Milano</li>
+                <li class="mb-2">🏆 <strong>2018</strong> - Contemporary Art Award, Milano</li>
+                <li class="mb-2">🏆 <strong>2016</strong> - Premio Giovani Talenti, Napoli</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="achievement-card glass-card p-5 rounded-4 h-100">
+              <i class="bi bi-building text-gradient fs-1 mb-3"></i>
+              <h3 class="h4 fw-bold mb-3">Mostre Principali</h3>
+              <ul class="list-unstyled text-secondary">
+                <li class="mb-2">🎨 <strong>2024</strong> - Personale "Cromie Inverse", Galleria Nazionale</li>
+                <li class="mb-2">🎨 <strong>2023</strong> - Collettiva "Arte Innovativa", Firenze</li>
+                <li class="mb-2">🎨 <strong>2022</strong> - Personale "L'Altro Lato del Colore", Roma</li>
+                <li class="mb-2">🎨 <strong>2021</strong> - Art Basel, Miami (USA)</li>
+                <li class="mb-2">🎨 <strong>2019</strong> - Biennale Arte Contemporanea, Venezia</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section py-6">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="quote-card glass-card rounded-5 p-6 text-center" data-aos="zoom-in">
+              <i class="bi bi-quote text-gradient" style="font-size: 4rem;"></i>
+              <blockquote class="blockquote my-5">
+                <p class="lead fs-3 mb-0" style="line-height: 1.8;">
+                  "L'arte non è ciò che vedi, ma ciò che fai vedere agli altri. 
+                  Con il #negativoèpositivo® trasformo l'impossibile in visibile, 
+                  l'invisibile in emozione."
+                </p>
+              </blockquote>
+              <footer class="blockquote-footer text-white fs-5">
+                Mario Vetere
+              </footer>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section py-6 bg-surface">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="cta-card glass-card rounded-5 p-5 p-lg-6 text-center" data-aos="fade-up">
+              <h2 class="display-4 fw-bold mb-4">
+                Lavoriamo <span class="text-gradient">Insieme</span>
+              </h2>
+              <p class="lead text-secondary mb-5">
+                Cerchi un'opera personalizzata? Vuoi collaborare a un progetto artistico? 
+                O semplicemente vuoi saperne di più sulla tecnica #negativoèpositivo®?
+              </p>
+              <div class="d-flex gap-3 justify-content-center flex-wrap">
+                <a href="contatti.html" class="btn btn-primary btn-lg px-5">
+                  <i class="bi bi-envelope me-2"></i>
+                  Contattami
+                </a>
+                <a href="opere.html" class="btn btn-outline-light btn-lg px-5">
+                  <i class="bi bi-grid me-2"></i>
+                  Vedi le Opere
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer py-8 bg-surface border-top border-secondary">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <img src="assets/images/logo/logo-gold.svg" alt="Mario Vetere" height="40" class="mb-4">
+          <p class="text-secondary mb-4">
+            Arte contemporanea con la tecnica brevettata #negativoèpositivo®
+          </p>
+          <div class="social-links d-flex gap-3">
+            <a href="#" class="btn btn-icon btn-outline-light"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="btn btn-icon btn-outline-light"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="btn btn-icon btn-outline-light"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h4 class="h6 fw-bold mb-4">Link Rapidi</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="index.html" class="text-secondary text-decoration-none">Home</a></li>
+            <li class="mb-2"><a href="opere.html" class="text-secondary text-decoration-none">Opere</a></li>
+            <li class="mb-2"><a href="tecnica.html" class="text-secondary text-decoration-none">Tecnica</a></li>
+            <li class="mb-2"><a href="chi-sono.html" class="text-secondary text-decoration-none">Chi Sono</a></li>
+            <li class="mb-2"><a href="contatti.html" class="text-secondary text-decoration-none">Contatti</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h4 class="h6 fw-bold mb-4">Contatti</h4>
+          <ul class="list-unstyled">
+            <li class="mb-3"><i class="bi bi-geo-alt text-gradient me-2"></i>Calabria, Italia</li>
+            <li class="mb-3"><i class="bi bi-envelope text-gradient me-2"></i>info@mariovetere.art</li>
+          </ul>
+        </div>
+      </div>
+      <hr class="my-5 border-secondary">
+      <div class="row">
+        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+          <p class="small text-secondary mb-0">© 2024 Mario Vetere. Tutti i diritti riservati.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <p class="small text-secondary mb-0">#negativoèpositivo® marchio registrato</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="app.js"></script>
+  <script>
+    // Simple init for chi-sono page
+    if (typeof AOS !== 'undefined') {
+      AOS.init({ duration: 800, once: true });
+    }
+  </script>
+</body>
+</html>
+
