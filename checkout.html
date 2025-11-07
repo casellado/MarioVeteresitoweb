@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="it" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Checkout | Mario Vetere Art</title>
+  <meta name="description" content="Completa il tuo acquisto in modo sicuro">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo/favicon.svg">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5.3.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+  <!-- Minimal Navigation -->
+  <nav class="navbar navbar-dark glass-navbar fixed-top">
+    <div class="container-fluid px-4 px-lg-6">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="assets/images/logo/logo-gold.svg" alt="Mario Vetere" height="40">
+      </a>
+      <div class="d-flex align-items-center gap-3">
+        <i class="bi bi-shield-check text-success fs-5"></i>
+        <span class="text-secondary small">Pagamento Sicuro</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main style="padding-top: 100px; min-height: 100vh;">
+    <div class="container py-5">
+      <div class="row g-5">
+        
+        <!-- Left Column: Order Summary -->
+        <div class="col-lg-5 order-lg-2">
+          <div class="glass-card p-4 rounded-4 sticky-top" style="top: 120px;">
+            <h2 class="h5 fw-bold mb-4">Riepilogo Ordine</h2>
+            
+            <!-- Opera Info -->
+            <div class="order-item d-flex gap-3 mb-4 pb-4 border-bottom border-secondary">
+              <img id="orderImage" 
+                   src="assets/images/opere/featured/negative-1.jpg" 
+                   alt="Opera" 
+                   class="rounded-3" 
+                   style="width: 100px; height: 100px; object-fit: cover;">
+              <div class="flex-grow-1">
+                <h3 class="h6 fw-bold mb-2" id="orderTitle">Caricamento...</h3>
+                <p class="small text-secondary mb-2">
+                  Tecnica: #<span style="color: #0099FF;">negativo</span><span style="color: #FFD700;">è</span><span style="color: #FF6600;">positivo</span>®
+                </p>
+                <p class="small text-secondary mb-0">
+                  <span id="orderDimensions">0×0 cm</span> | <span id="orderYear">2024</span>
+                </p>
+              </div>
+            </div>
+            
+            <!-- Price Breakdown -->
+            <div class="price-breakdown">
+              <div class="d-flex justify-content-between mb-2">
+                <span class="text-secondary">Prezzo opera:</span>
+                <span class="fw-semibold" id="itemPrice">€ 0</span>
+              </div>
+              <div class="d-flex justify-content-between mb-2">
+                <span class="text-secondary">Spedizione:</span>
+                <span class="fw-semibold" id="shippingPrice">€ 0</span>
+              </div>
+              <div class="d-flex justify-content-between mb-2">
+                <span class="text-secondary">IVA (22%):</span>
+                <span class="fw-semibold" id="taxPrice">€ 0</span>
+              </div>
+              <hr class="my-3 border-secondary">
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="h6 fw-bold mb-0">Totale:</span>
+                <span class="h4 mb-0 text-gradient fw-bold" id="totalPrice">€ 0</span>
+              </div>
+            </div>
+            
+            <!-- Trust Badges -->
+            <div class="trust-badges mt-4 pt-4 border-top border-secondary">
+              <div class="row g-3 text-center small">
+                <div class="col-4">
+                  <i class="bi bi-shield-check text-success fs-4 d-block mb-2"></i>
+                  <span class="text-secondary">Pagamento<br>Sicuro</span>
+                </div>
+                <div class="col-4">
+                  <i class="bi bi-award text-success fs-4 d-block mb-2"></i>
+                  <span class="text-secondary">Certificato<br>Incluso</span>
+                </div>
+                <div class="col-4">
+                  <i class="bi bi-truck text-success fs-4 d-block mb-2"></i>
+                  <span class="text-secondary">Spedizione<br>Assicurata</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Checkout Form -->
+        <div class="col-lg-7 order-lg-1">
+          <div class="checkout-form">
+            
+            <!-- Test Mode Banner -->
+            <div class="alert alert-warning d-flex align-items-center gap-2 mb-4" role="alert">
+              <i class="bi bi-exclamation-triangle-fill"></i>
+              <div>
+                <strong>Modalità Test</strong> - Usa carta: 4242 4242 4242 4242 | CVV: 123 | Data: qualsiasi futura
+              </div>
+            </div>
+
+            <h1 class="h3 fw-bold mb-4">Dati di Fatturazione</h1>
+
+            <form id="checkoutForm" novalidate>
+              
+              <!-- Customer Info -->
+              <div class="glass-card p-4 rounded-4 mb-4">
+                <h2 class="h6 fw-bold mb-3">Informazioni Personali</h2>
+                
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="firstName" class="form-label">Nome *</label>
+                    <input type="text" class="form-control" id="firstName" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="lastName" class="form-label">Cognome *</label>
+                    <input type="text" class="form-control" id="lastName" required>
+                  </div>
+                  <div class="col-12">
+                    <label for="email" class="form-label">Email *</label>
+                    <input type="email" class="form-control" id="email" required>
+                    <div class="form-text">Riceverai conferma d'ordine e certificato</div>
+                  </div>
+                  <div class="col-12">
+                    <label for="phone" class="form-label">Telefono *</label>
+                    <input type="tel" class="form-control" id="phone" required>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Shipping Address -->
+              <div class="glass-card p-4 rounded-4 mb-4">
+                <h2 class="h6 fw-bold mb-3">Indirizzo di Spedizione</h2>
+                
+                <div class="row g-3">
+                  <div class="col-12">
+                    <label for="address" class="form-label">Indirizzo *</label>
+                    <input type="text" class="form-control" id="address" required>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="city" class="form-label">Città *</label>
+                    <input type="text" class="form-control" id="city" required>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="postalCode" class="form-label">CAP *</label>
+                    <input type="text" class="form-control" id="postalCode" required>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="country" class="form-label">Paese *</label>
+                    <select class="form-select" id="country" required>
+                      <option value="IT" selected>Italia</option>
+                      <option value="FR">Francia</option>
+                      <option value="DE">Germania</option>
+                      <option value="ES">Spagna</option>
+                      <option value="OTHER">Altro</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Payment Method -->
+              <div class="glass-card p-4 rounded-4 mb-4">
+                <h2 class="h6 fw-bold mb-3">
+                  <i class="bi bi-credit-card me-2"></i>
+                  Metodo di Pagamento
+                </h2>
+                
+                <!-- Stripe Payment Element Placeholder -->
+                <div id="payment-element" class="mb-3">
+                  <!-- Stripe will inject payment form here -->
+                </div>
+                
+                <!-- Manual Card Input (Fallback for test mode) -->
+                <div id="manual-payment">
+                  <div class="row g-3">
+                    <div class="col-12">
+                      <label for="cardNumber" class="form-label">Numero Carta *</label>
+                      <input type="text" 
+                             class="form-control" 
+                             id="cardNumber" 
+                             placeholder="4242 4242 4242 4242"
+                             maxlength="19"
+                             required>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="cardExpiry" class="form-label">Scadenza *</label>
+                      <input type="text" 
+                             class="form-control" 
+                             id="cardExpiry" 
+                             placeholder="MM/YY"
+                             maxlength="5"
+                             required>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="cardCvc" class="form-label">CVV *</label>
+                      <input type="text" 
+                             class="form-control" 
+                             id="cardCvc" 
+                             placeholder="123"
+                             maxlength="3"
+                             required>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="d-flex gap-2 mt-3">
+                  <img src="https://via.placeholder.com/40x25/1a1a1a/666?text=VISA" alt="Visa" class="rounded">
+                  <img src="https://via.placeholder.com/40x25/1a1a1a/666?text=MC" alt="Mastercard" class="rounded">
+                  <img src="https://via.placeholder.com/40x25/1a1a1a/666?text=AMEX" alt="Amex" class="rounded">
+                </div>
+              </div>
+
+              <!-- Notes -->
+              <div class="glass-card p-4 rounded-4 mb-4">
+                <label for="notes" class="form-label fw-semibold">Note Aggiuntive (opzionale)</label>
+                <textarea class="form-control" id="notes" rows="3" placeholder="Eventuali richieste speciali..."></textarea>
+              </div>
+
+              <!-- Terms -->
+              <div class="form-check mb-4">
+                <input class="form-check-input" type="checkbox" id="terms" required>
+                <label class="form-check-label text-secondary" for="terms">
+                  Accetto i <a href="termini.html" target="_blank" class="text-primary">termini e condizioni</a> 
+                  e la <a href="privacy.html" target="_blank" class="text-primary">privacy policy</a> *
+                </label>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="btn btn-primary btn-lg w-100" id="submitPayment">
+                <span id="paymentBtnText">
+                  <i class="bi bi-lock-fill me-2"></i>
+                  Paga <span id="paymentTotal">€ 0</span>
+                </span>
+                <span id="paymentBtnLoader" class="d-none">
+                  <span class="spinner-border spinner-border-sm me-2"></span>
+                  Elaborazione pagamento...
+                </span>
+              </button>
+
+              <p class="text-center text-secondary small mt-3 mb-0">
+                <i class="bi bi-shield-check me-1"></i>
+                Pagamento sicuro crittografato SSL
+              </p>
+
+            </form>
+
+            <!-- Payment Error -->
+            <div id="payment-error" class="alert alert-danger d-none mt-4" role="alert">
+              <i class="bi bi-exclamation-circle me-2"></i>
+              <span id="error-message"></span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer Minimal -->
+  <footer class="py-4 bg-surface border-top border-secondary mt-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+          <p class="small text-secondary mb-0">© 2024 Mario Vetere Art</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <a href="privacy.html" class="text-secondary small text-decoration-none me-3">Privacy</a>
+          <a href="termini.html" class="text-secondary small text-decoration-none">Termini</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script>
+  <script src="assets/js/components/checkout.js"></script>
+</body>
+</html>
+

@@ -39,6 +39,9 @@ class OperaSingle {
     // Setup lightbox gallery
     this.setupLightbox();
     
+    // Setup buy button
+    this.setupBuyButton();
+    
     // Init AOS
     if (typeof AOS !== 'undefined') {
       AOS.init({ duration: 800, once: true });
@@ -376,6 +379,26 @@ class OperaSingle {
     });
     
     pswp.init();
+  }
+  
+  setupBuyButton() {
+    const buyBtn = document.getElementById('buyNowBtn');
+    if (!buyBtn || !this.artwork) return;
+    
+    // Check if artwork is available
+    if (this.artwork.status !== 'available') {
+      buyBtn.classList.remove('btn-primary');
+      buyBtn.classList.add('btn-secondary');
+      buyBtn.innerHTML = '<i class="bi bi-x-circle me-2"></i>Opera Non Disponibile';
+      buyBtn.style.pointerEvents = 'none';
+      return;
+    }
+    
+    // Add click handler
+    buyBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.location.href = `checkout.html?id=${this.artwork.id}`;
+    });
   }
 }
 

@@ -232,18 +232,25 @@ class ArtworksGallery {
             <span class="badge bg-dark-subtle text-white-50">${support}</span>
           </div>
           
-          <!-- Price & CTA -->
-          <div class="d-flex align-items-center justify-content-between">
-            <div class="price">
-              ${artwork.status === 'available' ?
-                `<span class="h4 mb-0 text-gradient fw-bold">€ ${artwork.price.toLocaleString('it-IT')}</span>` :
-                `<span class="h5 mb-0 text-danger">Venduta</span>`
-              }
-            </div>
-            <a href="opera-single.html?id=${artwork.id}" class="btn btn-outline-light btn-sm">
-              Scopri
-            </a>
-          </div>
+              <!-- Price & CTA -->
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="price">
+                  ${artwork.status === 'available' ?
+                    `<span class="h4 mb-0 text-gradient fw-bold">€ ${artwork.price.toLocaleString('it-IT')}</span>` :
+                    `<span class="h5 mb-0 text-danger">Venduta</span>`
+                  }
+                </div>
+                <div class="d-flex gap-2">
+                  ${artwork.status === 'available' ?
+                    `<a href="checkout.html?id=${artwork.id}" class="btn btn-primary btn-sm">
+                      <i class="bi bi-cart-check"></i>
+                    </a>` : ''
+                  }
+                  <a href="opera-single.html?id=${artwork.id}" class="btn btn-outline-light btn-sm">
+                    Dettagli
+                  </a>
+                </div>
+              </div>
         </div>
         
       </article>
