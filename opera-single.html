@@ -176,59 +176,59 @@
             <!-- Price -->
             <div class="price-box glass-card p-4 rounded-4 mb-4" data-aos="fade-left" data-aos-delay="100">
               <div class="d-flex align-items-center justify-content-between mb-3">
-                <span class="text-secondary">Prezzo:</span>
+                <span class="text-secondary" data-i18n="opera.price_label">Prezzo:</span>
                 <h2 class="h1 mb-0 text-gradient fw-bold" id="operaPrice">€ 0</h2>
               </div>
               
               <div class="row g-3 text-center small text-secondary">
                 <div class="col-4">
                   <i class="bi bi-truck d-block fs-4 mb-2"></i>
-                  Spedizione<br>Assicurata
+                  <span data-i18n="opera.shipping">Spedizione</span><br><span data-i18n="opera.shipping_insured">Assicurata</span>
                 </div>
                 <div class="col-4">
                   <i class="bi bi-award d-block fs-4 mb-2"></i>
-                  Certificato<br>Autenticità
+                  <span data-i18n="opera.certificate">Certificato</span><br><span data-i18n="opera.certificate_auth">Autenticità</span>
                 </div>
                 <div class="col-4">
                   <i class="bi bi-shield-check d-block fs-4 mb-2"></i>
-                  Garanzia<br>100%
+                  <span data-i18n="opera.guarantee">Garanzia</span><br><span data-i18n="opera.guarantee_100">100%</span>
                 </div>
               </div>
             </div>
             
             <!-- Technical Details -->
             <div class="technical-details glass-card p-4 rounded-4 mb-4" data-aos="fade-left" data-aos-delay="200">
-              <h3 class="h5 fw-bold mb-3">Dettagli Tecnici</h3>
+              <h3 class="h5 fw-bold mb-3" data-i18n="opera.technical_details">Dettagli Tecnici</h3>
               
               <div class="detail-row d-flex justify-content-between py-2 border-bottom border-secondary">
-                <span class="text-secondary">Tecnica:</span>
+                <span class="text-secondary" data-i18n="opera.technique_label">Tecnica:</span>
                 <span class="fw-semibold">
                   #<span style="color: #0099FF;">negativo</span><span style="color: #FFD700;">è</span><span style="color: #FF6600;">positivo</span>®
                 </span>
               </div>
               
               <div class="detail-row d-flex justify-content-between py-2 border-bottom border-secondary">
-                <span class="text-secondary">Materiale:</span>
+                <span class="text-secondary" data-i18n="opera.material_label">Materiale:</span>
                 <span class="fw-semibold" id="operaMaterial">Crete colorate</span>
               </div>
               
               <div class="detail-row d-flex justify-content-between py-2 border-bottom border-secondary">
-                <span class="text-secondary">Supporto:</span>
+                <span class="text-secondary" data-i18n="opera.support_label">Supporto:</span>
                 <span class="fw-semibold" id="operaSupport">Cartoncino</span>
               </div>
               
               <div class="detail-row d-flex justify-content-between py-2 border-bottom border-secondary">
-                <span class="text-secondary">Dimensioni:</span>
+                <span class="text-secondary" data-i18n="opera.dimensions_label">Dimensioni:</span>
                 <span class="fw-semibold" id="operaDimensions">0×0 cm</span>
               </div>
               
               <div class="detail-row d-flex justify-content-between py-2 border-bottom border-secondary">
-                <span class="text-secondary">Anno:</span>
+                <span class="text-secondary" data-i18n="opera.year_label">Anno:</span>
                 <span class="fw-semibold" id="operaYear">2024</span>
               </div>
               
               <div class="detail-row d-flex justify-content-between py-2">
-                <span class="text-secondary">Certificato N°:</span>
+                <span class="text-secondary" data-i18n="opera.certificate_number">Certificato N°:</span>
                 <span class="fw-semibold" id="operaCertificate">MV-2024-000</span>
               </div>
             </div>
@@ -237,21 +237,21 @@
             <div class="cta-buttons d-grid gap-3 mb-4" data-aos="fade-left" data-aos-delay="300">
               <a href="#" class="btn btn-primary btn-lg" id="buyNowBtn">
                 <i class="bi bi-cart-check-fill me-2"></i>
-                Acquista Ora
+                <span data-i18n="opera.buy_now">Acquista Ora</span>
               </a>
               <button class="btn btn-outline-light btn-lg" data-bs-toggle="modal" data-bs-target="#requestInfoModal">
                 <i class="bi bi-envelope me-2"></i>
-                Richiedi Informazioni
+                <span data-i18n="opera.request_info">Richiedi Informazioni</span>
               </button>
               <a href="https://wa.me/393XXXXXXXXX" class="btn btn-success btn-lg" target="_blank">
                 <i class="bi bi-whatsapp me-2"></i>
-                Contatta via WhatsApp
+                <span data-i18n="opera.contact_whatsapp">Contatta via WhatsApp</span>
               </a>
             </div>
             
             <!-- Share -->
             <div class="share-section" data-aos="fade-left" data-aos-delay="400">
-              <p class="small text-secondary mb-2">Condividi:</p>
+              <p class="small text-secondary mb-2" data-i18n="opera.share">Condividi:</p>
               <div class="d-flex gap-2">
                 <button class="btn btn-outline-light btn-sm" onclick="shareOnFacebook()">
                   <i class="bi bi-facebook"></i>
@@ -279,8 +279,8 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8" data-aos="fade-up">
-            <h2 class="h3 fw-bold mb-4">Descrizione</h2>
-            <div class="description-content text-secondary" id="operaDescription" style="line-height: 1.8;">
+            <h2 class="h3 fw-bold mb-4" data-i18n="opera.description_title">Descrizione</h2>
+            <div class="description-content text-secondary" id="operaDescription" style="line-height: 1.8;" data-i18n="opera.description_loading">
               Caricamento descrizione...
             </div>
           </div>
@@ -292,8 +292,8 @@
     <section class="related-artworks-section py-6">
       <div class="container">
         <div class="text-center mb-5" data-aos="fade-up">
-          <h2 class="h3 fw-bold mb-3">Opere Correlate</h2>
-          <p class="text-secondary">Altre opere che potrebbero interessarti</p>
+          <h2 class="h3 fw-bold mb-3" data-i18n="opera.related_title">Opere Correlate</h2>
+          <p class="text-secondary" data-i18n="opera.related_desc">Altre opere che potrebbero interessarti</p>
         </div>
         
         <div class="row g-4" id="relatedArtworksContainer">
