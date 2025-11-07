@@ -656,6 +656,22 @@
         }
       });
       
+      // Handle placeholders
+      const placeholderElements = document.querySelectorAll('[data-i18n-placeholder]');
+      placeholderElements.forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        const translation = this.translate(key);
+        el.setAttribute('placeholder', translation);
+      });
+      
+      // Handle alt attributes
+      const altElements = document.querySelectorAll('[data-i18n-alt]');
+      altElements.forEach(el => {
+        const key = el.getAttribute('data-i18n-alt');
+        const translation = this.translate(key);
+        el.setAttribute('alt', translation);
+      });
+      
       console.log(`✅ Traduzioni applicate (${this.currentLang})`);
     }
     
