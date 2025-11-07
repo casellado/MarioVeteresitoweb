@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="it" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Dettaglio Opera | Mario Vetere Art</title>
+  <meta name="description" content="Scopri i dettagli dell'opera realizzata con la tecnica brevettata #negativoèpositivo®">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo/favicon.svg">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5.3.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <!-- PhotoSwipe -->
+  <link href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.3/dist/photoswipe.css" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+  <!-- Skip to Main Content -->
+  <a href="#main-content" class="skip-link visually-hidden-focusable">Salta al contenuto principale</a>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark glass-navbar fixed-top" id="mainNavbar">
+    <div class="container-fluid px-4 px-lg-6">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="assets/images/logo/logo-gold.svg" alt="Mario Vetere" height="40">
+      </a>
+      
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="opere.html">Opere</a></li>
+          <li class="nav-item"><a class="nav-link" href="tecnica.html">Tecnica</a></li>
+          <li class="nav-item"><a class="nav-link" href="chi-sono.html">Chi Sono</a></li>
+          <li class="nav-item"><a class="nav-link" href="contatti.html">Contatti</a></li>
+        </ul>
+        
+        <div class="navbar-actions d-flex align-items-center gap-3">
+          <button class="btn btn-icon" id="colorModeToggle" title="Cambia tema">
+            <i class="bi bi-moon-stars" id="colorModeIcon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main-content" style="padding-top: 100px;">
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section py-3 bg-surface">
+      <div class="container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="index.html" class="text-secondary">Home</a></li>
+            <li class="breadcrumb-item"><a href="opere.html" class="text-secondary">Opere</a></li>
+            <li class="breadcrumb-item active text-white" aria-current="page" id="breadcrumbTitle">Opera</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Opera Detail Section -->
+    <section class="opera-detail-section py-6">
+      <div class="container">
+        <div class="row g-5">
+          
+          <!-- Left Column: Images & Reveal Effect -->
+          <div class="col-lg-7">
+            
+            <!-- Main Reveal Container -->
+            <div class="reveal-container glass-card rounded-4 overflow-hidden mb-4" data-aos="fade-right">
+              <div class="reveal-wrapper position-relative" style="aspect-ratio: 4/3;">
+                
+                <!-- Negative Image -->
+                <img id="negativeImage" 
+                     src="assets/images/opere/featured/negative-1.jpg" 
+                     alt="Opera in negativo" 
+                     class="img-fluid w-100 h-100" 
+                     style="object-fit: cover;">
+                
+                <!-- Positive Image (Overlay) -->
+                <div class="positive-overlay position-absolute top-0 start-0 w-100 h-100" style="clip-path: inset(0 50% 0 0);">
+                  <img id="positiveImage" 
+                       src="assets/images/opere/featured/positive-1.jpg" 
+                       alt="Opera in positivo" 
+                       class="img-fluid w-100 h-100" 
+                       style="object-fit: cover;">
+                </div>
+                
+                <!-- Slider Handle -->
+                <div class="reveal-slider position-absolute top-0 start-50 h-100 d-flex align-items-center" 
+                     style="cursor: ew-resize; z-index: 10;">
+                  <div class="slider-handle bg-white rounded-circle shadow" 
+                       style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;">
+                    <i class="bi bi-arrows-expand text-dark"></i>
+                  </div>
+                </div>
+                
+                <!-- Labels -->
+                <span class="badge bg-primary position-absolute" style="top: 16px; left: 16px; z-index: 5;">
+                  Negativo
+                </span>
+                <span class="badge bg-warning text-dark position-absolute" style="top: 16px; right: 16px; z-index: 5;">
+                  Positivo
+                </span>
+                
+              </div>
+              
+              <!-- Instructions -->
+              <div class="p-3 text-center bg-dark-subtle">
+                <small class="text-secondary">
+                  <i class="bi bi-hand-index me-2"></i>
+                  Trascina il cursore per rivelare l'opera in positivo
+                </small>
+              </div>
+            </div>
+            
+            <!-- Thumbnail Gallery -->
+            <div class="thumbnail-gallery d-flex gap-2 flex-wrap" id="thumbnailGallery">
+              <!-- Thumbnails will be generated by JavaScript -->
+            </div>
+            
+          </div>
+          
+          <!-- Right Column: Info & Purchase -->
+          <div class="col-lg-5">
+            
+            <!-- Title & Status -->
+            <div class="opera-header mb-4" data-aos="fade-left">
+              <div class="d-flex align-items-center gap-2 mb-3">
+                <span class="badge bg-success" id="operaStatus">Disponibile</span>
+                <span class="badge bg-warning text-dark" id="operaFeatured" style="display: none;">In Evidenza</span>
+              </div>
+              
+              <h1 class="display-4 fw-bold mb-3" id="operaTitle">Caricamento...</h1>
+              
+              <p class="lead text-secondary mb-4" id="operaShortDesc">
+                Descrizione breve dell'opera
+              </p>
+            </div>
+            
+            <!-- Price -->
+            <div class="price-box glass-card p-4 rounded-4 mb-4" data-aos="fade-left" data-aos-delay="100">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="text-secondary">Prezzo:</span>
+                <h2 class="h1 mb-0 text-gradient fw-bold" id="operaPrice">€ 0</h2>
+              </div>
+              
+              <div class="row g-3 text-center small text-secondary">
+                <div class="col-4">
+                  <i class="bi bi-truck d-block fs-4 mb-2"></i>
+                  Spedizione<br>Assicurata
+                </div>
+                <div class="col-4">
+                  <i class="bi bi-award d-block fs-4 mb-2"></i>
+                  Certificato<br>Autenticità
+                </div>
+                <div class="col-4">
+                  <i class="bi bi-shield-check d-block fs-4 mb-2"></i>
+                  Garanzia<br>100%
+                </div>
+              </div>
+            </div>
+            
+            <!-- Technical Details -->
+            <div class="technical-details glass-card p-4 rounded-4 mb-4" data-aos="fade-left" data-aos-delay="200">
+              <h3 class="h5 fw-bold mb-3">Dettagli Tecnici</h3>
+              
+              <div class="detail-row d-flex justify-content-between py-2 border-bottom border-secondary">
+                <span class="text-secondary">Tecnica:</span>
+                <span class="fw-semibold">
+                  #<span style="color: #0099FF;">negativo</span><span style="color: #FFD700;">è</span><span style="color: #FF6600;">positivo</span>®
+                </span>
+              </div>
+              
+              <div class="detail-row d-flex justify-content-between py-2 border-bottom border-secondary">
+                <span class="text-secondary">Materiale:</span>
+                <span class="fw-semibold" id="operaMaterial">Crete colorate</span>
+              </div>
+              
+              <div class="detail-row d-flex justify-content-between py-2 border-bottom border-secondary">
+                <span class="text-secondary">Supporto:</span>
+                <span class="fw-semibold" id="operaSupport">Cartoncino</span>
+              </div>
+              
+              <div class="detail-row d-flex justify-content-between py-2 border-bottom border-secondary">
+                <span class="text-secondary">Dimensioni:</span>
+                <span class="fw-semibold" id="operaDimensions">0×0 cm</span>
+              </div>
+              
+              <div class="detail-row d-flex justify-content-between py-2 border-bottom border-secondary">
+                <span class="text-secondary">Anno:</span>
+                <span class="fw-semibold" id="operaYear">2024</span>
+              </div>
+              
+              <div class="detail-row d-flex justify-content-between py-2">
+                <span class="text-secondary">Certificato N°:</span>
+                <span class="fw-semibold" id="operaCertificate">MV-2024-000</span>
+              </div>
+            </div>
+            
+            <!-- CTA Buttons -->
+            <div class="cta-buttons d-grid gap-3 mb-4" data-aos="fade-left" data-aos-delay="300">
+              <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#requestInfoModal">
+                <i class="bi bi-envelope me-2"></i>
+                Richiedi Informazioni
+              </button>
+              <a href="https://wa.me/393XXXXXXXXX" class="btn btn-success btn-lg" target="_blank">
+                <i class="bi bi-whatsapp me-2"></i>
+                Contatta via WhatsApp
+              </a>
+            </div>
+            
+            <!-- Share -->
+            <div class="share-section" data-aos="fade-left" data-aos-delay="400">
+              <p class="small text-secondary mb-2">Condividi:</p>
+              <div class="d-flex gap-2">
+                <button class="btn btn-outline-light btn-sm" onclick="shareOnFacebook()">
+                  <i class="bi bi-facebook"></i>
+                </button>
+                <button class="btn btn-outline-light btn-sm" onclick="shareOnTwitter()">
+                  <i class="bi bi-twitter"></i>
+                </button>
+                <button class="btn btn-outline-light btn-sm" onclick="shareOnPinterest()">
+                  <i class="bi bi-pinterest"></i>
+                </button>
+                <button class="btn btn-outline-light btn-sm" onclick="copyLink()">
+                  <i class="bi bi-link-45deg"></i>
+                </button>
+              </div>
+            </div>
+            
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Description Section -->
+    <section class="description-section py-6 bg-surface">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8" data-aos="fade-up">
+            <h2 class="h3 fw-bold mb-4">Descrizione</h2>
+            <div class="description-content text-secondary" id="operaDescription" style="line-height: 1.8;">
+              Caricamento descrizione...
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Request Info Modal -->
+  <div class="modal fade" id="requestInfoModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content glass-card border-0">
+        <div class="modal-header border-bottom border-secondary">
+          <h5 class="modal-title">Richiedi Informazioni</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body p-4">
+          <form id="requestInfoForm">
+            <div class="mb-3">
+              <label for="userName" class="form-label">Nome e Cognome *</label>
+              <input type="text" class="form-control" id="userName" required>
+            </div>
+            <div class="mb-3">
+              <label for="userEmail" class="form-label">Email *</label>
+              <input type="email" class="form-control" id="userEmail" required>
+            </div>
+            <div class="mb-3">
+              <label for="userPhone" class="form-label">Telefono</label>
+              <input type="tel" class="form-control" id="userPhone">
+            </div>
+            <div class="mb-3">
+              <label for="userMessage" class="form-label">Messaggio *</label>
+              <textarea class="form-control" id="userMessage" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">
+              <i class="bi bi-send me-2"></i>
+              Invia Richiesta
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@5.4.3/dist/photoswipe.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@5.4.3/dist/photoswipe-lightbox.umd.min.js"></script>
+  <script src="app.js"></script>
+  <script src="assets/js/components/opera-single.js"></script>
+</body>
+</html>
+
