@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Auto-Add i18n Attributes</title>
+</head>
+<body>
+  <h1>Script per aggiungere automaticamente data-i18n</h1>
+  <p>Questo script identifica gli elementi da tradurre e aggiunge gli attributi data-i18n.</p>
+  
+  <h2>Istruzioni:</h2>
+  <ol>
+    <li>Devo aggiungere manualmente i data-i18n agli elementi HTML</li>
+    <li>Gli elementi da tradurre sono:
+      <ul>
+        <li>Badge (es: "Tecnica Brevettata", "Opere Selezionate")</li>
+        <li>Titoli (es: "Mario Vetere", "Una selezione curata...")</li>
+        <li>Descrizioni/Paragrafi (lead text)</li>
+        <li>Pulsanti CTA già hanno data-i18n</li>
+        <li>Badge opere ("Disponibile", "In Evidenza") già hanno data-i18n</li>
+        <li>Footer links</li>
+      </ul>
+    </li>
+  </ol>
+  
+  <h2>Esempi di cosa aggiungere:</h2>
+  <pre>
+&lt;!-- Badge --&gt;
+&lt;span class="badge..." data-i18n="hero.badge"&gt;Tecnica Brevettata&lt;/span&gt;
+
+&lt;!-- Titolo --&gt;
+&lt;h1 data-i18n="hero.artist_name"&gt;Mario Vetere&lt;/h1&gt;
+
+&lt;!-- Paragrafo --&gt;
+&lt;p class="lead" data-i18n="hero.description"&gt;Scopri l'unica tecnica...&lt;/p&gt;
+
+&lt;!-- Stats --&gt;
+&lt;div class="small" data-i18n="hero.stats_artworks"&gt;Opere Create&lt;/div&gt;
+  </pre>
+  
+  <h2>Faccio io manualmente!</h2>
+</body>
+</html>
+
