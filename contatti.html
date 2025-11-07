@@ -58,6 +58,20 @@
           <button class="btn btn-icon" id="colorModeToggle" title="Cambia tema">
             <i class="bi bi-moon-stars" id="colorModeIcon"></i>
           </button>
+          
+          <!-- Language Selector -->
+          <div class="dropdown language-selector">
+            <button class="btn btn-icon dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-label="Seleziona lingua">
+              <i class="bi bi-globe fs-5"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
+              <li><a class="dropdown-item" href="#" data-lang="it">🇮🇹 Italiano</a></li>
+              <li><a class="dropdown-item" href="#" data-lang="en">🇬🇧 English</a></li>
+              <li><a class="dropdown-item" href="#" data-lang="de">🇩🇪 Deutsch</a></li>
+              <li><a class="dropdown-item" href="#" data-lang="fr">🇫🇷 Français</a></li>
+              <li><a class="dropdown-item" href="#" data-lang="es">🇪🇸 Español</a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -544,6 +558,11 @@
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <!-- Internationalization -->
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/i18n-auto.js"></script>
+  
   <script src="app.js"></script>
   <script src="assets/js/components/contatti.js"></script>
 </body>
