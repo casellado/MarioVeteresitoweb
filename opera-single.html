@@ -316,30 +316,30 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content glass-card border-0">
         <div class="modal-header border-bottom border-secondary">
-          <h5 class="modal-title">Richiedi Informazioni</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+          <h5 class="modal-title" data-i18n="opera.modal_title">Richiedi Informazioni</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" data-i18n-attr="aria-label" data-i18n="opera.modal_close"></button>
         </div>
         <div class="modal-body p-4">
           <form id="requestInfoForm">
             <div class="mb-3">
-              <label for="userName" class="form-label">Nome e Cognome *</label>
+              <label for="userName" class="form-label"><span data-i18n="opera.modal_name">Nome e Cognome</span> *</label>
               <input type="text" class="form-control" id="userName" required>
             </div>
             <div class="mb-3">
-              <label for="userEmail" class="form-label">Email *</label>
+              <label for="userEmail" class="form-label"><span data-i18n="opera.modal_email">Email</span> *</label>
               <input type="email" class="form-control" id="userEmail" required>
             </div>
             <div class="mb-3">
-              <label for="userPhone" class="form-label">Telefono</label>
+              <label for="userPhone" class="form-label" data-i18n="opera.modal_phone">Telefono</label>
               <input type="tel" class="form-control" id="userPhone">
             </div>
             <div class="mb-3">
-              <label for="userMessage" class="form-label">Messaggio *</label>
+              <label for="userMessage" class="form-label"><span data-i18n="opera.modal_message">Messaggio</span> *</label>
               <textarea class="form-control" id="userMessage" rows="4" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary w-100">
               <i class="bi bi-send me-2"></i>
-              Invia Richiesta
+              <span data-i18n="opera.modal_submit">Invia Richiesta</span>
             </button>
           </form>
         </div>
