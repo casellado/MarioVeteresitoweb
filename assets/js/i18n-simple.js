@@ -9,46 +9,124 @@
   // Translations embedded (best practice: external files loaded sync)
   const translations = {
     it: {
+      // Navigation
       "nav.home": "Home",
       "nav.artworks": "Opere",
       "nav.technique": "Tecnica",
       "nav.about": "Chi Sono",
       "nav.contact": "Contatti",
-      "hero.title": "Arte Contemporanea",
-      "hero.subtitle": "Tecnica Brevettata",
-      "hero.description": "Dipingo in negativo con i polpastrelli. La fotografia rivela l'opera in positivo.",
+      
+      // Hero Section
+      "hero.badge": "Tecnica Brevettata",
+      "hero.artist_name": "Mario Vetere",
+      "hero.subtitle": "Arte dipinta in negativo, rivelata in positivo",
+      "hero.description": "Scopri l'unica tecnica al mondo che trasforma il modo di creare e vivere l'arte contemporanea. Ogni opera è un viaggio sensoriale tra luce e ombra.",
       "hero.cta_explore": "Esplora le Opere",
       "hero.cta_technique": "Scopri la Tecnica",
-      "hero.unique_badge": "Unico",
-      "artworks.featured_title": "Opere Selezionate",
-      "artworks.featured_subtitle": "Una selezione curata delle opere più significative",
+      "hero.stats_artworks": "Opere Create",
+      "hero.stats_collectors": "Collezionisti",
+      "hero.stats_exhibitions": "Esposizioni",
+      "hero.scroll": "Scorri per esplorare",
+      
+      // Artworks Section
+      "artworks.badge": "Opere Selezionate",
+      "artworks.title": "Una selezione curata delle opere più significative",
+      "artworks.subtitle": "Disponibili per l'acquisto immediato",
       "artworks.view_all": "Vedi Tutte le Opere",
       "artworks.available": "Disponibile",
       "artworks.sold": "Venduta",
       "artworks.featured": "In Evidenza",
       "artworks.buy_now": "Acquista Ora",
-      "artworks.details": "Dettagli"
+      "artworks.details": "Scopri",
+      "artworks.technique": "Tecnica",
+      "artworks.dimensions": "Dimensioni",
+      "artworks.price": "Prezzo",
+      
+      // Technique Section
+      "technique.badge": "Tecnica Unica",
+      "technique.title": "L'Arte dell'Inversione Cromatica",
+      "technique.description": "Dipingo in negativo con i polpastrelli. La fotografia rivela l'opera in positivo. Una tecnica brevettata che sfida la percezione e crea opere d'arte uniche al mondo.",
+      "technique.cta": "Scopri la Tecnica",
+      
+      // Artist Section
+      "artist.badge": "L'Artista",
+      "artist.title": "Mario Vetere",
+      "artist.subtitle": "Inventore della Tecnica",
+      "artist.description": "Da oltre 20 anni dedico la mia vita all'arte e alla ricerca. La tecnica #negativoèpositivo® nasce dalla passione per la sperimentazione e dalla volontà di creare qualcosa di veramente unico.",
+      "artist.cta": "La Mia Storia",
+      
+      // Contact CTA
+      "contact.badge": "Contattami",
+      "contact.title": "Interessato a un'Opera?",
+      "contact.description": "Ogni opera è unica e realizzata a mano. Contattami per informazioni, commissioni personalizzate o per visitare lo studio.",
+      "contact.cta": "Scrivimi",
+      
+      // Footer
+      "footer.quick_links": "Link Rapidi",
+      "footer.contact_info": "Contatti",
+      "footer.follow": "Seguici",
+      "footer.rights": "Tutti i diritti riservati",
+      "footer.trademark": "è un marchio registrato"
     },
     en: {
+      // Navigation
       "nav.home": "Home",
       "nav.artworks": "Artworks",
       "nav.technique": "Technique",
       "nav.about": "About",
       "nav.contact": "Contact",
-      "hero.title": "Contemporary Art",
-      "hero.subtitle": "Patented Technique",
-      "hero.description": "I paint in negative with my fingertips. Photography reveals the artwork in positive.",
+      
+      // Hero Section
+      "hero.badge": "Patented Technique",
+      "hero.artist_name": "Mario Vetere",
+      "hero.subtitle": "Art painted in negative, revealed in positive",
+      "hero.description": "Discover the only technique in the world that transforms the way contemporary art is created and experienced. Each artwork is a sensory journey between light and shadow.",
       "hero.cta_explore": "Explore Artworks",
       "hero.cta_technique": "Discover the Technique",
-      "hero.unique_badge": "Unique",
-      "artworks.featured_title": "Featured Artworks",
-      "artworks.featured_subtitle": "A curated selection of the most significant works",
+      "hero.stats_artworks": "Artworks Created",
+      "hero.stats_collectors": "Collectors",
+      "hero.stats_exhibitions": "Exhibitions",
+      "hero.scroll": "Scroll to explore",
+      
+      // Artworks Section
+      "artworks.badge": "Featured Artworks",
+      "artworks.title": "A curated selection of the most significant works",
+      "artworks.subtitle": "Available for immediate purchase",
       "artworks.view_all": "View All Artworks",
       "artworks.available": "Available",
       "artworks.sold": "Sold",
       "artworks.featured": "Featured",
       "artworks.buy_now": "Buy Now",
-      "artworks.details": "Details"
+      "artworks.details": "Discover",
+      "artworks.technique": "Technique",
+      "artworks.dimensions": "Dimensions",
+      "artworks.price": "Price",
+      
+      // Technique Section
+      "technique.badge": "Unique Technique",
+      "technique.title": "The Art of Chromatic Inversion",
+      "technique.description": "I paint in negative with my fingertips. Photography reveals the artwork in positive. A patented technique that challenges perception and creates truly unique artworks.",
+      "technique.cta": "Discover the Technique",
+      
+      // Artist Section
+      "artist.badge": "The Artist",
+      "artist.title": "Mario Vetere",
+      "artist.subtitle": "Inventor of the Technique",
+      "artist.description": "For over 20 years I have dedicated my life to art and research. The #negativoèpositivo® technique was born from a passion for experimentation and the desire to create something truly unique.",
+      "artist.cta": "My Story",
+      
+      // Contact CTA
+      "contact.badge": "Contact Me",
+      "contact.title": "Interested in an Artwork?",
+      "contact.description": "Each artwork is unique and handmade. Contact me for information, custom commissions, or to visit the studio.",
+      "contact.cta": "Write Me",
+      
+      // Footer
+      "footer.quick_links": "Quick Links",
+      "footer.contact_info": "Contact",
+      "footer.follow": "Follow Us",
+      "footer.rights": "All rights reserved",
+      "footer.trademark": "is a registered trademark"
     },
     de: {
       "nav.home": "Startseite",
