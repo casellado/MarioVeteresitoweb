@@ -36,6 +36,9 @@ class OperaSingle {
     // Load related artworks
     this.loadRelatedArtworks();
     
+    // Setup lightbox gallery
+    this.setupLightbox();
+    
     // Init AOS
     if (typeof AOS !== 'undefined') {
       AOS.init({ duration: 800, once: true });
@@ -322,6 +325,57 @@ class OperaSingle {
     `;
     
     return col;
+  }
+  
+  setupLightbox() {
+    // Create gallery items array
+    const galleryItems = [];
+    
+    if (this.artwork.images.negative && this.artwork.images.negative.main) {
+      galleryItems.push({
+        src: this.artwork.images.negative.main,
+        w: 1200,
+        h: 900,
+        title: `${this.artwork.title} - Negativo`
+      });
+    }
+    
+    if (this.artwork.images.positive && this.artwork.images.positive.main) {
+      galleryItems.push({
+        src: this.artwork.images.positive.main,
+        w: 1200,
+        h: 900,
+        title: `${this.artwork.title} - Positivo`
+      });
+    }
+    
+    // Add click event to reveal container to open lightbox
+    const revealContainer = document.querySelector('.reveal-container');
+    if (revealContainer && typeof PhotoSwipeLightbox !== 'undefined') {
+      revealContainer.style.cursor = 'pointer';
+      revealContainer.addEventListener('click', (e) => {
+        // Don't open if clicking on slider handle
+        if (e.target.closest('.reveal-slider')) return;
+        
+        this.openPhotoSwipe(galleryItems, 0);
+      });
+    }
+  }
+  
+  openPhotoSwipe(items, index) {
+    if (typeof PhotoSwipe === 'undefined') {
+      console.warn('PhotoSwipe not loaded');
+      return;
+    }
+    
+    const pswp = new PhotoSwipe({
+      dataSource: items,
+      index: index,
+      bgOpacity: 0.95,
+      showHideAnimationType: 'zoom'
+    });
+    
+    pswp.init();
   }
 }
 
