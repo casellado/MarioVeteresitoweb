@@ -35,7 +35,7 @@
 <body>
 
   <!-- Skip to Main Content -->
-  <a href="#main-content" class="skip-link visually-hidden-focusable">Salta al contenuto principale</a>
+  <a href="#main-content" class="skip-link visually-hidden-focusable" data-i18n="skip_link">Salta al contenuto principale</a>
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark glass-navbar fixed-top" id="mainNavbar">
@@ -88,9 +88,9 @@
       <div class="container">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="index.html" class="text-secondary">Home</a></li>
-            <li class="breadcrumb-item"><a href="opere.html" class="text-secondary">Opere</a></li>
-            <li class="breadcrumb-item active text-white" aria-current="page" id="breadcrumbTitle">Opera</li>
+            <li class="breadcrumb-item"><a href="index.html" class="text-secondary" data-i18n="nav.home">Home</a></li>
+            <li class="breadcrumb-item"><a href="opere.html" class="text-secondary" data-i18n="nav.artworks">Opere</a></li>
+            <li class="breadcrumb-item active text-white" aria-current="page" id="breadcrumbTitle" data-i18n="opera.breadcrumb_opera">Opera</li>
           </ol>
         </nav>
       </div>
@@ -132,17 +132,17 @@
                 <!-- Interactive Reveal Button -->
                 <button class="reveal-toggle-btn btn btn-primary position-absolute bottom-0 start-50 translate-middle-x mb-4" id="revealBtn" aria-label="Rivela l'opera in positivo">
                   <i class="bi bi-eye me-2" aria-hidden="true"></i>
-                  <span id="revealText">Rivela l'Opera</span>
+                  <span id="revealText" data-i18n="opera.reveal_button">Rivela l'Opera</span>
                 </button>
                 
                 <!-- Fullscreen Button (mobile) -->
-                <button class="fullscreen-btn btn btn-outline-light btn-sm position-absolute top-0 end-0 m-3" id="fullscreenBtn" aria-label="Visualizza a schermo intero" title="Schermo intero">
+                <button class="fullscreen-btn btn btn-outline-light btn-sm position-absolute top-0 end-0 m-3" id="fullscreenBtn" data-i18n-attr="title" data-i18n="opera.fullscreen" aria-label="Visualizza a schermo intero" title="Schermo intero">
                   <i class="bi bi-arrows-fullscreen"></i>
                 </button>
                 
                 <!-- Zoom Info Badge -->
                 <div class="zoom-info badge bg-dark position-absolute top-0 start-0 m-3" id="zoomInfo" style="display: none; opacity: 0.8;">
-                  Zoom: <span id="zoomLevel">100</span>%
+                  <span data-i18n="opera.zoom">Zoom</span>: <span id="zoomLevel">100</span>%
                 </div>
                 
               </div>
@@ -162,13 +162,13 @@
             <!-- Title & Status -->
             <div class="opera-header mb-4" data-aos="fade-left">
               <div class="d-flex align-items-center gap-2 mb-3">
-                <span class="badge bg-success" id="operaStatus">Disponibile</span>
-                <span class="badge bg-warning text-dark" id="operaFeatured" style="display: none;">In Evidenza</span>
+                <span class="badge bg-success" id="operaStatus" data-i18n="opera.status_available">Disponibile</span>
+                <span class="badge bg-warning text-dark" id="operaFeatured" style="display: none;" data-i18n="opera.status_featured">In Evidenza</span>
               </div>
               
-              <h1 class="display-4 fw-bold mb-3" id="operaTitle">Caricamento...</h1>
+              <h1 class="display-4 fw-bold mb-3" id="operaTitle" data-i18n="opera.loading">Caricamento...</h1>
               
-              <p class="lead text-secondary mb-4" id="operaShortDesc">
+              <p class="lead text-secondary mb-4" id="operaShortDesc" data-i18n="opera.short_desc">
                 Descrizione breve dell'opera
               </p>
             </div>
