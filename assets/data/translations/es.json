@@ -1,0 +1,99 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "artworks": "Obras",
+    "technique": "Técnica",
+    "about": "Sobre mí",
+    "contact": "Contacto",
+    "language": "Idioma"
+  },
+  "hero": {
+    "title": "Arte Contemporáneo",
+    "subtitle": "Técnica Patentada",
+    "description": "Pinto en negativo con las yemas de los dedos. La fotografía revela la obra en positivo.",
+    "cta_explore": "Explorar Obras",
+    "cta_technique": "Descubrir la Técnica",
+    "unique_badge": "Único"
+  },
+  "artworks": {
+    "featured_title": "Obras Seleccionadas",
+    "featured_subtitle": "Una selección curada de las obras más significativas",
+    "view_all": "Ver Todas las Obras",
+    "available": "Disponible",
+    "sold": "Vendida",
+    "featured": "Destacada",
+    "buy_now": "Comprar Ahora",
+    "details": "Detalles",
+    "price": "Precio",
+    "dimensions": "Dimensiones",
+    "year": "Año",
+    "technique_label": "Técnica"
+  },
+  "technique": {
+    "title": "La Técnica",
+    "subtitle": "Técnica Patentada",
+    "description": "El arte de la inversión cromática: pinto en negativo con las yemas de los dedos, la fotografía revela la obra en positivo.",
+    "cta_process": "Descubrir el Proceso",
+    "cta_video": "Ver Video",
+    "process_title": "Cómo Nace una Obra",
+    "process_subtitle": "Cada obra pasa por 5 fases fundamentales",
+    "step1_title": "Ideación",
+    "step1_desc": "Visualizo mentalmente la obra final en positivo.",
+    "step2_title": "Inversión Cromática",
+    "step2_desc": "Calculo mentalmente los colores complementarios.",
+    "step3_title": "Pintura con los Dedos",
+    "step3_desc": "Pinto exclusivamente con las yemas de los dedos, sin pinceles.",
+    "step4_title": "Fotografía Profesional",
+    "step4_desc": "Fotografío la obra en negativo con equipo profesional.",
+    "step5_title": "Revelación del Positivo",
+    "step5_desc": "La obra se revela en su forma final a través de la inversión fotográfica."
+  },
+  "contact": {
+    "title": "Contacta Conmigo",
+    "subtitle": "¿Preguntas sobre una obra? ¿Quieres encargar una pieza personalizada?",
+    "form_title": "Enviar Mensaje",
+    "name": "Nombre Completo",
+    "email": "Correo Electrónico",
+    "phone": "Teléfono",
+    "subject": "Asunto",
+    "message": "Mensaje",
+    "send": "Enviar Mensaje",
+    "success": "¡Mensaje enviado! Te responderé pronto.",
+    "error": "Error al enviar. Inténtalo de nuevo más tarde.",
+    "required": "Campo obligatorio"
+  },
+  "checkout": {
+    "title": "Pago",
+    "order_summary": "Resumen del Pedido",
+    "billing_info": "Información de Facturación",
+    "shipping_address": "Dirección de Envío",
+    "payment_method": "Método de Pago",
+    "total": "Total",
+    "subtotal": "Subtotal",
+    "shipping": "Envío",
+    "tax": "IVA",
+    "pay_now": "Pagar Ahora",
+    "secure_payment": "Pago seguro cifrado SSL",
+    "test_mode": "Modo Prueba"
+  },
+  "footer": {
+    "quick_links": "Enlaces Rápidos",
+    "contact_info": "Contacto",
+    "follow_us": "Síguenos",
+    "copyright": "Todos los derechos reservados",
+    "trademark": "marca registrada"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "close": "Cerrar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "sort": "Ordenar",
+    "view_more": "Ver Más",
+    "read_more": "Leer más",
+    "learn_more": "Saber más"
+  }
+}
+

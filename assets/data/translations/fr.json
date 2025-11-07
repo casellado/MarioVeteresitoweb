@@ -1,0 +1,99 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "artworks": "Œuvres",
+    "technique": "Technique",
+    "about": "À propos",
+    "contact": "Contact",
+    "language": "Langue"
+  },
+  "hero": {
+    "title": "Art Contemporain",
+    "subtitle": "Technique Brevetée",
+    "description": "Je peins en négatif avec mes doigts. La photographie révèle l'œuvre en positif.",
+    "cta_explore": "Explorer les Œuvres",
+    "cta_technique": "Découvrir la Technique",
+    "unique_badge": "Unique"
+  },
+  "artworks": {
+    "featured_title": "Œuvres Sélectionnées",
+    "featured_subtitle": "Une sélection soignée des œuvres les plus significatives",
+    "view_all": "Voir Toutes les Œuvres",
+    "available": "Disponible",
+    "sold": "Vendue",
+    "featured": "En Vedette",
+    "buy_now": "Acheter Maintenant",
+    "details": "Détails",
+    "price": "Prix",
+    "dimensions": "Dimensions",
+    "year": "Année",
+    "technique_label": "Technique"
+  },
+  "technique": {
+    "title": "La Technique",
+    "subtitle": "Technique Brevetée",
+    "description": "L'art de l'inversion chromatique : je peins en négatif avec mes doigts, la photographie révèle l'œuvre en positif.",
+    "cta_process": "Découvrir le Processus",
+    "cta_video": "Regarder la Vidéo",
+    "process_title": "Comment Naît une Œuvre",
+    "process_subtitle": "Chaque œuvre passe par 5 phases fondamentales",
+    "step1_title": "Idéation",
+    "step1_desc": "Je visualise mentalement l'œuvre finale en positif.",
+    "step2_title": "Inversion Chromatique",
+    "step2_desc": "Je calcule mentalement les couleurs complémentaires.",
+    "step3_title": "Peinture aux Doigts",
+    "step3_desc": "Je peins exclusivement avec mes doigts, sans pinceaux.",
+    "step4_title": "Photographie Professionnelle",
+    "step4_desc": "Je photographie l'œuvre en négatif avec un équipement professionnel.",
+    "step5_title": "Révélation du Positif",
+    "step5_desc": "L'œuvre se révèle dans sa forme finale à travers l'inversion photographique."
+  },
+  "contact": {
+    "title": "Contactez-moi",
+    "subtitle": "Questions sur une œuvre ? Voulez-vous commander une pièce personnalisée ?",
+    "form_title": "Envoyer un Message",
+    "name": "Nom Complet",
+    "email": "Email",
+    "phone": "Téléphone",
+    "subject": "Objet",
+    "message": "Message",
+    "send": "Envoyer le Message",
+    "success": "Message envoyé ! Je vous répondrai bientôt.",
+    "error": "Erreur d'envoi. Veuillez réessayer plus tard.",
+    "required": "Champ obligatoire"
+  },
+  "checkout": {
+    "title": "Paiement",
+    "order_summary": "Récapitulatif de Commande",
+    "billing_info": "Informations de Facturation",
+    "shipping_address": "Adresse de Livraison",
+    "payment_method": "Méthode de Paiement",
+    "total": "Total",
+    "subtotal": "Sous-total",
+    "shipping": "Livraison",
+    "tax": "TVA",
+    "pay_now": "Payer Maintenant",
+    "secure_payment": "Paiement sécurisé crypté SSL",
+    "test_mode": "Mode Test"
+  },
+  "footer": {
+    "quick_links": "Liens Rapides",
+    "contact_info": "Contact",
+    "follow_us": "Suivez-nous",
+    "copyright": "Tous droits réservés",
+    "trademark": "marque déposée"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "close": "Fermer",
+    "back": "Retour",
+    "next": "Suivant",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "sort": "Trier",
+    "view_more": "Voir Plus",
+    "read_more": "Lire plus",
+    "learn_more": "En savoir plus"
+  }
+}
+

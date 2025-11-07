@@ -1,0 +1,99 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "artworks": "Kunstwerke",
+    "technique": "Technik",
+    "about": "Über mich",
+    "contact": "Kontakt",
+    "language": "Sprache"
+  },
+  "hero": {
+    "title": "Zeitgenössische Kunst",
+    "subtitle": "Patentierte Technik",
+    "description": "Ich male im Negativ mit meinen Fingerspitzen. Die Fotografie offenbart das Kunstwerk im Positiv.",
+    "cta_explore": "Kunstwerke erkunden",
+    "cta_technique": "Technik entdecken",
+    "unique_badge": "Einzigartig"
+  },
+  "artworks": {
+    "featured_title": "Ausgewählte Kunstwerke",
+    "featured_subtitle": "Eine kuratierte Auswahl der bedeutendsten Werke",
+    "view_all": "Alle Kunstwerke ansehen",
+    "available": "Verfügbar",
+    "sold": "Verkauft",
+    "featured": "Hervorgehoben",
+    "buy_now": "Jetzt kaufen",
+    "details": "Details",
+    "price": "Preis",
+    "dimensions": "Abmessungen",
+    "year": "Jahr",
+    "technique_label": "Technik"
+  },
+  "technique": {
+    "title": "Die Technik",
+    "subtitle": "Patentierte Technik",
+    "description": "Die Kunst der chromatischen Inversion: Ich male im Negativ mit meinen Fingerspitzen, die Fotografie offenbart das Kunstwerk im Positiv.",
+    "cta_process": "Prozess entdecken",
+    "cta_video": "Video ansehen",
+    "process_title": "Wie ein Kunstwerk entsteht",
+    "process_subtitle": "Jedes Kunstwerk durchläuft 5 grundlegende Phasen",
+    "step1_title": "Ideenfindung",
+    "step1_desc": "Ich visualisiere das fertige Kunstwerk mental im Positiv.",
+    "step2_title": "Chromatische Inversion",
+    "step2_desc": "Ich berechne mental die Komplementärfarben.",
+    "step3_title": "Fingerspitzen-Malerei",
+    "step3_desc": "Ich male ausschließlich mit meinen Fingerspitzen, ohne Pinsel.",
+    "step4_title": "Professionelle Fotografie",
+    "step4_desc": "Ich fotografiere das Kunstwerk im Negativ mit professioneller Ausrüstung.",
+    "step5_title": "Positiv-Offenbarung",
+    "step5_desc": "Das Kunstwerk offenbart sich in seiner endgültigen Form durch fotografische Inversion."
+  },
+  "contact": {
+    "title": "Kontakt aufnehmen",
+    "subtitle": "Fragen zu einem Kunstwerk? Möchten Sie ein individuelles Werk in Auftrag geben?",
+    "form_title": "Nachricht senden",
+    "name": "Vollständiger Name",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "subject": "Betreff",
+    "message": "Nachricht",
+    "send": "Nachricht senden",
+    "success": "Nachricht gesendet! Ich melde mich bald bei Ihnen.",
+    "error": "Fehler beim Senden. Bitte versuchen Sie es später erneut.",
+    "required": "Pflichtfeld"
+  },
+  "checkout": {
+    "title": "Kasse",
+    "order_summary": "Bestellübersicht",
+    "billing_info": "Rechnungsinformationen",
+    "shipping_address": "Lieferadresse",
+    "payment_method": "Zahlungsmethode",
+    "total": "Gesamt",
+    "subtotal": "Zwischensumme",
+    "shipping": "Versand",
+    "tax": "MwSt.",
+    "pay_now": "Jetzt bezahlen",
+    "secure_payment": "Sichere SSL-verschlüsselte Zahlung",
+    "test_mode": "Testmodus"
+  },
+  "footer": {
+    "quick_links": "Schnelllinks",
+    "contact_info": "Kontakt",
+    "follow_us": "Folgen Sie uns",
+    "copyright": "Alle Rechte vorbehalten",
+    "trademark": "eingetragene Marke"
+  },
+  "common": {
+    "loading": "Laden...",
+    "close": "Schließen",
+    "back": "Zurück",
+    "next": "Weiter",
+    "search": "Suchen",
+    "filter": "Filtern",
+    "sort": "Sortieren",
+    "view_more": "Mehr anzeigen",
+    "read_more": "Mehr lesen",
+    "learn_more": "Mehr erfahren"
+  }
+}
+

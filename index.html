@@ -102,14 +102,16 @@
           </button>
           
           <!-- Language -->
-          <div class="dropdown">
+          <div class="dropdown language-selector">
             <button class="btn btn-icon dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Seleziona lingua">
               <i class="bi bi-globe fs-5" aria-hidden="true"></i>
             </button>
             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="languageDropdown">
-              <li><a class="dropdown-item active" href="#" aria-current="true">🇮🇹 Italiano</a></li>
-              <li><a class="dropdown-item" href="#" lang="en">🇬🇧 English</a></li>
-              <li><a class="dropdown-item" href="#" lang="de">🇩🇪 Deutsch</a></li>
+              <li><a class="dropdown-item" href="#" data-lang="it">🇮🇹 Italiano</a></li>
+              <li><a class="dropdown-item" href="#" data-lang="en">🇬🇧 English</a></li>
+              <li><a class="dropdown-item" href="#" data-lang="de">🇩🇪 Deutsch</a></li>
+              <li><a class="dropdown-item" href="#" data-lang="fr">🇫🇷 Français</a></li>
+              <li><a class="dropdown-item" href="#" data-lang="es">🇪🇸 Español</a></li>
             </ul>
           </div>
           
@@ -933,6 +935,9 @@
   <!-- GSAP -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  
+  <!-- Internationalization -->
+  <script src="assets/js/i18n.js"></script>
   
   <!-- Custom JS -->
   <script src="app.js"></script>

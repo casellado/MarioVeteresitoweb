@@ -1,0 +1,99 @@
+{
+  "nav": {
+    "home": "Home",
+    "artworks": "Artworks",
+    "technique": "Technique",
+    "about": "About",
+    "contact": "Contact",
+    "language": "Language"
+  },
+  "hero": {
+    "title": "Contemporary Art",
+    "subtitle": "Patented Technique",
+    "description": "I paint in negative with my fingertips. Photography reveals the artwork in positive.",
+    "cta_explore": "Explore Artworks",
+    "cta_technique": "Discover the Technique",
+    "unique_badge": "Unique"
+  },
+  "artworks": {
+    "featured_title": "Featured Artworks",
+    "featured_subtitle": "A curated selection of the most significant works",
+    "view_all": "View All Artworks",
+    "available": "Available",
+    "sold": "Sold",
+    "featured": "Featured",
+    "buy_now": "Buy Now",
+    "details": "Details",
+    "price": "Price",
+    "dimensions": "Dimensions",
+    "year": "Year",
+    "technique_label": "Technique"
+  },
+  "technique": {
+    "title": "The Technique",
+    "subtitle": "Patented Technique",
+    "description": "The art of chromatic inversion: I paint in negative with my fingertips, photography reveals the artwork in positive.",
+    "cta_process": "Discover the Process",
+    "cta_video": "Watch Video",
+    "process_title": "How an Artwork is Born",
+    "process_subtitle": "Each artwork goes through 5 fundamental phases",
+    "step1_title": "Ideation",
+    "step1_desc": "I mentally visualize the final artwork in positive.",
+    "step2_title": "Chromatic Inversion",
+    "step2_desc": "I mentally calculate complementary colors.",
+    "step3_title": "Fingertip Painting",
+    "step3_desc": "I paint exclusively with my fingertips, without brushes.",
+    "step4_title": "Professional Photography",
+    "step4_desc": "I photograph the artwork in negative with professional equipment.",
+    "step5_title": "Positive Revelation",
+    "step5_desc": "The artwork reveals itself in its final form through photographic inversion."
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Questions about an artwork? Want to commission a custom piece?",
+    "form_title": "Send a Message",
+    "name": "Full Name",
+    "email": "Email",
+    "phone": "Phone",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send Message",
+    "success": "Message sent! I'll get back to you soon.",
+    "error": "Error sending. Please try again later.",
+    "required": "Required field"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "order_summary": "Order Summary",
+    "billing_info": "Billing Information",
+    "shipping_address": "Shipping Address",
+    "payment_method": "Payment Method",
+    "total": "Total",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "tax": "VAT",
+    "pay_now": "Pay Now",
+    "secure_payment": "Secure SSL encrypted payment",
+    "test_mode": "Test Mode"
+  },
+  "footer": {
+    "quick_links": "Quick Links",
+    "contact_info": "Contact",
+    "follow_us": "Follow Us",
+    "copyright": "All rights reserved",
+    "trademark": "registered trademark"
+  },
+  "common": {
+    "loading": "Loading...",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "view_more": "View More",
+    "read_more": "Read more",
+    "learn_more": "Learn more"
+  }
+}
+

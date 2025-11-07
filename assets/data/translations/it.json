@@ -1,0 +1,99 @@
+{
+  "nav": {
+    "home": "Home",
+    "artworks": "Opere",
+    "technique": "Tecnica",
+    "about": "Chi Sono",
+    "contact": "Contatti",
+    "language": "Lingua"
+  },
+  "hero": {
+    "title": "Arte Contemporanea",
+    "subtitle": "Tecnica Brevettata",
+    "description": "Dipingo in negativo con i polpastrelli. La fotografia rivela l'opera in positivo.",
+    "cta_explore": "Esplora le Opere",
+    "cta_technique": "Scopri la Tecnica",
+    "unique_badge": "Unico"
+  },
+  "artworks": {
+    "featured_title": "Opere Selezionate",
+    "featured_subtitle": "Una selezione curata delle opere più significative",
+    "view_all": "Vedi Tutte le Opere",
+    "available": "Disponibile",
+    "sold": "Venduta",
+    "featured": "In Evidenza",
+    "buy_now": "Acquista Ora",
+    "details": "Dettagli",
+    "price": "Prezzo",
+    "dimensions": "Dimensioni",
+    "year": "Anno",
+    "technique_label": "Tecnica"
+  },
+  "technique": {
+    "title": "La Tecnica",
+    "subtitle": "Tecnica Brevettata",
+    "description": "L'arte dell'inversione cromatica: dipingo in negativo con i polpastrelli, la fotografia rivela l'opera in positivo.",
+    "cta_process": "Scopri il Processo",
+    "cta_video": "Guarda il Video",
+    "process_title": "Come Nasce un'Opera",
+    "process_subtitle": "Ogni opera passa attraverso 5 fasi fondamentali",
+    "step1_title": "Ideazione",
+    "step1_desc": "Visualizzo mentalmente l'opera finale in positivo.",
+    "step2_title": "Inversione Cromatica",
+    "step2_desc": "Calcolo mentalmente i colori complementari.",
+    "step3_title": "Pittura a Polpastrelli",
+    "step3_desc": "Dipingo esclusivamente con i polpastrelli, senza pennelli.",
+    "step4_title": "Fotografia Professionale",
+    "step4_desc": "Fotografo l'opera in negativo con attrezzatura professionale.",
+    "step5_title": "Rivelazione del Positivo",
+    "step5_desc": "L'opera si rivela nella sua forma finale attraverso l'inversione fotografica."
+  },
+  "contact": {
+    "title": "Mettiamoci in Contatto",
+    "subtitle": "Hai domande su un'opera? Vuoi commissionare un lavoro personalizzato?",
+    "form_title": "Invia un Messaggio",
+    "name": "Nome e Cognome",
+    "email": "Email",
+    "phone": "Telefono",
+    "subject": "Oggetto",
+    "message": "Messaggio",
+    "send": "Invia Messaggio",
+    "success": "Messaggio inviato! Ti risponderò al più presto.",
+    "error": "Errore nell'invio. Riprova più tardi.",
+    "required": "Campo obbligatorio"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "order_summary": "Riepilogo Ordine",
+    "billing_info": "Dati di Fatturazione",
+    "shipping_address": "Indirizzo di Spedizione",
+    "payment_method": "Metodo di Pagamento",
+    "total": "Totale",
+    "subtotal": "Subtotale",
+    "shipping": "Spedizione",
+    "tax": "IVA",
+    "pay_now": "Paga Ora",
+    "secure_payment": "Pagamento sicuro crittografato SSL",
+    "test_mode": "Modalità Test"
+  },
+  "footer": {
+    "quick_links": "Link Rapidi",
+    "contact_info": "Contatti",
+    "follow_us": "Seguici sui Social",
+    "copyright": "Tutti i diritti riservati",
+    "trademark": "marchio registrato"
+  },
+  "common": {
+    "loading": "Caricamento...",
+    "close": "Chiudi",
+    "back": "Indietro",
+    "next": "Avanti",
+    "search": "Cerca",
+    "filter": "Filtra",
+    "sort": "Ordina",
+    "view_more": "Vedi Altro",
+    "read_more": "Leggi di più",
+    "learn_more": "Scopri di più"
+  }
+}
+
