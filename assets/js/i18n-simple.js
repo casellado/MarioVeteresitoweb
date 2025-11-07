@@ -37,6 +37,7 @@
       "hero.artwork_featured": "Opera in Evidenza",
       "hero.artwork_example": "Esempio di tecnica",
       "hero.cta_story": "Scopri la Storia Completa",
+      "hero.reveal_button": "Rivela l'Opera",
       "hero.scroll": "Scorri per esplorare",
       
       // Artworks Section
@@ -178,6 +179,7 @@
       "hero.artwork_featured": "Featured Artwork",
       "hero.artwork_example": "Technique example",
       "hero.cta_story": "Discover the Full Story",
+      "hero.reveal_button": "Reveal the Artwork",
       "hero.scroll": "Scroll to explore",
       
       // Artworks Section
