@@ -93,14 +93,13 @@
           <div class="col-lg-8" data-aos="fade-up">
             <span class="badge glass-badge mb-3 d-inline-flex align-items-center gap-2">
               <i class="bi bi-palette"></i>
-              Collezione Completa
+              <span data-i18n="opere.badge">Collezione Completa</span>
             </span>
             <h1 class="display-2 fw-bold mb-4">
-              Le <span class="text-gradient">Opere</span>
+              <span data-i18n="opere.title">Le Opere</span>
             </h1>
-            <p class="lead fs-4 text-secondary mb-5">
-              Scopri l'intera collezione di opere realizzate con la tecnica brevettata 
-              #<span style="color: #0099FF;">negativo</span><span style="color: #FFD700;">è</span><span style="color: #FF6600;">positivo</span>®. 
+            <p class="lead fs-4 text-secondary mb-5" data-i18n="opere.description">
+              Scopri l'intera collezione di opere realizzate con la tecnica brevettata. 
               Ogni pezzo è un'esperienza unica tra negativo e positivo.
             </p>
             
@@ -108,15 +107,15 @@
             <div class="d-flex justify-content-center gap-5 flex-wrap" data-aos="fade-up" data-aos-delay="100">
               <div>
                 <div class="h2 text-gradient mb-0" id="totalArtworksCount">45</div>
-                <div class="small text-secondary">Opere Totali</div>
+                <div class="small text-secondary" data-i18n="opere.stats_total">Opere Totali</div>
               </div>
               <div>
                 <div class="h2 text-gradient mb-0" id="availableArtworksCount">32</div>
-                <div class="small text-secondary">Disponibili</div>
+                <div class="small text-secondary" data-i18n="opere.stats_available">Disponibili</div>
               </div>
               <div>
                 <div class="h2 text-gradient mb-0">4</div>
-                <div class="small text-secondary">Categorie</div>
+                <div class="small text-secondary" data-i18n="opere.stats_categories">Categorie</div>
               </div>
             </div>
           </div>
@@ -138,6 +137,7 @@
               <input type="text" 
                      class="form-control bg-transparent border-secondary" 
                      id="artworkSearch" 
+                     data-i18n-placeholder="opere.search_placeholder"
                      placeholder="Cerca per titolo, tag...">
             </div>
           </div>
@@ -145,33 +145,31 @@
           <!-- Category Filter -->
           <div class="col-lg-3">
             <select class="form-select bg-transparent border-secondary" id="categoryFilter">
-              <option value="all">Tutte le Categorie</option>
-              <option value="paesaggi">Paesaggi</option>
-              <option value="ritratti">Ritratti</option>
-              <option value="astratto">Astratto</option>
-              <option value="urbano">Urbano</option>
+              <option value="all" data-i18n="opere.filter_all">Tutte le Categorie</option>
+              <option value="paesaggi" data-i18n="opere.filter_landscapes">Paesaggi</option>
+              <option value="ritratti" data-i18n="opere.filter_portraits">Ritratti</option>
+              <option value="astratto" data-i18n="opere.filter_abstract">Astratto</option>
+              <option value="urbano" data-i18n="opere.filter_urban">Urbano</option>
             </select>
           </div>
           
           <!-- Price Range -->
           <div class="col-lg-3">
             <select class="form-select bg-transparent border-secondary" id="priceFilter">
-              <option value="all">Tutte le Fasce</option>
-              <option value="0-1000">€ 0 - 1.000</option>
-              <option value="1000-2000">€ 1.000 - 2.000</option>
-              <option value="2000-3000">€ 2.000 - 3.000</option>
-              <option value="3000+">€ 3.000+</option>
+              <option value="all" data-i18n="opere.price_all">Tutte le Fasce</option>
+              <option value="0-1000" data-i18n="opere.price_under1000">Sotto €1.000</option>
+              <option value="1000-2000" data-i18n="opere.price_1000_2000">€1.000 - €2.000</option>
+              <option value="2000+opere.price_over2000">Oltre €2.000</option>
             </select>
           </div>
           
           <!-- Sort -->
           <div class="col-lg-2">
             <select class="form-select bg-transparent border-secondary" id="sortFilter">
-              <option value="newest">Più Recenti</option>
-              <option value="oldest">Più Antiche</option>
-              <option value="price-low">Prezzo: ↑</option>
-              <option value="price-high">Prezzo: ↓</option>
-              <option value="title">Titolo A-Z</option>
+              <option value="newest" data-i18n="opere.sort_recent">Più Recenti</option>
+              <option value="price-low" data-i18n="opere.sort_price_low">Prezzo: Basso → Alto</option>
+              <option value="price-high" data-i18n="opere.sort_price_high">Prezzo: Alto → Basso</option>
+              <option value="title" data-i18n="opere.sort_title">Titolo A-Z</option>
             </select>
           </div>
           
@@ -226,20 +224,20 @@
       <div class="container">
         <div class="row justify-content-center text-center">
           <div class="col-lg-8">
-            <h2 class="display-5 fw-bold mb-4">
+            <h2 class="display-5 fw-bold mb-4" data-i18n="opere.cta_title">
               Non hai trovato quello che cerchi?
             </h2>
-            <p class="lead text-secondary mb-5">
+            <p class="lead text-secondary mb-5" data-i18n="opere.cta_description">
               Posso realizzare commissioni personalizzate seguendo le tue idee e preferenze
             </p>
             <div class="d-flex gap-3 justify-content-center flex-wrap">
               <a href="contatti.html" class="btn btn-primary btn-lg px-5">
                 <i class="bi bi-envelope me-2"></i>
-                Richiedi Commissione
+                <span data-i18n="opere.cta_commission">Richiedi Commissione</span>
               </a>
               <a href="https://wa.me/393XXXXXXXXX" class="btn btn-success btn-lg px-5" target="_blank">
                 <i class="bi bi-whatsapp me-2"></i>
-                WhatsApp
+                <span data-i18n="opere.cta_whatsapp">WhatsApp</span>
               </a>
             </div>
           </div>
