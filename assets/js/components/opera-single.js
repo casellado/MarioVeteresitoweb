@@ -153,60 +153,30 @@ class OperaSingle {
   }
   
   setupRevealEffect() {
-    const revealWrapper = document.querySelector('.reveal-wrapper');
-    const slider = document.querySelector('.reveal-slider');
-    const positiveOverlay = document.querySelector('.positive-overlay');
+    // Reveal effect identico homepage (con bottone)
+    const revealBtn = document.getElementById('revealBtn');
+    const positiveImage = document.getElementById('positiveImage');
+    const revealText = document.getElementById('revealText');
     
-    if (!revealWrapper || !slider || !positiveOverlay) return;
+    if (!revealBtn || !positiveImage) return;
     
-    // Mouse events
-    slider.addEventListener('mousedown', () => {
-      this.isDragging = true;
-      document.body.style.cursor = 'ew-resize';
+    let isRevealed = false;
+    
+    revealBtn.addEventListener('click', () => {
+      isRevealed = !isRevealed;
+      
+      if (isRevealed) {
+        // Show positive
+        positiveImage.style.opacity = '1';
+        revealText.textContent = 'Nascondi Opera';
+        revealBtn.innerHTML = '<i class="bi bi-eye-slash me-2" aria-hidden="true"></i><span id="revealText">Nascondi Opera</span>';
+      } else {
+        // Show negative
+        positiveImage.style.opacity = '0';
+        revealText.textContent = 'Rivela l\'Opera';
+        revealBtn.innerHTML = '<i class="bi bi-eye me-2" aria-hidden="true"></i><span id="revealText">Rivela l\'Opera</span>';
+      }
     });
-    
-    document.addEventListener('mouseup', () => {
-      this.isDragging = false;
-      document.body.style.cursor = '';
-    });
-    
-    document.addEventListener('mousemove', (e) => {
-      if (!this.isDragging) return;
-      this.updateReveal(e.clientX, revealWrapper, slider, positiveOverlay);
-    });
-    
-    // Touch events
-    slider.addEventListener('touchstart', (e) => {
-      this.isDragging = true;
-      e.preventDefault();
-    });
-    
-    document.addEventListener('touchend', () => {
-      this.isDragging = false;
-    });
-    
-    document.addEventListener('touchmove', (e) => {
-      if (!this.isDragging) return;
-      const touch = e.touches[0];
-      this.updateReveal(touch.clientX, revealWrapper, slider, positiveOverlay);
-      e.preventDefault();
-    });
-  }
-  
-  updateReveal(clientX, wrapper, slider, overlay) {
-    const rect = wrapper.getBoundingClientRect();
-    let x = clientX - rect.left;
-    
-    // Clamp between 0 and width
-    x = Math.max(0, Math.min(x, rect.width));
-    
-    const percentage = (x / rect.width) * 100;
-    
-    // Update slider position
-    slider.style.left = `${percentage}%`;
-    
-    // Update clip-path
-    overlay.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
   }
   
   setupForm() {

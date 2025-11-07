@@ -90,46 +90,39 @@
           <!-- Left Column: Images & Reveal Effect -->
           <div class="col-lg-7">
             
-            <!-- Main Reveal Container -->
-            <div class="reveal-container glass-card rounded-4 overflow-hidden mb-4" data-aos="fade-right">
-              <div class="reveal-wrapper position-relative" style="aspect-ratio: 4/3;">
+            <!-- Main Reveal Container (identico homepage) -->
+            <div class="artwork-container glass-card p-4 rounded-4 shadow-lg mb-4" data-aos="fade-right">
+              
+              <!-- Canvas Reveal Effect -->
+              <div class="reveal-canvas-wrapper position-relative" style="aspect-ratio: 4/5;">
                 
-                <!-- Negative Image -->
-                <img id="negativeImage" 
-                     src="assets/images/opere/featured/negative-1.jpg" 
-                     alt="Opera d'arte" 
-                     class="img-fluid w-100 h-100" 
-                     style="object-fit: cover;">
+                <!-- Negative Image (Default) -->
+                <img 
+                  id="negativeImage"
+                  src="assets/images/opere/featured/negative-1.jpg" 
+                  alt="Opera in negativo" 
+                  class="reveal-negative img-fluid w-100 h-100 object-fit-cover rounded-3"
+                  loading="eager"
+                >
                 
-                <!-- Positive Image (Overlay) -->
-                <div class="positive-overlay position-absolute top-0 start-0 w-100 h-100" style="clip-path: inset(0 50% 0 0);">
-                  <img id="positiveImage" 
-                       src="assets/images/opere/featured/positive-1.jpg" 
-                       alt="Opera d'arte" 
-                       class="img-fluid w-100 h-100" 
-                       style="object-fit: cover;">
-                </div>
+                <!-- Positive Image (Revealed) -->
+                <img 
+                  id="positiveImage"
+                  src="assets/images/opere/featured/positive-1.jpg" 
+                  alt="Opera rivelata in positivo" 
+                  class="reveal-positive img-fluid w-100 h-100 object-fit-cover rounded-3 position-absolute top-0 start-0"
+                  style="opacity: 0; transition: opacity 0.6s ease;"
+                  loading="eager"
+                >
                 
-                <!-- Slider Handle -->
-                <div class="reveal-slider position-absolute top-0 start-50 h-100 d-flex align-items-center" 
-                     style="cursor: ew-resize; z-index: 10;">
-                  <div class="slider-handle bg-white rounded-circle shadow" 
-                       style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;">
-                    <i class="bi bi-arrows-expand text-dark"></i>
-                  </div>
-                </div>
-                
-                <!-- Badge Negativo - In alto a sinistra -->
-                <span class="badge bg-primary position-absolute" style="top: 12px; left: 12px; z-index: 15; font-size: 0.875rem;">
-                  Negativo
-                </span>
-                
-                <!-- Badge Positivo - In alto a destra -->
-                <span class="badge bg-warning text-dark position-absolute" style="top: 12px; right: 12px; z-index: 15; font-size: 0.875rem;">
-                  Positivo
-                </span>
+                <!-- Interactive Reveal Button -->
+                <button class="reveal-toggle-btn btn btn-primary position-absolute bottom-0 start-50 translate-middle-x mb-4" id="revealBtn" aria-label="Rivela l'opera in positivo">
+                  <i class="bi bi-eye me-2" aria-hidden="true"></i>
+                  <span id="revealText">Rivela l'Opera</span>
+                </button>
                 
               </div>
+              
             </div>
             
             <!-- Thumbnail Gallery -->
