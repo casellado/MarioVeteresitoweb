@@ -156,12 +156,22 @@ class OperaSingle {
     // Reveal effect identico homepage (con bottone)
     const revealBtn = document.getElementById('revealBtn');
     const positiveImage = document.getElementById('positiveImage');
+    const negativeImage = document.getElementById('negativeImage');
     const revealText = document.getElementById('revealText');
+    const zoomBtn = document.getElementById('zoomBtn');
+    const revealWrapper = document.querySelector('.reveal-canvas-wrapper');
     
     if (!revealBtn || !positiveImage) return;
     
     let isRevealed = false;
+    let isZoomed = false;
+    let isDragging = false;
+    let startX = 0;
+    let startY = 0;
+    let translateX = 0;
+    let translateY = 0;
     
+    // Reveal toggle
     revealBtn.addEventListener('click', () => {
       isRevealed = !isRevealed;
       
@@ -177,6 +187,102 @@ class OperaSingle {
         revealBtn.innerHTML = '<i class="bi bi-eye me-2" aria-hidden="true"></i><span id="revealText">Rivela l\'Opera</span>';
       }
     });
+    
+    // Zoom functionality
+    if (zoomBtn && revealWrapper) {
+      zoomBtn.addEventListener('click', () => {
+        isZoomed = !isZoomed;
+        
+        if (isZoomed) {
+          // Enable zoom
+          revealWrapper.style.cursor = 'move';
+          revealWrapper.style.overflow = 'hidden';
+          negativeImage.style.transform = 'scale(5)';
+          positiveImage.style.transform = 'scale(5)';
+          negativeImage.style.transformOrigin = 'center center';
+          positiveImage.style.transformOrigin = 'center center';
+          zoomBtn.innerHTML = '<i class="bi bi-zoom-out"></i>';
+          zoomBtn.title = 'Disattiva zoom';
+          
+          // Enable dragging
+          revealWrapper.addEventListener('mousedown', startDrag);
+          revealWrapper.addEventListener('touchstart', startDragTouch);
+        } else {
+          // Disable zoom
+          revealWrapper.style.cursor = 'default';
+          negativeImage.style.transform = 'scale(1)';
+          positiveImage.style.transform = 'scale(1)';
+          negativeImage.style.transformOrigin = 'center center';
+          positiveImage.style.transformOrigin = 'center center';
+          zoomBtn.innerHTML = '<i class="bi bi-zoom-in"></i>';
+          zoomBtn.title = 'Zoom dettagli';
+          translateX = 0;
+          translateY = 0;
+          
+          // Disable dragging
+          revealWrapper.removeEventListener('mousedown', startDrag);
+          revealWrapper.removeEventListener('touchstart', startDragTouch);
+        }
+      });
+      
+      // Drag functions
+      function startDrag(e) {
+        if (!isZoomed) return;
+        isDragging = true;
+        startX = e.clientX - translateX;
+        startY = e.clientY - translateY;
+        e.preventDefault();
+      }
+      
+      function startDragTouch(e) {
+        if (!isZoomed) return;
+        isDragging = true;
+        const touch = e.touches[0];
+        startX = touch.clientX - translateX;
+        startY = touch.clientY - translateY;
+        e.preventDefault();
+      }
+      
+      document.addEventListener('mousemove', (e) => {
+        if (!isDragging || !isZoomed) return;
+        
+        translateX = e.clientX - startX;
+        translateY = e.clientY - startY;
+        
+        // Limit pan to reasonable bounds
+        const maxTranslate = 200;
+        translateX = Math.max(-maxTranslate, Math.min(maxTranslate, translateX));
+        translateY = Math.max(-maxTranslate, Math.min(maxTranslate, translateY));
+        
+        negativeImage.style.transform = `scale(5) translate(${translateX / 5}px, ${translateY / 5}px)`;
+        positiveImage.style.transform = `scale(5) translate(${translateX / 5}px, ${translateY / 5}px)`;
+      });
+      
+      document.addEventListener('touchmove', (e) => {
+        if (!isDragging || !isZoomed) return;
+        
+        const touch = e.touches[0];
+        translateX = touch.clientX - startX;
+        translateY = touch.clientY - startY;
+        
+        // Limit pan to reasonable bounds
+        const maxTranslate = 200;
+        translateX = Math.max(-maxTranslate, Math.min(maxTranslate, translateX));
+        translateY = Math.max(-maxTranslate, Math.min(maxTranslate, translateY));
+        
+        negativeImage.style.transform = `scale(5) translate(${translateX / 5}px, ${translateY / 5}px)`;
+        positiveImage.style.transform = `scale(5) translate(${translateX / 5}px, ${translateY / 5}px)`;
+        e.preventDefault();
+      });
+      
+      document.addEventListener('mouseup', () => {
+        isDragging = false;
+      });
+      
+      document.addEventListener('touchend', () => {
+        isDragging = false;
+      });
+    }
   }
   
   setupForm() {
