@@ -145,9 +145,27 @@ h1, h2, h3, h4, h5, h6,
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
+  overflow-x: hidden;
+  max-width: 100%;
+  position: relative;
+}
+
+/* Prevent horizontal overflow on all elements */
+* {
+  max-width: 100%;
+}
+
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+.container, .container-fluid {
   overflow-x: hidden;
 }
 
@@ -546,6 +564,39 @@ body {
 }
 
 @media (max-width: 767px) {
+  /* Prevent horizontal overflow on mobile */
+  body, html {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+  
+  .container, .container-fluid, .row {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+  }
+  
+  /* Make display headings responsive */
+  .display-1 {
+    font-size: 3rem !important;
+    word-wrap: break-word;
+  }
+  
+  .display-2 {
+    font-size: 2.5rem !important;
+    word-wrap: break-word;
+  }
+  
+  .display-3 {
+    font-size: 2rem !important;
+    word-wrap: break-word;
+  }
+  
+  .display-4 {
+    font-size: 1.75rem !important;
+    word-wrap: break-word;
+  }
+  
+
   .hero-stats {
     gap: 2rem !important;
     justify-content: center;
