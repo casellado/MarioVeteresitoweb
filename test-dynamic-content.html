@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="it" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TEST: Dynamic Content Translation</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { padding: 20px; background: #1a1a1a; color: #fff; }
+    .step { border: 2px solid #333; padding: 20px; margin: 20px 0; border-radius: 8px; }
+    .done { border-color: #28a745; background: rgba(40, 167, 69, 0.1); }
+    pre { background: #000; padding: 10px; border-radius: 5px; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1 class="mb-4">🧪 TEST: Contenuto Dinamico come opera-single.js</h1>
+  
+  <div class="step" id="step1">
+    <h3>STEP 1: Caricamento i18n</h3>
+    <div id="step1-status">⏳ In attesa...</div>
+  </div>
+  
+  <div class="step" id="step2">
+    <h3>STEP 2: Elementi Statici Iniziali</h3>
+    <div class="mb-3">
+      <span class="badge bg-success" data-i18n="opera.status_available">Disponibile</span>
+      <span class="badge bg-primary ms-2" data-i18n="opera.reveal_button">Rivela l'Opera</span>
+    </div>
+    <div id="step2-status">⏳ In attesa...</div>
+  </div>
+  
+  <div class="step" id="step3">
+    <h3>STEP 3: Simula opera-single.js loadArtwork()</h3>
+    <button id="loadBtn" class="btn btn-warning mb-3">🔄 Carica Dati Opera (Simula Async)</button>
+    <div id="dynamicContent"><!-- Contenuto dinamico verrà inserito qui --></div>
+    <div id="step3-status">⏳ In attesa...</div>
+  </div>
+  
+  <div class="step" id="step4">
+    <h3>STEP 4: Riapplicazione Traduzioni</h3>
+    <button id="reapplyBtn" class="btn btn-primary mb-3">🔄 Riapplica Traduzioni</button>
+    <div id="step4-status">⏳ In attesa...</div>
+  </div>
+  
+  <div class="step" id="step5">
+    <h3>STEP 5: Verifica Finale</h3>
+    <div id="step5-status">⏳ In attesa...</div>
+  </div>
+  
+  <div class="mt-5">
+    <h3>📟 Log</h3>
+    <pre id="log" style="max-height: 300px; overflow-y: auto;"></pre>
+  </div>
+</div>
+
+<script src="assets/js/i18n-simple.js"></script>
+<script>
+const logEl = document.getElementById('log');
+
+function log(msg) {
+  const time = new Date().toLocaleTimeString();
+  logEl.textContent += `[${time}] ${msg}\n`;
+  logEl.scrollTop = logEl.scrollHeight;
+  console.log(msg);
+}
+
+// STEP 1: Check i18n
+function checkI18n() {
+  log('🔍 STEP 1: Controllo i18n...');
+  
+  if (typeof window.i18n !== 'undefined') {
+    log('✅ window.i18n disponibile');
+    log(`   - currentLang: ${window.i18n.currentLang}`);
+    log(`   - isReady: ${window.i18n.isReady}`);
+    document.getElementById('step1-status').innerHTML = '✅ i18n Caricato';
+    document.getElementById('step1').classList.add('done');
+    
+    // Check initial translations
+    setTimeout(() => checkInitialElements(), 500);
+  } else {
+    log('❌ window.i18n NON disponibile!');
+    document.getElementById('step1-status').innerHTML = '❌ ERRORE: i18n non trovato';
+  }
+}
+
+// STEP 2: Check initial elements
+function checkInitialElements() {
+  log('\n🔍 STEP 2: Controllo elementi statici iniziali...');
+  
+  const elements = document.querySelectorAll('[data-i18n]');
+  log(`   - Trovati ${elements.length} elementi [data-i18n]`);
+  
+  elements.forEach((el, i) => {
+    const key = el.getAttribute('data-i18n');
+    const text = el.textContent;
+    log(`   - Elemento ${i+1}: key="${key}", text="${text}"`);
+  });
+  
+  document.getElementById('step2-status').innerHTML = `✅ ${elements.length} elementi trovati e tradotti`;
+  document.getElementById('step2').classList.add('done');
+}
+
+// STEP 3: Simulate dynamic content loading (like opera-single.js)
+document.getElementById('loadBtn').addEventListener('click', () => {
+  log('\n🔍 STEP 3: Simulo caricamento dati (come opera-single.js)...');
+  log('   - Questo SOVRASCRIVE il DOM con contenuto dinamico');
+  
+  // Simulate async data loading
+  setTimeout(() => {
+    const container = document.getElementById('dynamicContent');
+    
+    // Simulate what opera-single.js does
+    container.innerHTML = `
+      <div class="alert alert-info">
+        <strong>Contenuto Dinamico Caricato!</strong>
+        <p>Questo simula cosa fa opera-single.js quando carica i dati dell'opera.</p>
+      </div>
+      <div class="mb-3">
+        <span class="badge bg-success" id="dynamicStatus">Disponibile</span>
+        <span class="badge bg-warning text-dark ms-2" id="dynamicPrice">€ 1.200</span>
+      </div>
+      <button class="btn btn-primary" id="dynamicReveal">
+        <span id="dynamicRevealText">Rivela l'Opera</span>
+      </button>
+    `;
+    
+    log('❌ PROBLEMA: Il contenuto dinamico NON ha data-i18n attributes!');
+    log('   - dynamicStatus: "Disponibile" (hardcoded, no data-i18n)');
+    log('   - dynamicRevealText: "Rivela l\'Opera" (hardcoded, no data-i18n)');
+    
+    document.getElementById('step3-status').innerHTML = '⚠️ Contenuto dinamico caricato ma NON tradotto';
+    document.getElementById('step3').classList.add('done');
+    
+  }, 1000);
+});
+
+// STEP 4: Reapply translations
+document.getElementById('reapplyBtn').addEventListener('click', () => {
+  log('\n🔍 STEP 4: Riapplico traduzioni...');
+  
+  if (window.i18n && window.i18n.isReady) {
+    const before = document.querySelectorAll('[data-i18n]').length;
+    
+    window.i18n.applyTranslations();
+    
+    const after = document.querySelectorAll('[data-i18n]').length;
+    
+    log(`✅ Traduzioni riapplicate`);
+    log(`   - Elementi con [data-i18n] prima: ${before}`);
+    log(`   - Elementi con [data-i18n] dopo: ${after}`);
+    log('');
+    log('⚠️ NOTA: Il contenuto dinamico non ha [data-i18n]!');
+    log('   Soluzione: Aggiungere data-i18n quando si crea contenuto dinamico');
+    
+    document.getElementById('step4-status').innerHTML = '✅ Traduzioni riapplicate (ma contenuto dinamico resta in IT)';
+    document.getElementById('step4').classList.add('done');
+    
+    setTimeout(verifyFinal, 500);
+  } else {
+    log('❌ i18n non disponibile o non ready');
+    document.getElementById('step4-status').innerHTML = '❌ Errore: i18n non disponibile';
+  }
+});
+
+// STEP 5: Final verification
+function verifyFinal() {
+  log('\n🔍 STEP 5: Verifica finale...');
+  
+  const dynamicStatus = document.getElementById('dynamicStatus');
+  const dynamicRevealText = document.getElementById('dynamicRevealText');
+  
+  if (dynamicStatus) {
+    log(`   - Badge status: "${dynamicStatus.textContent}"`);
+    log(`     Ha data-i18n? ${dynamicStatus.hasAttribute('data-i18n') ? 'SÌ' : 'NO'}`);
+  }
+  
+  if (dynamicRevealText) {
+    log(`   - Reveal text: "${dynamicRevealText.textContent}"`);
+    log(`     Ha data-i18n? ${dynamicRevealText.hasAttribute('data-i18n') ? 'SÌ' : 'NO'}`);
+  }
+  
+  log('');
+  log('📊 CONCLUSIONE:');
+  log('   ❌ Il problema è che opera-single.js crea contenuto dinamico');
+  log('   ❌ Questo contenuto NON ha attributi [data-i18n]');
+  log('   ❌ Quindi anche riapplicando le traduzioni, non viene tradotto');
+  log('');
+  log('💡 SOLUZIONE:');
+  log('   1. Aggiungere data-i18n quando si crea HTML dinamicamente');
+  log('   2. OPPURE usare window.i18n.t() per il testo');
+  log('   3. OPPURE mantenere data-i18n nel template HTML iniziale');
+  
+  document.getElementById('step5-status').innerHTML = '📊 Analisi completata - Vedi log per dettagli';
+  document.getElementById('step5').classList.add('done');
+}
+
+// Start test on load
+window.addEventListener('load', () => {
+  log('🚀 Test inizializzato\n');
+  setTimeout(checkI18n, 500);
+});
+
+// Listen for events
+window.addEventListener('i18nReady', (e) => {
+  log(`\n🎉 Evento i18nReady ricevuto! Lingua: ${e.detail.language}`);
+});
+
+window.addEventListener('languageChanged', (e) => {
+  log(`\n🌍 Evento languageChanged ricevuto! Nuova lingua: ${e.detail.language}`);
+});
+</script>
+
+</body>
+</html>
+

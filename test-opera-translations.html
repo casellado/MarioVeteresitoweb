@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="it" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TEST: Opera Single Translations Debug</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { padding: 20px; background: #1a1a1a; color: #fff; }
+    .test-section { border: 2px solid #333; padding: 20px; margin: 20px 0; border-radius: 8px; }
+    .success { border-color: #28a745; background: rgba(40, 167, 69, 0.1); }
+    .error { border-color: #dc3545; background: rgba(220, 53, 69, 0.1); }
+    .warning { border-color: #ffc107; background: rgba(255, 193, 7, 0.1); }
+    #console { background: #000; padding: 15px; border-radius: 8px; font-family: monospace; max-height: 400px; overflow-y: auto; }
+    .log-entry { margin: 5px 0; padding: 5px; border-left: 3px solid #666; }
+    .log-success { border-color: #28a745; color: #28a745; }
+    .log-error { border-color: #dc3545; color: #dc3545; }
+    .log-info { border-color: #17a2b8; color: #17a2b8; }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <h1 class="mb-4">🔬 TEST DIAGNOSTICO: opera-single.html Translations</h1>
+  
+  <!-- Test 1: i18n Availability -->
+  <div class="test-section" id="test1">
+    <h3>TEST 1: window.i18n Disponibile?</h3>
+    <div id="test1-result">⏳ In attesa...</div>
+  </div>
+  
+  <!-- Test 2: DOM Elements Found -->
+  <div class="test-section" id="test2">
+    <h3>TEST 2: Elementi [data-i18n] Trovati?</h3>
+    <div id="test2-result">⏳ In attesa...</div>
+  </div>
+  
+  <!-- Test 3: Sample Elements -->
+  <div class="test-section" id="test3">
+    <h3>TEST 3: Elementi di Test</h3>
+    <div class="mb-3">
+      <strong>Elemento 1 (nav.home):</strong>
+      <span id="elem1" data-i18n="nav.home">Home</span>
+      <span id="elem1-result" class="ms-3"></span>
+    </div>
+    <div class="mb-3">
+      <strong>Elemento 2 (opera.status_available):</strong>
+      <span id="elem2" data-i18n="opera.status_available">Disponibile</span>
+      <span id="elem2-result" class="ms-3"></span>
+    </div>
+    <div class="mb-3">
+      <strong>Elemento 3 (opera.reveal_button):</strong>
+      <span id="elem3" data-i18n="opera.reveal_button">Rivela l'Opera</span>
+      <span id="elem3-result" class="ms-3"></span>
+    </div>
+  </div>
+  
+  <!-- Test 4: Manual Translation Test -->
+  <div class="test-section" id="test4">
+    <h3>TEST 4: Traduzione Manuale</h3>
+    <button id="translateBtn" class="btn btn-primary mb-3">🔄 Applica Traduzioni Manualmente</button>
+    <div id="test4-result"></div>
+  </div>
+  
+  <!-- Test 5: Language Change -->
+  <div class="test-section" id="test5">
+    <h3>TEST 5: Cambio Lingua</h3>
+    <div class="btn-group mb-3">
+      <button class="btn btn-outline-light" data-lang="it">🇮🇹 IT</button>
+      <button class="btn btn-outline-light" data-lang="en">🇬🇧 EN</button>
+      <button class="btn btn-outline-light" data-lang="de">🇩🇪 DE</button>
+    </div>
+    <div id="test5-result"></div>
+  </div>
+  
+  <!-- Console Log -->
+  <div class="test-section">
+    <h3>📟 Console Log</h3>
+    <div id="console"></div>
+  </div>
+  
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/i18n-simple.js"></script>
+
+<script>
+// Custom console logger
+const consoleDiv = document.getElementById('console');
+const originalLog = console.log;
+const originalError = console.error;
+
+function addLog(message, type = 'info') {
+  const entry = document.createElement('div');
+  entry.className = `log-entry log-${type}`;
+  entry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+  consoleDiv.appendChild(entry);
+  consoleDiv.scrollTop = consoleDiv.scrollHeight;
+}
+
+console.log = function(...args) {
+  originalLog.apply(console, args);
+  addLog(args.join(' '), 'info');
+};
+
+console.error = function(...args) {
+  originalError.apply(console, args);
+  addLog(args.join(' '), 'error');
+};
+
+// Wait for everything to load
+window.addEventListener('load', () => {
+  addLog('🎬 Pagina caricata completamente', 'success');
+  runTests();
+});
+
+function runTests() {
+  // TEST 1: i18n Availability
+  setTimeout(() => {
+    const test1Div = document.getElementById('test1');
+    const test1Result = document.getElementById('test1-result');
+    
+    if (typeof window.i18n !== 'undefined') {
+      test1Div.classList.add('success');
+      test1Result.innerHTML = `
+        ✅ window.i18n DISPONIBILE<br>
+        - Lingua attuale: <strong>${window.i18n.currentLang}</strong><br>
+        - isReady: <strong>${window.i18n.isReady}</strong><br>
+        - Lingue supportate: <strong>${window.i18n.supportedLanguages.join(', ')}</strong>
+      `;
+      addLog('✅ TEST 1 PASSED: window.i18n disponibile', 'success');
+    } else {
+      test1Div.classList.add('error');
+      test1Result.innerHTML = '❌ window.i18n NON DISPONIBILE';
+      addLog('❌ TEST 1 FAILED: window.i18n non trovato', 'error');
+    }
+  }, 100);
+  
+  // TEST 2: DOM Elements
+  setTimeout(() => {
+    const test2Div = document.getElementById('test2');
+    const test2Result = document.getElementById('test2-result');
+    const elements = document.querySelectorAll('[data-i18n]');
+    
+    if (elements.length > 0) {
+      test2Div.classList.add('success');
+      test2Result.innerHTML = `✅ Trovati <strong>${elements.length}</strong> elementi con [data-i18n]`;
+      addLog(`✅ TEST 2 PASSED: ${elements.length} elementi trovati`, 'success');
+    } else {
+      test2Div.classList.add('error');
+      test2Result.innerHTML = '❌ NESSUN elemento [data-i18n] trovato!';
+      addLog('❌ TEST 2 FAILED: 0 elementi trovati', 'error');
+    }
+  }, 200);
+  
+  // TEST 3: Check Sample Elements
+  setTimeout(() => {
+    const test3Div = document.getElementById('test3');
+    const elem1 = document.getElementById('elem1');
+    const elem2 = document.getElementById('elem2');
+    const elem3 = document.getElementById('elem3');
+    
+    let allGood = true;
+    
+    // Check each element
+    if (elem1.textContent === 'Home') {
+      document.getElementById('elem1-result').innerHTML = '<span class="text-success">✅ Tradotto</span>';
+    } else {
+      document.getElementById('elem1-result').innerHTML = '<span class="text-danger">❌ NON tradotto</span>';
+      allGood = false;
+    }
+    
+    if (elem2.textContent === 'Disponibile') {
+      document.getElementById('elem2-result').innerHTML = '<span class="text-success">✅ Tradotto</span>';
+    } else {
+      document.getElementById('elem2-result').innerHTML = '<span class="text-danger">❌ NON tradotto</span>';
+      allGood = false;
+    }
+    
+    if (elem3.textContent === "Rivela l'Opera") {
+      document.getElementById('elem3-result').innerHTML = '<span class="text-success">✅ Tradotto</span>';
+    } else {
+      document.getElementById('elem3-result').innerHTML = '<span class="text-danger">❌ NON tradotto</span>';
+      allGood = false;
+    }
+    
+    test3Div.classList.add(allGood ? 'success' : 'warning');
+    addLog(allGood ? '✅ TEST 3 PASSED: Tutti gli elementi tradotti' : '⚠️ TEST 3 PARTIAL: Alcuni elementi non tradotti', allGood ? 'success' : 'error');
+  }, 300);
+}
+
+// TEST 4: Manual Translation
+document.getElementById('translateBtn').addEventListener('click', () => {
+  const test4Result = document.getElementById('test4-result');
+  
+  if (window.i18n) {
+    addLog('🔄 Applicazione manuale traduzioni...', 'info');
+    window.i18n.applyTranslations();
+    test4Result.innerHTML = '<span class="text-success">✅ Traduzioni applicate! Controlla gli elementi sopra.</span>';
+    addLog('✅ Traduzioni applicate manualmente', 'success');
+  } else {
+    test4Result.innerHTML = '<span class="text-danger">❌ window.i18n non disponibile!</span>';
+    addLog('❌ Impossibile applicare traduzioni: i18n non disponibile', 'error');
+  }
+});
+
+// TEST 5: Language Change
+document.querySelectorAll('[data-lang]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const lang = btn.getAttribute('data-lang');
+    const test5Result = document.getElementById('test5-result');
+    
+    if (window.i18n) {
+      addLog(`🌍 Cambio lingua a: ${lang.toUpperCase()}`, 'info');
+      window.i18n.changeLanguage(lang);
+      test5Result.innerHTML = `<span class="text-success">✅ Lingua cambiata a: <strong>${lang.toUpperCase()}</strong></span>`;
+    } else {
+      test5Result.innerHTML = '<span class="text-danger">❌ window.i18n non disponibile!</span>';
+    }
+  });
+});
+
+// Listen for i18nReady event
+window.addEventListener('i18nReady', (e) => {
+  addLog(`🎉 Evento i18nReady ricevuto! Lingua: ${e.detail.language}`, 'success');
+});
+
+// Listen for languageChanged event
+window.addEventListener('languageChanged', (e) => {
+  addLog(`🌍 Evento languageChanged ricevuto! Nuova lingua: ${e.detail.language}`, 'success');
+});
+
+addLog('🚀 Test diagnostico inizializzato', 'info');
+</script>
+
+</body>
+</html>
+
