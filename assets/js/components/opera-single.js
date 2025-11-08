@@ -48,16 +48,26 @@ class OperaSingle {
     }
     
     // CRITICAL: Re-apply translations after DOM manipulation
-    if (window.i18n) {
-      console.log('🔄 Riapplicazione traduzioni dopo caricamento opera...');
-      window.i18n.applyTranslations();
-    }
+    this.applyTranslationsWhenReady();
     
     // Listen for language changes
     window.addEventListener('languageChanged', () => {
       console.log('🌍 Lingua cambiata, aggiorno contenuto dinamico...');
       this.updateDynamicTranslations();
     });
+  }
+  
+  applyTranslationsWhenReady() {
+    if (window.i18n && window.i18n.isReady) {
+      console.log('🔄 Riapplicazione traduzioni dopo caricamento opera...');
+      window.i18n.applyTranslations();
+    } else {
+      console.log('⏳ Attendo i18n ready...');
+      window.addEventListener('i18nReady', () => {
+        console.log('🔄 i18n ready! Applico traduzioni...');
+        window.i18n.applyTranslations();
+      }, { once: true });
+    }
   }
   
   updateDynamicTranslations() {
@@ -446,7 +456,7 @@ class OperaSingle {
       }
       
       // Re-apply translations for dynamic content
-      if (window.i18n) {
+      if (window.i18n && window.i18n.isReady) {
         window.i18n.applyTranslations();
       }
       

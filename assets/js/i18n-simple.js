@@ -1276,9 +1276,21 @@
       this.supportedLanguages = ['it', 'en', 'de', 'fr', 'es'];
       this.currentLang = this.getSavedLanguage();
       this.translations = translations;
+      this.isReady = false;
       
-      console.log('✅ SimpleI18n caricato');
-      this.init();
+      console.log('✅ SimpleI18n caricato - attendo DOM...');
+      
+      // CRITICAL: Wait for DOM to be ready before applying translations
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+          console.log('📄 DOM pronto, inizializzo traduzioni...');
+          this.init();
+        });
+      } else {
+        // DOM already loaded
+        console.log('📄 DOM già pronto, inizializzo traduzioni...');
+        this.init();
+      }
     }
     
     getSavedLanguage() {
@@ -1295,12 +1307,23 @@
       document.documentElement.lang = this.currentLang;
       this.applyTranslations();
       this.setupLanguageSelectors();
+      this.isReady = true;
       console.log(`✅ Lingua attiva: ${this.currentLang.toUpperCase()}`);
+      
+      // Dispatch ready event for other scripts
+      window.dispatchEvent(new CustomEvent('i18nReady', { 
+        detail: { language: this.currentLang } 
+      }));
     }
     
     translate(key) {
       const lang = this.translations[this.currentLang];
       return lang && lang[key] ? lang[key] : key;
+    }
+    
+    // Alias for translate (common i18n pattern)
+    t(key) {
+      return this.translate(key);
     }
     
     applyTranslations() {
