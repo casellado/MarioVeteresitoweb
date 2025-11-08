@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🔬 TEST DIAGNOSTICO DEFINITIVO</title>
+  <style>
+    body {
+      font-family: monospace;
+      background: #000;
+      color: #0f0;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .section {
+      border: 2px solid #0f0;
+      padding: 15px;
+      margin: 20px 0;
+    }
+    .success { color: #0f0; }
+    .error { color: #f00; }
+    .warning { color: #ff0; }
+    button {
+      background: #0f0;
+      color: #000;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      cursor: pointer;
+      margin: 10px;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #0ff;
+    }
+    #result {
+      white-space: pre-wrap;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🔬 TEST DIAGNOSTICO DEFINITIVO - Mario Vetere i18n</h1>
+
+<div class="section">
+  <h2>ISTRUZIONI:</h2>
+  <p>1. Clicca il pulsante qui sotto</p>
+  <p>2. Leggi ATTENTAMENTE il risultato</p>
+  <p>3. Copia TUTTO il testo del risultato</p>
+  <p>4. Invialo all'assistente</p>
+</div>
+
+<button onclick="runDiagnostic()" style="font-size: 24px; padding: 20px 40px;">
+  ▶️ AVVIA TEST DIAGNOSTICO
+</button>
+
+<div class="section">
+  <h2>📊 RISULTATO:</h2>
+  <div id="result"></div>
+</div>
+
+<script src="assets/js/i18n-simple.js?v=2024110801"></script>
+<script>
+function runDiagnostic() {
+  const resultDiv = document.getElementById('result');
+  let report = '';
+  
+  report += '═══════════════════════════════════════\n';
+  report += '  TEST DIAGNOSTICO DEFINITIVO\n';
+  report += '  ' + new Date().toLocaleString() + '\n';
+  report += '═══════════════════════════════════════\n\n';
+  
+  // TEST 1: window.i18n exists?
+  report += '▸ TEST 1: window.i18n disponibile?\n';
+  if (typeof window.i18n !== 'undefined') {
+    report += '  ✅ SI - window.i18n esiste\n';
+    report += '     - currentLang: ' + window.i18n.currentLang + '\n';
+    report += '     - isReady: ' + window.i18n.isReady + '\n';
+    report += '     - supportedLanguages: ' + window.i18n.supportedLanguages.join(', ') + '\n';
+  } else {
+    report += '  ❌ NO - window.i18n NON ESISTE!\n';
+    report += '  PROBLEMA CRITICO: Il file i18n-simple.js non si è caricato!\n\n';
+    resultDiv.innerHTML = '<pre class="error">' + report + '</pre>';
+    return;
+  }
+  report += '\n';
+  
+  // TEST 2: Translations loaded?
+  report += '▸ TEST 2: Traduzioni caricate?\n';
+  try {
+    const testKey = 'nav.home';
+    const itTranslation = window.i18n.translations.it[testKey];
+    const enTranslation = window.i18n.translations.en[testKey];
+    
+    report += '  ✅ Traduzioni accessibili\n';
+    report += '     - IT "nav.home": "' + itTranslation + '"\n';
+    report += '     - EN "nav.home": "' + enTranslation + '"\n';
+  } catch(e) {
+    report += '  ❌ ERRORE: ' + e.message + '\n';
+  }
+  report += '\n';
+  
+  // TEST 3: Can translate?
+  report += '▸ TEST 3: Metodo translate() funziona?\n';
+  try {
+    const translated = window.i18n.t('nav.home');
+    report += '  ✅ SI - t("nav.home") = "' + translated + '"\n';
+  } catch(e) {
+    report += '  ❌ ERRORE: ' + e.message + '\n';
+  }
+  report += '\n';
+  
+  // TEST 4: Language change works?
+  report += '▸ TEST 4: Cambio lingua funziona?\n';
+  try {
+    const beforeLang = window.i18n.currentLang;
+    const beforeTranslation = window.i18n.t('nav.home');
+    
+    // Change to English
+    window.i18n.changeLanguage('en');
+    const afterLang = window.i18n.currentLang;
+    const afterTranslation = window.i18n.t('nav.home');
+    
+    report += '  Prima: ' + beforeLang + ' - "' + beforeTranslation + '"\n';
+    report += '  Dopo:  ' + afterLang + ' - "' + afterTranslation + '"\n';
+    
+    if (beforeTranslation !== afterTranslation) {
+      report += '  ✅ SI - La lingua è cambiata correttamente!\n';
+    } else {
+      report += '  ⚠️  ATTENZIONE - Il testo è lo stesso!\n';
+    }
+    
+    // Restore
+    window.i18n.changeLanguage(beforeLang);
+  } catch(e) {
+    report += '  ❌ ERRORE: ' + e.message + '\n';
+  }
+  report += '\n';
+  
+  // TEST 5: DOM elements
+  report += '▸ TEST 5: Elementi DOM con [data-i18n]?\n';
+  const elements = document.querySelectorAll('[data-i18n]');
+  report += '  Trovati: ' + elements.length + ' elementi\n';
+  if (elements.length === 0) {
+    report += '  ⚠️  Nessun elemento da tradurre in questa pagina di test\n';
+    report += '  (Questo è normale per questa pagina diagnostica)\n';
+  }
+  report += '\n';
+  
+  // TEST 6: Check localStorage
+  report += '▸ TEST 6: Preferenza lingua salvata?\n';
+  const savedLang = localStorage.getItem('preferredLanguage');
+  report += '  localStorage.preferredLanguage: ' + (savedLang || 'null') + '\n';
+  report += '\n';
+  
+  // TEST 7: Browser language
+  report += '▸ TEST 7: Lingua browser?\n';
+  report += '  navigator.language: ' + navigator.language + '\n';
+  report += '\n';
+  
+  // FINAL VERDICT
+  report += '═══════════════════════════════════════\n';
+  report += '  VERDETTO FINALE\n';
+  report += '═══════════════════════════════════════\n\n';
+  
+  if (typeof window.i18n !== 'undefined' && window.i18n.isReady) {
+    report += '✅ IL SISTEMA i18n FUNZIONA CORRETTAMENTE!\n\n';
+    report += 'Il problema potrebbe essere:\n';
+    report += '1. Cache del browser (premi Ctrl+Shift+R per ricaricare)\n';
+    report += '2. Elementi senza data-i18n attributes\n';
+    report += '3. Contenuto dinamico non riapplicato\n\n';
+    report += 'PROSSIMO PASSO:\n';
+    report += '- Vai su opera-single.html?id=1\n';
+    report += '- Premi F12 per aprire Console\n';
+    report += '- Cerca messaggi di errore rossi\n';
+    report += '- Copia e invia il contenuto della console\n';
+  } else {
+    report += '❌ IL SISTEMA i18n NON FUNZIONA!\n\n';
+    report += 'PROBLEMA: i18n non si è inizializzato.\n';
+    report += 'SOLUZIONE: Usare un sistema di traduzione alternativo.\n';
+  }
+  
+  resultDiv.innerHTML = '<pre class="success">' + report + '</pre>';
+  
+  // Also log to console
+  console.log(report);
+}
+
+// Auto-run after 1 second
+setTimeout(() => {
+  runDiagnostic();
+}, 1000);
+</script>
+
+</body>
+</html>
+
