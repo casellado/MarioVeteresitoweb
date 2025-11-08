@@ -1,0 +1,15 @@
+# robots.txt per Mario Vetere Art
+# https://casellado.github.io/MarioVeteresitoweb/
+
+User-agent: *
+Allow: /
+
+# Escludi file di test e documentazione
+Disallow: /test-*.html
+Disallow: /TEST-*.html
+Disallow: /docs/
+Disallow: /.git/
+
+# Sitemap
+Sitemap: https://casellado.github.io/MarioVeteresitoweb/sitemap.xml
+
