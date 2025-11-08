@@ -210,6 +210,12 @@ img, video, iframe {
   transition: transform var(--transition-base);
 }
 
+.navbar-brand img {
+  max-width: 100%;
+  height: auto;
+  max-height: 40px;
+}
+
 .navbar-brand:hover {
   transform: scale(1.05);
 }
@@ -734,6 +740,30 @@ a, button, .btn {
   clip: rect(0, 0, 0, 0) !important;
   white-space: nowrap !important;
   border: 0 !important;
+}
+
+/* ========================================
+   16. HERO SECTION LAYOUT FIX
+======================================== */
+
+/* Sposta riquadro artwork a destra per evitare sovrapposizione */
+.hero-artwork {
+  margin-left: auto;
+  margin-right: 0;
+  max-width: 480px;
+}
+
+/* Scroll indicator sopra tutto */
+.scroll-indicator {
+  z-index: 20;
+}
+
+@media (max-width: 991px) {
+  .hero-artwork {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    max-width: 100% !important;
+  }
 }
 
 /* ========================================
