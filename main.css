@@ -686,7 +686,32 @@ a, button, .btn {
 }
 
 /* ========================================
-   16. PRINT STYLES
+   16. LANGUAGE SELECTOR ACTIVE STATE
+======================================== */
+
+/* Active language indicator */
+.dropdown-item[data-lang].active,
+.dropdown-item[data-lang]:active {
+  background-color: #0d6efd !important;
+  color: #fff !important;
+}
+
+.dropdown-item[data-lang].active:hover,
+.dropdown-item[data-lang].active:focus {
+  background-color: #0b5ed7 !important;
+  color: #fff !important;
+}
+
+/* Visual checkmark for current language */
+.dropdown-item[data-lang].active::before {
+  content: '✓ ';
+  font-weight: bold;
+  margin-right: 0.5rem;
+  color: #fff;
+}
+
+/* ========================================
+   17. PRINT STYLES
 ======================================== */
 
 @media print {
