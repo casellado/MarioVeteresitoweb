@@ -1320,6 +1320,18 @@
         el.setAttribute('alt', translation);
       });
       
+      // Handle generic attributes (aria-label, title, etc.)
+      const attrElements = document.querySelectorAll('[data-i18n-attr]');
+      attrElements.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        const attrs = el.getAttribute('data-i18n-attr').split(',').map(a => a.trim());
+        const translation = this.translate(key);
+        
+        attrs.forEach(attr => {
+          el.setAttribute(attr, translation);
+        });
+      });
+      
       console.log(`✅ Traduzioni applicate (${this.currentLang})`);
     }
     
