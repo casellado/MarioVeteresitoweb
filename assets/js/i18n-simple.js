@@ -18,6 +18,7 @@
       "nav.technique": "Tecnica",
       "nav.about": "Chi Sono",
       "nav.contact": "Contatti",
+      "nav.language_selector": "Seleziona lingua",
       
       // Mobile Menu
       "mobile.menu": "Menu",
@@ -275,6 +276,7 @@
       "nav.technique": "Technique",
       "nav.about": "About",
       "nav.contact": "Contact",
+      "nav.language_selector": "Select language",
       
       // Mobile Menu
       "mobile.menu": "Menu",
@@ -531,6 +533,7 @@
       "nav.technique": "Technik",
       "nav.about": "Über mich",
       "nav.contact": "Kontakt",
+      "nav.language_selector": "Sprache wählen",
       
       // Mobile Menu
       "mobile.menu": "Menü",
@@ -773,6 +776,7 @@
       "nav.technique": "Technique",
       "nav.about": "À propos",
       "nav.contact": "Contact",
+      "nav.language_selector": "Sélectionner la langue",
       
       // Mobile Menu
       "mobile.menu": "Menu",
@@ -1015,6 +1019,7 @@
       "nav.technique": "Técnica",
       "nav.about": "Sobre mí",
       "nav.contact": "Contacto",
+      "nav.language_selector": "Seleccionar idioma",
       
       // Mobile Menu
       "mobile.menu": "Menú",
