@@ -27,9 +27,10 @@
 ### 3. opera-single.html ✅ COMPLETO
 - **Traduzioni JSON:** IT ✅ EN ✅ DE ✅ FR ✅ ES ✅
 - **HTML data-i18n:** ✅ Applicato
-- **Footer:** ❌ MANCANTE
+- **Footer:** ✅ AGGIUNTO
+- **aria-labels:** ✅ Tradotti (language selector, reveal, fullscreen)
 - **Chiavi:** ~43
-- **Status:** 🟡 98% DONE (manca solo footer)
+- **Status:** 🟢 100% DONE
 
 ---
 
@@ -91,8 +92,13 @@
 | **Pagine completate** | 3/8 | 37.5% |
 | **Pagine in corso** | 1/8 | 12.5% |
 | **Pagine da iniziare** | 4/8 | 50% |
-| **Chiavi tradotte (5 lingue)** | ~1,090 | 60% |
+| **Chiavi tradotte (5 lingue)** | ~1,095 | 61% |
 | **Chiavi totali stimate** | ~1,800 | - |
+
+**ULTIMO AGGIORNAMENTO:** opera-single.html completato al 100% ✅
+- Aggiunto footer completo
+- Tradotti tutti gli aria-label (language selector, reveal, fullscreen)
+- 1 nuova chiave: nav.language_selector (×5 lingue = +5 chiavi totali)
 
 ---
 
