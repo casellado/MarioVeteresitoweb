@@ -764,10 +764,7 @@ a, button, .btn {
 
 @media (max-width: 768px) {
   .dashboard-launcher {
-    bottom: 80px;
-    width: 48px;
-    height: 48px;
-    font-size: 1.25rem;
+    display: none !important;
   }
 }
 
