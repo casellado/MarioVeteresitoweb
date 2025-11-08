@@ -92,10 +92,12 @@ class OperaSingle {
     }
     
     if (art.status === 'available') {
-      statusBadge.textContent = 'Disponibile';
+      statusBadge.setAttribute('data-i18n', 'opera.status_available');
+      statusBadge.textContent = window.i18n ? window.i18n.t('opera.status_available') : 'Disponibile';
       statusBadge.className = 'badge bg-success';
     } else {
-      statusBadge.textContent = 'Venduta';
+      statusBadge.setAttribute('data-i18n', 'opera.status_sold');
+      statusBadge.textContent = window.i18n ? window.i18n.t('opera.status_sold') : 'Venduta';
       statusBadge.className = 'badge bg-danger';
     }
     
@@ -108,9 +110,11 @@ class OperaSingle {
     if (art.status === 'available') {
       document.getElementById('operaPrice').textContent = `€ ${art.price.toLocaleString('it-IT')}`;
     } else {
-      document.getElementById('operaPrice').textContent = 'Venduta';
-      document.getElementById('operaPrice').classList.remove('text-gradient');
-      document.getElementById('operaPrice').classList.add('text-danger');
+      const priceEl = document.getElementById('operaPrice');
+      priceEl.setAttribute('data-i18n', 'opera.status_sold');
+      priceEl.textContent = window.i18n ? window.i18n.t('opera.status_sold') : 'Venduta';
+      priceEl.classList.remove('text-gradient');
+      priceEl.classList.add('text-danger');
     }
     
     // Technical details
@@ -182,10 +186,12 @@ class OperaSingle {
       
       if (isRevealed) {
         positiveImage.style.opacity = '1';
-        revealBtn.innerHTML = '<i class="bi bi-eye-slash me-2"></i><span>Nascondi Opera</span>';
+        const hideText = window.i18n ? window.i18n.t('opera.hide_artwork') : 'Nascondi Opera';
+        revealBtn.innerHTML = `<i class="bi bi-eye-slash me-2"></i><span>${hideText}</span>`;
       } else {
         positiveImage.style.opacity = '0';
-        revealBtn.innerHTML = '<i class="bi bi-eye me-2"></i><span>Rivela l\'Opera</span>';
+        const revealText = window.i18n ? window.i18n.t('opera.reveal_button') : 'Rivela l\'Opera';
+        revealBtn.innerHTML = `<i class="bi bi-eye me-2"></i><span>${revealText}</span>`;
       }
     });
     
@@ -509,7 +515,8 @@ class OperaSingle {
     if (this.artwork.status !== 'available') {
       buyBtn.classList.remove('btn-primary');
       buyBtn.classList.add('btn-secondary');
-      buyBtn.innerHTML = '<i class="bi bi-x-circle me-2"></i>Opera Non Disponibile';
+      const notAvailableText = window.i18n ? window.i18n.t('opera.not_available') : 'Opera Non Disponibile';
+      buyBtn.innerHTML = `<i class="bi bi-x-circle me-2"></i>${notAvailableText}`;
       buyBtn.style.pointerEvents = 'none';
       return;
     }
