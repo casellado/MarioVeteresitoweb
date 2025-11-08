@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- SEO Meta Tags -->
-  <title>Ordine Completato | Mario Vetere Art</title>
-  <meta name="description" content="Grazie per il tuo acquisto">
+  <title data-i18n="success.page_title">Ordine Completato | Mario Vetere Art</title>
+  <meta name="description" content="Grazie per il tuo acquisto" data-i18n-attr="content:success.page_desc">
   
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/images/logo/favicon.svg">
@@ -75,7 +75,7 @@
       
       <!-- Language Selector -->
       <div class="dropdown language-selector">
-        <button class="btn btn-icon dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-label="Seleziona lingua">
+        <button class="btn btn-icon dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-label="Seleziona lingua" data-i18n-attr="aria-label:nav.language_selector">
           <i class="bi bi-globe fs-5"></i>
         </button>
         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
@@ -100,8 +100,8 @@
             <div class="success-icon">
               <i class="bi bi-check-circle-fill text-white" style="font-size: 4rem;"></i>
             </div>
-            <h1 class="display-3 fw-bold mb-3">Pagamento Completato!</h1>
-            <p class="lead text-secondary mb-4">
+            <h1 class="display-3 fw-bold mb-3" data-i18n="success.hero_title">Pagamento Completato!</h1>
+            <p class="lead text-secondary mb-4" data-i18n="success.hero_subtitle">
               Grazie per il tuo acquisto. La tua opera d'arte è ora tua!
             </p>
           </div>
@@ -109,21 +109,21 @@
           <!-- Order Details -->
           <div class="glass-card p-5 rounded-4 mb-4" data-aos="fade-up" data-aos-delay="100">
             <div class="d-flex align-items-center justify-content-between mb-4">
-              <h2 class="h5 fw-bold mb-0">Dettagli Ordine</h2>
-              <span class="badge bg-success">Completato</span>
+              <h2 class="h5 fw-bold mb-0" data-i18n="success.order_details">Dettagli Ordine</h2>
+              <span class="badge bg-success" data-i18n="success.badge_completed">Completato</span>
             </div>
             
             <div class="order-details">
               <div class="row mb-3">
-                <div class="col-6 text-secondary">Numero Ordine:</div>
+                <div class="col-6 text-secondary" data-i18n="success.order_number">Numero Ordine:</div>
                 <div class="col-6 text-end fw-semibold" id="orderNumber">---</div>
               </div>
               <div class="row mb-3">
-                <div class="col-6 text-secondary">Data:</div>
+                <div class="col-6 text-secondary" data-i18n="success.order_date">Data:</div>
                 <div class="col-6 text-end fw-semibold" id="orderDate">---</div>
               </div>
               <div class="row mb-4">
-                <div class="col-6 text-secondary">Email:</div>
+                <div class="col-6 text-secondary" data-i18n="success.order_email">Email:</div>
                 <div class="col-6 text-end fw-semibold" id="customerEmail">---</div>
               </div>
               
@@ -134,12 +134,13 @@
                 <img id="artworkImage" 
                      src="" 
                      alt="Opera acquistata" 
+                     data-i18n-alt="success.artwork_alt"
                      class="rounded-3" 
                      style="width: 120px; height: 120px; object-fit: cover;">
                 <div class="flex-grow-1">
                   <h3 class="h6 fw-bold mb-2" id="artworkTitle">---</h3>
                   <p class="small text-secondary mb-2">
-                    Tecnica: #<span style="color: #0099FF;">negativo</span><span style="color: #FFD700;">è</span><span style="color: #FF6600;">positivo</span>®
+                    <span data-i18n="success.technique">Tecnica:</span> #<span style="color: #0099FF;">negativo</span><span style="color: #FFD700;">è</span><span style="color: #FF6600;">positivo</span>®
                   </p>
                   <p class="small text-secondary mb-0" id="artworkDetails">---</p>
                 </div>
@@ -150,19 +151,19 @@
               <!-- Price Summary -->
               <div class="price-summary">
                 <div class="d-flex justify-content-between mb-2">
-                  <span class="text-secondary">Prezzo opera:</span>
+                  <span class="text-secondary" data-i18n="success.price_subtotal">Prezzo opera:</span>
                   <span id="priceSubtotal">€ 0</span>
                 </div>
                 <div class="d-flex justify-content-between mb-2">
-                  <span class="text-secondary">Spedizione:</span>
+                  <span class="text-secondary" data-i18n="success.price_shipping">Spedizione:</span>
                   <span id="priceShipping">€ 0</span>
                 </div>
                 <div class="d-flex justify-content-between mb-3">
-                  <span class="text-secondary">IVA:</span>
+                  <span class="text-secondary" data-i18n="success.price_tax">IVA:</span>
                   <span id="priceTax">€ 0</span>
                 </div>
                 <div class="d-flex justify-content-between align-items-center pt-3 border-top border-secondary">
-                  <span class="h6 fw-bold mb-0">Totale Pagato:</span>
+                  <span class="h6 fw-bold mb-0" data-i18n="success.price_total">Totale Pagato:</span>
                   <span class="h4 mb-0 text-gradient fw-bold" id="priceTotal">€ 0</span>
                 </div>
               </div>
@@ -171,7 +172,7 @@
 
           <!-- What's Next -->
           <div class="glass-card p-5 rounded-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-            <h2 class="h5 fw-bold mb-4">Cosa Succede Ora?</h2>
+            <h2 class="h5 fw-bold mb-4" data-i18n="success.whatsnext_title">Cosa Succede Ora?</h2>
             
             <div class="timeline-steps">
               <div class="d-flex align-items-start gap-3 mb-4">
@@ -180,8 +181,8 @@
                   <i class="bi bi-check text-white"></i>
                 </div>
                 <div>
-                  <h3 class="h6 fw-bold mb-1">Email di Conferma</h3>
-                  <p class="text-secondary small mb-0">
+                  <h3 class="h6 fw-bold mb-1" data-i18n="success.step1_title">Email di Conferma</h3>
+                  <p class="text-secondary small mb-0" data-i18n="success.step1_desc">
                     Riceverai un'email di conferma con tutti i dettagli dell'ordine
                   </p>
                 </div>
@@ -193,8 +194,8 @@
                   <span class="text-white fw-bold">2</span>
                 </div>
                 <div>
-                  <h3 class="h6 fw-bold mb-1">Preparazione Opera</h3>
-                  <p class="text-secondary small mb-0">
+                  <h3 class="h6 fw-bold mb-1" data-i18n="success.step2_title">Preparazione Opera</h3>
+                  <p class="text-secondary small mb-0" data-i18n="success.step2_desc">
                     L'opera verrà accuratamente imballata con materiali professionali
                   </p>
                 </div>
@@ -206,8 +207,8 @@
                   <span class="text-white fw-bold">3</span>
                 </div>
                 <div>
-                  <h3 class="h6 fw-bold mb-1">Spedizione Assicurata</h3>
-                  <p class="text-secondary small mb-0">
+                  <h3 class="h6 fw-bold mb-1" data-i18n="success.step3_title">Spedizione Assicurata</h3>
+                  <p class="text-secondary small mb-0" data-i18n="success.step3_desc">
                     Riceverai il tracking per seguire la spedizione (2-5 giorni lavorativi)
                   </p>
                 </div>
@@ -219,8 +220,8 @@
                   <span class="text-white fw-bold">4</span>
                 </div>
                 <div>
-                  <h3 class="h6 fw-bold mb-1">Certificato di Autenticità</h3>
-                  <p class="text-secondary small mb-0">
+                  <h3 class="h6 fw-bold mb-1" data-i18n="success.step4_title">Certificato di Autenticità</h3>
+                  <p class="text-secondary small mb-0" data-i18n="success.step4_desc">
                     Incluso nella spedizione, firmato dall'artista Mario Vetere
                   </p>
                 </div>
@@ -233,20 +234,20 @@
             <div class="col-md-6">
               <a href="opere.html" class="btn btn-outline-light btn-lg w-100">
                 <i class="bi bi-grid me-2"></i>
-                Continua a Esplorare
+                <span data-i18n="success.btn_explore">Continua a Esplorare</span>
               </a>
             </div>
             <div class="col-md-6">
               <a href="contatti.html" class="btn btn-primary btn-lg w-100">
                 <i class="bi bi-envelope me-2"></i>
-                Contattaci
+                <span data-i18n="success.btn_contact">Contattaci</span>
               </a>
             </div>
           </div>
 
           <!-- Social Share -->
           <div class="text-center" data-aos="fade-up" data-aos-delay="400">
-            <p class="text-secondary mb-3">Condividi la tua nuova opera:</p>
+            <p class="text-secondary mb-3" data-i18n="success.share_title">Condividi la tua nuova opera:</p>
             <div class="d-flex gap-2 justify-content-center">
               <button class="btn btn-outline-light" onclick="shareOnFacebook()">
                 <i class="bi bi-facebook"></i>
@@ -268,7 +269,7 @@
   <!-- Footer -->
   <footer class="footer py-5 bg-surface border-top border-secondary mt-6">
     <div class="container text-center">
-      <p class="text-secondary mb-0">© 2024 Mario Vetere Art. Tutti i diritti riservati.</p>
+      <p class="text-secondary mb-0" data-i18n="success.footer">© 2024 Mario Vetere Art. Tutti i diritti riservati.</p>
     </div>
   </footer>
 
@@ -277,7 +278,7 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   
   <!-- Internationalization (Simple & Fast) -->
-  <script src="assets/js/i18n-simple.js?v=2024110801"></script>
+  <script src="assets/js/i18n-simple.js?v=2024110802"></script>
   
   <script src="app.js"></script>
   <script>
