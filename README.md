@@ -6,9 +6,7 @@ Sito ufficiale dell'artista contemporaneo italiano **Mario Vetere**, creatore de
 
 ### 🌐 Sito Online
 
-**URL Ufficiale**: https://www.mariovetere.art
-
-*(Temporaneo: https://casellado.github.io/MarioVeteresitoweb/)*
+**URL**: https://casellado.github.io/MarioVeteresitoweb/
 
 ### 🌍 Multilingua
 
@@ -28,7 +26,7 @@ Sito ufficiale dell'artista contemporaneo italiano **Mario Vetere**, creatore de
 ### 📞 Contatti
 
 - Instagram: [@mario_vetere_art](https://instagram.com/mario_vetere_art)
-- Website: [www.mariovetere.art](https://www.mariovetere.art)
+- Website: [casellado.github.io/MarioVeteresitoweb](https://casellado.github.io/MarioVeteresitoweb/)
 
 ---
 
