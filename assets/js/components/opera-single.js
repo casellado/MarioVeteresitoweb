@@ -46,6 +46,55 @@ class OperaSingle {
     if (typeof AOS !== 'undefined') {
       AOS.init({ duration: 800, once: true });
     }
+    
+    // CRITICAL: Re-apply translations after DOM manipulation
+    if (window.i18n) {
+      console.log('🔄 Riapplicazione traduzioni dopo caricamento opera...');
+      window.i18n.applyTranslations();
+    }
+    
+    // Listen for language changes
+    window.addEventListener('languageChanged', () => {
+      console.log('🌍 Lingua cambiata, aggiorno contenuto dinamico...');
+      this.updateDynamicTranslations();
+    });
+  }
+  
+  updateDynamicTranslations() {
+    // Update status badge
+    const statusBadge = document.getElementById('operaStatus');
+    if (statusBadge && this.artwork) {
+      if (this.artwork.status === 'available') {
+        statusBadge.textContent = window.i18n.t('opera.status_available');
+      } else {
+        statusBadge.textContent = window.i18n.t('opera.status_sold');
+      }
+    }
+    
+    // Update price if sold
+    const priceEl = document.getElementById('operaPrice');
+    if (priceEl && this.artwork && this.artwork.status !== 'available') {
+      priceEl.textContent = window.i18n.t('opera.status_sold');
+    }
+    
+    // Update reveal button
+    const revealBtn = document.getElementById('revealBtn');
+    const revealText = document.getElementById('revealText');
+    if (revealBtn && revealText) {
+      const isRevealed = document.getElementById('positiveImage').style.opacity === '1';
+      if (isRevealed) {
+        revealText.textContent = window.i18n.t('opera.hide_artwork');
+      } else {
+        revealText.textContent = window.i18n.t('opera.reveal_button');
+      }
+    }
+    
+    // Update buy button if not available
+    const buyBtn = document.getElementById('buyNowBtn');
+    if (buyBtn && this.artwork && this.artwork.status !== 'available') {
+      const notAvailableText = window.i18n.t('opera.not_available');
+      buyBtn.innerHTML = `<i class="bi bi-x-circle me-2"></i>${notAvailableText}`;
+    }
   }
   
   getOperaIdFromURL() {
@@ -396,6 +445,11 @@ class OperaSingle {
         AOS.refresh();
       }
       
+      // Re-apply translations for dynamic content
+      if (window.i18n) {
+        window.i18n.applyTranslations();
+      }
+      
     } catch (error) {
       console.error('❌ Errore caricamento opere correlate:', error);
     }
@@ -413,9 +467,9 @@ class OperaSingle {
     
     let badge = '';
     if (artwork.featured) {
-      badge = '<span class="badge bg-warning text-dark position-absolute" style="top: 8px; right: 8px; z-index: 10;">In Evidenza</span>';
+      badge = '<span class="badge bg-warning text-dark position-absolute" style="top: 8px; right: 8px; z-index: 10;" data-i18n="artworks.featured">In Evidenza</span>';
     } else if (artwork.status === 'available') {
-      badge = '<span class="badge bg-success position-absolute" style="top: 8px; right: 8px; z-index: 10;">Disponibile</span>';
+      badge = '<span class="badge bg-success position-absolute" style="top: 8px; right: 8px; z-index: 10;" data-i18n="artworks.available">Disponibile</span>';
     }
     
     col.innerHTML = `
@@ -425,7 +479,7 @@ class OperaSingle {
           <div class="image-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center opacity-0">
             <a href="opera-single.html?id=${artwork.id}" class="btn btn-primary btn-sm">
               <i class="bi bi-eye me-2"></i>
-              Vedi Dettagli
+              <span data-i18n="artworks.view_details">Vedi Dettagli</span>
             </a>
           </div>
           ${badge}
@@ -433,7 +487,7 @@ class OperaSingle {
         <div class="card-body p-4">
           <h3 class="h5 mb-3 text-white" style="line-height: 1.4;">${artwork.title}</h3>
           <p class="text-secondary small mb-3" style="line-height: 1.5;">
-            Tecnica: #<span style="color: #0099FF;">negativo</span><span style="color: #FFD700;">è</span><span style="color: #FF6600;">positivo</span>® | ${artwork.year}
+            <span data-i18n="artworks.technique_label">Tecnica</span>: #<span style="color: #0099FF;">negativo</span><span style="color: #FFD700;">è</span><span style="color: #FF6600;">positivo</span>® | ${artwork.year}
           </p>
           <div class="artwork-details d-flex flex-wrap gap-2 mb-4">
             <span class="badge bg-dark-subtle text-white-50">${artwork.dimensions.width}×${artwork.dimensions.height} cm</span>
@@ -444,10 +498,10 @@ class OperaSingle {
             <div class="price">
               ${artwork.status === 'available' ? 
                 `<span class="h4 mb-0 text-gradient fw-bold">€ ${artwork.price.toLocaleString('it-IT')}</span>` :
-                `<span class="h5 mb-0 text-danger">Venduta</span>`
+                `<span class="h5 mb-0 text-danger" data-i18n="artworks.sold">Venduta</span>`
               }
             </div>
-            <a href="opera-single.html?id=${artwork.id}" class="btn btn-outline-light btn-sm">Scopri</a>
+            <a href="opera-single.html?id=${artwork.id}" class="btn btn-outline-light btn-sm" data-i18n="artworks.details">Scopri</a>
           </div>
         </div>
       </article>
