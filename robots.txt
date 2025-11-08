@@ -1,5 +1,5 @@
 # robots.txt per Mario Vetere Art
-# https://casellado.github.io/MarioVeteresitoweb/
+# https://www.mariovetere.art/
 
 User-agent: *
 Allow: /
@@ -11,5 +11,5 @@ Disallow: /docs/
 Disallow: /.git/
 
 # Sitemap
-Sitemap: https://casellado.github.io/MarioVeteresitoweb/sitemap.xml
+Sitemap: https://www.mariovetere.art/sitemap.xml
 
