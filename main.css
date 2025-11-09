@@ -770,6 +770,12 @@ a, button, .btn {
    16. LANGUAGE SELECTOR ACTIVE STATE
 ======================================== */
 
+/* Ensure dropdown menu is visible above navbar */
+.language-selector .dropdown-menu {
+  z-index: 1050 !important;
+  min-width: 200px;
+}
+
 /* Active language indicator */
 .dropdown-item[data-lang].active,
 .dropdown-item[data-lang]:active {
