@@ -474,12 +474,20 @@ class OperaSingle {
       const response = await fetch('assets/data/artworks.json?v=' + Date.now());
       const data = await response.json();
       
-      // Get related artworks (same category, excluding current)
+      // Get related artworks (same collection, excluding current)
       const related = data.artworks
-        .filter(a => a.category === this.artwork.category && a.id !== this.artwork.id)
+        .filter(a => a.collection === this.artwork.collection && a.id !== this.artwork.id)
         .slice(0, 3);
       
-      // If not enough, add others
+      // If not enough from same collection, try same category
+      if (related.length < 3) {
+        const sameCategory = data.artworks
+          .filter(a => a.category === this.artwork.category && a.id !== this.artwork.id && !related.find(r => r.id === a.id))
+          .slice(0, 3 - related.length);
+        related.push(...sameCategory);
+      }
+      
+      // If still not enough, add any others
       if (related.length < 3) {
         const others = data.artworks
           .filter(a => a.id !== this.artwork.id && !related.find(r => r.id === a.id))
