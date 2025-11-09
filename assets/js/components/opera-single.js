@@ -114,7 +114,7 @@ class OperaSingle {
   
   async loadArtwork() {
     try {
-      const response = await fetch('assets/data/artworks.json');
+      const response = await fetch('assets/data/artworks.json?v=' + Date.now());
       const data = await response.json();
       
       this.artwork = data.artworks.find(a => a.id == this.operaId);
@@ -426,7 +426,7 @@ class OperaSingle {
   
   async loadRelatedArtworks() {
     try {
-      const response = await fetch('assets/data/artworks.json');
+      const response = await fetch('assets/data/artworks.json?v=' + Date.now());
       const data = await response.json();
       
       // Get related artworks (same category, excluding current)

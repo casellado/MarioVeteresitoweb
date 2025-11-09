@@ -36,7 +36,7 @@ class ArtworksGallery {
   
   async loadArtworks() {
     try {
-      const response = await fetch('assets/data/artworks.json');
+      const response = await fetch('assets/data/artworks.json?v=' + Date.now());
       const data = await response.json();
       this.artworks = data.artworks;
       this.filteredArtworks = [...this.artworks];
