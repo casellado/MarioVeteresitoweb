@@ -19,35 +19,68 @@ class FeaturedArtworks {
       console.log('✅ Featured Artworks caricati:', this.artworks.length);
     } catch (error) {
       console.error('❌ Errore caricamento featured artworks:', error);
+      this.showError(error);
+    }
+  }
+
+  showError(error) {
+    const container = document.getElementById('featured-artworks-grid');
+    if (container) {
+      container.innerHTML = `
+        <div class="col-12 text-center py-5">
+          <i class="bi bi-exclamation-triangle-fill text-danger fs-1 mb-3 d-block"></i>
+          <h3 class="h5 text-white mb-2">Errore caricamento opere</h3>
+          <p class="text-secondary mb-3">${error.message}</p>
+          <button class="btn btn-outline-primary" onclick="location.reload()">
+            <i class="bi bi-arrow-clockwise me-2"></i>
+            Riprova
+          </button>
+        </div>
+      `;
     }
   }
 
   async loadArtworks() {
+    console.log('🔄 Inizio caricamento artworks.json...');
     try {
       const response = await fetch('assets/data/artworks.json?v=' + Date.now());
-      if (!response.ok) throw new Error('Failed to load artworks');
+      console.log('📡 Response ricevuta:', response.status, response.ok);
+      
+      if (!response.ok) throw new Error(`HTTP ${response.status}: ${response.statusText}`);
       
       const data = await response.json();
+      console.log('📦 JSON parsato, chiavi:', Object.keys(data));
+      
       // Filtra solo opere featured (data.artworks perché il JSON ha {artworks: [...]})
       const artworksArray = data.artworks || data;
+      console.log('🔍 Opere totali:', artworksArray.length);
+      
       this.artworks = artworksArray.filter(art => art.featured === true).slice(0, 3);
-      console.log('📦 Opere featured caricate:', this.artworks.map(a => a.id));
+      console.log('⭐ Opere featured trovate:', this.artworks.length);
+      console.log('📋 IDs:', this.artworks.map(a => a.id));
+      
+      if (this.artworks.length === 0) {
+        throw new Error('Nessuna opera featured trovata nel JSON');
+      }
     } catch (error) {
-      console.error('Errore fetch artworks:', error);
+      console.error('❌ Errore in loadArtworks():', error);
       throw error;
     }
   }
 
   renderArtworks() {
+    console.log('🎨 Inizio rendering artworks...');
     const container = document.getElementById('featured-artworks-grid');
     if (!container) {
-      console.warn('⚠️  Container #featured-artworks-grid non trovato');
+      console.error('❌ Container #featured-artworks-grid NON TROVATO!');
       return;
     }
 
+    console.log('✅ Container trovato, opere da renderizzare:', this.artworks.length);
     container.innerHTML = '';
 
     this.artworks.forEach((artwork, index) => {
+      console.log(`🖼️  Rendering opera ${artwork.id}...`);
       const col = document.createElement('div');
       col.className = 'col-lg-4 col-md-6';
       col.setAttribute('data-aos', 'fade-up');
