@@ -380,141 +380,14 @@
           </p>
         </div>
         
-        <!-- Artworks Grid -->
-        <div class="row g-4 mb-5">
-          
-          <!-- Artwork Card 1 -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <article class="artwork-card glass-card h-100 rounded-4 overflow-hidden" role="article">
-              
-              <!-- Image -->
-              <div class="artwork-image position-relative">
-                <img src="assets/images/opere/featured/opera-1.jpg" alt="Opera d'arte" data-i18n-alt="artworks.artwork_alt" class="img-fluid w-100" style="aspect-ratio: 4/3; object-fit: cover;" loading="lazy">
-                
-                <!-- Quick View Overlay -->
-                <div class="image-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center opacity-0">
-                  <a href="opera-single.html?id=1" class="btn btn-primary btn-sm" aria-label="Vedi dettagli opera">
-                    <i class="bi bi-eye me-2"></i>
-                    <span data-i18n="artworks.view_details">Vedi Dettagli</span>
-                  </a>
-                </div>
-                
-                <!-- Badge -->
-                <span class="badge bg-success position-absolute" style="top: 8px; right: 8px; z-index: 10; box-shadow: 0 2px 8px rgba(0,0,0,0.3);" data-i18n="artworks.available">
-                  Disponibile
-                </span>
-              </div>
-              
-              <!-- Card Body -->
-              <div class="card-body p-4">
-                <h3 class="h5 mb-3 text-white" style="line-height: 1.4;" data-i18n="artworks.artwork1_title">Tramonto Calabrese</h3>
-                <p class="text-secondary small mb-3" style="line-height: 1.5;"><span data-i18n="artworks.technique_label">Tecnica:</span> #<span style="color: #0099FF;">negativo</span><span style="color: #FFD700;">è</span><span style="color: #FF6600;">positivo</span>® | 2024</p>
-                
-                <!-- Details -->
-                <div class="artwork-details d-flex flex-wrap gap-2 mb-4">
-                  <span class="badge bg-dark-subtle text-white-50">70×50 cm</span>
-                  <span class="badge bg-dark-subtle text-white-50" data-i18n="artworks.material_colored_chalks">Crete colorate</span>
-                  <span class="badge bg-dark-subtle text-white-50" data-i18n="artworks.material_cardboard">Cartoncino</span>
-                </div>
-                
-                <!-- Price & CTA -->
-                <div class="d-flex align-items-center justify-content-between">
-                  <div class="price">
-                    <span class="h4 mb-0 text-gradient fw-bold">€ 1.200</span>
-                  </div>
-                <a href="opera-single.html?id=1" class="btn btn-outline-light btn-sm">
-                  <span data-i18n="artworks.details">Scopri</span>
-                </a>
-                </div>
-              </div>
-              
-            </article>
+        <!-- Artworks Grid - DINAMICO da artworks.json -->
+        <div class="row g-4 mb-5" id="featured-artworks-grid">
+          <!-- Le card saranno caricate dinamicamente da featured-artworks.js -->
+          <div class="col-12 text-center py-5">
+            <div class="spinner-border text-primary" role="status">
+              <span class="visually-hidden">Caricamento opere...</span>
+            </div>
           </div>
-          
-          <!-- Artwork Card 2 -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <article class="artwork-card glass-card h-100 rounded-4 overflow-hidden" role="article">
-              
-              <div class="artwork-image position-relative">
-                <img src="assets/images/opere/featured/opera-2.jpg" alt="Opera d'arte" data-i18n-alt="artworks.artwork_alt" class="img-fluid w-100" style="aspect-ratio: 4/3; object-fit: cover;" loading="lazy">
-                
-                <div class="image-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center opacity-0">
-                  <a href="opera-single.html?id=2" class="btn btn-primary btn-sm" aria-label="Vedi dettagli opera">
-                    <i class="bi bi-eye me-2"></i>
-                    <span data-i18n="artworks.view_details">Vedi Dettagli</span>
-                  </a>
-                </div>
-                
-                <span class="badge bg-success position-absolute" style="top: 8px; right: 8px; z-index: 10; box-shadow: 0 2px 8px rgba(0,0,0,0.3);" data-i18n="artworks.available">
-                  Disponibile
-                </span>
-              </div>
-              
-              <div class="card-body p-4">
-                <h3 class="h5 mb-3 text-white" style="line-height: 1.4;" data-i18n="artworks.artwork2_title">Riflessi Urbani</h3>
-                <p class="text-secondary small mb-3" style="line-height: 1.5;"><span data-i18n="artworks.technique_label">Tecnica:</span> #<span style="color: #0099FF;">negativo</span><span style="color: #FFD700;">è</span><span style="color: #FF6600;">positivo</span>® | 2024</p>
-                
-                <div class="artwork-details d-flex flex-wrap gap-2 mb-4">
-                  <span class="badge bg-dark-subtle text-white-50">50×70 cm</span>
-                  <span class="badge bg-dark-subtle text-white-50" data-i18n="artworks.material_colored_chalks">Crete colorate</span>
-                  <span class="badge bg-dark-subtle text-white-50" data-i18n="artworks.material_cardboard">Cartoncino</span>
-                </div>
-                
-                <div class="d-flex align-items-center justify-content-between">
-                  <div class="price">
-                    <span class="h4 mb-0 text-gradient fw-bold">€ 950</span>
-                  </div>
-                  <a href="opera-single.html?id=2" class="btn btn-outline-light btn-sm">
-                    <span data-i18n="artworks.details">Scopri</span>
-                  </a>
-                </div>
-              </div>
-              
-            </article>
-          </div>
-          
-          <!-- Artwork Card 3 -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <article class="artwork-card glass-card h-100 rounded-4 overflow-hidden" role="article">
-              
-              <div class="artwork-image position-relative">
-                <img src="assets/images/opere/featured/opera-3.jpg" alt="Opera d'arte" data-i18n-alt="artworks.artwork_alt" class="img-fluid w-100" style="aspect-ratio: 4/3; object-fit: cover;" loading="lazy">
-                
-                <div class="image-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center opacity-0">
-                  <a href="opera-single.html?id=3" class="btn btn-primary btn-sm" aria-label="Vedi dettagli opera">
-                    <i class="bi bi-eye me-2"></i>
-                    <span data-i18n="artworks.view_details">Vedi Dettagli</span>
-                  </a>
-                </div>
-                
-                <span class="badge bg-warning text-dark position-absolute" style="top: 8px; right: 8px; z-index: 10; box-shadow: 0 2px 8px rgba(0,0,0,0.3); font-weight: 600;" data-i18n="artworks.featured">
-                  In Evidenza
-                </span>
-              </div>
-              
-              <div class="card-body p-4">
-                <h3 class="h5 mb-3 text-white" style="line-height: 1.4;" data-i18n="artworks.artwork3_title">Natura Silenziosa</h3>
-                <p class="text-secondary small mb-3" style="line-height: 1.5;"><span data-i18n="artworks.technique_label">Tecnica:</span> #<span style="color: #0099FF;">negativo</span><span style="color: #FFD700;">è</span><span style="color: #FF6600;">positivo</span>® | 2024</p>
-                
-                <div class="artwork-details d-flex flex-wrap gap-2 mb-4">
-                  <span class="badge bg-dark-subtle text-white-50">100×70 cm</span>
-                  <span class="badge bg-dark-subtle text-white-50" data-i18n="artworks.material_colored_chalks">Crete colorate</span>
-                  <span class="badge bg-dark-subtle text-white-50" data-i18n="artworks.material_cardboard">Cartoncino</span>
-                </div>
-                
-                <div class="d-flex align-items-center justify-content-between">
-                  <div class="price">
-                    <span class="h4 mb-0 text-gradient fw-bold">€ 2.500</span>
-                  </div>
-                  <a href="opera-single.html?id=3" class="btn btn-outline-light btn-sm">
-                    <span data-i18n="artworks.details">Scopri</span>
-                  </a>
-                </div>
-              </div>
-              
-            </article>
-          </div>
-          
         </div>
         
         <!-- View All CTA -->
@@ -982,6 +855,9 @@
   
   <!-- Artwork Translations Helper -->
   <script src="assets/js/artwork-i18n-helper.js"></script>
+  
+  <!-- Featured Artworks Component (Homepage) -->
+  <script src="assets/js/components/featured-artworks.js"></script>
   
   <!-- Cookie Consent Banner (GDPR) -->
   <script src="assets/js/cookie-consent.js"></script>
