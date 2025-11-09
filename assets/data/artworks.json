@@ -23,13 +23,13 @@
       },
       "images": {
         "negative": {
-          "main": "assets/images/opere/gallery/1-tramonto-negative-main.jpg",
-          "detail": "assets/images/opere/gallery/1-tramonto-negative-detail.jpg",
-          "process": "assets/images/opere/gallery/1-tramonto-negative-process.jpg"
+          "main": "assets/images/opere/hero/hero-negative.jpg",
+          "detail": "assets/images/opere/hero/hero-negative.jpg",
+          "process": "assets/images/opere/hero/hero-negative.jpg"
         },
         "positive": {
-          "main": "assets/images/opere/gallery/1-tramonto-positive-main.jpg",
-          "detail": "assets/images/opere/gallery/1-tramonto-positive-detail.jpg"
+          "main": "assets/images/opere/hero/hero-positive.jpg",
+          "detail": "assets/images/opere/hero/hero-positive.jpg"
         },
         "thumbnail": "assets/images/opere/featured/opera-1.jpg"
       },
@@ -75,13 +75,13 @@
       },
       "images": {
         "negative": {
-          "main": "assets/images/opere/gallery/2-urbano-negative-main.jpg",
-          "detail": "assets/images/opere/gallery/2-urbano-negative-detail.jpg",
-          "process": "assets/images/opere/gallery/2-urbano-negative-process.jpg"
+          "main": "assets/images/opere/hero/hero-negative.jpg",
+          "detail": "assets/images/opere/hero/hero-negative.jpg",
+          "process": "assets/images/opere/hero/hero-negative.jpg"
         },
         "positive": {
-          "main": "assets/images/opere/gallery/2-urbano-positive-main.jpg",
-          "detail": "assets/images/opere/gallery/2-urbano-positive-detail.jpg"
+          "main": "assets/images/opere/hero/hero-positive.jpg",
+          "detail": "assets/images/opere/hero/hero-positive.jpg"
         },
         "thumbnail": "assets/images/opere/featured/opera-2.jpg"
       },
@@ -127,13 +127,13 @@
       },
       "images": {
         "negative": {
-          "main": "assets/images/opere/gallery/3-natura-negative-main.jpg",
-          "detail": "assets/images/opere/gallery/3-natura-negative-detail.jpg",
-          "process": "assets/images/opere/gallery/3-natura-negative-process.jpg"
+          "main": "assets/images/opere/hero/hero-negative.jpg",
+          "detail": "assets/images/opere/hero/hero-negative.jpg",
+          "process": "assets/images/opere/hero/hero-negative.jpg"
         },
         "positive": {
-          "main": "assets/images/opere/gallery/3-natura-positive-main.jpg",
-          "detail": "assets/images/opere/gallery/3-natura-positive-detail.jpg"
+          "main": "assets/images/opere/hero/hero-positive.jpg",
+          "detail": "assets/images/opere/hero/hero-positive.jpg"
         },
         "thumbnail": "assets/images/opere/featured/opera-3.jpg"
       },
@@ -179,15 +179,15 @@
       },
       "images": {
         "negative": {
-          "main": "assets/images/opere/gallery/4-volto-negative-main.jpg",
-          "detail": "assets/images/opere/gallery/4-volto-negative-detail.jpg",
-          "process": "assets/images/opere/gallery/4-volto-negative-process.jpg"
+          "main": "assets/images/opere/hero/hero-negative.jpg",
+          "detail": "assets/images/opere/hero/hero-negative.jpg",
+          "process": "assets/images/opere/hero/hero-negative.jpg"
         },
         "positive": {
-          "main": "assets/images/opere/gallery/4-volto-positive-main.jpg",
-          "detail": "assets/images/opere/gallery/4-volto-positive-detail.jpg"
+          "main": "assets/images/opere/hero/hero-positive.jpg",
+          "detail": "assets/images/opere/hero/hero-positive.jpg"
         },
-        "thumbnail": "assets/images/opere/gallery/4-volto-thumb.jpg"
+        "thumbnail": "assets/images/opere/featured/opera-1.jpg"
       },
       "tags": ["ritratto", "volto", "ombra", "luce", "emozione"],
       "seo": {
@@ -231,15 +231,15 @@
       },
       "images": {
         "negative": {
-          "main": "assets/images/opere/gallery/5-alba-negative-main.jpg",
-          "detail": "assets/images/opere/gallery/5-alba-negative-detail.jpg",
-          "process": "assets/images/opere/gallery/5-alba-negative-process.jpg"
+          "main": "assets/images/opere/hero/hero-negative.jpg",
+          "detail": "assets/images/opere/hero/hero-negative.jpg",
+          "process": "assets/images/opere/hero/hero-negative.jpg"
         },
         "positive": {
-          "main": "assets/images/opere/gallery/5-alba-positive-main.jpg",
-          "detail": "assets/images/opere/gallery/5-alba-positive-detail.jpg"
+          "main": "assets/images/opere/hero/hero-positive.jpg",
+          "detail": "assets/images/opere/hero/hero-positive.jpg"
         },
-        "thumbnail": "assets/images/opere/gallery/5-alba-thumb.jpg"
+        "thumbnail": "assets/images/opere/featured/opera-2.jpg"
       },
       "tags": ["alba", "mare", "mediterraneo", "sole", "paesaggio"],
       "seo": {
