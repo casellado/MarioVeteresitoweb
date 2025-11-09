@@ -28,8 +28,9 @@ class FeaturedArtworks {
       if (!response.ok) throw new Error('Failed to load artworks');
       
       const data = await response.json();
-      // Filtra solo opere featured
-      this.artworks = data.filter(art => art.featured === true).slice(0, 3);
+      // Filtra solo opere featured (data.artworks perché il JSON ha {artworks: [...]})
+      const artworksArray = data.artworks || data;
+      this.artworks = artworksArray.filter(art => art.featured === true).slice(0, 3);
       console.log('📦 Opere featured caricate:', this.artworks.map(a => a.id));
     } catch (error) {
       console.error('Errore fetch artworks:', error);
