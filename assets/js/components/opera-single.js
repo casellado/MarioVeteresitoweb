@@ -90,9 +90,11 @@ class OperaSingle {
   }
   
   updateDynamicTranslations() {
+    if (!this.artwork) return;
+    
     // Update status badge
     const statusBadge = document.getElementById('operaStatus');
-    if (statusBadge && this.artwork) {
+    if (statusBadge) {
       if (this.artwork.status === 'available') {
         statusBadge.textContent = window.i18n.t('opera.status_available');
       } else {
@@ -102,9 +104,32 @@ class OperaSingle {
     
     // Update price if sold
     const priceEl = document.getElementById('operaPrice');
-    if (priceEl && this.artwork && this.artwork.status !== 'available') {
+    if (priceEl && this.artwork.status !== 'available') {
       priceEl.textContent = window.i18n.t('opera.status_sold');
     }
+    
+    // Update TITLE & DESCRIPTIONS (NUOVO SISTEMA)
+    const title = window.ArtworkI18n ? window.ArtworkI18n.getTranslatedField(this.artwork.title) : this.artwork.title;
+    const shortDesc = window.ArtworkI18n && this.artwork.description && this.artwork.description.short ? 
+      window.ArtworkI18n.getTranslatedField(this.artwork.description.short) : 
+      (this.artwork.description ? this.artwork.description.short || '' : '');
+    const fullDesc = window.ArtworkI18n && this.artwork.description && this.artwork.description.full ? 
+      window.ArtworkI18n.getTranslatedField(this.artwork.description.full) : 
+      (this.artwork.description ? this.artwork.description.full || '' : '');
+    
+    // Update DOM elements
+    const titleEl = document.getElementById('operaTitle');
+    const shortDescEl = document.getElementById('operaShortDesc');
+    const fullDescEl = document.getElementById('operaDescription');
+    const breadcrumbEl = document.getElementById('breadcrumbTitle');
+    
+    if (titleEl) titleEl.textContent = title;
+    if (shortDescEl) shortDescEl.textContent = shortDesc;
+    if (fullDescEl) fullDescEl.textContent = fullDesc;
+    if (breadcrumbEl) breadcrumbEl.textContent = title;
+    
+    // Update page title
+    document.title = `${title} | Mario Vetere Art`;
     
     // Update reveal button
     const revealBtn = document.getElementById('revealBtn');
@@ -166,11 +191,20 @@ class OperaSingle {
   populatePageData() {
     const art = this.artwork;
     
+    // Get translated artwork data (NUOVO SISTEMA)
+    const title = window.ArtworkI18n ? window.ArtworkI18n.getTranslatedField(art.title) : art.title;
+    const shortDesc = window.ArtworkI18n && art.description && art.description.short ? 
+      window.ArtworkI18n.getTranslatedField(art.description.short) : 
+      (art.description ? art.description.short || '' : '');
+    const fullDesc = window.ArtworkI18n && art.description && art.description.full ? 
+      window.ArtworkI18n.getTranslatedField(art.description.full) : 
+      (art.description ? art.description.full || '' : '');
+    
     // Page title
-    document.title = `${art.title} | Mario Vetere Art`;
+    document.title = `${title} | Mario Vetere Art`;
     
     // Breadcrumb
-    document.getElementById('breadcrumbTitle').textContent = art.title;
+    document.getElementById('breadcrumbTitle').textContent = title;
     
     // Status badges
     const statusBadge = document.getElementById('operaStatus');
@@ -190,10 +224,10 @@ class OperaSingle {
       statusBadge.className = 'badge bg-danger';
     }
     
-    // Title & Description
-    document.getElementById('operaTitle').textContent = art.title;
-    document.getElementById('operaShortDesc').textContent = art.description.short;
-    document.getElementById('operaDescription').textContent = art.description.full;
+    // Title & Description (USANO TRADUZIONI)
+    document.getElementById('operaTitle').textContent = title;
+    document.getElementById('operaShortDesc').textContent = shortDesc;
+    document.getElementById('operaDescription').textContent = fullDesc;
     
     // Price
     if (art.status === 'available') {

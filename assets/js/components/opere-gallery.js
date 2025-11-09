@@ -203,11 +203,17 @@ class ArtworksGallery {
     const material = techniqueParts[0] || 'Crete colorate';
     const support = techniqueParts[1] || 'Cartoncino';
     
-    // Get translated texts
+    // Get translated texts from i18n
     const artworkAlt = window.i18n ? window.i18n.t('artworks.artwork_alt') : 'Opera d\'arte';
     const viewDetailsText = window.i18n ? window.i18n.t('artworks.view_details') : 'Vedi Dettagli';
     const techniqueLabel = window.i18n ? window.i18n.t('artworks.technique_label') : 'Tecnica';
     const detailsText = window.i18n ? window.i18n.t('artworks.details') : 'Dettagli';
+    
+    // Get translated artwork data (NUOVO SISTEMA)
+    const title = window.ArtworkI18n ? window.ArtworkI18n.getTranslatedField(artwork.title) : artwork.title;
+    const shortDesc = window.ArtworkI18n && artwork.description && artwork.description.short ? 
+      window.ArtworkI18n.getTranslatedField(artwork.description.short) : 
+      (artwork.description ? artwork.description.short || '' : '');
     
     col.innerHTML = `
       <article class="artwork-card glass-card h-100 rounded-4 overflow-hidden" role="article">
@@ -235,7 +241,7 @@ class ArtworksGallery {
         <!-- Card Body -->
         <div class="card-body p-4">
           <h3 class="h5 mb-3 text-white" style="line-height: 1.4;">
-            ${artwork.title}
+            ${title}
           </h3>
           <p class="text-secondary small mb-3" style="line-height: 1.5;">
             ${techniqueLabel}: #<span style="color: #0099FF;">negativo</span><span style="color: #FFD700;">è</span><span style="color: #FF6600;">positivo</span>® | ${artwork.year}

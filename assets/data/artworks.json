@@ -2,7 +2,13 @@
   "artworks": [
     {
       "id": 1,
-      "title": "Tramonto Calabrese",
+      "title": {
+        "it": "Tramonto Calabrese",
+        "en": "Calabrian Sunset",
+        "de": "Kalabrischer Sonnenuntergang",
+        "fr": "Coucher de Soleil Calabrais",
+        "es": "Atardecer Calabrés"
+      },
       "slug": "tramonto-calabrese",
       "year": 2024,
       "category": "paesaggi",
@@ -17,8 +23,20 @@
       "status": "available",
       "featured": true,
       "description": {
-        "short": "Un tramonto mozzafiato sulle coste calabresi",
-        "full": "Quest'opera cattura la magica atmosfera di un tramonto calabrese, dove il mare incontra il cielo in una danza di colori. Realizzata con la tecnica #negativoèpositivo®, rivela sfumature sorprendenti quando osservata in positivo.",
+        "short": {
+          "it": "Un tramonto mozzafiato sulle coste calabresi",
+          "en": "A breathtaking sunset on the Calabrian coast",
+          "de": "Ein atemberaubender Sonnenuntergang an der kalabrischen Küste",
+          "fr": "Un coucher de soleil à couper le souffle sur la côte calabraise",
+          "es": "Un atardecer impresionante en la costa calabresa"
+        },
+        "full": {
+          "it": "Quest'opera cattura la magica atmosfera di un tramonto calabrese, dove il mare incontra il cielo in una danza di colori. Realizzata con la tecnica #negativoèpositivo®, rivela sfumature sorprendenti quando osservata in positivo.",
+          "en": "This artwork captures the magical atmosphere of a Calabrian sunset, where the sea meets the sky in a dance of colors. Created with the patented #negativoèpositivo® technique, it reveals surprising nuances when viewed in positive.",
+          "de": "Dieses Kunstwerk fängt die magische Atmosphäre eines kalabrischen Sonnenuntergangs ein, wo das Meer den Himmel in einem Farbenspiel trifft. Mit der patentierten #negativoèpositivo®-Technik geschaffen, enthüllt es überraschende Nuancen, wenn es im Positiv betrachtet wird.",
+          "fr": "Cette œuvre capture l'atmosphère magique d'un coucher de soleil calabrais, où la mer rencontre le ciel dans une danse de couleurs. Réalisée avec la technique brevetée #negativoèpositivo®, elle révèle des nuances surprenantes lorsqu'elle est vue en positif.",
+          "es": "Esta obra captura la atmósfera mágica de un atardecer calabrés, donde el mar se encuentra con el cielo en una danza de colores. Realizada con la técnica patentada #negativoèpositivo®, revela matices sorprendentes cuando se observa en positivo."
+        },
         "technique": "L'opera è stata dipinta interamente a mano con i polpastrelli usando crete colorate, creando prima il negativo cromatico e poi rivelando il positivo attraverso fotografia professionale."
       },
       "images": {
