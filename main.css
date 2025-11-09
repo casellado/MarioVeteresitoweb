@@ -401,6 +401,14 @@ img, video, iframe {
 
 .stat-number {
   font-size: clamp(2rem, 3vw, 3rem);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 60px;
+}
+
+.stat-number svg {
+  display: block;
 }
 
 /* Reveal Effect */
