@@ -695,14 +695,23 @@ function initOperaSingle() {
 }
 
 // CRITICAL: Wait for i18n to be ready FIRST
-if (window.i18n && window.i18n.isReady) {
+// Check both immediate state and event, because event might have already fired
+if (window.i18n && (window.i18n.isReady || window.i18n.currentLang)) {
   console.log('✅ i18n già pronto, inizializzo Opera Single...');
   initOperaSingle();
 } else {
   console.log('⏳ Attendo i18n ready event...');
+  
+  // Set timeout as fallback in case event never fires
+  const fallbackTimer = setTimeout(() => {
+    console.warn('⚠️ Timeout i18n, inizializzo comunque...');
+    initOperaSingle();
+  }, 3000);
+  
   window.addEventListener('i18nReady', () => {
+    clearTimeout(fallbackTimer);
     console.log('✅ i18n ready ricevuto, inizializzo Opera Single...');
     initOperaSingle();
-  });
+  }, { once: true });
 }
 
