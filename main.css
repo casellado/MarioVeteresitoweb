@@ -219,6 +219,19 @@ img, video, iframe {
   max-width: 100%;
   height: auto;
   max-height: 40px;
+  /* Forma circolare con bordo oro */
+  border-radius: 50%;
+  border: 2px solid #d4af37;
+  padding: 4px;
+  background: rgba(10, 10, 10, 0.8);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.navbar-brand img:hover {
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+  border-color: #ffd700;
 }
 
 .navbar-brand:hover {
