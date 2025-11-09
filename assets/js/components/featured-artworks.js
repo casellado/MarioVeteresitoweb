@@ -59,9 +59,15 @@ class FeaturedArtworks {
         (typeof artwork.title === 'object' ? artwork.title.it : artwork.title);
 
       // Ottieni descrizione breve tradotta (se esiste)
-      const shortDesc = window.ArtworkI18n && artwork.description && artwork.description.short ? 
-        window.ArtworkI18n.getTranslatedField(artwork.description.short) : 
-        (artwork.description ? (artwork.description.short || '') : '');
+      let shortDesc = '';
+      if (window.ArtworkI18n && artwork.description && artwork.description.short) {
+        shortDesc = window.ArtworkI18n.getTranslatedField(artwork.description.short);
+      } else if (artwork.description && artwork.description.short) {
+        // Fallback: se short è un oggetto con traduzioni, usa l'italiano
+        shortDesc = typeof artwork.description.short === 'object' ? 
+          (artwork.description.short.it || '') : 
+          (artwork.description.short || '');
+      }
 
       // Badge disponibilità
       const availabilityText = window.i18n ? window.i18n.t('artworks.available') : 'Disponibile';
@@ -75,12 +81,18 @@ class FeaturedArtworks {
       const detailsText = window.i18n ? window.i18n.t('artworks.details') : 'Scopri';
       const artworkAlt = window.i18n ? window.i18n.t('artworks.artwork_alt') : 'Opera d\'arte';
 
+      // Immagine sicura (fallback multipli)
+      const imgSrc = artwork.images?.thumbnail || 
+                     artwork.images?.positive?.main || 
+                     artwork.images?.negative?.main || 
+                     'assets/images/opere/placeholder.jpg';
+
       col.innerHTML = `
         <article class="artwork-card glass-card h-100 rounded-4 overflow-hidden" role="article">
           
           <!-- Image -->
           <div class="artwork-image position-relative">
-            <img src="${artwork.images.thumbnail || artwork.images.positive.main}" 
+            <img src="${imgSrc}" 
                  alt="${artworkAlt}" 
                  class="img-fluid w-100" 
                  style="aspect-ratio: 4/3; object-fit: cover;" 

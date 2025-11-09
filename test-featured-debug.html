@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEBUG Featured Artworks</title>
+  <style>
+    body { font-family: monospace; padding: 20px; background: #1a1a1a; color: #fff; }
+    .log { margin: 10px 0; padding: 10px; background: #2a2a2a; border-left: 3px solid #0099ff; }
+    .error { border-left-color: #ff0000; }
+    .success { border-left-color: #00ff00; }
+    pre { background: #0a0a0a; padding: 10px; overflow-x: auto; }
+  </style>
+</head>
+<body>
+  <h1>🔍 DEBUG Featured Artworks Loading</h1>
+  <div id="logs"></div>
+  
+  <h2>Test Container</h2>
+  <div id="featured-artworks-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px;">
+    <div style="background: #2a2a2a; padding: 20px; text-align: center;">
+      <div style="animation: spin 1s linear infinite; display: inline-block;">⏳</div>
+      <p>Caricamento...</p>
+    </div>
+  </div>
+
+  <script>
+    const logs = document.getElementById('logs');
+    
+    function log(message, type = 'log') {
+      const div = document.createElement('div');
+      div.className = `log ${type}`;
+      div.innerHTML = `<strong>${new Date().toLocaleTimeString()}</strong>: ${message}`;
+      logs.appendChild(div);
+      console.log(message);
+    }
+
+    log('🚀 Inizio test caricamento Featured Artworks');
+
+    // Test 1: Carica il JSON
+    log('📦 Test 1: Caricamento JSON...');
+    fetch('assets/data/artworks.json?v=' + Date.now())
+      .then(response => {
+        log(`✅ Response ricevuta: status ${response.status}`, 'success');
+        return response.json();
+      })
+      .then(data => {
+        log(`✅ JSON parsato correttamente`, 'success');
+        log(`📊 Struttura JSON: ${JSON.stringify(Object.keys(data))}`);
+        
+        // Test 2: Verifica struttura
+        if (data.artworks) {
+          log(`✅ Trovato array 'artworks' con ${data.artworks.length} elementi`, 'success');
+        } else if (Array.isArray(data)) {
+          log(`⚠️ data è un array diretto con ${data.length} elementi`, 'log');
+        } else {
+          log(`❌ Struttura JSON non riconosciuta!`, 'error');
+          log(`<pre>${JSON.stringify(data, null, 2).substring(0, 500)}</pre>`);
+        }
+        
+        // Test 3: Filtra featured
+        const artworksArray = data.artworks || data;
+        log(`📦 Array opere da analizzare: ${artworksArray.length} elementi`);
+        
+        const featured = artworksArray.filter(art => art.featured === true);
+        log(`⭐ Opere featured trovate: ${featured.length}`, featured.length > 0 ? 'success' : 'error');
+        
+        if (featured.length > 0) {
+          log(`📋 ID opere featured: ${featured.map(a => a.id).join(', ')}`);
+          featured.forEach(art => {
+            log(`<pre>Opera ID ${art.id}:
+- Title: ${JSON.stringify(art.title)}
+- Status: ${art.status}
+- Featured: ${art.featured}
+- Images: ${art.images ? 'presente' : 'MANCANTE'}
+- Price: ${art.price}</pre>`);
+          });
+        }
+        
+        // Test 4: Rendering
+        log('🎨 Test 4: Rendering nel container...');
+        const container = document.getElementById('featured-artworks-grid');
+        if (!container) {
+          log('❌ Container #featured-artworks-grid NON TROVATO!', 'error');
+          return;
+        }
+        
+        log('✅ Container trovato, svuoto contenuto...', 'success');
+        container.innerHTML = '';
+        
+        featured.slice(0, 3).forEach((artwork, index) => {
+          log(`Rendering opera ${artwork.id}...`);
+          const col = document.createElement('div');
+          col.style.background = '#2a2a2a';
+          col.style.padding = '20px';
+          col.style.borderRadius = '8px';
+          
+          const title = typeof artwork.title === 'object' ? artwork.title.it : artwork.title;
+          const price = artwork.price ? `€${artwork.price.toLocaleString()}` : 'N/A';
+          
+          col.innerHTML = `
+            <h3 style="margin: 0 0 10px 0; color: #0099ff;">${title}</h3>
+            <p style="margin: 0 0 10px 0; color: #999; font-size: 14px;">ID: ${artwork.id}</p>
+            <p style="margin: 0 0 10px 0;"><strong>Prezzo:</strong> ${price}</p>
+            <p style="margin: 0 0 10px 0;"><strong>Status:</strong> ${artwork.status}</p>
+            <p style="margin: 0 0 10px 0;"><strong>Anno:</strong> ${artwork.year}</p>
+            ${artwork.images ? `<p style="margin: 0; color: #00ff00;">✅ Immagini presenti</p>` : `<p style="margin: 0; color: #ff0000;">❌ Immagini mancanti</p>`}
+          `;
+          
+          container.appendChild(col);
+          log(`✅ Opera ${artwork.id} renderizzata`, 'success');
+        });
+        
+        log('🎉 TEST COMPLETATO CON SUCCESSO!', 'success');
+        
+      })
+      .catch(error => {
+        log(`❌ ERRORE: ${error.message}`, 'error');
+        log(`<pre>${error.stack}</pre>`);
+      });
+  </script>
+</body>
+</html>
+
