@@ -116,3 +116,6 @@ backup/
 *.css.map
 *.js.map
 
+# === Area Admin (NON pubblicare) ===
+Dashboard/
+

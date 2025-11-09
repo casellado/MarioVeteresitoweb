@@ -927,73 +927,14 @@ a, button, .btn {
 }
 
 /* ========================================
-   17. DASHBOARD LAUNCHER (Admin Only)
-======================================== */
-
-.dashboard-launcher {
-  position: fixed;
-  bottom: 24px;
-  left: 24px;
-  width: 56px;
-  height: 56px;
-  background: linear-gradient(135deg, var(--accent-primary), #f4d35e);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #000;
-  font-size: 1.5rem;
-  text-decoration: none;
-  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
-  z-index: 9999;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-}
-
-.dashboard-launcher:hover {
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 12px 32px rgba(212, 175, 55, 0.6);
-  color: #000;
-}
-
-.dashboard-launcher:active {
-  transform: translateY(-2px) scale(1);
-}
-
-.dashboard-launcher i {
-  animation: rotate-slow 8s linear infinite;
-}
-
-@keyframes rotate-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.dashboard-launcher:hover i {
-  animation: rotate-fast 1s linear infinite;
-}
-
-@keyframes rotate-fast {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-@media (max-width: 768px) {
-  .dashboard-launcher {
-    display: none !important;
-  }
-}
-
-/* ========================================
-   18. PRINT STYLES
+   17. PRINT STYLES
 ======================================== */
 
 @media print {
   .navbar,
   .footer,
   .btn,
-  .scroll-indicator,
-  .dashboard-launcher {
+  .scroll-indicator {
     display: none !important;
   }
   
