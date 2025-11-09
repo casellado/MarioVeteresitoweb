@@ -169,6 +169,11 @@ img, video, iframe {
   overflow-x: hidden;
 }
 
+/* Allow dropdown to overflow navbar */
+.navbar .container-fluid {
+  overflow: visible !important;
+}
+
 /* Skip Link */
 .skip-link {
   position: absolute;
@@ -774,6 +779,17 @@ a, button, .btn {
 .language-selector .dropdown-menu {
   z-index: 1050 !important;
   min-width: 200px;
+  position: absolute !important;
+}
+
+/* Ensure navbar-actions allows dropdown overflow */
+.navbar-actions {
+  position: relative;
+  z-index: 1040;
+}
+
+.navbar-actions .dropdown {
+  position: static;
 }
 
 /* Active language indicator */
