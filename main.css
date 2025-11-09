@@ -126,6 +126,180 @@
 }
 
 /* === LIGHT THEME SPECIFIC STYLES === */
+
+/* TESTI - Forza colori scuri nel tema chiaro */
+[data-bs-theme="light"] .text-white,
+[data-bs-theme="light"] h1, 
+[data-bs-theme="light"] h2, 
+[data-bs-theme="light"] h3, 
+[data-bs-theme="light"] h4, 
+[data-bs-theme="light"] h5, 
+[data-bs-theme="light"] h6,
+[data-bs-theme="light"] p,
+[data-bs-theme="light"] .lead {
+  color: #1a1a1a !important;
+}
+
+[data-bs-theme="light"] .text-secondary {
+  color: #2d2d2d !important;
+}
+
+[data-bs-theme="light"] .text-muted {
+  color: #525252 !important;
+}
+
+/* Links nel tema chiaro */
+[data-bs-theme="light"] a {
+  color: #0066cc;
+}
+
+[data-bs-theme="light"] a:hover {
+  color: #004499;
+}
+
+/* Navbar nel tema chiaro */
+[data-bs-theme="light"] .navbar {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-bs-theme="light"] .nav-link {
+  color: #1a1a1a !important;
+}
+
+[data-bs-theme="light"] .nav-link:hover {
+  color: #c9a35f !important;
+}
+
+[data-bs-theme="light"] .navbar-brand {
+  color: #1a1a1a !important;
+}
+
+/* Card body nel tema chiaro */
+[data-bs-theme="light"] .card-body h3,
+[data-bs-theme="light"] .card-body h5,
+[data-bs-theme="light"] .card-body p,
+[data-bs-theme="light"] .card-body span {
+  color: #1a1a1a !important;
+}
+
+/* Footer nel tema chiaro */
+[data-bs-theme="light"] .footer {
+  background: #f8f9fa;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-bs-theme="light"] .footer,
+[data-bs-theme="light"] .footer p,
+[data-bs-theme="light"] .footer a,
+[data-bs-theme="light"] .footer li {
+  color: #1a1a1a !important;
+}
+
+[data-bs-theme="light"] .footer a:hover {
+  color: #c9a35f !important;
+}
+
+/* Display e titoli grandi */
+[data-bs-theme="light"] .display-1,
+[data-bs-theme="light"] .display-2,
+[data-bs-theme="light"] .display-3,
+[data-bs-theme="light"] .display-4,
+[data-bs-theme="light"] .display-5,
+[data-bs-theme="light"] .display-6 {
+  color: #1a1a1a !important;
+}
+
+/* Statistiche e numeri */
+[data-bs-theme="light"] .stat-number,
+[data-bs-theme="light"] .stat-label {
+  color: #1a1a1a !important;
+}
+
+/* Breadcrumb */
+[data-bs-theme="light"] .breadcrumb-item {
+  color: #2d2d2d !important;
+}
+
+[data-bs-theme="light"] .breadcrumb-item.active {
+  color: #1a1a1a !important;
+}
+
+/* Form elementi */
+[data-bs-theme="light"] label,
+[data-bs-theme="light"] .form-label {
+  color: #1a1a1a !important;
+}
+
+[data-bs-theme="light"] input,
+[data-bs-theme="light"] textarea,
+[data-bs-theme="light"] select,
+[data-bs-theme="light"] .form-control {
+  color: #1a1a1a !important;
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+[data-bs-theme="light"] input::placeholder,
+[data-bs-theme="light"] textarea::placeholder {
+  color: #6c757d !important;
+}
+
+/* Small text */
+[data-bs-theme="light"] .small,
+[data-bs-theme="light"] small {
+  color: #525252 !important;
+}
+
+/* Gradienti testo - Mantieni visibile nel tema chiaro */
+[data-bs-theme="light"] .text-gradient {
+  background: linear-gradient(135deg, #c9a35f 0%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Liste */
+[data-bs-theme="light"] ul li,
+[data-bs-theme="light"] ol li {
+  color: #1a1a1a !important;
+}
+
+/* Tabelle */
+[data-bs-theme="light"] table,
+[data-bs-theme="light"] th,
+[data-bs-theme="light"] td {
+  color: #1a1a1a !important;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Dropdown menu */
+[data-bs-theme="light"] .dropdown-menu {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+[data-bs-theme="light"] .dropdown-item {
+  color: #1a1a1a !important;
+}
+
+[data-bs-theme="light"] .dropdown-item:hover {
+  background: rgba(201, 163, 95, 0.1);
+  color: #1a1a1a !important;
+}
+
+/* Eccezioni - Elementi che DEVONO rimanere bianchi */
+[data-bs-theme="light"] .btn-primary,
+[data-bs-theme="light"] .btn-success,
+[data-bs-theme="light"] .btn-danger,
+[data-bs-theme="light"] .btn-dark,
+[data-bs-theme="light"] .badge.bg-success,
+[data-bs-theme="light"] .badge.bg-primary,
+[data-bs-theme="light"] .badge.bg-warning.text-dark,
+[data-bs-theme="light"] .badge.bg-danger {
+  /* I bottoni e badge colorati mantengono il testo originale */
+}
+
 [data-bs-theme="light"] .glass-card {
   background: rgba(248, 249, 250, 0.85);
   backdrop-filter: blur(12px);
