@@ -47,11 +47,12 @@ class OperaSingle {
       AOS.init({ duration: 800, once: true });
     }
     
-    // CRITICAL: Re-apply translations after DOM manipulation
-    this.applyTranslationsWhenReady();
-    
-    // CRITICAL: Re-initialize language selectors after page load
-    this.reinitLanguageSelectors();
+    // Apply translations (i18n is guaranteed to be ready at this point)
+    if (window.i18n) {
+      console.log('🔄 Applicazione traduzioni iniziale...');
+      window.i18n.applyTranslations();
+      window.i18n.setupLanguageSelectors();
+    }
     
     // Listen for language changes
     window.addEventListener('languageChanged', () => {
@@ -60,35 +61,6 @@ class OperaSingle {
       // Re-render related artworks with new translations
       this.loadRelatedArtworks();
     });
-  }
-  
-  applyTranslationsWhenReady() {
-    if (window.i18n && window.i18n.isReady) {
-      console.log('🔄 Riapplicazione traduzioni dopo caricamento opera...');
-      window.i18n.applyTranslations();
-    } else {
-      console.log('⏳ Attendo i18n ready...');
-      window.addEventListener('i18nReady', () => {
-        console.log('🔄 i18n ready! Applico traduzioni...');
-        window.i18n.applyTranslations();
-      }, { once: true });
-    }
-  }
-  
-  reinitLanguageSelectors() {
-    // Re-initialize language selector event listeners
-    if (window.i18n && window.i18n.setupLanguageSelectors) {
-      console.log('🔄 Re-inizializzazione language selectors...');
-      window.i18n.setupLanguageSelectors();
-    } else {
-      console.log('⏳ Attendo i18n per language selectors...');
-      window.addEventListener('i18nReady', () => {
-        console.log('🔄 i18n ready! Re-inizializzo language selectors...');
-        if (window.i18n && window.i18n.setupLanguageSelectors) {
-          window.i18n.setupLanguageSelectors();
-        }
-      }, { once: true });
-    }
   }
   
   updateDynamicTranslations() {
@@ -711,7 +683,26 @@ function copyLink() {
 
 // Initialize
 let operaSingle;
-document.addEventListener('DOMContentLoaded', () => {
-  operaSingle = new OperaSingle();
-});
+
+function initOperaSingle() {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      operaSingle = new OperaSingle();
+    });
+  } else {
+    operaSingle = new OperaSingle();
+  }
+}
+
+// CRITICAL: Wait for i18n to be ready FIRST
+if (window.i18n && window.i18n.isReady) {
+  console.log('✅ i18n già pronto, inizializzo Opera Single...');
+  initOperaSingle();
+} else {
+  console.log('⏳ Attendo i18n ready event...');
+  window.addEventListener('i18nReady', () => {
+    console.log('✅ i18n ready ricevuto, inizializzo Opera Single...');
+    initOperaSingle();
+  });
+}
 
