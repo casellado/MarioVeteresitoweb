@@ -181,6 +181,12 @@ class OperaSingle {
       console.log('✅ Opera caricata:', this.artwork.title);
       this.populatePageData();
       
+      // Apply translations immediately after populating data
+      if (window.i18n && window.i18n.isReady) {
+        window.i18n.applyTranslations();
+        console.log('🌍 Traduzioni applicate dopo caricamento dati');
+      }
+      
     } catch (error) {
       console.error('❌ Errore caricamento opera:', error);
       alert('Errore nel caricamento dell\'opera. Verrai reindirizzato alla galleria.');
