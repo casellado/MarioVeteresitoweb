@@ -72,7 +72,13 @@
     },
     {
       "id": 2,
-      "title": "Riflessi Urbani",
+      "title": {
+        "it": "Riflessi Urbani",
+        "en": "Urban Reflections",
+        "de": "Urbane Reflexionen",
+        "fr": "Reflets Urbains",
+        "es": "Reflejos Urbanos"
+      },
       "slug": "riflessi-urbani",
       "year": 2024,
       "category": "urbano",
@@ -87,8 +93,20 @@
       "status": "available",
       "featured": true,
       "description": {
-        "short": "La città moderna attraverso lo specchio della tecnica negativo-positivo",
-        "full": "Un'esplorazione dei contrasti urbani moderni, dove luci e ombre si fondono in una danza ipnotica. L'opera cattura l'essenza della vita metropolitana attraverso la lente unica della tecnica #negativoèpositivo®.",
+        "short": {
+          "it": "La città moderna attraverso lo specchio della tecnica negativo-positivo",
+          "en": "The modern city through the mirror of the negative-positive technique",
+          "de": "Die moderne Stadt durch den Spiegel der Negativ-Positiv-Technik",
+          "fr": "La ville moderne à travers le miroir de la technique négatif-positif",
+          "es": "La ciudad moderna a través del espejo de la técnica negativo-positivo"
+        },
+        "full": {
+          "it": "Un'esplorazione dei contrasti urbani moderni, dove luci e ombre si fondono in una danza ipnotica. L'opera cattura l'essenza della vita metropolitana attraverso la lente unica della tecnica #negativoèpositivo®.",
+          "en": "An exploration of modern urban contrasts, where lights and shadows merge in a hypnotic dance. The artwork captures the essence of metropolitan life through the unique lens of the #negativoèpositivo® technique.",
+          "de": "Eine Erkundung moderner urbaner Kontraste, bei der Lichter und Schatten in einem hypnotischen Tanz verschmelzen. Das Kunstwerk fängt die Essenz des Großstadtlebens durch die einzigartige Linse der #negativoèpositivo®-Technik ein.",
+          "fr": "Une exploration des contrastes urbains modernes, où les lumières et les ombres se fondent dans une danse hypnotique. L'œuvre capture l'essence de la vie métropolitaine à travers l'objectif unique de la technique #negativoèpositivo®.",
+          "es": "Una exploración de los contrastes urbanos modernos, donde luces y sombras se fusionan en una danza hipnótica. La obra captura la esencia de la vida metropolitana a través del lente único de la técnica #negativoèpositivo®."
+        },
         "technique": "Realizzata con crete colorate su cartoncino, ogni pennellata è stata applicata pensando all'inversione finale, creando un gioco di luci e ombre che prende vita nel processo fotografico."
       },
       "images": {
@@ -124,7 +142,13 @@
     },
     {
       "id": 3,
-      "title": "Natura Silenziosa",
+      "title": {
+        "it": "Natura Silenziosa",
+        "en": "Silent Nature",
+        "de": "Stille Natur",
+        "fr": "Nature Silencieuse",
+        "es": "Naturaleza Silenciosa"
+      },
       "slug": "natura-silenziosa",
       "year": 2024,
       "category": "paesaggi",
@@ -139,8 +163,20 @@
       "status": "available",
       "featured": true,
       "description": {
-        "short": "La quiete della natura catturata nell'inversione cromatica",
-        "full": "Un bosco silenzioso che rivela i suoi segreti solo a chi sa guardare oltre le apparenze. L'opera invita lo spettatore in un viaggio meditativo attraverso la natura, dove ogni foglia e ogni ombra nasconde una storia da scoprire.",
+        "short": {
+          "it": "La quiete della natura catturata nell'inversione cromatica",
+          "en": "The stillness of nature captured in chromatic inversion",
+          "de": "Die Stille der Natur in chromatischer Inversion eingefangen",
+          "fr": "Le calme de la nature capturé dans l'inversion chromatique",
+          "es": "La quietud de la naturaleza capturada en inversión cromática"
+        },
+        "full": {
+          "it": "Un bosco silenzioso che rivela i suoi segreti solo a chi sa guardare oltre le apparenze. L'opera invita lo spettatore in un viaggio meditativo attraverso la natura, dove ogni foglia e ogni ombra nasconde una storia da scoprire.",
+          "en": "A silent forest that reveals its secrets only to those who know how to look beyond appearances. The artwork invites the viewer on a meditative journey through nature, where every leaf and shadow hides a story to discover.",
+          "de": "Ein stiller Wald, der seine Geheimnisse nur denen offenbart, die über die Oberfläche hinausschauen können. Das Kunstwerk lädt den Betrachter zu einer meditativen Reise durch die Natur ein, wo jedes Blatt und jeder Schatten eine Geschichte verbirgt.",
+          "fr": "Une forêt silencieuse qui révèle ses secrets seulement à ceux qui savent regarder au-delà des apparences. L'œuvre invite le spectateur dans un voyage méditatif à travers la nature, où chaque feuille et chaque ombre cache une histoire à découvrir.",
+          "es": "Un bosque silencioso que revela sus secretos solo a quienes saben mirar más allá de las apariencias. La obra invita al espectador a un viaje meditativo a través de la naturaleza, donde cada hoja y cada sombra esconde una historia por descubrir."
+        },
         "technique": "Le crete colorate sono state stratificate con cura su cartoncino, creando profondità e texture che emergono magnificamente nel processo di inversione fotografica."
       },
       "images": {
@@ -176,7 +212,13 @@
     },
     {
       "id": 4,
-      "title": "Volto nell'Ombra",
+      "title": {
+        "it": "Volto nell'Ombra",
+        "en": "Face in the Shadow",
+        "de": "Gesicht im Schatten",
+        "fr": "Visage dans l'Ombre",
+        "es": "Rostro en la Sombra"
+      },
       "slug": "volto-nellombra",
       "year": 2024,
       "category": "ritratti",
@@ -191,8 +233,20 @@
       "status": "available",
       "featured": false,
       "description": {
-        "short": "Un ritratto che emerge dall'oscurità per rivelare l'anima",
-        "full": "Questo ritratto esplora la dualità dell'essere umano, nascosto nell'ombra ma rivelato nella luce. La tecnica #negativoèpositivo® enfatizza il contrasto emotivo tra ciò che mostriamo e ciò che siamo realmente.",
+        "short": {
+          "it": "Un ritratto che emerge dall'oscurità per rivelare l'anima",
+          "en": "A portrait emerging from darkness to reveal the soul",
+          "de": "Ein Porträt, das aus der Dunkelheit auftaucht, um die Seele zu offenbaren",
+          "fr": "Un portrait qui émerge de l'obscurité pour révéler l'âme",
+          "es": "Un retrato que emerge de la oscuridad para revelar el alma"
+        },
+        "full": {
+          "it": "Questo ritratto esplora la dualità dell'essere umano, nascosto nell'ombra ma rivelato nella luce. La tecnica #negativoèpositivo® enfatizza il contrasto emotivo tra ciò che mostriamo e ciò che siamo realmente.",
+          "en": "This portrait explores the duality of the human being, hidden in shadow but revealed in light. The #negativoèpositivo® technique emphasizes the emotional contrast between what we show and what we truly are.",
+          "de": "Dieses Porträt erforscht die Dualität des menschlichen Wesens, verborgen im Schatten, aber im Licht offenbart. Die #negativoèpositivo®-Technik betont den emotionalen Kontrast zwischen dem, was wir zeigen, und dem, was wir wirklich sind.",
+          "fr": "Ce portrait explore la dualité de l'être humain, caché dans l'ombre mais révélé dans la lumière. La technique #negativoèpositivo® met l'accent sur le contraste émotionnel entre ce que nous montrons et ce que nous sommes réellement.",
+          "es": "Este retrato explora la dualidad del ser humano, oculto en la sombra pero revelado en la luz. La técnica #negativoèpositivo® enfatiza el contraste emocional entre lo que mostramos y lo que realmente somos."
+        },
         "technique": "Ogni tratto del volto è stato studiato e dipinto in negativo con crete colorate, prestando particolare attenzione alle zone d'ombra che diventeranno luce nel positivo."
       },
       "images": {
@@ -228,7 +282,13 @@
     },
     {
       "id": 5,
-      "title": "Alba Mediterranea",
+      "title": {
+        "it": "Alba Mediterranea",
+        "en": "Mediterranean Dawn",
+        "de": "Mittelmeer-Morgendämmerung",
+        "fr": "Aube Méditerranéenne",
+        "es": "Amanecer Mediterráneo"
+      },
       "slug": "alba-mediterranea",
       "year": 2023,
       "category": "paesaggi",
@@ -243,8 +303,20 @@
       "status": "available",
       "featured": false,
       "description": {
-        "short": "I primi raggi del sole sul mare Mediterraneo",
-        "full": "L'alba sul Mediterraneo è un momento magico che questa opera cattura in tutta la sua essenza. I colori caldi dell'aurora si riflettono sull'acqua calma, creando un'atmosfera di pace e rinascita.",
+        "short": {
+          "it": "I primi raggi del sole sul mare Mediterraneo",
+          "en": "The first rays of the sun on the Mediterranean Sea",
+          "de": "Die ersten Sonnenstrahlen auf dem Mittelmeer",
+          "fr": "Les premiers rayons du soleil sur la mer Méditerranée",
+          "es": "Los primeros rayos del sol sobre el mar Mediterráneo"
+        },
+        "full": {
+          "it": "L'alba sul Mediterraneo è un momento magico che questa opera cattura in tutta la sua essenza. I colori caldi dell'aurora si riflettono sull'acqua calma, creando un'atmosfera di pace e rinascita.",
+          "en": "Dawn over the Mediterranean is a magical moment that this artwork captures in all its essence. The warm colors of sunrise reflect on the calm water, creating an atmosphere of peace and rebirth.",
+          "de": "Die Morgendämmerung über dem Mittelmeer ist ein magischer Moment, den dieses Kunstwerk in seiner ganzen Essenz einfängt. Die warmen Farben der Morgensonne spiegeln sich im ruhigen Wasser wider und schaffen eine Atmosphäre von Frieden und Wiedergeburt.",
+          "fr": "L'aube sur la Méditerranée est un moment magique que cette œuvre capture dans toute son essence. Les couleurs chaudes de l'aurore se reflètent sur l'eau calme, créant une atmosphère de paix et de renaissance.",
+          "es": "El amanecer sobre el Mediterráneo es un momento mágico que esta obra captura en toda su esencia. Los colores cálidos del alba se reflejan en el agua tranquila, creando una atmósfera de paz y renacimiento."
+        },
         "technique": "Le crete colorate sono state applicate con tecnica a strati, creando sfumature delicate che si rivelano magnificamente nell'inversione positiva."
       },
       "images": {
