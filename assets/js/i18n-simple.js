@@ -171,6 +171,8 @@
       
       // Opera Single Page
       "opera.breadcrumb_opera": "Opera",
+      "opera.negative_image_alt": "Opera in negativo",
+      "opera.positive_image_alt": "Opera rivelata in positivo",
       "opera.reveal_button": "Rivela l'Opera",
       "opera.hide_artwork": "Nascondi Opera",
       "opera.fullscreen": "Schermo intero",
@@ -623,6 +625,8 @@
       
       // Opera Single Page
       "opera.breadcrumb_opera": "Artwork",
+      "opera.negative_image_alt": "Artwork in negative",
+      "opera.positive_image_alt": "Artwork revealed in positive",
       "opera.reveal_button": "Reveal the Artwork",
       "opera.hide_artwork": "Hide Artwork",
       "opera.fullscreen": "Fullscreen",
@@ -1059,6 +1063,8 @@
       
       // Opera Single Page
       "opera.breadcrumb_opera": "Kunstwerk",
+      "opera.negative_image_alt": "Kunstwerk im Negativ",
+      "opera.positive_image_alt": "Kunstwerk im Positiv enthüllt",
       "opera.reveal_button": "Das Kunstwerk enthüllen",
       "opera.hide_artwork": "Kunstwerk verbergen",
       "opera.fullscreen": "Vollbild",
@@ -1495,6 +1501,8 @@
       
       // Opera Single Page
       "opera.breadcrumb_opera": "Œuvre",
+      "opera.negative_image_alt": "Œuvre en négatif",
+      "opera.positive_image_alt": "Œuvre révélée en positif",
       "opera.reveal_button": "Révéler l'Œuvre",
       "opera.hide_artwork": "Cacher l'Œuvre",
       "opera.fullscreen": "Plein écran",
@@ -1931,6 +1939,8 @@
       
       // Opera Single Page
       "opera.breadcrumb_opera": "Obra",
+      "opera.negative_image_alt": "Obra en negativo",
+      "opera.positive_image_alt": "Obra revelada en positivo",
       "opera.reveal_button": "Revelar la Obra",
       "opera.hide_artwork": "Ocultar Obra",
       "opera.fullscreen": "Pantalla completa",

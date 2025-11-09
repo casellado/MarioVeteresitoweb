@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="it" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Traduzioni Opera-Single</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { padding: 20px; background: #1a1a1a; color: #fff; }
+    .test-result { margin: 10px 0; padding: 15px; border-radius: 8px; }
+    .test-result.success { background: #0d6efd20; border: 1px solid #0d6efd; }
+    .test-result.error { background: #dc354520; border: 1px solid #dc3545; }
+    .lang-switcher button { margin: 5px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="mb-4">🧪 Test Completo Traduzioni Opera-Single</h1>
+    
+    <div class="lang-switcher mb-4">
+      <h4>Cambia Lingua:</h4>
+      <button class="btn btn-primary" onclick="testLang('it')">🇮🇹 Italiano</button>
+      <button class="btn btn-primary" onclick="testLang('en')">🇬🇧 English</button>
+      <button class="btn btn-primary" onclick="testLang('de')">🇩🇪 Deutsch</button>
+      <button class="btn btn-primary" onclick="testLang('fr')">🇫🇷 Français</button>
+      <button class="btn btn-primary" onclick="testLang('es')">🇪🇸 Español</button>
+    </div>
+    
+    <div class="test-section mb-5">
+      <h3>📋 Sezione 1: Chiavi "opera.*" (45 chiavi × 5 lingue)</h3>
+      <div id="keysTest"></div>
+    </div>
+    
+    <div class="test-section mb-5">
+      <h3>🔤 Sezione 2: Testi Dinamici</h3>
+      <div id="dynamicTest"></div>
+    </div>
+    
+    <div class="test-section mb-5">
+      <h3>🎨 Sezione 3: Card Correlate</h3>
+      <div id="cardTest"></div>
+    </div>
+  </div>
+
+  <script src="assets/js/i18n-simple.js?v=2024110803"></script>
+  <script src="assets/js/artwork-i18n-helper.js"></script>
+  
+  <script>
+    // Aspetta che i18n sia pronto
+    window.addEventListener('i18nReady', () => {
+      console.log('✅ i18n is ready');
+      runAllTests();
+    });
+    
+    if (window.i18n && window.i18n.isReady) {
+      runAllTests();
+    }
+    
+    function testLang(lang) {
+      if (window.i18n) {
+        window.i18n.changeLanguage(lang);
+        setTimeout(runAllTests, 500);
+      }
+    }
+    
+    function runAllTests() {
+      const currentLang = window.i18n ? window.i18n.currentLang : 'unknown';
+      console.log(`🧪 Running tests for language: ${currentLang}`);
+      
+      testKeys();
+      testDynamicTexts();
+      testCardGeneration();
+    }
+    
+    function testKeys() {
+      const keysToTest = [
+        'opera.breadcrumb_opera',
+        'opera.negative_image_alt',
+        'opera.positive_image_alt',
+        'opera.reveal_button',
+        'opera.status_available',
+        'opera.status_featured',
+        'opera.price_label',
+        'opera.shipping',
+        'opera.certificate',
+        'opera.guarantee',
+        'opera.technical_details',
+        'opera.technique_label',
+        'opera.material_label',
+        'opera.support_label',
+        'opera.dimensions_label',
+        'opera.year_label',
+        'opera.collection_label',
+        'opera.certificate_number',
+        'opera.buy_now',
+        'opera.request_info',
+        'opera.contact_whatsapp',
+        'opera.description_title',
+        'opera.related_title',
+        'opera.view_all'
+      ];
+      
+      const results = keysToTest.map(key => {
+        const translation = window.i18n ? window.i18n.t(key) : 'N/A';
+        const isMissing = translation === key || translation === 'N/A';
+        
+        return {
+          key,
+          translation,
+          status: isMissing ? 'error' : 'success'
+        };
+      });
+      
+      const currentLang = window.i18n ? window.i18n.currentLang : 'unknown';
+      const missing = results.filter(r => r.status === 'error');
+      
+      let html = `<h5>Lingua corrente: <strong>${currentLang.toUpperCase()}</strong></h5>`;
+      html += `<p>Totale chiavi testate: ${results.length}</p>`;
+      html += `<p class="text-success">✅ Tradotte: ${results.length - missing.length}</p>`;
+      html += `<p class="text-danger">❌ Mancanti: ${missing.length}</p>`;
+      
+      if (missing.length > 0) {
+        html += '<div class="alert alert-danger mt-3"><strong>Chiavi MANCANTI:</strong><ul>';
+        missing.forEach(m => {
+          html += `<li><code>${m.key}</code></li>`;
+        });
+        html += '</ul></div>';
+      }
+      
+      results.forEach(r => {
+        html += `<div class="test-result ${r.status}">
+          <strong>${r.key}:</strong> 
+          <span>${r.translation}</span>
+        </div>`;
+      });
+      
+      document.getElementById('keysTest').innerHTML = html;
+    }
+    
+    function testDynamicTexts() {
+      const tests = [
+        { label: 'Badge "Disponibile"', value: window.i18n ? window.i18n.t('opera.status_available') : 'N/A' },
+        { label: 'Badge "In Evidenza"', value: window.i18n ? window.i18n.t('opera.status_featured') : 'N/A' },
+        { label: 'Bottone "Acquista Ora"', value: window.i18n ? window.i18n.t('opera.buy_now') : 'N/A' },
+        { label: 'Bottone "Richiedi Informazioni"', value: window.i18n ? window.i18n.t('opera.request_info') : 'N/A' },
+        { label: 'Footer "Made with"', value: window.i18n ? window.i18n.t('footer.made_with') : 'N/A' },
+        { label: 'Footer "in Italy"', value: window.i18n ? window.i18n.t('footer.in_italy') : 'N/A' }
+      ];
+      
+      let html = '';
+      tests.forEach(t => {
+        const isOk = t.value !== 'N/A' && t.value !== t.label;
+        html += `<div class="test-result ${isOk ? 'success' : 'error'}">
+          <strong>${t.label}:</strong> "${t.value}"
+        </div>`;
+      });
+      
+      document.getElementById('dynamicTest').innerHTML = html;
+    }
+    
+    function testCardGeneration() {
+      const cardTests = [
+        { key: 'artworks.featured', label: 'Badge "In Evidenza" card' },
+        { key: 'artworks.available', label: 'Badge "Disponibile" card' },
+        { key: 'artworks.view_details', label: 'Bottone "Vedi Dettagli"' },
+        { key: 'artworks.technique_label', label: 'Label "Tecnica"' },
+        { key: 'artworks.sold', label: 'Testo "Venduta"' },
+        { key: 'artworks.details', label: 'Bottone "Scopri"' }
+      ];
+      
+      let html = '';
+      cardTests.forEach(t => {
+        const value = window.i18n ? window.i18n.t(t.key) : 'N/A';
+        const isOk = value !== 'N/A' && value !== t.key;
+        html += `<div class="test-result ${isOk ? 'success' : 'error'}">
+          <strong>${t.label}:</strong> "${value}"
+        </div>`;
+      });
+      
+      document.getElementById('cardTest').innerHTML = html;
+    }
+  </script>
+</body>
+</html>
+
