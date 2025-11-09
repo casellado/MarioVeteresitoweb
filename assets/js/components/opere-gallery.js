@@ -26,6 +26,12 @@ class ArtworksGallery {
     this.setupEventListeners();
     this.renderArtworks();
     this.updateStats();
+    
+    // Listen for language changes to re-render cards with new translations
+    window.addEventListener('languageChanged', () => {
+      console.log('🌍 Lingua cambiata, ri-renderizzazione opere...');
+      this.renderArtworks();
+    });
   }
   
   async loadArtworks() {
@@ -180,12 +186,16 @@ class ArtworksGallery {
     
     // Determine badge based on status and featured
     let badge = '';
+    const featuredText = window.i18n ? window.i18n.t('artworks.featured') : 'In Evidenza';
+    const availableText = window.i18n ? window.i18n.t('artworks.available') : 'Disponibile';
+    const soldText = window.i18n ? window.i18n.t('artworks.sold') : 'Venduta';
+    
     if (artwork.featured) {
-      badge = '<span class="badge bg-warning text-dark position-absolute" style="top: 8px; right: 8px; z-index: 10; box-shadow: 0 2px 8px rgba(0,0,0,0.3); font-weight: 600;">In Evidenza</span>';
+      badge = `<span class="badge bg-warning text-dark position-absolute" style="top: 8px; right: 8px; z-index: 10; box-shadow: 0 2px 8px rgba(0,0,0,0.3); font-weight: 600;">${featuredText}</span>`;
     } else if (artwork.status === 'available') {
-      badge = '<span class="badge bg-success position-absolute" style="top: 8px; right: 8px; z-index: 10; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">Disponibile</span>';
+      badge = `<span class="badge bg-success position-absolute" style="top: 8px; right: 8px; z-index: 10; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">${availableText}</span>`;
     } else {
-      badge = '<span class="badge bg-danger position-absolute" style="top: 8px; right: 8px; z-index: 10; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">Venduta</span>';
+      badge = `<span class="badge bg-danger position-absolute" style="top: 8px; right: 8px; z-index: 10; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">${soldText}</span>`;
     }
     
     // Parse technique to separate material and support
@@ -193,22 +203,28 @@ class ArtworksGallery {
     const material = techniqueParts[0] || 'Crete colorate';
     const support = techniqueParts[1] || 'Cartoncino';
     
+    // Get translated texts
+    const artworkAlt = window.i18n ? window.i18n.t('artworks.artwork_alt') : 'Opera d\'arte';
+    const viewDetailsText = window.i18n ? window.i18n.t('artworks.view_details') : 'Vedi Dettagli';
+    const techniqueLabel = window.i18n ? window.i18n.t('artworks.technique_label') : 'Tecnica';
+    const detailsText = window.i18n ? window.i18n.t('artworks.details') : 'Dettagli';
+    
     col.innerHTML = `
       <article class="artwork-card glass-card h-100 rounded-4 overflow-hidden" role="article">
         
         <!-- Image -->
         <div class="artwork-image position-relative">
           <img src="${artwork.images.thumbnail}" 
-               alt="Opera d'arte" 
+               alt="${artworkAlt}" 
                class="img-fluid w-100" 
                style="aspect-ratio: 4/3; object-fit: cover;"
                loading="lazy">
           
           <!-- Quick View Overlay -->
           <div class="image-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center opacity-0">
-            <a href="opera-single.html?id=${artwork.id}" class="btn btn-primary btn-sm" aria-label="Vedi dettagli opera">
+            <a href="opera-single.html?id=${artwork.id}" class="btn btn-primary btn-sm" aria-label="${viewDetailsText}">
               <i class="bi bi-eye me-2"></i>
-              Vedi Dettagli
+              ${viewDetailsText}
             </a>
           </div>
           
@@ -222,7 +238,7 @@ class ArtworksGallery {
             ${artwork.title}
           </h3>
           <p class="text-secondary small mb-3" style="line-height: 1.5;">
-            Tecnica: #<span style="color: #0099FF;">negativo</span><span style="color: #FFD700;">è</span><span style="color: #FF6600;">positivo</span>® | ${artwork.year}
+            ${techniqueLabel}: #<span style="color: #0099FF;">negativo</span><span style="color: #FFD700;">è</span><span style="color: #FF6600;">positivo</span>® | ${artwork.year}
           </p>
           
           <!-- Details -->
@@ -237,7 +253,7 @@ class ArtworksGallery {
                 <div class="price">
                   ${artwork.status === 'available' ?
                     `<span class="h4 mb-0 text-gradient fw-bold">€ ${artwork.price.toLocaleString('it-IT')}</span>` :
-                    `<span class="h5 mb-0 text-danger">Venduta</span>`
+                    `<span class="h5 mb-0 text-danger">${soldText}</span>`
                   }
                 </div>
                 <div class="d-flex gap-2">
@@ -247,7 +263,7 @@ class ArtworksGallery {
                     </a>` : ''
                   }
                   <a href="opera-single.html?id=${artwork.id}" class="btn btn-outline-light btn-sm">
-                    Dettagli
+                    ${detailsText}
                   </a>
                 </div>
               </div>
