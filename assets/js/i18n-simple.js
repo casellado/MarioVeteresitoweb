@@ -2291,17 +2291,21 @@
       const elements = document.querySelectorAll('[data-i18n]');
       console.log(`🔄 Applicazione traduzioni a ${elements.length} elementi`);
       
-      elements.forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        const translation = this.translate(key);
-        
-        const attr = el.getAttribute('data-i18n-attr');
-        if (attr) {
-          el.setAttribute(attr, translation);
-        } else {
-          el.textContent = translation;
-        }
-      });
+    elements.forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const translation = this.translate(key);
+      
+      const attr = el.getAttribute('data-i18n-attr');
+      if (attr) {
+        // Handle multiple attributes separated by comma
+        const attrs = attr.split(',').map(a => a.trim());
+        attrs.forEach(a => {
+          if (a) el.setAttribute(a, translation);
+        });
+      } else {
+        el.textContent = translation;
+      }
+    });
       
       // Handle placeholders
       const placeholderElements = document.querySelectorAll('[data-i18n-placeholder]');
