@@ -522,10 +522,23 @@ class OperaSingle {
     // Get translated alt text
     const altText = window.i18n ? window.i18n.t('artworks.artwork_alt') : 'Opera d\'arte';
     
-    // Parse technique for material and support
+    // Parse technique for material and support with translations
     const techniqueParts = artwork.technique.split(' su ');
-    const material = techniqueParts[0] || 'Crete colorate';
-    const support = techniqueParts[1] || 'Cartoncino';
+    const materialRaw = techniqueParts[0] || 'Crete colorate';
+    const supportRaw = techniqueParts[1] || 'Cartoncino';
+    
+    // Translate materials if they match known values
+    let material = materialRaw;
+    let support = supportRaw;
+    
+    if (window.i18n) {
+      if (materialRaw.toLowerCase().includes('crete colorate') || materialRaw.toLowerCase().includes('colored chalk')) {
+        material = window.i18n.t('artworks.material_colored_chalks');
+      }
+      if (supportRaw.toLowerCase().includes('cartoncino') || supportRaw.toLowerCase().includes('cardboard')) {
+        support = window.i18n.t('artworks.material_cardboard');
+      }
+    }
     
     // Generate badge with proper i18n
     let badge = '';
