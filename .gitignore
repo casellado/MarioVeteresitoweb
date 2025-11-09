@@ -118,4 +118,6 @@ backup/
 
 # === Area Admin (NON pubblicare) ===
 Dashboard/
+!Dashboard/README.md
+Dashboard/node_modules/
 
