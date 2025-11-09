@@ -2342,10 +2342,16 @@
     }
     
     setupLanguageSelectors() {
+      // Remove existing listeners by cloning nodes (prevents duplicates)
       document.querySelectorAll('[data-lang]').forEach(link => {
-        link.addEventListener('click', (e) => {
+        // Remove old click listeners by cloning (clean slate)
+        const newLink = link.cloneNode(true);
+        link.parentNode.replaceChild(newLink, link);
+        
+        // Add fresh click listener
+        newLink.addEventListener('click', (e) => {
           e.preventDefault();
-          const lang = link.getAttribute('data-lang');
+          const lang = newLink.getAttribute('data-lang');
           this.changeLanguage(lang);
         });
       });

@@ -50,6 +50,9 @@ class OperaSingle {
     // CRITICAL: Re-apply translations after DOM manipulation
     this.applyTranslationsWhenReady();
     
+    // CRITICAL: Re-initialize language selectors after page load
+    this.reinitLanguageSelectors();
+    
     // Listen for language changes
     window.addEventListener('languageChanged', () => {
       console.log('🌍 Lingua cambiata, aggiorno contenuto dinamico...');
@@ -66,6 +69,22 @@ class OperaSingle {
       window.addEventListener('i18nReady', () => {
         console.log('🔄 i18n ready! Applico traduzioni...');
         window.i18n.applyTranslations();
+      }, { once: true });
+    }
+  }
+  
+  reinitLanguageSelectors() {
+    // Re-initialize language selector event listeners
+    if (window.i18n && window.i18n.setupLanguageSelectors) {
+      console.log('🔄 Re-inizializzazione language selectors...');
+      window.i18n.setupLanguageSelectors();
+    } else {
+      console.log('⏳ Attendo i18n per language selectors...');
+      window.addEventListener('i18nReady', () => {
+        console.log('🔄 i18n ready! Re-inizializzo language selectors...');
+        if (window.i18n && window.i18n.setupLanguageSelectors) {
+          window.i18n.setupLanguageSelectors();
+        }
       }, { once: true });
     }
   }
@@ -114,13 +133,22 @@ class OperaSingle {
   
   async loadArtwork() {
     try {
+      console.log('📥 Caricamento opera ID:', this.operaId);
       const response = await fetch('assets/data/artworks.json?v=' + Date.now());
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
       const data = await response.json();
+      console.log('✅ JSON caricato, opere disponibili:', data.artworks.length);
       
       this.artwork = data.artworks.find(a => a.id == this.operaId);
       
       if (!this.artwork) {
-        console.error('❌ Opera non trovata');
+        console.error('❌ Opera non trovata con ID:', this.operaId);
+        console.log('IDs disponibili:', data.artworks.map(a => a.id));
+        alert('Opera non trovata. Verrai reindirizzato alla galleria.');
         window.location.href = 'opere.html';
         return;
       }
@@ -130,6 +158,8 @@ class OperaSingle {
       
     } catch (error) {
       console.error('❌ Errore caricamento opera:', error);
+      alert('Errore nel caricamento dell\'opera. Verrai reindirizzato alla galleria.');
+      window.location.href = 'opere.html';
     }
   }
   
