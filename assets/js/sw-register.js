@@ -118,9 +118,9 @@ function initOfflineIndicator() {
   
   indicator.style.cssText = `
     position: fixed;
-    top: 70px;
+    top: -200px;
     left: 50%;
-    transform: translateX(-50%) translateY(-100px);
+    transform: translateX(-50%);
     background: #ef4444;
     color: white;
     padding: 0.75rem 1.5rem;
@@ -132,19 +132,25 @@ function initOfflineIndicator() {
     font-weight: 600;
     z-index: 9999;
     box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    pointer-events: none;
   `;
   
   document.body.appendChild(indicator);
   
   // Listen for online/offline events
   window.addEventListener('offline', () => {
-    indicator.style.transform = 'translateX(-50%) translateY(0)';
+    indicator.style.top = '70px';
+    indicator.style.opacity = '1';
+    indicator.style.pointerEvents = 'auto';
     console.log('[SW] App is offline');
   });
   
   window.addEventListener('online', () => {
-    indicator.style.transform = 'translateX(-50%) translateY(-100px)';
+    indicator.style.top = '-200px';
+    indicator.style.opacity = '0';
+    indicator.style.pointerEvents = 'none';
     console.log('[SW] App is online');
     
     // Reload to get fresh content
