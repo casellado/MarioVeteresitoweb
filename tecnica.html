@@ -142,10 +142,10 @@
       <div class="container">
         <div class="text-center mb-6" data-aos="fade-up">
           <span class="badge glass-badge mb-3" data-i18n="tecnica.process_badge">Il Processo</span>
-          <h2 class="display-4 fw-bold mb-4">
+          <h2 class="display-4 fw-bold mb-4" data-editable="process-title">
             <span data-i18n="tecnica.process_title">Come Nasce un'<span class="text-gradient">Opera</span></span>
           </h2>
-          <p class="lead text-secondary mb-0" data-i18n="tecnica.process_desc">
+          <p class="lead text-secondary mb-0" data-i18n="tecnica.process_desc" data-editable="process-description">
             Ogni opera passa attraverso 5 fasi fondamentali che trasformano l'idea in realtà
           </p>
         </div>
@@ -283,10 +283,10 @@
         <div class="row align-items-center g-5">
           <div class="col-lg-6" data-aos="fade-right">
             <span class="badge glass-badge mb-3" data-i18n="tecnica.video_badge">Video Tutorial</span>
-            <h2 class="display-4 fw-bold mb-4">
+            <h2 class="display-4 fw-bold mb-4" data-editable="video-title">
               <span data-i18n="tecnica.video_title">Guarda la <span class="text-gradient">Tecnica</span> in Azione</span>
             </h2>
-            <p class="lead text-secondary mb-4" data-i18n="tecnica.video_desc">
+            <p class="lead text-secondary mb-4" data-i18n="tecnica.video_desc" data-editable="video-description">
               Scopri dal vivo come prende vita un'opera con la tecnica #negativoèpositivo®. 
               Dal primo tocco di colore alla rivelazione finale.
             </p>
@@ -347,10 +347,10 @@
             
             <div class="text-center mb-6" data-aos="fade-up">
               <span class="badge glass-badge mb-3" data-i18n="tecnica.faq_badge">FAQ</span>
-              <h2 class="display-4 fw-bold mb-4">
+              <h2 class="display-4 fw-bold mb-4" data-editable="faq-title">
                 <span data-i18n="tecnica.faq_title">Domande <span class="text-gradient">Frequenti</span></span>
               </h2>
-              <p class="lead text-secondary mb-0" data-i18n="tecnica.faq_desc">
+              <p class="lead text-secondary mb-0" data-i18n="tecnica.faq_desc" data-editable="faq-description">
                 Tutto quello che devi sapere sulla tecnica #negativoèpositivo®
               </p>
             </div>
@@ -560,13 +560,17 @@
   </main>
 
   <!-- Footer -->
-  <footer class="footer py-8 bg-surface border-top border-secondary">
+  <footer class="footer py-6 bg-surface border-top border-secondary">
     <div class="container">
-      <div class="row g-5">
+      
+      <!-- Main Footer -->
+      <div class="row g-4 mb-5">
         
         <!-- Brand Column -->
-        <div class="col-lg-4">
-          <img src="assets/images/logo/logo-gold.svg" alt="Mario Vetere" height="40" class="mb-4">
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <a href="index.html" class="d-inline-block mb-4">
+            <img src="assets/images/logo/logo-gold.svg" alt="Mario Vetere" height="50">
+          </a>
           <p class="text-secondary mb-4" data-i18n="footer.description">
             Arte contemporanea con la tecnica brevettata #negativoèpositivo®. 
             Un viaggio unico tra luce e ombra, tra ciò che appare e ciò che si rivela.
@@ -609,52 +613,67 @@
         </div>
         
         <!-- Quick Links -->
-        <div class="col-lg-4 col-md-6">
-          <h4 class="h6 fw-bold mb-4" data-i18n="footer.quick_links">Link Rapidi</h4>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h6 class="fw-semibold mb-3 text-gradient" data-i18n="footer.nav_title">Navigazione</h6>
           <ul class="list-unstyled">
-            <li class="mb-2"><a href="index.html" class="text-secondary text-decoration-none hover-text-primary" data-i18n="nav.home">Home</a></li>
-            <li class="mb-2"><a href="opere.html" class="text-secondary text-decoration-none hover-text-primary" data-i18n="nav.artworks">Opere</a></li>
-            <li class="mb-2"><a href="tecnica.html" class="text-secondary text-decoration-none hover-text-primary" data-i18n="nav.technique">Tecnica</a></li>
-            <li class="mb-2"><a href="chi-sono.html" class="text-secondary text-decoration-none hover-text-primary" data-i18n="nav.about">Chi Sono</a></li>
-            <li class="mb-2"><a href="contatti.html" class="text-secondary text-decoration-none hover-text-primary" data-i18n="nav.contact">Contatti</a></li>
+            <li class="mb-2"><a href="index.html" class="footer-link text-secondary text-decoration-none" data-i18n="nav.home">Home</a></li>
+            <li class="mb-2"><a href="opere.html" class="footer-link text-secondary text-decoration-none" data-i18n="nav.artworks">Opere</a></li>
+            <li class="mb-2"><a href="tecnica.html" class="footer-link text-secondary text-decoration-none" data-i18n="nav.technique">Tecnica</a></li>
+            <li class="mb-2"><a href="chi-sono.html" class="footer-link text-secondary text-decoration-none" data-i18n="nav.about">Chi Sono</a></li>
+            <li class="mb-2"><a href="contatti.html" class="footer-link text-secondary text-decoration-none" data-i18n="nav.contact">Contatti</a></li>
           </ul>
         </div>
         
-        <!-- Contact Info -->
-        <div class="col-lg-4 col-md-6">
-          <h4 class="h6 fw-bold mb-4" data-i18n="footer.contact_info">Contatti</h4>
+        <!-- Info Links -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <h6 class="fw-semibold mb-3 text-gradient" data-i18n="footer.info_title">Informazioni</h6>
           <ul class="list-unstyled">
-            <li class="mb-3 d-flex align-items-start gap-2">
-              <i class="bi bi-geo-alt text-gradient"></i>
-              <span class="text-secondary">Calabria, Italia</span>
-            </li>
-            <li class="mb-3 d-flex align-items-start gap-2">
-              <i class="bi bi-envelope text-gradient"></i>
-              <a href="mailto:info@mariovetere.art" class="text-secondary text-decoration-none hover-text-primary">info@mariovetere.art</a>
-            </li>
-            <li class="mb-3 d-flex align-items-start gap-2">
-              <i class="bi bi-whatsapp text-gradient"></i>
-              <a href="https://wa.me/393XXXXXXXXX" class="text-secondary text-decoration-none hover-text-primary">WhatsApp</a>
-            </li>
+            <li class="mb-2"><a href="faq.html" class="footer-link text-secondary text-decoration-none" data-i18n="footer.faq">FAQ</a></li>
+            <li class="mb-2"><a href="spedizioni.html" class="footer-link text-secondary text-decoration-none" data-i18n="footer.shipping">Spedizioni</a></li>
+            <li class="mb-2"><a href="privacy.html" class="footer-link text-secondary text-decoration-none" data-i18n="footer.privacy">Privacy Policy</a></li>
+            <li class="mb-2"><a href="termini.html" class="footer-link text-secondary text-decoration-none" data-i18n="footer.terms">Termini</a></li>
           </ul>
+        </div>
+        
+        <!-- Newsletter -->
+        <div class="col-md-6 col-lg-4">
+          <h6 class="fw-semibold mb-3 text-gradient" data-i18n="footer.newsletter_title">Resta Aggiornato</h6>
+          <p class="text-secondary small mb-3" data-i18n="footer.newsletter_desc">
+            Iscriviti alla newsletter per ricevere aggiornamenti su nuove opere, 
+            mostre ed eventi esclusivi.
+          </p>
+          
+          <form id="newsletterForm" class="mb-3">
+            <div class="input-group" style="height: 48px;">
+              <input type="email" class="form-control bg-transparent border-secondary" data-i18n-placeholder="footer.newsletter_placeholder" placeholder="La tua email" required id="newsletterEmail" aria-label="Email per newsletter" style="height: 48px; line-height: 1.5;">
+              <button class="btn btn-primary px-4" type="submit" aria-label="Iscriviti alla newsletter" style="height: 48px;">
+                <i class="bi bi-send"></i>
+              </button>
+            </div>
+          </form>
         </div>
         
       </div>
       
-      <hr class="my-5 border-secondary">
-      
-      <div class="row align-items-center">
-        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-          <p class="small text-secondary mb-0">
-            © 2024 Mario Vetere. <span data-i18n="footer.rights">Tutti i diritti riservati</span>.
-          </p>
-        </div>
-        <div class="col-md-6 text-center text-md-end">
-          <p class="small text-secondary mb-0">
-            #negativoèpositivo® <span data-i18n="footer.trademark">è un marchio registrato</span>
-          </p>
+      <!-- Bottom Bar -->
+      <div class="footer-bottom pt-4 border-top border-secondary">
+        <div class="row align-items-center">
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+            <p class="text-secondary small mb-0">
+              © 2025 Mario Vetere. <span data-i18n="footer.rights">Tutti i diritti riservati</span>. #<span style="color: #0099FF;">negativo</span><span style="color: #FFD700;">è</span><span style="color: #FF6600;">positivo</span>® <span data-i18n="footer.trademark">è un marchio registrato</span>.
+            </p>
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            <p class="text-secondary small mb-0">
+              <a href="privacy-policy.html" class="text-secondary text-decoration-none me-3">Privacy Policy</a>
+              <a href="cookie-policy.html" class="text-secondary text-decoration-none me-3">Cookie Policy</a>
+              <span class="d-none d-md-inline">|</span>
+              <span class="d-block d-md-inline mt-2 mt-md-0 ms-md-3">Made with <i class="bi bi-heart-fill text-danger"></i> in Italy</span>
+            </p>
+          </div>
         </div>
       </div>
+      
     </div>
   </footer>
 
