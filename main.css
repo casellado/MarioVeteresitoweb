@@ -1184,3 +1184,529 @@ a, button, .btn {
     color: black;
   }
 }
+
+/* ========================================
+   MOBILE UX OPTIMIZATION - 2025 BEST PRACTICES
+   Touch targets: 48x48px minimum
+   Font scaling: responsive
+   Spacing: mobile-optimized
+======================================== */
+
+/* === MOBILE LARGE (max 992px) - Tablets === */
+@media (max-width: 992px) {
+  
+  /* Container padding ridotto */
+  .container,
+  .container-fluid {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  /* Navbar height ottimizzata */
+  .navbar {
+    min-height: 64px;
+  }
+  
+  .navbar-brand img {
+    height: 32px;
+  }
+  
+  /* Hero section - riduci altezza */
+  .hero-section {
+    min-height: auto !important;
+    padding: 100px 0 60px 0;
+  }
+  
+  /* Typography - riduzione graduale */
+  .display-1 {
+    font-size: 3rem !important; /* Da ~6rem */
+  }
+  
+  .display-2 {
+    font-size: 2.5rem !important;
+  }
+  
+  .display-3 {
+    font-size: 2rem !important;
+  }
+  
+  .display-4 {
+    font-size: 1.75rem !important;
+  }
+  
+  /* Lead text */
+  .lead {
+    font-size: 1.125rem !important;
+  }
+  
+  /* Buttons - padding ridotto */
+  .btn-lg {
+    padding: 0.75rem 2rem !important;
+    font-size: 1rem !important;
+  }
+  
+  /* Cards - padding ottimizzato */
+  .card,
+  .glass-card {
+    padding: 1.25rem !important;
+  }
+  
+  /* Stats - dimensioni ridotte */
+  .stat-number {
+    font-size: 2rem !important;
+  }
+  
+  /* Spacing sezioni */
+  section {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+}
+
+/* === MOBILE MEDIUM (max 768px) - Landscape phones & small tablets === */
+@media (max-width: 768px) {
+  
+  /* Typography - ulteriore riduzione */
+  .display-1 {
+    font-size: 2.25rem !important; /* ~36px */
+    line-height: 1.2 !important;
+  }
+  
+  .display-2 {
+    font-size: 2rem !important;
+  }
+  
+  .display-3 {
+    font-size: 1.75rem !important;
+  }
+  
+  .display-4 {
+    font-size: 1.5rem !important;
+  }
+  
+  h1, .h1 {
+    font-size: 2rem !important;
+  }
+  
+  h2, .h2 {
+    font-size: 1.75rem !important;
+  }
+  
+  h3, .h3 {
+    font-size: 1.5rem !important;
+  }
+  
+  /* Hero - compatto */
+  .hero-section {
+    padding: 80px 0 40px 0;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  /* Buttons - full width su mobile quando appropriato */
+  .hero-cta {
+    flex-direction: column;
+    gap: 0.75rem !important;
+  }
+  
+  .hero-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  /* Stats - layout verticale */
+  .hero-stats {
+    flex-direction: column;
+    gap: 1.5rem !important;
+  }
+  
+  .stat-number {
+    font-size: 2.5rem !important;
+  }
+  
+  /* Touch targets - minimo 48x48px */
+  .btn,
+  .nav-link,
+  .form-control,
+  .form-select {
+    min-height: 48px !important;
+    padding: 0.75rem 1rem !important;
+  }
+  
+  .btn-lg {
+    min-height: 56px !important;
+    padding: 1rem 1.5rem !important;
+  }
+  
+  /* Social buttons - touch optimized */
+  .social-links a,
+  .share-section .btn {
+    min-width: 48px !important;
+    min-height: 48px !important;
+    padding: 0.75rem !important;
+  }
+  
+  /* Cards - full width e padding ridotto */
+  .card,
+  .glass-card,
+  .artwork-card {
+    margin-bottom: 1rem;
+    padding: 1rem !important;
+  }
+  
+  .card-body {
+    padding: 1rem !important;
+  }
+  
+  /* Grid - single column su mobile */
+  .row.g-4 {
+    row-gap: 1rem !important;
+  }
+  
+  .row.g-5 {
+    row-gap: 1.5rem !important;
+  }
+  
+  /* Footer - stacking ottimizzato */
+  .footer .row > div {
+    margin-bottom: 2rem;
+  }
+  
+  /* Navbar mobile - offcanvas ottimizzato */
+  .offcanvas {
+    width: 85% !important;
+    max-width: 320px !important;
+  }
+  
+  .offcanvas-body .nav-link {
+    padding: 1rem !important;
+    font-size: 1.125rem !important;
+  }
+  
+  /* Forms - input ottimizzati mobile */
+  .form-control,
+  .form-select {
+    font-size: 16px !important; /* Previene zoom su iOS */
+  }
+  
+  .form-control-lg {
+    font-size: 16px !important;
+    padding: 1rem !important;
+  }
+  
+  /* Modal - full screen su mobile */
+  .modal-dialog {
+    margin: 0;
+    max-width: 100%;
+  }
+  
+  .modal-content {
+    min-height: 100vh;
+    border-radius: 0;
+  }
+  
+  /* Spacing ottimizzato */
+  .py-6 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+  
+  .py-8 {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+  
+  /* Checkout - layout mobile ottimizzato */
+  .checkout-summary {
+    position: relative !important;
+    top: 0 !important;
+    margin-bottom: 2rem;
+  }
+}
+
+/* === MOBILE SMALL (max 576px) - Portrait phones === */
+@media (max-width: 576px) {
+  
+  /* Typography - dimensioni ottimali per mobile */
+  .display-1 {
+    font-size: 2rem !important; /* 32px */
+  }
+  
+  .display-2 {
+    font-size: 1.75rem !important;
+  }
+  
+  .display-3,
+  .display-4 {
+    font-size: 1.5rem !important;
+  }
+  
+  h1, .h1 {
+    font-size: 1.75rem !important;
+  }
+  
+  h2, .h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  h3, .h3 {
+    font-size: 1.25rem !important;
+  }
+  
+  h4, .h4 {
+    font-size: 1.125rem !important;
+  }
+  
+  /* Body text - leggibilità ottimale */
+  body,
+  p,
+  .lead {
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* Hero compatto */
+  .hero-section {
+    padding: 70px 0 30px 0;
+  }
+  
+  .hero-title {
+    font-size: 2rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.125rem !important;
+  }
+  
+  .hero-badge .badge {
+    font-size: 0.75rem !important;
+    padding: 0.5rem 0.75rem !important;
+  }
+  
+  /* Stats compatti */
+  .stat-number {
+    font-size: 2rem !important;
+  }
+  
+  .stat-label {
+    font-size: 0.75rem !important;
+  }
+  
+  /* Buttons - touch ottimizzati */
+  .btn {
+    min-height: 48px !important;
+    padding: 0.75rem 1rem !important;
+    font-size: 0.95rem !important;
+  }
+  
+  .btn-lg {
+    min-height: 56px !important;
+    padding: 1rem 1.25rem !important;
+    font-size: 1rem !important;
+  }
+  
+  .btn-sm {
+    min-height: 40px !important;
+    padding: 0.5rem 0.75rem !important;
+  }
+  
+  /* Container padding minimo */
+  .container,
+  .container-fluid {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+  
+  /* Cards - padding minimo */
+  .card,
+  .glass-card {
+    padding: 0.75rem !important;
+    border-radius: 12px !important;
+  }
+  
+  /* Navbar brand */
+  .navbar-brand {
+    font-size: 1rem !important;
+  }
+  
+  .navbar-brand img {
+    height: 28px !important;
+  }
+  
+  /* Offcanvas - quasi full width */
+  .offcanvas {
+    width: 90% !important;
+  }
+  
+  /* Footer - layout compatto */
+  .footer {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
+  .footer h6 {
+    font-size: 1rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  
+  .footer .nav-link {
+    padding: 0.375rem 0 !important;
+    font-size: 0.875rem !important;
+  }
+  
+  /* Form ottimizzazioni */
+  .form-label {
+    font-size: 0.875rem !important;
+    margin-bottom: 0.375rem !important;
+  }
+  
+  .form-control,
+  .form-select {
+    min-height: 48px !important;
+  }
+  
+  /* Badge - dimensioni ridotte */
+  .badge {
+    font-size: 0.75rem !important;
+    padding: 0.35rem 0.65rem !important;
+  }
+  
+  /* Social buttons - grid ottimizzata */
+  .social-links {
+    gap: 0.5rem !important;
+  }
+  
+  .social-links a {
+    font-size: 1.125rem !important;
+  }
+  
+  /* Share section - wrap su mobile */
+  .share-section {
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
+  }
+  
+  /* Checkout trust badges */
+  .trust-badges .col-4 {
+    font-size: 0.75rem !important;
+  }
+  
+  .trust-badges i {
+    font-size: 1.5rem !important;
+  }
+  
+  /* Spacing sezioni ridotto */
+  section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+  
+  /* Artwork grid - single column */
+  #featured-artworks-grid .col-lg-6,
+  #featured-artworks-grid .col-lg-4,
+  #featured-artworks-grid .col-md-6 {
+    margin-bottom: 1rem;
+  }
+  
+  /* Modal - full screen definitivo */
+  .modal {
+    padding: 0 !important;
+  }
+  
+  .modal-header {
+    padding: 1rem !important;
+  }
+  
+  .modal-body {
+    padding: 1rem !important;
+  }
+  
+  /* Table responsive */
+  .table {
+    font-size: 0.875rem !important;
+  }
+  
+  /* Breadcrumb compatto */
+  .breadcrumb {
+    font-size: 0.875rem !important;
+    padding: 0.5rem 0 !important;
+  }
+}
+
+/* === EXTRA OPTIMIZATIONS === */
+
+/* Touch feedback - migliora UX mobile */
+@media (hover: none) and (pointer: coarse) {
+  
+  /* Buttons - feedback tattile */
+  .btn:active,
+  .nav-link:active,
+  .card:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+  
+  /* Remove hover effects su touch */
+  .btn:hover,
+  .nav-link:hover,
+  .card:hover {
+    transform: none;
+  }
+}
+
+/* Landscape orientation - ottimizzazioni */
+@media (max-height: 600px) and (orientation: landscape) {
+  
+  .hero-section {
+    min-height: auto !important;
+    padding: 60px 0 30px 0;
+  }
+  
+  .modal-dialog {
+    margin: 1rem auto;
+  }
+  
+  .offcanvas {
+    width: 50% !important;
+  }
+}
+
+/* Safe area insets - iPhone notch support */
+@supports (padding-top: env(safe-area-inset-top)) {
+  
+  .navbar.fixed-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  
+  .offcanvas {
+    padding-top: env(safe-area-inset-top);
+  }
+  
+  body {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Prevent text scaling in landscape on iOS */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Smooth scroll su mobile */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* END MOBILE OPTIMIZATIONS */
