@@ -675,31 +675,118 @@ class OperaSingle {
   }
 }
 
-// Share Functions
+// Share Functions - Social Media Sharing for Artwork
+function shareOnInstagram() {
+  // Instagram doesn't support direct web sharing, show instructions
+  const artworkTitle = document.getElementById('operaTitle').textContent;
+  const message = `📸 Per condividere "${artworkTitle}" su Instagram:\n\n1. Fai uno screenshot di questa pagina\n2. Apri Instagram e crea un nuovo post\n3. Usa l'hashtag #negativoèpositivo e tagga @mario_vetere_art\n\n✨ Grazie per condividere l'arte!`;
+  alert(message);
+}
+
 function shareOnFacebook() {
   const url = encodeURIComponent(window.location.href);
   window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank', 'width=600,height=400');
 }
 
+function shareOnWhatsApp() {
+  const url = encodeURIComponent(window.location.href);
+  const artworkTitle = document.getElementById('operaTitle').textContent;
+  const text = encodeURIComponent(`Guarda quest'opera d'arte: "${artworkTitle}" con la tecnica #negativoèpositivo® di Mario Vetere`);
+  
+  // Check if mobile
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  
+  if (isMobile) {
+    // Mobile: use WhatsApp app
+    window.location.href = `whatsapp://send?text=${text}%20${url}`;
+  } else {
+    // Desktop: use WhatsApp Web
+    window.open(`https://web.whatsapp.com/send?text=${text}%20${url}`, '_blank', 'width=600,height=600');
+  }
+}
+
 function shareOnTwitter() {
   const url = encodeURIComponent(window.location.href);
-  const text = encodeURIComponent(document.getElementById('operaTitle').textContent + ' - Mario Vetere Art');
+  const artworkTitle = document.getElementById('operaTitle').textContent;
+  const text = encodeURIComponent(`"${artworkTitle}" - Opera d'arte con tecnica #negativoèpositivo® di Mario Vetere`);
   window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank', 'width=600,height=400');
 }
 
 function shareOnPinterest() {
   const url = encodeURIComponent(window.location.href);
   const media = encodeURIComponent(document.getElementById('positiveImage').src);
-  const description = encodeURIComponent(document.getElementById('operaTitle').textContent);
-  window.open(`https://pinterest.com/pin/create/button/?url=${url}&media=${media}&description=${description}`, '_blank', 'width=600,height=400');
+  const artworkTitle = document.getElementById('operaTitle').textContent;
+  const description = encodeURIComponent(`${artworkTitle} - Tecnica #negativoèpositivo® di Mario Vetere`);
+  window.open(`https://pinterest.com/pin/create/button/?url=${url}&media=${media}&description=${description}`, '_blank', 'width=750,height=550');
+}
+
+function shareViaEmail() {
+  const artworkTitle = document.getElementById('operaTitle').textContent;
+  const artworkPrice = document.getElementById('operaPrice').textContent;
+  const url = window.location.href;
+  
+  const subject = encodeURIComponent(`Opera d'arte: ${artworkTitle} - Mario Vetere`);
+  const body = encodeURIComponent(
+    `Ciao!\n\nVolevo condividere con te questa splendida opera d'arte:\n\n` +
+    `"${artworkTitle}"\n` +
+    `Artista: Mario Vetere\n` +
+    `Tecnica: #negativoèpositivo® (brevettata)\n` +
+    `Prezzo: ${artworkPrice}\n\n` +
+    `Guarda i dettagli qui:\n${url}\n\n` +
+    `La tecnica #negativoèpositivo® è unica al mondo: l'opera viene dipinta in negativo con i polpastrelli e rivelata in positivo attraverso la fotografia.\n\n` +
+    `Scopri di più su Mario Vetere: https://casellado.github.io/MarioVeteresitoweb/\n\n` +
+    `Un saluto!`
+  );
+  
+  window.location.href = `mailto:?subject=${subject}&body=${body}`;
 }
 
 function copyLink() {
-  navigator.clipboard.writeText(window.location.href).then(() => {
-    alert('Link copiato negli appunti!');
-  }).catch(err => {
-    console.error('Errore copia link:', err);
-  });
+  const url = window.location.href;
+  
+  // Try modern clipboard API
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(url).then(() => {
+      // Show success message with better UX
+      const alertMsg = window.i18n ? window.i18n.t('opera.link_copied') : '✅ Link copiato negli appunti!';
+      
+      // Create toast notification (optional, better than alert)
+      const toast = document.createElement('div');
+      toast.className = 'position-fixed bottom-0 start-50 translate-middle-x mb-4 px-4 py-3 bg-success text-white rounded-3 shadow-lg';
+      toast.style.zIndex = '9999';
+      toast.innerHTML = '<i class="bi bi-check-circle me-2"></i>' + alertMsg;
+      document.body.appendChild(toast);
+      
+      setTimeout(() => {
+        toast.remove();
+      }, 3000);
+    }).catch(err => {
+      console.error('Errore copia link:', err);
+      fallbackCopyLink(url);
+    });
+  } else {
+    // Fallback for older browsers
+    fallbackCopyLink(url);
+  }
+}
+
+function fallbackCopyLink(url) {
+  // Fallback method for older browsers
+  const textArea = document.createElement('textarea');
+  textArea.value = url;
+  textArea.style.position = 'fixed';
+  textArea.style.left = '-999999px';
+  document.body.appendChild(textArea);
+  textArea.select();
+  
+  try {
+    document.execCommand('copy');
+    alert('✅ Link copiato negli appunti!');
+  } catch (err) {
+    alert('❌ Impossibile copiare il link. Copia manualmente: ' + url);
+  }
+  
+  document.body.removeChild(textArea);
 }
 
 // Initialize

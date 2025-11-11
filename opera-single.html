@@ -265,17 +265,26 @@
             <!-- Share -->
             <div class="share-section" data-aos="fade-left" data-aos-delay="400">
               <p class="small text-secondary mb-2" data-i18n="opera.share">Condividi:</p>
-              <div class="d-flex gap-2">
-                <button class="btn btn-outline-light btn-sm" onclick="shareOnFacebook()">
+              <div class="d-flex gap-2 flex-wrap">
+                <button class="btn btn-outline-light btn-sm" onclick="shareOnInstagram()" title="Condividi su Instagram" aria-label="Condividi su Instagram">
+                  <i class="bi bi-instagram"></i>
+                </button>
+                <button class="btn btn-outline-light btn-sm" onclick="shareOnFacebook()" title="Condividi su Facebook" aria-label="Condividi su Facebook">
                   <i class="bi bi-facebook"></i>
                 </button>
-                <button class="btn btn-outline-light btn-sm" onclick="shareOnTwitter()">
-                  <i class="bi bi-twitter"></i>
+                <button class="btn btn-outline-light btn-sm" onclick="shareOnWhatsApp()" title="Condividi su WhatsApp" aria-label="Condividi su WhatsApp">
+                  <i class="bi bi-whatsapp"></i>
                 </button>
-                <button class="btn btn-outline-light btn-sm" onclick="shareOnPinterest()">
+                <button class="btn btn-outline-light btn-sm" onclick="shareOnTwitter()" title="Condividi su X (Twitter)" aria-label="Condividi su X">
+                  <i class="bi bi-twitter-x"></i>
+                </button>
+                <button class="btn btn-outline-light btn-sm" onclick="shareOnPinterest()" title="Condividi su Pinterest" aria-label="Condividi su Pinterest">
                   <i class="bi bi-pinterest"></i>
                 </button>
-                <button class="btn btn-outline-light btn-sm" onclick="copyLink()">
+                <button class="btn btn-outline-light btn-sm" onclick="shareViaEmail()" title="Condividi via Email" aria-label="Condividi via Email">
+                  <i class="bi bi-envelope"></i>
+                </button>
+                <button class="btn btn-outline-light btn-sm" onclick="copyLink()" title="Copia Link" aria-label="Copia link negli appunti">
                   <i class="bi bi-link-45deg"></i>
                 </button>
               </div>
