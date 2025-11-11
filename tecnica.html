@@ -35,39 +35,61 @@
   <a href="#main-content" class="skip-link visually-hidden-focusable" data-i18n="skip_link">Salta al contenuto principale</a>
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark glass-navbar fixed-top" id="mainNavbar">
-    <div class="container-fluid px-4 px-lg-6">
-      <a class="navbar-brand d-flex align-items-center" href="index.html">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top glass-navbar" id="mainNavbar" role="navigation" aria-label="Navigazione principale">
+    <div class="container-fluid px-4 px-lg-5">
+      
+      <!-- Logo -->
+      <a class="navbar-brand d-flex align-items-center" href="index.html" aria-label="Mario Vetere - Torna alla homepage">
         <img src="assets/images/logo/logo-gold.png" alt="Logo Mario Vetere" height="40" class="d-inline-block align-text-top">
         <span class="logo-text fw-bold ms-2">
           Mario <span class="text-gradient">Vetere</span>
         </span>
       </a>
       
-      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <!-- Mobile Toggle -->
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-expanded="false" aria-label="Apri menu di navigazione">
         <span class="navbar-toggler-icon"></span>
       </button>
       
+      <!-- Desktop Navigation -->
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html" data-i18n="nav.home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="opere.html" data-i18n="nav.artworks">Opere</a></li>
-          <li class="nav-item"><a class="nav-link active" href="tecnica.html" data-i18n="nav.technique">Tecnica</a></li>
-          <li class="nav-item"><a class="nav-link" href="chi-sono.html" data-i18n="nav.about">Chi Sono</a></li>
-          <li class="nav-item"><a class="nav-link" href="contatti.html" data-i18n="nav.contact">Contatti</a></li>
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0" role="menubar">
+          <li class="nav-item" role="none">
+            <a class="nav-link" href="index.html" role="menuitem" data-i18n="nav.home">Home</a>
+          </li>
+          <li class="nav-item" role="none">
+            <a class="nav-link" href="opere.html" role="menuitem" data-i18n="nav.artworks">Opere</a>
+          </li>
+          <li class="nav-item" role="none">
+            <a class="nav-link active" aria-current="page" href="tecnica.html" role="menuitem" data-i18n="nav.technique">Tecnica</a>
+          </li>
+          <li class="nav-item" role="none">
+            <a class="nav-link" href="chi-sono.html" role="menuitem" data-i18n="nav.about">Chi Sono</a>
+          </li>
+          <li class="nav-item" role="none">
+            <a class="nav-link" href="contatti.html" role="menuitem" data-i18n="nav.contact">Contatti</a>
+          </li>
         </ul>
         
-        <div class="navbar-actions d-flex align-items-center gap-3">
-          <button class="btn btn-icon" id="colorModeToggle" title="Cambia tema">
-            <i class="bi bi-moon-stars" id="colorModeIcon"></i>
+        <!-- Actions -->
+        <div class="navbar-actions d-flex align-items-center gap-3" role="toolbar" aria-label="Azioni utente">
+          
+          <!-- Search -->
+          <button class="btn btn-icon" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Apri ricerca">
+            <i class="bi bi-search fs-5" aria-hidden="true"></i>
           </button>
           
-          <!-- Language Selector -->
+          <!-- Color Mode Toggle -->
+          <button class="btn btn-icon" id="colorModeToggle" aria-label="Cambia tema colore" aria-pressed="false">
+            <i class="bi bi-moon-stars fs-5" id="colorModeIcon" aria-hidden="true"></i>
+          </button>
+          
+          <!-- Language -->
           <div class="dropdown language-selector">
-            <button class="btn btn-icon dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-label="Seleziona lingua">
-              <i class="bi bi-globe fs-5"></i>
+            <button class="btn btn-icon dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Seleziona lingua">
+              <i class="bi bi-globe fs-5" aria-hidden="true"></i>
             </button>
-            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="languageDropdown">
               <li><a class="dropdown-item" href="#" data-lang="it">🇮🇹 Italiano</a></li>
               <li><a class="dropdown-item" href="#" data-lang="en">🇬🇧 English</a></li>
               <li><a class="dropdown-item" href="#" data-lang="de">🇩🇪 Deutsch</a></li>
@@ -75,10 +97,58 @@
               <li><a class="dropdown-item" href="#" data-lang="es">🇪🇸 Español</a></li>
             </ul>
           </div>
+          
         </div>
       </div>
+      
     </div>
   </nav>
+
+  <!-- Mobile Offcanvas Menu -->
+  <div class="offcanvas offcanvas-end glass-offcanvas" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+    <div class="offcanvas-header border-bottom border-secondary">
+      <h5 class="offcanvas-title" id="mobileMenuLabel" data-i18n="mobile.menu">Menu</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Chiudi menu"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="navbar-nav">
+        <li class="nav-item mb-3">
+          <a class="nav-link fs-5" href="index.html">
+            <i class="bi bi-house-fill me-2"></i> <span data-i18n="nav.home">Home</span>
+          </a>
+        </li>
+        <li class="nav-item mb-3">
+          <a class="nav-link fs-5" href="opere.html">
+            <i class="bi bi-palette-fill me-2"></i> <span data-i18n="nav.artworks">Opere</span>
+          </a>
+        </li>
+        <li class="nav-item mb-3">
+          <a class="nav-link fs-5 active" href="tecnica.html">
+            <i class="bi bi-lightbulb-fill me-2"></i> <span data-i18n="nav.technique">Tecnica</span>
+          </a>
+        </li>
+        <li class="nav-item mb-3">
+          <a class="nav-link fs-5" href="chi-sono.html">
+            <i class="bi bi-person-fill me-2"></i> <span data-i18n="nav.about">Chi Sono</span>
+          </a>
+        </li>
+        <li class="nav-item mb-3">
+          <a class="nav-link fs-5" href="contatti.html">
+            <i class="bi bi-envelope-fill me-2"></i> <span data-i18n="nav.contact">Contatti</span>
+          </a>
+        </li>
+      </ul>
+      
+      <hr class="border-secondary my-4">
+      
+      <div class="d-grid gap-2">
+        <a href="contatti.html" class="btn btn-primary btn-lg">
+          <i class="bi bi-whatsapp me-2"></i>
+          <span data-i18n="mobile.contact_me">Contattami</span>
+        </a>
+      </div>
+    </div>
+  </div>
 
   <!-- Main Content -->
   <main id="main-content">
@@ -745,6 +815,23 @@
           <small class="text-secondary text-center w-100" data-i18n="modal.newsletter_footer">
             🔒 I tuoi dati sono protetti e non verranno mai condivisi con terze parti
           </small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Modal -->
+  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content glass-card border-0">
+        <div class="modal-body p-4">
+          <div class="input-group input-group-lg">
+            <span class="input-group-text bg-transparent border-end-0">
+              <i class="bi bi-search"></i>
+            </span>
+            <input type="text" class="form-control bg-transparent border-start-0 ps-0" data-i18n-placeholder="modal.search_placeholder" placeholder="Cerca opere, artista, tecnica..." id="globalSearchInput" autofocus aria-label="Campo di ricerca">
+          </div>
+          <div id="searchResults" class="mt-4"></div>
         </div>
       </div>
     </div>
