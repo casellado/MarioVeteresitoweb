@@ -20,7 +20,7 @@
       },
       "price": 10,
       "currency": "EUR",
-      "status": "available",
+      "status": "sold",
       "featured": true,
       "description": {
         "short": {
@@ -417,7 +417,7 @@
   ],
   "stats": {
     "totalArtworks": 45,
-    "availableArtworks": 5,
+    "availableArtworks": 4,
     "soldArtworks": 13,
     "averagePrice": 1500,
     "priceRange": {
