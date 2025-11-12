@@ -2860,6 +2860,46 @@ html {
 /* END OPERE PAGE */
 
 /* ========================================
+   OPERA SINGLE + FAQ + CHECKOUT + SUCCESS - BATCH
+======================================== */
+
+/* OPERA SINGLE - Hero & Details */
+@media (max-width: 576px) {
+  .artwork-detail-page .display-3 { font-size: 1.75rem !important; }
+  .artwork-detail-page .lead { font-size: 1.125rem !important; }
+  .artwork-detail-page .btn-lg { width: 100% !important; padding: 0.875rem !important; }
+  .artwork-detail-page .glass-badge { font-size: 0.875rem !important; padding: 0.5rem 1rem !important; }
+}
+
+/* FAQ PAGE - Accordion */
+@media (max-width: 992px) { .faq-page .display-4 { font-size: 2.25rem !important; }}
+@media (max-width: 768px) { .faq-page .display-4 { font-size: 2rem !important; }}
+@media (max-width: 576px) {
+  .faq-page .display-4 { font-size: 1.75rem !important; }
+  .faq-page .glass-badge { font-size: 0.875rem !important; padding: 0.5rem 1rem !important; }
+  .faq-page .accordion-button { font-size: 0.9375rem !important; padding: 1rem !important; }
+  .faq-page .accordion-body { font-size: 0.9375rem !important; padding: 1rem !important; }
+  .faq-page .accordion-item { margin-bottom: 0.75rem !important; }
+}
+
+/* CHECKOUT - Minimale */
+@media (max-width: 576px) {
+  .checkout-page .display-4 { font-size: 1.75rem !important; }
+  .checkout-page .btn-lg { width: 100% !important; padding: 0.875rem !important; }
+  .checkout-page .form-control,
+  .checkout-page .form-select { font-size: 16px !important; }
+}
+
+/* SUCCESS - Minimale */
+@media (max-width: 576px) {
+  .success-page .display-3 { font-size: 1.75rem !important; }
+  .success-page .lead { font-size: 1.125rem !important; }
+  .success-page .btn-lg { width: 100% !important; padding: 0.875rem !important; }
+}
+
+/* END BATCH PAGES */
+
+/* ========================================
    BOTTOM NAVIGATION - Mobile Native UX
 ======================================== */
 
