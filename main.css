@@ -1202,36 +1202,37 @@ a, button, .btn {
     padding-right: 1rem !important;
   }
   
-  /* Navbar height ottimizzata */
+  /* Navbar height - MANTENIAMO IDENTICO AL DESKTOP */
   .navbar {
-    min-height: 64px;
+    min-height: 80px;
+    height: 80px;
   }
   
   .navbar-brand img {
-    height: 32px;
+    height: 36px; /* Riduzione minima per mobile */
   }
   
-  /* Hero section - riduci altezza */
+  /* Hero section - MANTENIAMO 100vh COME DESKTOP */
   .hero-section {
-    min-height: auto !important;
-    padding: 100px 0 60px 0;
+    min-height: 100vh !important;
+    padding: 80px 0 60px 0; /* Allineato a navbar height */
   }
   
-  /* Typography - riduzione graduale */
+  /* Typography - PROPORZIONI OTTIMIZZATE (più vicino a desktop) */
   .display-1 {
-    font-size: 3rem !important; /* Da ~6rem */
+    font-size: 3.5rem !important; /* Aumentato da 3rem per più impatto */
   }
   
   .display-2 {
-    font-size: 2.5rem !important;
+    font-size: 3rem !important; /* Aumentato da 2.5rem */
   }
   
   .display-3 {
-    font-size: 2rem !important;
+    font-size: 2.5rem !important; /* Aumentato da 2rem */
   }
   
   .display-4 {
-    font-size: 1.75rem !important;
+    font-size: 2rem !important; /* Aumentato da 1.75rem */
   }
   
   /* Lead text */
@@ -1256,32 +1257,42 @@ a, button, .btn {
     font-size: 2rem !important;
   }
   
-  /* Spacing sezioni */
+  /* Spacing sezioni - AUMENTATO per proporzioni migliori */
   section {
-    padding-top: 60px !important;
-    padding-bottom: 60px !important;
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+  }
+  
+  .py-6 {
+    padding-top: 4.5rem !important;
+    padding-bottom: 4.5rem !important;
+  }
+  
+  /* Achievement cards - MANTENIAMO ALTEZZA DESKTOP */
+  .achievement-card {
+    min-height: 140px !important;
   }
 }
 
 /* === MOBILE MEDIUM (max 768px) - Landscape phones & small tablets === */
 @media (max-width: 768px) {
   
-  /* Typography - ulteriore riduzione */
+  /* Typography - PROPORZIONI MIGLIORATE (più impatto visivo) */
   .display-1 {
-    font-size: 2.25rem !important; /* ~36px */
+    font-size: 3rem !important; /* Aumentato da 2.25rem */
     line-height: 1.2 !important;
   }
   
   .display-2 {
-    font-size: 2rem !important;
+    font-size: 2.5rem !important; /* Aumentato da 2rem */
   }
   
   .display-3 {
-    font-size: 1.75rem !important;
+    font-size: 2.25rem !important; /* Aumentato da 1.75rem */
   }
   
   .display-4 {
-    font-size: 1.5rem !important;
+    font-size: 2rem !important; /* Aumentato da 1.5rem */
   }
   
   h1, .h1 {
@@ -1296,18 +1307,19 @@ a, button, .btn {
     font-size: 1.5rem !important;
   }
   
-  /* Hero - compatto */
+  /* Hero - MANTENIAMO 100vh COME DESKTOP */
   .hero-section {
-    padding: 80px 0 40px 0;
+    min-height: 100vh !important;
+    padding: 80px 0 40px 0; /* Padding top allineato a navbar */
   }
   
   .hero-title {
-    font-size: 2.5rem !important;
+    font-size: 3rem !important; /* Aumentato da 2.5rem */
     margin-bottom: 1.5rem !important;
   }
   
   .hero-subtitle {
-    font-size: 1.25rem !important;
+    font-size: 1.5rem !important; /* Aumentato da 1.25rem */
     margin-bottom: 1rem !important;
   }
   
@@ -1413,15 +1425,26 @@ a, button, .btn {
     border-radius: 0;
   }
   
-  /* Spacing ottimizzato */
+  /* Spacing ottimizzato - AUMENTATO */
   .py-6 {
-    padding-top: 3rem !important;
-    padding-bottom: 3rem !important;
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
   }
   
   .py-8 {
-    padding-top: 4rem !important;
-    padding-bottom: 4rem !important;
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+  }
+  
+  /* Sezioni - padding aumentato */
+  section {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+  
+  /* Achievement cards - MANTENIAMO ALTEZZA */
+  .achievement-card {
+    min-height: 130px !important;
   }
   
   /* Checkout - layout mobile ottimizzato */
@@ -1435,34 +1458,37 @@ a, button, .btn {
 /* === MOBILE SMALL (max 576px) - Portrait phones === */
 @media (max-width: 576px) {
   
-  /* Typography - dimensioni ottimali per mobile */
+  /* Typography - DIMENSIONI AUMENTATE (migliore impatto visivo) */
   .display-1 {
-    font-size: 2rem !important; /* 32px */
+    font-size: 2.5rem !important; /* Aumentato da 2rem per più impatto */
   }
   
   .display-2 {
-    font-size: 1.75rem !important;
+    font-size: 2.25rem !important; /* Aumentato da 1.75rem */
   }
   
-  .display-3,
+  .display-3 {
+    font-size: 2rem !important; /* Aumentato da 1.5rem */
+  }
+  
   .display-4 {
-    font-size: 1.5rem !important;
+    font-size: 1.75rem !important; /* Separato da display-3 */
   }
   
   h1, .h1 {
-    font-size: 1.75rem !important;
+    font-size: 2rem !important; /* Aumentato da 1.75rem */
   }
   
   h2, .h2 {
-    font-size: 1.5rem !important;
+    font-size: 1.75rem !important; /* Aumentato da 1.5rem */
   }
   
   h3, .h3 {
-    font-size: 1.25rem !important;
+    font-size: 1.5rem !important; /* Aumentato da 1.25rem */
   }
   
   h4, .h4 {
-    font-size: 1.125rem !important;
+    font-size: 1.25rem !important; /* Aumentato da 1.125rem */
   }
   
   /* Body text - leggibilità ottimale */
@@ -1473,18 +1499,19 @@ a, button, .btn {
     line-height: 1.6 !important;
   }
   
-  /* Hero compatto */
+  /* Hero - MANTENIAMO 100vh COME DESKTOP */
   .hero-section {
-    padding: 70px 0 30px 0;
+    min-height: 100vh !important;
+    padding: 80px 0 30px 0; /* Padding top allineato a navbar */
   }
   
   .hero-title {
-    font-size: 2rem !important;
+    font-size: 2.5rem !important; /* Aumentato da 2rem */
     margin-bottom: 1rem !important;
   }
   
   .hero-subtitle {
-    font-size: 1.125rem !important;
+    font-size: 1.25rem !important; /* Manteniamo 1.125rem era troppo piccolo */
   }
   
   .hero-badge .badge {
@@ -1533,13 +1560,13 @@ a, button, .btn {
     border-radius: 12px !important;
   }
   
-  /* Navbar brand */
+  /* Navbar brand - DIMENSIONI MIGLIORATE */
   .navbar-brand {
     font-size: 1rem !important;
   }
   
   .navbar-brand img {
-    height: 28px !important;
+    height: 36px !important; /* Aumentato da 28px per migliore visibilità */
   }
   
   /* Offcanvas - quasi full width */
@@ -1604,10 +1631,20 @@ a, button, .btn {
     font-size: 1.5rem !important;
   }
   
-  /* Spacing sezioni ridotto */
+  /* Spacing sezioni - AUMENTATO per proporzioni migliori */
   section {
-    padding-top: 3rem !important;
-    padding-bottom: 3rem !important;
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+  
+  .py-6 {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+  
+  /* Achievement cards - MANTENIAMO ALTEZZA MINIMA */
+  .achievement-card {
+    min-height: 120px !important;
   }
   
   /* Artwork grid - single column */
