@@ -170,7 +170,7 @@
         "height": 70,
         "unit": "cm"
       },
-      "price": 980,
+      "price": 10,
       "currency": "EUR",
       "status": "available",
       "featured": true,
@@ -188,8 +188,7 @@
           "de": "Ein stiller Wald, der seine Geheimnisse nur denen offenbart, die über die Oberfläche hinausschauen können. Das Kunstwerk lädt den Betrachter zu einer meditativen Reise durch die Natur ein, wo jedes Blatt und jeder Schatten eine Geschichte verbirgt.",
           "fr": "Une forêt silencieuse qui révèle ses secrets seulement à ceux qui savent regarder au-delà des apparences. L'œuvre invite le spectateur dans un voyage méditatif à travers la nature, où chaque feuille et chaque ombre cache une histoire à découvrir.",
           "es": "Un bosque silencioso que revela sus secretos solo a quienes saben mirar más allá de las apariencias. La obra invita al espectador a un viaje meditativo a través de la naturaleza, donde cada hoja y cada sombra esconde una historia por descubrir."
-        },
-        "technique": "Le crete colorate sono state stratificate con cura su cartoncino, creando profondità e texture che emergono magnificamente nel processo di inversione fotografica."
+        }
       },
       "images": {
         "negative": {
@@ -226,7 +225,8 @@
         "europe": 50,
         "worldwide": 100,
         "freeShippingOver": 2000
-      }
+      },
+      "collection": ""
     },
     {
       "id": 4,
