@@ -2333,6 +2333,228 @@ html {
 /* END CHI SONO PAGE - LOOP 2 */
 
 /* ========================================
+   CONTATTI PAGE - MOBILE PARITY (LOOP 1)
+======================================== */
+
+/* 1. HERO TITLE - Display-2 */
+@media (max-width: 992px) {
+  .page-hero .display-2 {
+    font-size: 3rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .page-hero .display-2 {
+    font-size: 2.5rem !important;
+  }
+}
+@media (max-width: 576px) {
+  .page-hero .display-2 {
+    font-size: 2.25rem !important;
+  }
+}
+
+/* 2. HERO BUTTONS - Layout & Full-width */
+@media (max-width: 576px) {
+  .page-hero .d-flex.gap-3.flex-wrap {
+    flex-direction: column !important;
+    width: 100%;
+  }
+  
+  .page-hero .btn-lg {
+    width: 100% !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+}
+
+/* 3. HERO PADDING-TOP */
+@media (max-width: 768px) {
+  .page-hero[style*="padding-top: 100px"] {
+    padding-top: 90px !important;
+  }
+}
+@media (max-width: 576px) {
+  .page-hero[style*="padding-top: 100px"] {
+    padding-top: 80px !important;
+  }
+}
+
+/* 4. CONTACT SECTION - Grid Gap */
+@media (max-width: 992px) {
+  .contact-section .row.g-5 {
+    gap: 2rem !important;
+  }
+}
+@media (max-width: 576px) {
+  .contact-section .row.g-5 {
+    gap: 1.5rem !important;
+  }
+}
+
+/* 5. FORM CARD - Padding */
+@media (max-width: 768px) {
+  .contact-section .glass-card.p-5 {
+    padding: 2rem !important;
+  }
+}
+@media (max-width: 576px) {
+  .contact-section .glass-card.p-5 {
+    padding: 1.5rem !important;
+  }
+}
+
+/* 6. INFO CARDS - Padding */
+@media (max-width: 576px) {
+  .contact-info-card,
+  .hours-card,
+  .social-card {
+    padding: 1.25rem !important;
+  }
+}
+
+/* 7. FORM FIELDS - Spacing */
+@media (max-width: 576px) {
+  #contactForm .mb-4 {
+    margin-bottom: 1.25rem !important;
+  }
+}
+
+/* 8. SECTION TITLES - h3 */
+@media (max-width: 768px) {
+  .contact-section .h3,
+  .map-section .h3,
+  .faq-section .h3 {
+    font-size: 1.5rem !important;
+  }
+}
+@media (max-width: 576px) {
+  .contact-section .h3,
+  .map-section .h3,
+  .faq-section .h3 {
+    font-size: 1.375rem !important;
+  }
+}
+
+/* 9. INFO CARDS ICONS - fs-2 */
+@media (max-width: 576px) {
+  .contact-info-card .fs-2,
+  .hours-card .fs-2 {
+    font-size: 1.5rem !important;
+  }
+}
+
+/* 10. ACCORDION BUTTONS - Font-size */
+@media (max-width: 576px) {
+  .accordion-button {
+    font-size: 0.9375rem !important;
+  }
+}
+
+/* 11. HERO LEAD - fs-4 */
+@media (max-width: 768px) {
+  .page-hero .lead.fs-4 {
+    font-size: 1.25rem !important;
+  }
+}
+@media (max-width: 576px) {
+  .page-hero .lead.fs-4 {
+    font-size: 1.125rem !important;
+  }
+}
+
+/* 13. MAP ASPECT RATIO */
+@media (max-width: 768px) {
+  .map-container .ratio-21x9 {
+    padding-bottom: 56.25% !important; /* 16:9 */
+  }
+}
+@media (max-width: 576px) {
+  .map-container .ratio-21x9 {
+    padding-bottom: 75% !important; /* 4:3 */
+  }
+}
+
+/* 14. SECTION SPACING - py-6 */
+@media (max-width: 768px) {
+  .contact-section,
+  .map-section,
+  .faq-section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+}
+@media (max-width: 576px) {
+  .contact-section,
+  .map-section,
+  .faq-section {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+}
+
+/* 15. ACCORDION - Border-radius */
+@media (max-width: 576px) {
+  .accordion-item.rounded-4 {
+    border-radius: 1rem !important;
+  }
+}
+
+/* 16. ACCORDION SPACING */
+@media (max-width: 576px) {
+  .faq-section .accordion-item {
+    margin-bottom: 0.75rem !important;
+  }
+}
+
+/* 17. HOURS CARD LAYOUT */
+@media (max-width: 576px) {
+  .hours-card .d-flex {
+    font-size: 0.875rem !important;
+  }
+}
+
+/* 18. SOCIAL BUTTONS GAP */
+@media (max-width: 576px) {
+  .social-card .d-flex {
+    gap: 0.5rem !important;
+  }
+}
+
+/* 19. HERO BADGE */
+@media (max-width: 576px) {
+  .page-hero .glass-badge {
+    font-size: 0.875rem !important;
+    padding: 0.5rem 1rem !important;
+  }
+}
+
+/* 20. FORM LABELS */
+@media (max-width: 576px) {
+  #contactForm .form-label {
+    font-size: 0.9375rem !important;
+  }
+}
+
+/* 21. INFO CARDS TITLES - h6 */
+@media (max-width: 576px) {
+  .contact-info-card .h6,
+  .hours-card .h6,
+  .social-card .h6 {
+    font-size: 1rem !important;
+  }
+}
+
+/* 22. ACCORDION BODY */
+@media (max-width: 576px) {
+  .accordion-body {
+    font-size: 0.9375rem !important;
+    padding: 1rem !important;
+  }
+}
+
+/* END CONTATTI PAGE - MOBILE PARITY (LOOP 1) */
+
+/* ========================================
    BOTTOM NAVIGATION - Mobile Native UX
 ======================================== */
 
