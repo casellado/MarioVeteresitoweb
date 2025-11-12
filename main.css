@@ -850,6 +850,8 @@ img, video, iframe {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;  /* LOOP 5: Centramento orizzontale */
+  text-align: center;  /* LOOP 5: Testi centrati */
 }
 
 .achievement-card h4 {
@@ -860,6 +862,10 @@ img, video, iframe {
 .achievement-card p {
   line-height: 1.4;
   margin-top: 0.5rem;
+}
+
+.achievement-card .d-flex {
+  justify-content: center;  /* LOOP 5: Icone centrate */
 }
 
 /* ========================================
@@ -1321,10 +1327,34 @@ a, button, .btn {
     font-size: 1.5rem !important;
   }
   
-  /* Hero - MANTENIAMO 100vh COME DESKTOP */
+  /* Hero - FIX BADGE TAGLIATO: align-items flex-start + padding aumentato */
   .hero-section {
     min-height: 100vh !important;
-    padding: 80px 0 40px 0; /* Padding top allineato a navbar */
+    align-items: flex-start !important; /* Rimuove centering verticale che causava overlap */
+    padding: 110px 0 40px 0 !important; /* Aumentato da 80px a 110px per visibilità badge */
+  }
+  
+  /* Hero badge - extra margin per sicurezza */
+  .hero-badge {
+    margin-top: 10px !important;
+  }
+  
+  /* Hero container - rimuovi padding inline se presente */
+  .hero-section .container {
+    padding-top: 0 !important;
+  }
+  
+  /* LOOP 5: Centramento testi hero su mobile */
+  .hero-badge,
+  .hero-title,
+  .hero-subtitle {
+    text-align: center !important;
+  }
+  
+  .hero-section .lead {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
   }
   
   .hero-title {
@@ -1354,6 +1384,14 @@ a, button, .btn {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem !important;
     width: 100%;
+  }
+  
+  /* LOOP 5: Centramento perfetto tutti gli stat items */
+  .hero-stats .stat-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
   }
   
   /* Terzo stat (Made in Italy) span 2 columns per centratura */
@@ -1417,6 +1455,15 @@ a, button, .btn {
   /* Footer - stacking ottimizzato */
   .footer .row > div {
     margin-bottom: 2rem;
+  }
+  
+  /* LOOP 5: Footer logo centrato su mobile */
+  .footer .col-lg-4:first-child {
+    text-align: center !important;
+  }
+  
+  .footer .col-lg-4:first-child a:first-child {
+    display: inline-block;
   }
   
   /* Navbar mobile - offcanvas ottimizzato */
@@ -1526,10 +1573,34 @@ a, button, .btn {
     line-height: 1.6 !important;
   }
   
-  /* Hero - MANTENIAMO 100vh COME DESKTOP */
+  /* Hero - FIX BADGE TAGLIATO: align-items flex-start + padding aumentato */
   .hero-section {
     min-height: 100vh !important;
-    padding: 80px 0 30px 0; /* Padding top allineato a navbar */
+    align-items: flex-start !important; /* Rimuove centering verticale che causava overlap */
+    padding: 100px 0 30px 0 !important; /* Aumentato da 80px a 100px per visibilità badge */
+  }
+  
+  /* Hero badge - extra margin per sicurezza */
+  .hero-badge {
+    margin-top: 10px !important;
+  }
+  
+  /* Hero container - rimuovi padding inline se presente */
+  .hero-section .container {
+    padding-top: 0 !important;
+  }
+  
+  /* LOOP 5: Centramento testi hero su mobile */
+  .hero-badge,
+  .hero-title,
+  .hero-subtitle {
+    text-align: center !important;
+  }
+  
+  .hero-section .lead {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
   }
   
   .hero-title {
@@ -1605,6 +1676,15 @@ a, button, .btn {
   .footer {
     padding-top: 2rem !important;
     padding-bottom: 2rem !important;
+  }
+  
+  /* LOOP 5: Footer logo centrato su mobile */
+  .footer .col-lg-4:first-child {
+    text-align: center !important;
+  }
+  
+  .footer .col-lg-4:first-child a:first-child {
+    display: inline-block;
   }
   
   .footer h6 {
