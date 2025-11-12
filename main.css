@@ -1905,6 +1905,284 @@ html {
 /* END MOBILE OPTIMIZATIONS */
 
 /* ========================================
+   CHI SONO PAGE - MOBILE PARITY (LOOP 1)
+======================================== */
+
+/* 1. HERO TITLE - Display-1 */
+@media (max-width: 992px) {
+  .page-hero .display-1 {
+    font-size: 3.5rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .page-hero .display-1 {
+    font-size: 3rem !important;
+  }
+}
+@media (max-width: 576px) {
+  .page-hero .display-1 {
+    font-size: 2.5rem !important;
+  }
+}
+
+/* 2. HERO SUBTITLE - Lead fs-3 */
+@media (max-width: 768px) {
+  .page-hero .lead.fs-3 {
+    font-size: 1.375rem !important;
+  }
+}
+@media (max-width: 576px) {
+  .page-hero .lead.fs-3 {
+    font-size: 1.25rem !important;
+  }
+}
+
+/* 3. HERO STATISTICHE - Layout & Centering */
+@media (max-width: 768px) {
+  .page-hero .d-flex.gap-4.flex-wrap {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem !important;
+    justify-items: center;
+    text-align: center;
+  }
+  
+  .page-hero .d-flex.gap-4.flex-wrap > div:nth-child(3) {
+    grid-column: span 2;
+  }
+  
+  /* 16. HERO STATISTICS - h2 Numbers */
+  .page-hero .h2 {
+    font-size: 1.75rem !important;
+  }
+}
+@media (max-width: 576px) {
+  .page-hero .h2 {
+    font-size: 1.5rem !important;
+  }
+}
+
+/* 4. SECTION TITLES - Display-4 */
+@media (max-width: 992px) {
+  .bio-timeline-section .display-4,
+  .studio-gallery-section .display-4,
+  .achievements-section .display-4,
+  .quote-section .display-4,
+  .cta-section .display-4 {
+    font-size: 2.25rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .bio-timeline-section .display-4,
+  .studio-gallery-section .display-4,
+  .achievements-section .display-4,
+  .quote-section .display-4,
+  .cta-section .display-4 {
+    font-size: 2rem !important;
+  }
+}
+@media (max-width: 576px) {
+  .bio-timeline-section .display-4,
+  .studio-gallery-section .display-4,
+  .achievements-section .display-4,
+  .quote-section .display-4,
+  .cta-section .display-4 {
+    font-size: 1.75rem !important;
+  }
+}
+
+/* 5. TIMELINE BADGE ANNO - h3 */
+@media (max-width: 768px) {
+  .year-badge .h3 {
+    font-size: 1.5rem !important;
+  }
+}
+@media (max-width: 576px) {
+  .year-badge .h3 {
+    font-size: 1.375rem !important;
+  }
+}
+
+/* 6. QUOTE ICON - Font-size 4rem */
+@media (max-width: 768px) {
+  .quote-card .bi-quote {
+    font-size: 3rem !important;
+  }
+}
+@media (max-width: 576px) {
+  .quote-card .bi-quote {
+    font-size: 2.5rem !important;
+  }
+}
+
+/* 7. QUOTE TEXT - Lead fs-3 */
+@media (max-width: 768px) {
+  .quote-card .lead.fs-3 {
+    font-size: 1.375rem !important;
+  }
+}
+@media (max-width: 576px) {
+  .quote-card .lead.fs-3 {
+    font-size: 1.25rem !important;
+  }
+}
+
+/* 8. SECTION SPACING - py-6 */
+@media (max-width: 768px) {
+  .page-hero,
+  .bio-timeline-section,
+  .studio-gallery-section,
+  .achievements-section,
+  .quote-section,
+  .cta-section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+}
+@media (max-width: 576px) {
+  .page-hero,
+  .bio-timeline-section,
+  .studio-gallery-section,
+  .achievements-section,
+  .quote-section,
+  .cta-section {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+}
+
+/* 9. CARDS PADDING - p-5 */
+@media (max-width: 768px) {
+  .bio-timeline-section .glass-card,
+  .achievement-card,
+  .quote-card,
+  .cta-card {
+    padding: 2rem !important;
+  }
+}
+@media (max-width: 576px) {
+  .bio-timeline-section .glass-card,
+  .achievement-card,
+  .quote-card,
+  .cta-card {
+    padding: 1.5rem !important;
+  }
+}
+
+/* 10. HERO IMAGE CARD - Min-height 550px */
+@media (max-width: 992px) {
+  .artist-photo-wrapper .glass-card {
+    min-height: 400px !important;
+  }
+}
+@media (max-width: 768px) {
+  .artist-photo-wrapper .glass-card {
+    min-height: 350px !important;
+  }
+}
+@media (max-width: 576px) {
+  .artist-photo-wrapper .glass-card {
+    min-height: 300px !important;
+  }
+}
+
+/* 11. HERO IMAGE SIZE */
+@media (max-width: 768px) {
+  .artist-photo-wrapper img {
+    width: 100% !important;
+    max-width: 320px !important;
+    height: auto !important;
+  }
+}
+@media (max-width: 576px) {
+  .artist-photo-wrapper img {
+    max-width: 280px !important;
+  }
+}
+
+/* 12. CTA BUTTONS - px-5 padding */
+@media (max-width: 576px) {
+  .page-hero .btn-lg,
+  .cta-section .btn-lg {
+    width: 100%;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+}
+
+/* 13. HERO GAP - g-5 */
+@media (max-width: 768px) {
+  .page-hero .row.g-5 {
+    gap: 2rem !important;
+  }
+}
+
+/* 14. TIMELINE SPACING - mb-5 */
+@media (max-width: 768px) {
+  .timeline-event {
+    margin-bottom: 2rem !important;
+  }
+}
+@media (max-width: 576px) {
+  .timeline-event {
+    margin-bottom: 1.5rem !important;
+  }
+}
+
+/* 15. CENTERING GENERALE MOBILE */
+@media (max-width: 768px) {
+  .page-hero .col-lg-6:first-child,
+  .timeline-event .col-lg-2,
+  .timeline-event .col-lg-10 {
+    text-align: center !important;
+  }
+  
+  .page-hero .d-flex.gap-3.flex-wrap {
+    justify-content: center !important;
+  }
+}
+
+/* 17. ACHIEVEMENT ICONS - fs-1 */
+@media (max-width: 576px) {
+  .achievement-card i.fs-1 {
+    font-size: 2rem !important;
+  }
+}
+
+/* 18. FLOATING BADGE - Position */
+@media (max-width: 576px) {
+  .artist-photo-wrapper .position-absolute {
+    margin: 0.5rem !important;
+  }
+  
+  .artist-photo-wrapper .position-absolute .glass-card {
+    padding: 0.75rem !important;
+  }
+  
+  .artist-photo-wrapper .position-absolute i {
+    font-size: 1.5rem !important;
+  }
+  
+  .artist-photo-wrapper .position-absolute .small {
+    font-size: 0.75rem !important;
+  }
+}
+
+/* 20. TIMELINE CENTERING */
+@media (max-width: 992px) {
+  .year-badge {
+    text-align: center !important;
+  }
+  
+  .timeline-event .col-lg-10 h3,
+  .timeline-event .col-lg-10 p {
+    text-align: center !important;
+  }
+}
+
+/* END CHI SONO PAGE - MOBILE PARITY */
+
+/* ========================================
    BOTTOM NAVIGATION - Mobile Native UX
 ======================================== */
 
