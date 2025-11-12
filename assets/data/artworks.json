@@ -20,7 +20,7 @@
       },
       "price": 10,
       "currency": "EUR",
-      "status": "sold",
+      "status": "available",
       "featured": true,
       "description": {
         "short": {
