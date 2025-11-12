@@ -2748,6 +2748,83 @@ html {
   }
 }
 
+/* PERFEZIONAMENTO TECNICA MOBILE - 6 Correzioni */
+
+/* FIX #1: Gap Verticale tra Card Negativo/Positivo */
+@media (max-width: 768px) {
+  .reveal-demo > div.mt-3 {
+    margin-top: 1rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .reveal-demo > div.mt-3 {
+    margin-top: 1.5rem !important;
+  }
+}
+
+/* FIX #2: Freccia Centrale Dimensioni Mobile */
+@media (max-width: 768px) {
+  .reveal-demo .bi-arrow-down.fs-1 {
+    font-size: 2rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .reveal-demo .bi-arrow-down.fs-1 {
+    font-size: 1.75rem !important;
+  }
+}
+
+/* FIX #3: Timeline Step Numbers Spacing Mobile */
+@media (max-width: 768px) {
+  .step-number-wrapper.mb-4 {
+    margin-bottom: 1.25rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .step-number-wrapper.mb-4 {
+    margin-bottom: 1rem !important;
+  }
+}
+
+/* FIX #4: Timeline Cards Icon Alignment */
+@media (max-width: 576px) {
+  .timeline-step .glass-card .d-flex .fs-1 {
+    flex-shrink: 0;
+    align-self: flex-start;
+    margin-top: 0.125rem;
+  }
+}
+
+/* FIX #5: Video Section Feature Items Gap */
+@media (max-width: 576px) {
+  .video-section .feature-item {
+    margin-bottom: 1rem !important;
+  }
+  
+  .video-section .feature-item:last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+/* FIX #6: Workshop CTA Features Layout Mobile */
+@media (max-width: 768px) {
+  .workshop-cta-section .d-flex.gap-4 {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .workshop-cta-section .d-flex.gap-4 {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+  }
+}
+
 /* Section Titles - Display-4 */
 @media (max-width: 992px) { .display-4 { font-size: 2.25rem !important; }}
 @media (max-width: 768px) { .display-4 { font-size: 2rem !important; }}
@@ -2851,6 +2928,15 @@ html {
 }
 @media (max-width: 576px) {
   .page-hero .h2 { font-size: 1.5rem !important; }
+  /* FIX #1: Stats Gap Ottimizzato Mobile */
+  .page-hero .d-flex.gap-5 {
+    gap: 1rem !important;
+  }
+  /* FIX #2: Stats Labels Font-size Perfetto */
+  .page-hero .small {
+    font-size: 0.8125rem !important;
+    line-height: 1.4;
+  }
 }
 
 /* Filters Section */
@@ -2858,6 +2944,17 @@ html {
   .filters-section { padding-top: 2rem !important; padding-bottom: 2rem !important; }
   .filters-section .form-control,
   .filters-section .form-select { font-size: 16px !important; } /* iOS fix */
+  /* FIX #3: Sticky Top Coerente con Navbar Mobile */
+  .filters-section.sticky-top {
+    top: 80px !important;
+  }
+}
+
+/* FIX #4: Filters Row Gap Mobile Piccoli */
+@media (max-width: 400px) {
+  .filters-section .row.g-3 {
+    gap: 0.5rem !important;
+  }
 }
 
 /* Artworks Grid */
@@ -2866,6 +2963,11 @@ html {
 }
 @media (max-width: 576px) {
   .artworks-grid { padding-top: 2.5rem !important; padding-bottom: 2.5rem !important; }
+  /* FIX #6: Empty State Icon Size Mobile */
+  .artworks-grid #emptyState .fs-1,
+  .artworks-grid #emptyState i.fs-1 {
+    font-size: 2rem !important;
+  }
 }
 
 /* CTA Section */
@@ -2875,7 +2977,12 @@ html {
   .cta-section .display-5 { font-size: 1.5rem !important; }
   .cta-section .lead { font-size: 1.125rem !important; }
   .cta-section .btn-lg { width: 100% !important; padding: 0.875rem 2rem !important; }
-  .cta-section .d-flex.gap-3 { gap: 0.75rem !important; }
+  /* FIX #5: CTA Buttons Stack Verticale + Gap Ottimizzato */
+  .cta-section .d-flex.gap-3 {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+    align-items: stretch !important;
+  }
 }
 
 /* END OPERE PAGE */
