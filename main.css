@@ -3146,6 +3146,162 @@ html {
 
 /* END OPERA STATUS */
 
+/* ========================================
+   INDEX.HTML - Mobile Ottimizzazioni Finali
+======================================== */
+
+/* CORREZIONE #1: Hero Artwork Aspect Ratio Mobile */
+@media (max-width: 768px) {
+  .reveal-canvas-wrapper {
+    aspect-ratio: 3/4 !important; /* Ridotto da 4/5 per risparmiare spazio verticale */
+  }
+}
+
+@media (max-width: 576px) {
+  .reveal-canvas-wrapper {
+    aspect-ratio: 1/1 !important; /* Quadrato su schermi piccoli */
+  }
+}
+
+/* CORREZIONE #2: Achievement Cards Padding Mobile */
+@media (max-width: 768px) {
+  .achievement-card.p-5,
+  #achievements .card.p-5 {
+    padding: 2rem !important; /* Ridotto da 3rem */
+  }
+}
+
+@media (max-width: 576px) {
+  .achievement-card.p-5,
+  #achievements .card.p-5 {
+    padding: 1.5rem !important; /* Ulteriormente ridotto */
+  }
+}
+
+/* CORREZIONE #3: Newsletter Input Group Mobile */
+@media (max-width: 576px) {
+  .footer .input-group {
+    flex-direction: column !important;
+    gap: 0.5rem;
+  }
+  
+  .footer .input-group .form-control,
+  .footer .input-group .btn {
+    width: 100% !important;
+    border-radius: 0.5rem !important; /* Ripristina border-radius */
+  }
+}
+
+/* CORREZIONE #4: Testimonial Author Photos Mobile */
+@media (max-width: 576px) {
+  #testimonials img[style*="width: 60px"],
+  .testimonial-card img.rounded-circle {
+    width: 50px !important;
+    height: 50px !important;
+  }
+}
+
+/* END INDEX MOBILE OPTIMIZATIONS */
+
+/* ========================================
+   CHI-SONO.HTML - Mobile Ottimizzazioni Finali
+======================================== */
+
+/* CORREZIONE #1: Artist Photo Wrapper Height Mobile */
+@media (max-width: 992px) {
+  .artist-photo-wrapper .glass-card {
+    min-height: 450px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .artist-photo-wrapper .glass-card {
+    min-height: 400px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .artist-photo-wrapper .glass-card {
+    min-height: 350px !important;
+  }
+}
+
+/* CORREZIONE #2: Floating Badge su Small Screens */
+@media (max-width: 400px) {
+  .artist-photo-wrapper .position-absolute.top-0.end-0 {
+    transform: scale(0.85);
+    margin: 0.5rem !important;
+  }
+  
+  .artist-photo-wrapper .position-absolute .glass-card {
+    padding: 0.75rem !important;
+  }
+  
+  .artist-photo-wrapper .position-absolute .fs-1 {
+    font-size: 1.75rem !important;
+  }
+  
+  .artist-photo-wrapper .position-absolute .small {
+    font-size: 0.75rem !important;
+  }
+}
+
+/* END CHI-SONO MOBILE OPTIMIZATIONS */
+
+/* ========================================
+   OPERA-SINGLE.HTML - Mobile Ottimizzazioni Finali
+======================================== */
+
+/* CORREZIONE #1: Price Box Trust Signals su Mobile */
+@media (max-width: 576px) {
+  .price-box .fs-4 {
+    font-size: 1.25rem !important; /* Ridotto da fs-4 (1.5rem) */
+  }
+  
+  .price-box .small,
+  .price-box .text-gradient.fw-semibold {
+    font-size: 0.8125rem !important;
+  }
+  
+  .price-box .row.g-3 {
+    gap: 0.75rem !important;
+  }
+}
+
+/* CORREZIONE #2: Technical Details Card Padding Mobile */
+@media (max-width: 768px) {
+  .technical-details.p-4 {
+    padding: 1.5rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .technical-details.p-4 {
+    padding: 1.25rem !important;
+  }
+  
+  .technical-details .h5 {
+    font-size: 1.125rem !important;
+  }
+  
+  .technical-details .detail-row {
+    font-size: 0.9375rem !important;
+  }
+}
+
+/* CORREZIONE #3: Thumbnail Gallery Gap Mobile */
+@media (max-width: 576px) {
+  .thumbnail-gallery {
+    gap: 0.5rem !important;
+  }
+  
+  .thumbnail-gallery img {
+    max-width: 70px !important;
+  }
+}
+
+/* END OPERA-SINGLE MOBILE OPTIMIZATIONS */
+
 /* CHECKOUT - Minimale */
 @media (max-width: 576px) {
   .checkout-page .display-4 { font-size: 1.75rem !important; }

@@ -18,7 +18,7 @@
         "height": 50,
         "unit": "cm"
       },
-      "price": 1200,
+      "price": 10,
       "currency": "EUR",
       "status": "available",
       "featured": true,
@@ -36,8 +36,7 @@
           "de": "Dieses Kunstwerk fängt die magische Atmosphäre eines kalabrischen Sonnenuntergangs ein, wo das Meer den Himmel in einem Farbenspiel trifft. Mit der patentierten #negativoèpositivo®-Technik geschaffen, enthüllt es überraschende Nuancen, wenn es im Positiv betrachtet wird.",
           "fr": "Cette œuvre capture l'atmosphère magique d'un coucher de soleil calabrais, où la mer rencontre le ciel dans une danse de couleurs. Réalisée avec la technique brevetée #negativoèpositivo®, elle révèle des nuances surprenantes lorsqu'elle est vue en positif.",
           "es": "Esta obra captura la atmósfera mágica de un atardecer calabrés, donde el mar se encuentra con el cielo en una danza de colores. Realizada con la técnica patentada #negativoèpositivo®, revela matices sorprendentes cuando se observa en positivo."
-        },
-        "technique": "L'opera è stata dipinta interamente a mano con i polpastrelli usando crete colorate, creando prima il negativo cromatico e poi rivelando il positivo attraverso fotografia professionale."
+        }
       },
       "images": {
         "negative": {
@@ -51,7 +50,13 @@
         },
         "thumbnail": "assets/images/opere/featured/positive-1.jpg"
       },
-      "tags": ["paesaggio", "mare", "tramonto", "calabria", "natura"],
+      "tags": [
+        "paesaggio",
+        "mare",
+        "tramonto",
+        "calabria",
+        "natura"
+      ],
       "seo": {
         "metaTitle": "Tramonto Calabrese - Opera #negativoèpositivo® | Mario Vetere",
         "metaDescription": "Acquista 'Tramonto Calabrese', opera unica realizzata con la tecnica brevettata #negativoèpositivo®. Crete colorate su cartoncino 70x50cm.",
@@ -68,7 +73,8 @@
         "europe": 50,
         "worldwide": 100,
         "freeShippingOver": 2000
-      }
+      },
+      "collection": ""
     },
     {
       "id": 2,
@@ -121,7 +127,13 @@
         },
         "thumbnail": "assets/images/opere/featured/positive-1.jpg"
       },
-      "tags": ["urbano", "città", "moderno", "architettura", "contrasti"],
+      "tags": [
+        "urbano",
+        "città",
+        "moderno",
+        "architettura",
+        "contrasti"
+      ],
       "seo": {
         "metaTitle": "Riflessi Urbani - Opera Unica #negativoèpositivo® | Mario Vetere",
         "metaDescription": "Scopri 'Riflessi Urbani', capolavoro urbano con tecnica brevettata. Crete colorate su cartoncino 60x80cm.",
@@ -191,7 +203,13 @@
         },
         "thumbnail": "assets/images/opere/featured/positive-1.jpg"
       },
-      "tags": ["natura", "bosco", "silenzio", "meditazione", "paesaggio"],
+      "tags": [
+        "natura",
+        "bosco",
+        "silenzio",
+        "meditazione",
+        "paesaggio"
+      ],
       "seo": {
         "metaTitle": "Natura Silenziosa - Opera d'Arte Contemporanea | Mario Vetere",
         "metaDescription": "Acquista 'Natura Silenziosa', opera in crete colorate 50x70cm con tecnica #negativoèpositivo®.",
@@ -261,7 +279,13 @@
         },
         "thumbnail": "assets/images/opere/featured/positive-1.jpg"
       },
-      "tags": ["ritratto", "volto", "ombra", "luce", "emozione"],
+      "tags": [
+        "ritratto",
+        "volto",
+        "ombra",
+        "luce",
+        "emozione"
+      ],
       "seo": {
         "metaTitle": "Volto nell'Ombra - Ritratto Contemporaneo | Mario Vetere",
         "metaDescription": "Ritratto unico con tecnica #negativoèpositivo®. Crete colorate 40x50cm.",
@@ -331,7 +355,13 @@
         },
         "thumbnail": "assets/images/opere/featured/positive-1.jpg"
       },
-      "tags": ["alba", "mare", "mediterraneo", "sole", "paesaggio"],
+      "tags": [
+        "alba",
+        "mare",
+        "mediterraneo",
+        "sole",
+        "paesaggio"
+      ],
       "seo": {
         "metaTitle": "Alba Mediterranea - Paesaggio Marino | Mario Vetere",
         "metaDescription": "Opera marina unica 80x60cm con tecnica brevettata #negativoèpositivo®.",
@@ -387,7 +417,7 @@
   ],
   "stats": {
     "totalArtworks": 45,
-    "availableArtworks": 32,
+    "availableArtworks": 5,
     "soldArtworks": 13,
     "averagePrice": 1500,
     "priceRange": {
@@ -447,4 +477,3 @@
     ]
   }
 }
-
