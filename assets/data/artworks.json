@@ -246,7 +246,7 @@
         "height": 50,
         "unit": "cm"
       },
-      "price": 1800,
+      "price": 10,
       "currency": "EUR",
       "status": "available",
       "featured": false,
@@ -264,8 +264,7 @@
           "de": "Dieses Porträt erforscht die Dualität des menschlichen Wesens, verborgen im Schatten, aber im Licht offenbart. Die #negativoèpositivo®-Technik betont den emotionalen Kontrast zwischen dem, was wir zeigen, und dem, was wir wirklich sind.",
           "fr": "Ce portrait explore la dualité de l'être humain, caché dans l'ombre mais révélé dans la lumière. La technique #negativoèpositivo® met l'accent sur le contraste émotionnel entre ce que nous montrons et ce que nous sommes réellement.",
           "es": "Este retrato explora la dualidad del ser humano, oculto en la sombra pero revelado en la luz. La técnica #negativoèpositivo® enfatiza el contraste emocional entre lo que mostramos y lo que realmente somos."
-        },
-        "technique": "Ogni tratto del volto è stato studiato e dipinto in negativo con crete colorate, prestando particolare attenzione alle zone d'ombra che diventeranno luce nel positivo."
+        }
       },
       "images": {
         "negative": {
@@ -302,7 +301,8 @@
         "europe": 45,
         "worldwide": 90,
         "freeShippingOver": 2000
-      }
+      },
+      "collection": ""
     },
     {
       "id": 5,
