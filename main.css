@@ -2871,16 +2871,115 @@ html {
   .artwork-detail-page .glass-badge { font-size: 0.875rem !important; padding: 0.5rem 1rem !important; }
 }
 
-/* FAQ PAGE - Accordion */
-@media (max-width: 992px) { .faq-page .display-4 { font-size: 2.25rem !important; }}
-@media (max-width: 768px) { .faq-page .display-4 { font-size: 2rem !important; }}
-@media (max-width: 576px) {
-  .faq-page .display-4 { font-size: 1.75rem !important; }
-  .faq-page .glass-badge { font-size: 0.875rem !important; padding: 0.5rem 1rem !important; }
-  .faq-page .accordion-button { font-size: 0.9375rem !important; padding: 1rem !important; }
-  .faq-page .accordion-body { font-size: 0.9375rem !important; padding: 1rem !important; }
-  .faq-page .accordion-item { margin-bottom: 0.75rem !important; }
+/* FAQ PAGE - Hero & Accordion (CORRETTO - selettori che esistono davvero!) */
+
+/* Hero FAQ */
+@media (max-width: 992px) {
+  /* Hero title in FAQ page */
+  body:has(#faqAccordion) .page-hero .display-3 { font-size: 2.5rem !important; }
 }
+@media (max-width: 768px) {
+  body:has(#faqAccordion) .page-hero .display-3 { font-size: 2rem !important; }
+  body:has(#faqAccordion) .page-hero .lead { font-size: 1.125rem !important; }
+}
+@media (max-width: 576px) {
+  body:has(#faqAccordion) .page-hero .display-3 { font-size: 1.75rem !important; }
+  body:has(#faqAccordion) .page-hero .lead { font-size: 1rem !important; }
+  body:has(#faqAccordion) .page-hero .glass-badge { font-size: 0.875rem !important; padding: 0.5rem 1rem !important; }
+}
+
+/* Accordion Categories */
+@media (max-width: 992px) { 
+  #faqAccordion .h4 { font-size: 1.5rem !important; }
+}
+@media (max-width: 768px) { 
+  #faqAccordion .h4 { font-size: 1.375rem !important; }
+}
+@media (max-width: 576px) {
+  /* Category titles */
+  #faqAccordion .h4 { font-size: 1.25rem !important; }
+  #faqAccordion .h4 i { font-size: 1.125rem !important; }
+  
+  /* Accordion items */
+  #faqAccordion .accordion-item { margin-bottom: 0.75rem !important; }
+  #faqAccordion .accordion-item.rounded-4 { border-radius: 1rem !important; }
+  
+  /* Accordion buttons */
+  #faqAccordion .accordion-button { 
+    font-size: 0.9375rem !important; 
+    padding: 1rem !important;
+    line-height: 1.5 !important;
+  }
+  
+  /* Accordion body */
+  #faqAccordion .accordion-body { 
+    font-size: 0.9375rem !important; 
+    padding: 1rem !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* Buttons inside FAQ */
+  #faqAccordion .btn-sm {
+    font-size: 0.875rem !important;
+    padding: 0.5rem 1rem !important;
+    width: 100% !important;
+    margin-top: 0.75rem !important;
+  }
+  
+  /* Alert boxes inside FAQ */
+  #faqAccordion .alert {
+    font-size: 0.875rem !important;
+    padding: 0.75rem !important;
+    margin-top: 0.75rem !important;
+  }
+  
+  #faqAccordion .alert i {
+    font-size: 1rem !important;
+  }
+  
+  #faqAccordion .alert small {
+    font-size: 0.8125rem !important;
+    line-height: 1.5 !important;
+  }
+  
+  /* Strong text in FAQ */
+  #faqAccordion strong {
+    font-size: inherit !important;
+  }
+}
+
+/* FAQ - Hero title & CTA section */
+@media (max-width: 992px) {
+  body:has(#faqAccordion) section.py-6:first-of-type .display-3 { font-size: 2.5rem !important; }
+}
+@media (max-width: 768px) {
+  body:has(#faqAccordion) section.py-6:first-of-type .display-3 { font-size: 2rem !important; }
+  body:has(#faqAccordion) section.py-6:first-of-type .lead { font-size: 1.125rem !important; }
+}
+@media (max-width: 576px) {
+  /* Hero */
+  body:has(#faqAccordion) section.py-6:first-of-type .display-3 { font-size: 1.75rem !important; }
+  body:has(#faqAccordion) section.py-6:first-of-type .lead { font-size: 1rem !important; }
+  body:has(#faqAccordion) section.py-6:first-of-type .glass-badge { 
+    font-size: 0.875rem !important; 
+    padding: 0.5rem 1rem !important; 
+  }
+  
+  /* CTA finale FAQ */
+  body:has(#faqAccordion) .h4 { font-size: 1.25rem !important; }
+  body:has(#faqAccordion) .btn-lg { 
+    width: 100% !important; 
+    padding: 0.875rem 2rem !important; 
+  }
+  
+  /* Section spacing FAQ */
+  body:has(#faqAccordion) .py-6 {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+}
+
+/* END FAQ PAGE */
 
 /* CHECKOUT - Minimale */
 @media (max-width: 576px) {
