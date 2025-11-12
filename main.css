@@ -2180,7 +2180,157 @@ html {
   }
 }
 
-/* END CHI SONO PAGE - MOBILE PARITY */
+/* END CHI SONO PAGE - MOBILE PARITY (LOOP 1) */
+
+/* ========================================
+   CHI SONO PAGE - LOOP 2 (Micro-ottimizzazioni)
+======================================== */
+
+/* 1. HERO BIOGRAFIA - fs-5 */
+@media (max-width: 576px) {
+  .page-hero .fs-5 {
+    font-size: 1.125rem !important;
+    line-height: 1.7 !important;
+  }
+}
+
+/* 2. HERO BADGE - Fine-tuning */
+@media (max-width: 576px) {
+  .page-hero .glass-badge {
+    font-size: 0.875rem !important;
+    padding: 0.5rem 1rem !important;
+  }
+}
+
+/* 3. HERO STATISTICS LABELS - Small text */
+@media (max-width: 576px) {
+  .page-hero .small {
+    font-size: 0.875rem !important;
+  }
+}
+
+/* 4. HERO CTA BUTTONS - Gap ridotto */
+@media (max-width: 576px) {
+  .page-hero .d-flex.gap-3.flex-wrap {
+    gap: 0.75rem !important;
+  }
+}
+
+/* 5. SECTION HEADERS - mb-6 ottimizzato */
+@media (max-width: 768px) {
+  .bio-timeline-section .mb-6,
+  .studio-gallery-section .mb-6,
+  .achievements-section .mb-6 {
+    margin-bottom: 2.5rem !important;
+  }
+}
+@media (max-width: 576px) {
+  .bio-timeline-section .mb-6,
+  .studio-gallery-section .mb-6,
+  .achievements-section .mb-6 {
+    margin-bottom: 2rem !important;
+  }
+}
+
+/* 6. TIMELINE CARDS - Border-radius */
+@media (max-width: 576px) {
+  .bio-timeline-section .rounded-4 {
+    border-radius: 1rem !important;
+  }
+}
+
+/* 7. TIMELINE TITLE - h4 */
+@media (max-width: 576px) {
+  .timeline-event h3.h4 {
+    font-size: 1.125rem !important;
+  }
+}
+
+/* 8. TIMELINE TEXT - Paragraph */
+@media (max-width: 576px) {
+  .timeline-event p {
+    font-size: 0.9375rem !important;
+    line-height: 1.6 !important;
+  }
+}
+
+/* 9. STUDIO GALLERY TITLES - h5/h6 */
+@media (max-width: 576px) {
+  .studio-gallery-section .h5 {
+    font-size: 1.125rem !important;
+  }
+  
+  .studio-gallery-section .h6 {
+    font-size: 1rem !important;
+  }
+}
+
+/* 10. STUDIO GALLERY DESCRIPTIONS */
+@media (max-width: 576px) {
+  .studio-gallery-section .small {
+    font-size: 0.8125rem !important;
+  }
+}
+
+/* 11. STUDIO GALLERY GRID - Gap */
+@media (max-width: 576px) {
+  .studio-gallery-section .row.g-4 {
+    gap: 1rem !important;
+  }
+}
+
+/* 12. ACHIEVEMENT ICON - Margin */
+@media (max-width: 576px) {
+  .achievement-card i.mb-3 {
+    margin-bottom: 0.75rem !important;
+  }
+}
+
+/* 13. ACHIEVEMENT TITLE - h4 */
+@media (max-width: 576px) {
+  .achievement-card h3.h4 {
+    font-size: 1.25rem !important;
+  }
+}
+
+/* 14. ACHIEVEMENT LIST ITEMS */
+@media (max-width: 576px) {
+  .achievement-card li {
+    margin-bottom: 0.5rem !important;
+    font-size: 0.9375rem !important;
+  }
+}
+
+/* 15. QUOTE BLOCKQUOTE - Margins */
+@media (max-width: 576px) {
+  .quote-card blockquote {
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+}
+
+/* 16. QUOTE FOOTER - fs-5 */
+@media (max-width: 576px) {
+  .quote-card .blockquote-footer {
+    font-size: 1rem !important;
+  }
+}
+
+/* 17. QUOTE CARD - Border-radius */
+@media (max-width: 576px) {
+  .quote-card.rounded-5 {
+    border-radius: 1.25rem !important;
+  }
+}
+
+/* 18. CTA DESCRIPTION - Lead */
+@media (max-width: 576px) {
+  .cta-section .lead {
+    font-size: 1.125rem !important;
+  }
+}
+
+/* END CHI SONO PAGE - LOOP 2 */
 
 /* ========================================
    BOTTOM NAVIGATION - Mobile Native UX
