@@ -620,6 +620,14 @@ img, video, iframe {
   transition: all var(--transition-base);
 }
 
+/* Icon Buttons - Mobile responsive */
+@media (max-width: 768px) {
+  .btn-icon {
+    width: 36px;
+    height: 36px;
+  }
+}
+
 .btn-icon:hover {
   background: var(--accent-primary);
   border-color: var(--accent-primary);
@@ -879,6 +887,12 @@ img, video, iframe {
   background-color: var(--bg-surface);
 }
 
+.footer h6 {
+  font-size: 1.125rem; /* Leggermente più grande per desktop */
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
 .footer-link {
   transition: color var(--transition-fast);
 }
@@ -992,11 +1006,11 @@ img, video, iframe {
   }
   
   .artwork-card h3 {
-    font-size: 1.1rem !important;
+    font-size: 1.25rem !important; /* Aumentato da 1.1rem per migliore gerarchia */
   }
   
   .artwork-card .small {
-    font-size: 0.8rem !important;
+    font-size: 0.875rem !important; /* Aumentato da 0.8rem per leggibilità */
   }
   
   .achievement-card {
@@ -1334,14 +1348,27 @@ a, button, .btn {
     justify-content: center;
   }
   
-  /* Stats - layout verticale */
+  /* Stats - layout GRID 2x2 (migliore impatto visivo) */
   .hero-stats {
-    flex-direction: column;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem !important;
+    width: 100%;
+  }
+  
+  /* Terzo stat (Made in Italy) span 2 columns per centratura */
+  .hero-stats .stat-item:nth-child(3) {
+    grid-column: 1 / -1;
+    justify-self: center;
   }
   
   .stat-number {
     font-size: 2.5rem !important;
+    justify-content: center !important;
+  }
+  
+  .stat-label {
+    text-align: center;
   }
   
   /* Touch targets - minimo 48x48px */
@@ -1515,8 +1542,8 @@ a, button, .btn {
   }
   
   .hero-badge .badge {
-    font-size: 0.75rem !important;
-    padding: 0.5rem 0.75rem !important;
+    font-size: 0.875rem !important; /* Aumentato da 0.75rem per leggibilità */
+    padding: 0.5rem 0.875rem !important;
   }
   
   /* Stats compatti */
@@ -1525,7 +1552,7 @@ a, button, .btn {
   }
   
   .stat-label {
-    font-size: 0.75rem !important;
+    font-size: 0.875rem !important; /* Aumentato da 0.75rem per accessibilità */
   }
   
   /* Buttons - touch ottimizzati */
