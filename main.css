@@ -2806,6 +2806,60 @@ html {
 /* END TECNICA PAGE */
 
 /* ========================================
+   OPERE PAGE - MOBILE PARITY
+======================================== */
+
+/* Hero */
+@media (max-width: 992px) { .page-hero .display-2 { font-size: 3rem !important; }}
+@media (max-width: 768px) { .page-hero .display-2 { font-size: 2.5rem !important; }}
+@media (max-width: 576px) { 
+  .page-hero .display-2 { font-size: 2.25rem !important; }
+  .page-hero .lead.fs-4 { font-size: 1.125rem !important; }
+  .page-hero .glass-badge { font-size: 0.875rem !important; padding: 0.5rem 1rem !important; }
+}
+
+/* Hero Stats */
+@media (max-width: 768px) {
+  .page-hero .d-flex.gap-5 { 
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem !important;
+  }
+  .page-hero .h2 { font-size: 1.75rem !important; }
+  .page-hero .small { font-size: 0.875rem !important; }
+}
+@media (max-width: 576px) {
+  .page-hero .h2 { font-size: 1.5rem !important; }
+}
+
+/* Filters Section */
+@media (max-width: 576px) {
+  .filters-section { padding-top: 2rem !important; padding-bottom: 2rem !important; }
+  .filters-section .form-control,
+  .filters-section .form-select { font-size: 16px !important; } /* iOS fix */
+}
+
+/* Artworks Grid */
+@media (max-width: 768px) {
+  .artworks-grid { padding-top: 3rem !important; padding-bottom: 3rem !important; }
+}
+@media (max-width: 576px) {
+  .artworks-grid { padding-top: 2.5rem !important; padding-bottom: 2.5rem !important; }
+}
+
+/* CTA Section */
+@media (max-width: 992px) { .cta-section .display-5 { font-size: 2rem !important; }}
+@media (max-width: 768px) { .cta-section .display-5 { font-size: 1.75rem !important; }}
+@media (max-width: 576px) { 
+  .cta-section .display-5 { font-size: 1.5rem !important; }
+  .cta-section .lead { font-size: 1.125rem !important; }
+  .cta-section .btn-lg { width: 100% !important; padding: 0.875rem 2rem !important; }
+  .cta-section .d-flex.gap-3 { gap: 0.75rem !important; }
+}
+
+/* END OPERE PAGE */
+
+/* ========================================
    BOTTOM NAVIGATION - Mobile Native UX
 ======================================== */
 
