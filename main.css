@@ -2981,6 +2981,135 @@ html {
 
 /* END FAQ PAGE */
 
+/* ========================================
+   LEGAL PAGES - Privacy, Cookie, Termini
+======================================== */
+
+/* Hero Titles */
+@media (max-width: 992px) {
+  body:has(main[style*="padding-top: 100px"]) .display-4 { font-size: 2.5rem !important; }
+}
+@media (max-width: 768px) {
+  body:has(main[style*="padding-top: 100px"]) .display-4 { font-size: 2.25rem !important; }
+  body:has(main[style*="padding-top: 100px"]) .lead { font-size: 1.125rem !important; }
+}
+@media (max-width: 576px) {
+  /* Hero */
+  body:has(main[style*="padding-top: 100px"]) .display-4 { 
+    font-size: 2rem !important; 
+    line-height: 1.2 !important;
+    margin-bottom: 1.5rem !important;
+  }
+  body:has(main[style*="padding-top: 100px"]) .lead { 
+    font-size: 1rem !important; 
+    line-height: 1.5 !important;
+  }
+  body:has(main[style*="padding-top: 100px"]) small { 
+    font-size: 0.875rem !important; 
+  }
+  
+  /* Section spacing */
+  body:has(main[style*="padding-top: 100px"]) .mb-5 { 
+    margin-bottom: 2rem !important; 
+  }
+  
+  /* Cards */
+  body:has(main[style*="padding-top: 100px"]) .card { 
+    margin-bottom: 1rem !important; 
+  }
+  body:has(main[style*="padding-top: 100px"]) .card-body.p-4 { 
+    padding: 1.5rem !important; 
+  }
+  
+  /* Titles inside cards */
+  body:has(main[style*="padding-top: 100px"]) .h4 { 
+    font-size: 1.25rem !important; 
+    line-height: 1.3 !important;
+    margin-bottom: 1rem !important;
+  }
+  body:has(main[style*="padding-top: 100px"]) .h5 { 
+    font-size: 1.125rem !important; 
+    line-height: 1.3 !important;
+    margin-bottom: 0.875rem !important;
+  }
+  body:has(main[style*="padding-top: 100px"]) .h6 { 
+    font-size: 1rem !important; 
+    line-height: 1.3 !important;
+    margin-bottom: 0.75rem !important;
+  }
+  
+  /* Paragraphs */
+  body:has(main[style*="padding-top: 100px"]) p { 
+    font-size: 0.9375rem !important; 
+    line-height: 1.6 !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  /* Lists */
+  body:has(main[style*="padding-top: 100px"]) ul,
+  body:has(main[style*="padding-top: 100px"]) ol { 
+    font-size: 0.9375rem !important; 
+    line-height: 1.6 !important;
+    padding-left: 1.25rem !important;
+  }
+  body:has(main[style*="padding-top: 100px"]) li { 
+    margin-bottom: 0.5rem !important; 
+  }
+  
+  /* Strong text */
+  body:has(main[style*="padding-top: 100px"]) strong { 
+    font-size: inherit !important; 
+  }
+  
+  /* Links */
+  body:has(main[style*="padding-top: 100px"]) a { 
+    word-break: break-word !important; 
+  }
+  
+  /* HR separators */
+  body:has(main[style*="padding-top: 100px"]) hr.my-4 { 
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  /* Tables (Cookie Policy) */
+  body:has(main[style*="padding-top: 100px"]) .table { 
+    font-size: 0.875rem !important; 
+  }
+  body:has(main[style*="padding-top: 100px"]) .table th,
+  body:has(main[style*="padding-top: 100px"]) .table td { 
+    padding: 0.5rem !important; 
+  }
+  body:has(main[style*="padding-top: 100px"]) code { 
+    font-size: 0.8125rem !important;
+    word-break: break-all !important;
+  }
+  
+  /* Back to top button */
+  body:has(main[style*="padding-top: 100px"]) .btn-outline-primary { 
+    width: 100% !important;
+    padding: 0.75rem !important;
+    font-size: 0.9375rem !important;
+  }
+  
+  /* Container adjustments */
+  body:has(main[style*="padding-top: 100px"]) .container { 
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+/* iOS Safari - Prevent zoom on focus for legal pages */
+@media (max-width: 576px) {
+  body:has(main[style*="padding-top: 100px"]) input,
+  body:has(main[style*="padding-top: 100px"]) textarea,
+  body:has(main[style*="padding-top: 100px"]) select {
+    font-size: 16px !important;
+  }
+}
+
+/* END LEGAL PAGES */
+
 /* CHECKOUT - Minimale */
 @media (max-width: 576px) {
   .checkout-page .display-4 { font-size: 1.75rem !important; }
