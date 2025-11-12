@@ -322,7 +322,7 @@
         "height": 60,
         "unit": "cm"
       },
-      "price": 1600,
+      "price": 5,
       "currency": "EUR",
       "status": "available",
       "featured": false,
@@ -340,8 +340,7 @@
           "de": "Die Morgendämmerung über dem Mittelmeer ist ein magischer Moment, den dieses Kunstwerk in seiner ganzen Essenz einfängt. Die warmen Farben der Morgensonne spiegeln sich im ruhigen Wasser wider und schaffen eine Atmosphäre von Frieden und Wiedergeburt.",
           "fr": "L'aube sur la Méditerranée est un moment magique que cette œuvre capture dans toute son essence. Les couleurs chaudes de l'aurore se reflètent sur l'eau calme, créant une atmosphère de paix et de renaissance.",
           "es": "El amanecer sobre el Mediterráneo es un momento mágico que esta obra captura en toda su esencia. Los colores cálidos del alba se reflejan en el agua tranquila, creando una atmósfera de paz y renacimiento."
-        },
-        "technique": "Le crete colorate sono state applicate con tecnica a strati, creando sfumature delicate che si rivelano magnificamente nell'inversione positiva."
+        }
       },
       "images": {
         "negative": {
@@ -378,7 +377,8 @@
         "europe": 55,
         "worldwide": 110,
         "freeShippingOver": 2000
-      }
+      },
+      "collection": ""
     }
   ],
   "categories": [
