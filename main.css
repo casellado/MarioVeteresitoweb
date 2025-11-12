@@ -3110,6 +3110,42 @@ html {
 
 /* END LEGAL PAGES */
 
+/* ========================================
+   OPERA STATUS - Vendute Badge & Buttons
+======================================== */
+
+/* Badge status opere - Mobile ottimizzato */
+@media (max-width: 576px) {
+  /* Badge header opera-single */
+  #operaStatus,
+  #operaFeatured {
+    font-size: 0.875rem !important;
+    padding: 0.5rem 1rem !important;
+    font-weight: 600 !important;
+  }
+  
+  /* Badge su card galleria */
+  .artwork-card .badge {
+    font-size: 0.875rem !important;
+    padding: 0.5rem 0.875rem !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+  }
+  
+  /* Prezzo "Venduta" in rosso */
+  #operaPrice.text-danger {
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+  }
+  
+  /* Bottone "Non Disponibile" */
+  #buyNowBtn.btn-secondary {
+    opacity: 0.6 !important;
+    cursor: not-allowed !important;
+  }
+}
+
+/* END OPERA STATUS */
+
 /* CHECKOUT - Minimale */
 @media (max-width: 576px) {
   .checkout-page .display-4 { font-size: 1.75rem !important; }
