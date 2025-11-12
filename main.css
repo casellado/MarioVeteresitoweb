@@ -2702,6 +2702,110 @@ html {
 /* END CONTATTI PAGE - LOOP 2 */
 
 /* ========================================
+   TECNICA PAGE - MOBILE PARITY (LOOP 1+2)
+======================================== */
+
+/* Hero Title - Display-2 */
+@media (max-width: 992px) { .page-hero .display-2 { font-size: 3rem !important; }}
+@media (max-width: 768px) { .page-hero .display-2 { font-size: 2.5rem !important; }}
+@media (max-width: 576px) { .page-hero .display-2 { font-size: 2.25rem !important; }}
+
+/* Hero Lead */
+@media (max-width: 768px) { .page-hero .lead.fs-4 { font-size: 1.25rem !important; }}
+@media (max-width: 576px) { .page-hero .lead.fs-4 { font-size: 1.125rem !important; }}
+
+/* Hero Badge */
+@media (max-width: 576px) { .page-hero .glass-badge { font-size: 0.875rem !important; padding: 0.5rem 1rem !important; }}
+
+/* Hero Buttons */
+@media (max-width: 576px) {
+  .page-hero .btn-lg { width: 100% !important; padding: 0.875rem 2rem !important; }
+  .page-hero .d-flex.gap-3 { gap: 0.75rem !important; }
+}
+
+/* Demo Card */
+@media (max-width: 768px) { .reveal-demo { padding: 2rem !important; }}
+@media (max-width: 576px) { .reveal-demo { padding: 1.5rem !important; }}
+
+/* Section Titles - Display-4 */
+@media (max-width: 992px) { .display-4 { font-size: 2.25rem !important; }}
+@media (max-width: 768px) { .display-4 { font-size: 2rem !important; }}
+@media (max-width: 576px) { .display-4 { font-size: 1.75rem !important; }}
+
+/* Timeline Step Numbers */
+@media (max-width: 576px) {
+  .step-number { width: 60px !important; height: 60px !important; }
+  .step-number .h2 { font-size: 1.5rem !important; }
+}
+
+/* Timeline Cards */
+@media (max-width: 768px) { .timeline-step .glass-card { padding: 2rem !important; }}
+@media (max-width: 576px) { .timeline-step .glass-card { padding: 1.5rem !important; }}
+
+/* Timeline Titles */
+@media (max-width: 576px) { .timeline-step .h4 { font-size: 1.25rem !important; }}
+
+/* Timeline Icons */
+@media (max-width: 576px) { .timeline-step .fs-1 { font-size: 1.5rem !important; }}
+
+/* Timeline Spacing */
+@media (max-width: 768px) { .timeline-step.mb-6 { margin-bottom: 3rem !important; }}
+@media (max-width: 576px) { .timeline-step.mb-6 { margin-bottom: 2rem !important; }}
+
+/* Section Spacing */
+@media (max-width: 768px) { 
+  .processo-section, .video-section, .faq-section, .workshop-cta-section { 
+    padding-top: 3rem !important; 
+    padding-bottom: 3rem !important; 
+  }
+}
+@media (max-width: 576px) { 
+  .processo-section, .video-section, .faq-section, .workshop-cta-section { 
+    padding-top: 2.5rem !important; 
+    padding-bottom: 2.5rem !important; 
+  }
+}
+
+/* Video Features */
+@media (max-width: 576px) {
+  .feature-item .h6 { font-size: 1rem !important; }
+  .feature-item .small { font-size: 0.875rem !important; }
+  .feature-item .fs-4 { font-size: 1.25rem !important; }
+}
+
+/* FAQ Accordion */
+@media (max-width: 576px) {
+  .faq-section .accordion-item.rounded-4 { border-radius: 1rem !important; }
+  .faq-section .accordion-button { font-size: 0.9375rem !important; padding: 1rem !important; }
+  .faq-section .accordion-body { font-size: 0.9375rem !important; padding: 1rem !important; }
+  .faq-section .accordion-item { margin-bottom: 0.75rem !important; }
+}
+
+/* Workshop CTA */
+@media (max-width: 992px) { .workshop-cta-section .display-3 { font-size: 2.5rem !important; }}
+@media (max-width: 768px) { .workshop-cta-section .display-3 { font-size: 2rem !important; }}
+@media (max-width: 576px) {
+  .workshop-cta-section .display-3 { font-size: 1.75rem !important; }
+  .workshop-cta-section .cta-card { padding: 2rem !important; }
+  .workshop-cta-section .fs-2 { font-size: 1.5rem !important; }
+  .workshop-cta-section .h6 { font-size: 1rem !important; }
+  .workshop-cta-section .small { font-size: 0.875rem !important; }
+}
+
+/* Section Badges */
+@media (max-width: 576px) {
+  .processo-section .glass-badge,
+  .video-section .glass-badge,
+  .faq-section .glass-badge,
+  .workshop-cta-section .glass-badge {
+    font-size: 0.875rem !important;
+    padding: 0.5rem 1rem !important;
+  }
+}
+
+/* END TECNICA PAGE */
+
+/* ========================================
    BOTTOM NAVIGATION - Mobile Native UX
 ======================================== */
 
