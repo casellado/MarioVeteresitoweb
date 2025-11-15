@@ -474,30 +474,35 @@ class OperaSingle {
       const response = await fetch('assets/data/artworks.json?v=' + Date.now());
       const data = await response.json();
       
-      // Get related artworks (same collection, excluding current)
-      const related = data.artworks
-        .filter(a => a.collection === this.artwork.collection && a.id !== this.artwork.id)
-        .slice(0, 3);
-      
-      // If not enough from same collection, try same category
-      if (related.length < 3) {
-        const sameCategory = data.artworks
-          .filter(a => a.category === this.artwork.category && a.id !== this.artwork.id && !related.find(r => r.id === a.id))
-          .slice(0, 3 - related.length);
-        related.push(...sameCategory);
-      }
-      
-      // If still not enough, add any others
-      if (related.length < 3) {
-        const others = data.artworks
-          .filter(a => a.id !== this.artwork.id && !related.find(r => r.id === a.id))
-          .slice(0, 3 - related.length);
-        related.push(...others);
-      }
-      
       const container = document.getElementById('relatedArtworksContainer');
+      const relatedSection = document.querySelector('.related-artworks-section');
       if (!container) return;
       
+      // Get related artworks - ONLY same collection (no fallback)
+      let related = [];
+      
+      // Only show related if collection is defined and not empty
+      if (this.artwork.collection && this.artwork.collection.trim() !== '') {
+        related = data.artworks
+          .filter(a => a.collection === this.artwork.collection && a.id !== this.artwork.id)
+          .slice(0, 3);
+      }
+      
+      // If no related artworks found, hide the entire section
+      if (related.length === 0) {
+        if (relatedSection) {
+          relatedSection.style.display = 'none';
+        }
+        console.log('ℹ️ Nessuna opera correlata trovata per questa collezione');
+        return;
+      }
+      
+      // Show section if it was hidden
+      if (relatedSection) {
+        relatedSection.style.display = 'block';
+      }
+      
+      // Render related artworks
       container.innerHTML = '';
       related.forEach((art, index) => {
         container.appendChild(this.createRelatedCard(art, index));
@@ -564,10 +569,16 @@ class OperaSingle {
     const soldText = window.i18n ? window.i18n.t('artworks.sold') : 'Venduta';
     const detailsText = window.i18n ? window.i18n.t('artworks.details') : 'Scopri';
     
+    // Image source priority: negative -> thumbnail -> positive
+    const imgSrc = artwork.images?.negative?.main || 
+                   artwork.images?.thumbnail || 
+                   artwork.images?.positive?.main || 
+                   'assets/images/opere/placeholder.jpg';
+    
     col.innerHTML = `
       <article class="artwork-card glass-card h-100 rounded-4 overflow-hidden" role="article">
-        <div class="artwork-image position-relative">
-          <img src="${artwork.images.thumbnail}" alt="${altText}" class="img-fluid w-100" style="aspect-ratio: 4/3; object-fit: cover;" loading="lazy">
+        <div class="artwork-image position-relative artwork-image-adaptive">
+          <img src="${imgSrc}" alt="${altText}" class="img-fluid" loading="lazy">
           <div class="image-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center opacity-0">
             <a href="opera-single.html?id=${artwork.id}" class="btn btn-primary btn-sm">
               <i class="bi bi-eye me-2"></i>

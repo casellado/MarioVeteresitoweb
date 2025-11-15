@@ -27,6 +27,7 @@
   
   <!-- Custom CSS -->
   <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="assets/css/utilities.css">
   
   <!-- Mobile App-like Animations -->
   <link rel="stylesheet" href="assets/css/mobile-animations.css">
@@ -157,7 +158,7 @@
   <main id="main-content">
 
     <!-- Hero Section -->
-    <section class="page-hero min-vh-100 d-flex align-items-center position-relative" style="padding-top: 80px;">
+    <section class="page-hero min-vh-100 d-flex align-items-center position-relative pt-navbar">
       <div class="container">
         <div class="row align-items-center g-5">
           <div class="col-lg-6" data-aos="fade-right">
@@ -168,7 +169,7 @@
             <p class="lead fs-3 text-secondary mb-4" data-i18n="chisono.hero_subtitle">
               Artista contemporaneo, innovatore della tecnica #negativoèpositivo®
             </p>
-            <p class="fs-5 text-secondary mb-5" style="line-height: 1.8;" data-i18n="chisono.hero_bio">
+            <p class="fs-5 text-secondary mb-5 lh-18" data-i18n="chisono.hero_bio">
               Nato in Calabria, la mia arte nasce dall'incontro tra tradizione mediterranea 
               e sperimentazione moderna. Dipingo con i polpastrelli, creando opere in negativo 
               che si rivelano attraverso la fotografia. Ogni opera è un viaggio tra ciò che vedi 
@@ -204,12 +205,11 @@
           
           <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
             <div class="artist-photo-wrapper position-relative">
-              <div class="glass-card rounded-4 overflow-hidden p-4 d-flex align-items-center justify-content-center" style="min-height: 550px;">
+              <div class="glass-card rounded-4 overflow-hidden p-4 d-flex align-items-center justify-content-center min-h-550">
                 <img src="assets/images/logo/logo-artist.svg" 
                      alt="Mario Vetere" 
                      data-i18n-alt="chisono.hero_img_alt"
-                     class="img-fluid rounded-3" 
-                     style="width: 400px; height: 445px; object-fit: contain;">
+                     class="img-fluid rounded-3 portrait-main">
               </div>
               <!-- Floating badge -->
               <div class="position-absolute top-0 end-0 m-3">
@@ -378,8 +378,7 @@
               <img src="assets/images/opere/featured/negative-1.jpg" 
                    alt="Studio Mario Vetere - Area lavoro" 
                    data-i18n-alt="chisono.studio_photo1_alt"
-                   class="img-fluid w-100" 
-                   style="aspect-ratio: 16/10; object-fit: cover;">
+                   class="img-fluid w-100 ratio-16-10">
               <div class="p-4">
                 <h3 class="h5 fw-bold mb-2" data-i18n="chisono.studio_photo1_title">Area di Lavoro</h3>
                 <p class="text-secondary small mb-0" data-i18n="chisono.studio_photo1_desc">
@@ -395,8 +394,7 @@
               <img src="assets/images/opere/featured/positive-1.jpg" 
                    alt="Studio Mario Vetere - Setup fotografico" 
                    data-i18n-alt="chisono.studio_photo2_alt"
-                   class="img-fluid w-100" 
-                   style="aspect-ratio: 16/10; object-fit: cover;">
+                   class="img-fluid w-100 ratio-16-10">
               <div class="p-4">
                 <h3 class="h5 fw-bold mb-2" data-i18n="chisono.studio_photo2_title">Setup Fotografico</h3>
                 <p class="text-secondary small mb-0" data-i18n="chisono.studio_photo2_desc">
@@ -412,8 +410,7 @@
               <img src="assets/images/opere/featured/negative-1.jpg" 
                    alt="Dettaglio materiali" 
                    data-i18n-alt="chisono.studio_photo3_alt"
-                   class="img-fluid w-100" 
-                   style="aspect-ratio: 1; object-fit: cover;">
+                   class="img-fluid w-100 ratio-1-1">
               <div class="p-3">
                 <h3 class="h6 fw-bold mb-1" data-i18n="chisono.studio_photo3_title">Materiali</h3>
                 <p class="text-secondary small mb-0" data-i18n="chisono.studio_photo3_desc">Crete colorate selezionate</p>
@@ -427,8 +424,7 @@
               <img src="assets/images/opere/featured/positive-1.jpg" 
                    alt="Opera in corso" 
                    data-i18n-alt="chisono.studio_photo4_alt"
-                   class="img-fluid w-100" 
-                   style="aspect-ratio: 1; object-fit: cover;">
+                   class="img-fluid w-100 ratio-1-1">
               <div class="p-3">
                 <h3 class="h6 fw-bold mb-1" data-i18n="chisono.studio_photo4_title">In Lavorazione</h3>
                 <p class="text-secondary small mb-0" data-i18n="chisono.studio_photo4_desc">Opera in fase di negativo</p>
@@ -442,8 +438,7 @@
               <img src="assets/images/opere/featured/negative-1.jpg" 
                    alt="Vista studio" 
                    data-i18n-alt="chisono.studio_photo5_alt"
-                   class="img-fluid w-100" 
-                   style="aspect-ratio: 1; object-fit: cover;">
+                   class="img-fluid w-100 ratio-1-1">
               <div class="p-3">
                 <h3 class="h6 fw-bold mb-1" data-i18n="chisono.studio_photo5_title">Vista Studio</h3>
                 <p class="text-secondary small mb-0" data-i18n="chisono.studio_photo5_desc">Il mio spazio creativo</p>
@@ -466,7 +461,7 @@
 
         <div class="row g-4">
           <div class="col-lg-6" data-aos="fade-right">
-            <div class="achievement-card glass-card p-5 rounded-4 h-100">
+            <div class="achievement-card glass-card p-5 rounded-4 h-100 text-start align-items-start">
               <i class="bi bi-trophy-fill text-gradient fs-1 mb-3"></i>
               <h3 class="h4 fw-bold mb-3" data-i18n="chisono.achievements_awards_title">Premi & Riconoscimenti</h3>
               <ul class="list-unstyled text-secondary">
@@ -480,7 +475,7 @@
           </div>
 
           <div class="col-lg-6" data-aos="fade-left">
-            <div class="achievement-card glass-card p-5 rounded-4 h-100">
+            <div class="achievement-card glass-card p-5 rounded-4 h-100 text-start align-items-start">
               <i class="bi bi-building text-gradient fs-1 mb-3"></i>
               <h3 class="h4 fw-bold mb-3" data-i18n="chisono.achievements_exhibitions_title">Mostre Principali</h3>
               <ul class="list-unstyled text-secondary">
@@ -502,9 +497,9 @@
         <div class="row justify-content-center">
           <div class="col-lg-8">
             <div class="quote-card glass-card rounded-5 p-6 text-center" data-aos="zoom-in">
-              <i class="bi bi-quote text-gradient" style="font-size: 4rem;"></i>
+              <i class="bi bi-quote text-gradient fs-4rem"></i>
               <blockquote class="blockquote my-5">
-                <p class="lead fs-3 mb-0" style="line-height: 1.8;" data-i18n="chisono.quote" data-editable="artist-quote">
+                <p class="lead fs-3 mb-0 lh-18" data-i18n="chisono.quote" data-editable="artist-quote">
                   "L'arte non è ciò che vedi, ma ciò che fai vedere agli altri. 
                   Con il #negativoèpositivo® trasformo l'impossibile in visibile, 
                   l'invisibile in emozione."
@@ -638,9 +633,9 @@
           </p>
           
           <form id="newsletterForm" class="mb-3">
-            <div class="input-group" style="height: 48px;">
-              <input type="email" class="form-control bg-transparent border-secondary" data-i18n-placeholder="footer.newsletter_placeholder" placeholder="La tua email" required id="newsletterEmail" aria-label="Email per newsletter" style="height: 48px; line-height: 1.5;">
-              <button class="btn btn-primary px-4" type="submit" aria-label="Iscriviti alla newsletter" style="height: 48px;">
+            <div class="input-group h-48">
+              <input type="email" class="form-control bg-transparent border-secondary h-48 lh-15" data-i18n-placeholder="footer.newsletter_placeholder" placeholder="La tua email" required id="newsletterEmail" aria-label="Email per newsletter">
+              <button class="btn btn-primary px-4 h-48" type="submit" aria-label="Iscriviti alla newsletter">
                 <i class="bi bi-send"></i>
               </button>
             </div>
@@ -654,7 +649,7 @@
         <div class="row align-items-center">
           <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
             <p class="text-secondary small mb-0">
-              © 2025 Mario Vetere. <span data-i18n="footer.rights">Tutti i diritti riservati</span>. #<span style="color: #0099FF;">negativo</span><span style="color: #FFD700;">è</span><span style="color: #FF6600;">positivo</span>® <span data-i18n="footer.trademark">è un marchio registrato</span>.
+              © 2025 Mario Vetere. <span data-i18n="footer.rights">Tutti i diritti riservati</span>. #<span class="color-negativo">negativo</span><span class="color-e">è</span><span class="color-positivo">positivo</span>® <span data-i18n="footer.trademark">è un marchio registrato</span>.
             </p>
           </div>
           <div class="col-md-6 text-center text-md-end">

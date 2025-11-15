@@ -56,8 +56,18 @@ class FeaturedArtworks {
       console.log('🔍 Opere totali:', artworksArray.length);
       
       this.artworks = artworksArray.filter(art => art.featured === true).slice(0, 3);
+      
+      // Ordina: verticali prima, poi orizzontali
+      this.artworks.sort((a, b) => {
+        const aIsVertical = a.dimensions.height > a.dimensions.width;
+        const bIsVertical = b.dimensions.height > b.dimensions.width;
+        
+        // Verticali prima (true = 1, false = 0, quindi b - a inverte l'ordine)
+        return bIsVertical - aIsVertical;
+      });
+      
       console.log('⭐ Opere featured trovate:', this.artworks.length);
-      console.log('📋 IDs:', this.artworks.map(a => a.id));
+      console.log('📋 IDs ordinati (verticali → orizzontali):', this.artworks.map(a => `${a.id} (${a.dimensions.width}×${a.dimensions.height})`));
       
       if (this.artworks.length === 0) {
         throw new Error('Nessuna opera featured trovata nel JSON');
@@ -102,9 +112,20 @@ class FeaturedArtworks {
           (artwork.description.short || '');
       }
 
-      // Badge disponibilità
-      const availabilityText = window.i18n ? window.i18n.t('artworks.available') : 'Disponibile';
-      const badgeClass = artwork.status === 'available' ? 'bg-success' : 'bg-warning';
+      // Traduzioni per badge
+      const featuredText = window.i18n ? window.i18n.t('artworks.featured') : 'In Evidenza';
+      const availableText = window.i18n ? window.i18n.t('artworks.available') : 'Disponibile';
+      const soldText = window.i18n ? window.i18n.t('artworks.sold') : 'Venduta';
+      
+      // Badge logic - Priority: Featured > Available > Sold
+      let badgeHtml = '';
+      if (artwork.featured) {
+        badgeHtml = `<span class="badge bg-warning text-dark position-absolute badge-availability fw-600">${featuredText}</span>`;
+      } else if (artwork.status === 'available') {
+        badgeHtml = `<span class="badge bg-success position-absolute badge-availability">${availableText}</span>`;
+      } else {
+        badgeHtml = `<span class="badge bg-danger position-absolute badge-availability">${soldText}</span>`;
+      }
 
       // Traduzioni statiche
       const viewDetailsText = window.i18n ? window.i18n.t('artworks.view_details') : 'Vedi Dettagli';
@@ -114,21 +135,20 @@ class FeaturedArtworks {
       const detailsText = window.i18n ? window.i18n.t('artworks.details') : 'Scopri';
       const artworkAlt = window.i18n ? window.i18n.t('artworks.artwork_alt') : 'Opera d\'arte';
 
-      // Immagine sicura (fallback multipli)
-      const imgSrc = artwork.images?.thumbnail || 
+      // Immagine sicura (fallback multipli) - SEMPRE NEGATIVO PRIMA
+      const imgSrc = artwork.images?.negative?.main || 
+                     artwork.images?.thumbnail || 
                      artwork.images?.positive?.main || 
-                     artwork.images?.negative?.main || 
                      'assets/images/opere/placeholder.jpg';
 
       col.innerHTML = `
         <article class="artwork-card glass-card h-100 rounded-4 overflow-hidden" role="article">
           
           <!-- Image -->
-          <div class="artwork-image position-relative">
+          <div class="artwork-image position-relative artwork-image-adaptive">
             <img src="${imgSrc}" 
                  alt="${artworkAlt}" 
                  class="img-fluid w-100" 
-                 style="aspect-ratio: 4/3; object-fit: cover;" 
                  loading="lazy">
             
             <!-- Quick View Overlay -->
@@ -140,16 +160,14 @@ class FeaturedArtworks {
             </div>
             
             <!-- Badge -->
-            <span class="badge ${badgeClass} position-absolute" style="top: 8px; right: 8px; z-index: 10; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">
-              ${availabilityText}
-            </span>
+            ${badgeHtml}
           </div>
           
           <!-- Card Body -->
           <div class="card-body p-4">
-            <h3 class="h5 mb-3 text-white" style="line-height: 1.4;">${title}</h3>
-            <p class="text-secondary small mb-3" style="line-height: 1.5;">
-              <span>${techniqueLabel}:</span> #<span style="color: #0099FF;">negativo</span><span style="color: #FFD700;">è</span><span style="color: #FF6600;">positivo</span>® | ${artwork.year}
+            <h3 class="h5 mb-3 text-white lh-14">${title}</h3>
+            <p class="text-secondary small mb-3 lh-15">
+              <span>${techniqueLabel}:</span> #<span class="color-negativo">negativo</span><span class="color-e">è</span><span class="color-positivo">positivo</span>® | ${artwork.year}
             </p>
             
             <!-- Details -->
@@ -162,7 +180,10 @@ class FeaturedArtworks {
             <!-- Price & CTA -->
             <div class="d-flex align-items-center justify-content-between">
               <div class="price">
-                <span class="h4 mb-0 text-gradient fw-bold">€ ${artwork.price.toLocaleString()}</span>
+                ${artwork.status === 'available' ?
+                  `<span class="h4 mb-0 text-gradient fw-bold">€ ${artwork.price.toLocaleString('it-IT')}</span>` :
+                  `<span class="h5 mb-0 text-danger">${soldText}</span>`
+                }
               </div>
               <a href="opera-single.html?id=${artwork.id}" class="btn btn-outline-light btn-sm">
                 <span>${detailsText}</span>

@@ -135,7 +135,10 @@ class ArtworksGallery {
         case 'title':
           return a.title.localeCompare(b.title);
         default:
-          return 0;
+          // Ordinamento default: verticali prima, poi orizzontali
+          const aIsVertical = a.dimensions.height > a.dimensions.width;
+          const bIsVertical = b.dimensions.height > b.dimensions.width;
+          return bIsVertical - aIsVertical;
       }
     });
     
@@ -191,11 +194,11 @@ class ArtworksGallery {
     const soldText = window.i18n ? window.i18n.t('artworks.sold') : 'Venduta';
     
     if (artwork.featured) {
-      badge = `<span class="badge bg-warning text-dark position-absolute" style="top: 8px; right: 8px; z-index: 10; box-shadow: 0 2px 8px rgba(0,0,0,0.3); font-weight: 600;">${featuredText}</span>`;
+      badge = `<span class="badge bg-warning text-dark position-absolute badge-availability fw-600">${featuredText}</span>`;
     } else if (artwork.status === 'available') {
-      badge = `<span class="badge bg-success position-absolute" style="top: 8px; right: 8px; z-index: 10; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">${availableText}</span>`;
+      badge = `<span class="badge bg-success position-absolute badge-availability">${availableText}</span>`;
     } else {
-      badge = `<span class="badge bg-danger position-absolute" style="top: 8px; right: 8px; z-index: 10; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">${soldText}</span>`;
+      badge = `<span class="badge bg-danger position-absolute badge-availability">${soldText}</span>`;
     }
     
     // Parse technique to separate material and support
@@ -215,15 +218,20 @@ class ArtworksGallery {
       window.ArtworkI18n.getTranslatedField(artwork.description.short) : 
       (artwork.description ? artwork.description.short || '' : '');
     
+    // Immagine con priorità NEGATIVO
+    const imgSrc = artwork.images?.negative?.main || 
+                   artwork.images?.thumbnail || 
+                   artwork.images?.positive?.main || 
+                   'assets/images/opere/placeholder.jpg';
+    
     col.innerHTML = `
       <article class="artwork-card glass-card h-100 rounded-4 overflow-hidden" role="article">
         
         <!-- Image -->
-        <div class="artwork-image position-relative">
-          <img src="${artwork.images.thumbnail}" 
+        <div class="artwork-image position-relative artwork-image-adaptive">
+          <img src="${imgSrc}" 
                alt="${artworkAlt}" 
                class="img-fluid w-100" 
-               style="aspect-ratio: 4/3; object-fit: cover;"
                loading="lazy">
           
           <!-- Quick View Overlay -->
@@ -240,11 +248,11 @@ class ArtworksGallery {
         
         <!-- Card Body -->
         <div class="card-body p-4">
-          <h3 class="h5 mb-3 text-white" style="line-height: 1.4;">
+          <h3 class="h5 mb-3 text-white lh-14">
             ${title}
           </h3>
-          <p class="text-secondary small mb-3" style="line-height: 1.5;">
-            ${techniqueLabel}: #<span style="color: #0099FF;">negativo</span><span style="color: #FFD700;">è</span><span style="color: #FF6600;">positivo</span>® | ${artwork.year}
+          <p class="text-secondary small mb-3 lh-15">
+            ${techniqueLabel}: #<span class="color-negativo">negativo</span><span class="color-e">è</span><span class="color-positivo">positivo</span>® | ${artwork.year}
           </p>
           
           <!-- Details -->
@@ -328,7 +336,7 @@ class ArtworksGallery {
         badge.className = 'badge bg-primary d-inline-flex align-items-center gap-2';
         badge.innerHTML = `
           ${filter.label}
-          <i class="bi bi-x-circle" style="cursor: pointer;"></i>
+          <i class="bi bi-x-circle cursor-pointer"></i>
         `;
         badge.querySelector('i').addEventListener('click', () => this.removeFilter(filter.type));
         container.appendChild(badge);

@@ -27,6 +27,7 @@
   
   <!-- Custom CSS -->
   <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="assets/css/utilities.css">
   
   <style>
     .success-icon {
@@ -93,7 +94,7 @@
   </nav>
 
   <!-- Main Content -->
-  <main style="padding-top: 120px; min-height: 100vh;">
+  <main class="pt-120 min-vh-100">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8">
@@ -101,7 +102,7 @@
           <!-- Success Card -->
           <div class="text-center mb-5" data-aos="fade-up">
             <div class="success-icon">
-              <i class="bi bi-check-circle-fill text-white" style="font-size: 4rem;"></i>
+              <i class="bi bi-check-circle-fill text-white fs-4rem"></i>
             </div>
             <h1 class="display-3 fw-bold mb-3" data-i18n="success.hero_title">Pagamento Completato!</h1>
             <p class="lead text-secondary mb-4" data-i18n="success.hero_subtitle">
@@ -138,12 +139,11 @@
                      src="" 
                      alt="Opera acquistata" 
                      data-i18n-alt="success.artwork_alt"
-                     class="rounded-3" 
-                     style="width: 120px; height: 120px; object-fit: cover;">
+                     class="rounded-3 size-120">
                 <div class="flex-grow-1">
                   <h3 class="h6 fw-bold mb-2" id="artworkTitle">---</h3>
                   <p class="small text-secondary mb-2">
-                    <span data-i18n="success.technique">Tecnica:</span> #<span style="color: #0099FF;">negativo</span><span style="color: #FFD700;">è</span><span style="color: #FF6600;">positivo</span>®
+                    <span data-i18n="success.technique">Tecnica:</span> #<span class="color-negativo">negativo</span><span class="color-e">è</span><span class="color-positivo">positivo</span>®
                   </p>
                   <p class="small text-secondary mb-0" id="artworkDetails">---</p>
                 </div>
@@ -180,7 +180,7 @@
             <div class="timeline-steps">
               <div class="d-flex align-items-start gap-3 mb-4">
                 <div class="step-icon bg-success rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" 
-                     style="width: 40px; height: 40px;">
+                     class="size-40">
                   <i class="bi bi-check text-white"></i>
                 </div>
                 <div>
@@ -193,7 +193,7 @@
               
               <div class="d-flex align-items-start gap-3 mb-4">
                 <div class="step-icon bg-primary rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" 
-                     style="width: 40px; height: 40px;">
+                     class="size-40">
                   <span class="text-white fw-bold">2</span>
                 </div>
                 <div>
@@ -206,7 +206,7 @@
               
               <div class="d-flex align-items-start gap-3 mb-4">
                 <div class="step-icon bg-primary rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" 
-                     style="width: 40px; height: 40px;">
+                     class="size-40">
                   <span class="text-white fw-bold">3</span>
                 </div>
                 <div>
@@ -219,7 +219,7 @@
               
               <div class="d-flex align-items-start gap-3">
                 <div class="step-icon bg-primary rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" 
-                     style="width: 40px; height: 40px;">
+                     class="size-40">
                   <span class="text-white fw-bold">4</span>
                 </div>
                 <div>

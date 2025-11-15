@@ -1,0 +1,307 @@
+/**
+ * UTILITY CLASSES
+ * Classi riutilizzabili per eliminare style inline
+ * Organizzate per categoria
+ */
+
+/* ========================================
+   BRAND COLORS - Tecnica #negativoèpositivo®
+   ======================================== */
+
+.color-negativo {
+  color: #0099FF !important;
+}
+
+.color-e {
+  color: #FFD700 !important;
+}
+
+.color-positivo {
+  color: #FF6600 !important;
+}
+
+/* Font weight per colori tecnica */
+.color-negativo-bold,
+.color-positivo-bold {
+  font-weight: 600;
+}
+
+/* ========================================
+   LINE HEIGHTS
+   ======================================== */
+
+.lh-1 {
+  line-height: 1 !important;
+}
+
+.lh-11 {
+  line-height: 1.1 !important;
+}
+
+.lh-12 {
+  line-height: 1.2 !important;
+}
+
+.lh-13 {
+  line-height: 1.3 !important;
+}
+
+.lh-14 {
+  line-height: 1.4 !important;
+}
+
+.lh-15 {
+  line-height: 1.5 !important;
+}
+
+.lh-16 {
+  line-height: 1.6 !important;
+}
+
+.lh-18 {
+  line-height: 1.8 !important;
+}
+
+/* ========================================
+   MAX WIDTHS
+   ======================================== */
+
+.mw-280 {
+  max-width: 280px !important;
+}
+
+.mw-540 {
+  max-width: 540px !important;
+}
+
+.mw-600 {
+  max-width: 600px !important;
+}
+
+.mw-700 {
+  max-width: 700px !important;
+}
+
+/* ========================================
+   FIXED DIMENSIONS
+   ======================================== */
+
+.size-80 {
+  width: 80px !important;
+  height: 80px !important;
+}
+
+.size-40 {
+  width: 40px !important;
+  height: 40px !important;
+}
+
+.size-100 {
+  width: 100px !important;
+  height: 100px !important;
+  object-fit: cover !important;
+}
+
+.size-120 {
+  width: 120px !important;
+  height: 120px !important;
+  object-fit: cover !important;
+}
+
+.h-48 {
+  height: 48px !important;
+}
+
+.min-h-550 {
+  min-height: 550px !important;
+}
+
+.portrait-main {
+  width: 400px !important;
+  height: 445px !important;
+  object-fit: contain !important;
+}
+
+/* ========================================
+   BACKGROUNDS & GRADIENTS
+   ======================================== */
+
+.bg-hero-gradient {
+  background: linear-gradient(135deg, rgba(10,10,10,0.95) 0%, rgba(26,26,26,0.9) 100%);
+}
+
+.bg-brand-gradient {
+  background: linear-gradient(135deg, #0099FF 0%, #FFD700 50%, #FF6600 100%) !important;
+}
+
+/* ========================================
+   SPACING
+   ======================================== */
+
+.pt-navbar {
+  padding-top: 80px !important;
+}
+
+.pt-main {
+  padding-top: 100px !important;
+}
+
+.pt-120 {
+  padding-top: 120px !important;
+}
+
+.pb-60 {
+  padding-bottom: 60px !important;
+}
+
+.py-hero {
+  padding-top: 140px !important;
+  padding-bottom: 80px !important;
+}
+
+/* ========================================
+   Z-INDEX
+   ======================================== */
+
+.z-n1 {
+  z-index: -1 !important;
+}
+
+/* ========================================
+   ASPECT RATIOS
+   ======================================== */
+
+.ratio-4-5 {
+  aspect-ratio: 4/5;
+}
+
+.ratio-4-3 {
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+.aspect-4-3 {
+  aspect-ratio: 4/3 !important;
+}
+
+.ratio-16-10 {
+  aspect-ratio: 16/10;
+  object-fit: cover;
+}
+
+.ratio-1-1 {
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+/* ========================================
+   ARTWORK IMAGE ADAPTIVE
+   ======================================== */
+
+.artwork-image-adaptive {
+  min-height: 280px;
+  max-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(13, 17, 23, 0.5);
+}
+
+.artwork-image-adaptive img {
+  object-fit: contain !important;
+  max-height: 400px;
+  width: auto !important;
+  margin: 0 auto;
+}
+
+/* Hero reveal image adaptive - for tecnica.html */
+.hero-reveal-image {
+  min-height: 300px;
+  max-height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(13, 17, 23, 0.3);
+}
+
+.hero-reveal-image img {
+  object-fit: contain !important;
+  max-height: 450px;
+  width: 100%;
+  height: auto !important;
+}
+
+/* ========================================
+   TRANSITIONS & STATES
+   ======================================== */
+
+.reveal-hidden {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.opacity-80 {
+  opacity: 0.8 !important;
+}
+
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
+
+.font-playfair {
+  font-family: 'Playfair Display', serif !important;
+}
+
+.fs-07rem {
+  font-size: 0.7rem !important;
+}
+
+.letter-spacing-05 {
+  letter-spacing: 0.05em !important;
+}
+
+.fw-600 {
+  font-weight: 600 !important;
+}
+
+.fs-4rem {
+  font-size: 4rem !important;
+}
+
+/* ========================================
+   BADGE POSITIONING
+   ======================================== */
+
+.badge-availability {
+  top: 8px !important;
+  right: 8px !important;
+  z-index: 10 !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3) !important;
+}
+
+.badge-demo {
+  top: 16px !important;
+  left: 16px !important;
+}
+
+/* ========================================
+   STICKY POSITIONING
+   ======================================== */
+
+.sticky-filters {
+  top: 80px !important;
+  z-index: 1020 !important;
+}
+
+.top-120 {
+  top: 120px !important;
+}
+
+/* ========================================
+   CURSOR
+   ======================================== */
+
+.cursor-pointer {
+  cursor: pointer !important;
+}
+

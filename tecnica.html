@@ -28,6 +28,9 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="main.css">
   
+  <!-- Utility Classes -->
+  <link rel="stylesheet" href="assets/css/utilities.css">
+  
   <!-- Mobile App-like Animations -->
   <link rel="stylesheet" href="assets/css/mobile-animations.css">
 </head>
@@ -157,15 +160,15 @@
   <main id="main-content">
 
     <!-- Hero Section -->
-    <section class="page-hero min-vh-100 d-flex align-items-center position-relative" style="padding-top: 80px;">
+    <section class="page-hero min-vh-100 d-flex align-items-center position-relative pt-navbar">
       <div class="container">
         <div class="row align-items-center g-5">
-          <div class="col-lg-5" data-aos="fade-right">
+          <div class="col-lg-4" data-aos="fade-right">
             <span class="badge glass-badge mb-3" data-i18n="tecnica.hero_badge">Tecnica Brevettata</span>
             <h1 class="display-2 fw-bold mb-4">
-              #<span style="color: #0099FF;">negativo</span><span style="color: #FFD700;">è</span><span style="color: #FF6600;">positivo</span>®
+              #<span class="color-negativo">negativo</span><span class="color-e">è</span><span class="color-positivo">positivo</span>®
             </h1>
-            <p class="lead fs-4 text-secondary mb-5" style="line-height: 1.6;" data-i18n="tecnica.hero_desc">
+            <p class="lead fs-4 text-secondary mb-5 lh-16" data-i18n="tecnica.hero_desc">
               L'arte dell'inversione cromatica: dipingo in negativo con i polpastrelli, 
               la fotografia rivela l'opera in positivo. Una tecnica unica che sfida la percezione.
             </p>
@@ -181,26 +184,24 @@
             </div>
           </div>
           
-          <div class="col-lg-6 offset-lg-1" data-aos="fade-left" data-aos-delay="200">
+          <div class="col-lg-5 offset-lg-3" data-aos="fade-left" data-aos-delay="200">
             <div class="reveal-demo glass-card rounded-4 overflow-hidden p-4">
-              <div class="position-relative" style="aspect-ratio: 4/3;">
+              <div class="position-relative hero-reveal-image">
                 <img src="assets/images/opere/featured/negative-1.jpg" 
                      alt="Opera in negativo" 
-                     class="img-fluid rounded-3 w-100 h-100" 
-                     style="object-fit: cover;">
-                <span class="badge bg-primary position-absolute" style="top: 16px; left: 16px;" data-i18n="tecnica.badge_negative">
+                     class="img-fluid rounded-3">
+                <span class="badge bg-primary position-absolute badge-demo" data-i18n="tecnica.badge_negative">
                   Negativo
                 </span>
               </div>
               <div class="text-center mt-3">
                 <i class="bi bi-arrow-down fs-1 text-gradient"></i>
               </div>
-              <div class="position-relative mt-3" style="aspect-ratio: 4/3;">
+              <div class="position-relative mt-3 hero-reveal-image">
                 <img src="assets/images/opere/featured/positive-1.jpg" 
                      alt="Opera in positivo" 
-                     class="img-fluid rounded-3 w-100 h-100" 
-                     style="object-fit: cover;">
-                <span class="badge bg-warning text-dark position-absolute" style="top: 16px; left: 16px;" data-i18n="tecnica.badge_positive">
+                     class="img-fluid rounded-3">
+                <span class="badge bg-warning text-dark position-absolute badge-demo" data-i18n="tecnica.badge_positive">
                   Positivo
                 </span>
               </div>
@@ -230,8 +231,7 @@
           <div class="timeline-step row align-items-center mb-6" data-aos="fade-right">
             <div class="col-lg-6 order-lg-1">
               <div class="step-number-wrapper text-center mb-4 mb-lg-0">
-                <div class="step-number mx-auto rounded-circle bg-gradient d-flex align-items-center justify-content-center" 
-                     style="width: 80px; height: 80px;">
+                <div class="step-number mx-auto rounded-circle bg-gradient d-flex align-items-center justify-content-center size-80">
                   <span class="h2 mb-0 fw-bold text-dark">1</span>
                 </div>
               </div>
@@ -254,8 +254,7 @@
           <div class="timeline-step row align-items-center mb-6" data-aos="fade-left">
             <div class="col-lg-6 order-lg-2">
               <div class="step-number-wrapper text-center mb-4 mb-lg-0">
-                <div class="step-number mx-auto rounded-circle bg-gradient d-flex align-items-center justify-content-center" 
-                     style="width: 80px; height: 80px;">
+                <div class="step-number mx-auto rounded-circle bg-gradient d-flex align-items-center justify-content-center size-80">
                   <span class="h2 mb-0 fw-bold text-dark">2</span>
                 </div>
               </div>
@@ -278,8 +277,7 @@
           <div class="timeline-step row align-items-center mb-6" data-aos="fade-right">
             <div class="col-lg-6 order-lg-1">
               <div class="step-number-wrapper text-center mb-4 mb-lg-0">
-                <div class="step-number mx-auto rounded-circle bg-gradient d-flex align-items-center justify-content-center" 
-                     style="width: 80px; height: 80px;">
+                <div class="step-number mx-auto rounded-circle bg-gradient d-flex align-items-center justify-content-center size-80">
                   <span class="h2 mb-0 fw-bold text-dark">3</span>
                 </div>
               </div>
@@ -302,8 +300,7 @@
           <div class="timeline-step row align-items-center mb-6" data-aos="fade-left">
             <div class="col-lg-6 order-lg-2">
               <div class="step-number-wrapper text-center mb-4 mb-lg-0">
-                <div class="step-number mx-auto rounded-circle bg-gradient d-flex align-items-center justify-content-center" 
-                     style="width: 80px; height: 80px;">
+                <div class="step-number mx-auto rounded-circle bg-gradient d-flex align-items-center justify-content-center size-80">
                   <span class="h2 mb-0 fw-bold text-dark">4</span>
                 </div>
               </div>
@@ -326,8 +323,7 @@
           <div class="timeline-step row align-items-center" data-aos="fade-right">
             <div class="col-lg-6 order-lg-1">
               <div class="step-number-wrapper text-center mb-4 mb-lg-0">
-                <div class="step-number mx-auto rounded-circle bg-gradient d-flex align-items-center justify-content-center" 
-                     style="width: 80px; height: 80px;">
+                <div class="step-number mx-auto rounded-circle bg-gradient d-flex align-items-center justify-content-center size-80">
                   <span class="h2 mb-0 fw-bold text-dark">5</span>
                 </div>
               </div>
@@ -568,16 +564,15 @@
           <div class="col-lg-10">
             <div class="cta-card glass-card rounded-5 p-5 p-lg-6 text-center position-relative overflow-hidden" data-aos="zoom-in">
               
-              <!-- Background Gradient -->
-              <div class="position-absolute top-0 start-0 w-100 h-100 opacity-10" 
-                   style="background: linear-gradient(135deg, #0099FF 0%, #FFD700 50%, #FF6600 100%);"></div>
+              <!-- Background Pattern (subtle) -->
+              <div class="position-absolute top-0 start-0 w-100 h-100 opacity-5" style="background: radial-gradient(circle at 30% 50%, rgba(0, 153, 255, 0.1) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(255, 102, 0, 0.1) 0%, transparent 50%);"></div>
               
               <div class="position-relative">
                 <span class="badge glass-badge mb-4" data-i18n="tecnica.workshop_badge">Corsi & Workshop</span>
                 <h2 class="display-3 fw-bold mb-4">
-                  <span data-i18n="tecnica.workshop_title">Impara la Tecnica</span> <span class="text-gradient">#negativoèpositivo®</span>
+                  <span data-i18n="tecnica.workshop_title">Impara la Tecnica</span> #<span class="color-negativo">negativo</span><span class="color-e">è</span><span class="color-positivo">positivo</span>®
                 </h2>
-                <p class="lead text-secondary mb-5 mx-auto" style="max-width: 600px;" data-i18n="tecnica.workshop_desc">
+                <p class="lead text-secondary mb-5 mx-auto mw-600" data-i18n="tecnica.workshop_desc">
                   Partecipa ai miei workshop esclusivi e scopri i segreti dell'inversione cromatica. 
                   Dall'ideazione alla realizzazione della tua prima opera in negativo.
                 </p>
@@ -720,9 +715,9 @@
           </p>
           
           <form id="newsletterForm" class="mb-3">
-            <div class="input-group" style="height: 48px;">
-              <input type="email" class="form-control bg-transparent border-secondary" data-i18n-placeholder="footer.newsletter_placeholder" placeholder="La tua email" required id="newsletterEmail" aria-label="Email per newsletter" style="height: 48px; line-height: 1.5;">
-              <button class="btn btn-primary px-4" type="submit" aria-label="Iscriviti alla newsletter" style="height: 48px;">
+            <div class="input-group h-48">
+              <input type="email" class="form-control bg-transparent border-secondary h-48 lh-15" data-i18n-placeholder="footer.newsletter_placeholder" placeholder="La tua email" required id="newsletterEmail" aria-label="Email per newsletter">
+              <button class="btn btn-primary px-4 h-48" type="submit" aria-label="Iscriviti alla newsletter">
                 <i class="bi bi-send"></i>
               </button>
             </div>
@@ -736,7 +731,7 @@
         <div class="row align-items-center">
           <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
             <p class="text-secondary small mb-0">
-              © 2025 Mario Vetere. <span data-i18n="footer.rights">Tutti i diritti riservati</span>. #<span style="color: #0099FF;">negativo</span><span style="color: #FFD700;">è</span><span style="color: #FF6600;">positivo</span>® <span data-i18n="footer.trademark">è un marchio registrato</span>.
+              © 2025 Mario Vetere. <span data-i18n="footer.rights">Tutti i diritti riservati</span>. #<span class="color-negativo">negativo</span><span class="color-e">è</span><span class="color-positivo">positivo</span>® <span data-i18n="footer.trademark">è un marchio registrato</span>.
             </p>
           </div>
           <div class="col-md-6 text-center text-md-end">

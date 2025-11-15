@@ -9,6 +9,11 @@ const CACHE_STATIC = `${CACHE_VERSION}-static`;
 const CACHE_DYNAMIC = `${CACHE_VERSION}-dynamic`;
 const CACHE_IMAGES = `${CACHE_VERSION}-images`;
 
+// Development mode detection (localhost)
+const IS_DEVELOPMENT = self.location.hostname === 'localhost' || 
+                        self.location.hostname === '127.0.0.1' ||
+                        self.location.port === '8001';
+
 // Files da cachare immediatamente
 const STATIC_FILES = [
   '/',
@@ -161,10 +166,24 @@ async function handleImageRequest(request) {
 }
 
 /**
- * Handle Static Asset Requests - Cache First
+ * Handle Static Asset Requests - Network First in Dev, Cache First in Prod
  */
 async function handleStaticRequest(request) {
   try {
+    // DEVELOPMENT: Network First (always fresh)
+    if (IS_DEVELOPMENT) {
+      console.log('[ServiceWorker][DEV] Fetching from network:', request.url);
+      const networkResponse = await fetch(request);
+      
+      if (networkResponse && networkResponse.status === 200) {
+        const cache = await caches.open(CACHE_STATIC);
+        cache.put(request, networkResponse.clone());
+      }
+      
+      return networkResponse;
+    }
+    
+    // PRODUCTION: Cache First (offline support)
     const cache = await caches.open(CACHE_STATIC);
     const cachedResponse = await cache.match(request);
     
@@ -181,7 +200,16 @@ async function handleStaticRequest(request) {
     
     return networkResponse;
   } catch (error) {
-    console.log('[ServiceWorker] Static fetch failed:', error);
+    console.log('[ServiceWorker] Static fetch failed, trying cache:', error);
+    
+    // Fallback to cache if network fails
+    const cache = await caches.open(CACHE_STATIC);
+    const cachedResponse = await cache.match(request);
+    
+    if (cachedResponse) {
+      return cachedResponse;
+    }
+    
     return new Response('Offline', { status: 503 });
   }
 }
