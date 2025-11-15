@@ -22,6 +22,7 @@
       "currency": "EUR",
       "status": "available",
       "featured": true,
+      "heroFeatured": true,
       "description": {
         "short": {
           "it": "Un tramonto mozzafiato sulle coste calabresi",
@@ -40,13 +41,13 @@
       },
       "images": {
         "negative": {
-          "main": "assets/images/opere/hero/hero-negative.jpg",
-          "detail": "assets/images/opere/hero/hero-negative.jpg",
-          "process": "assets/images/opere/hero/hero-negative.jpg"
+          "main": "assets/images/opere/featured/negative-1.jpg",
+          "detail": "assets/images/opere/featured/negative-1.jpg",
+          "process": "assets/images/opere/featured/negative-1.jpg"
         },
         "positive": {
-          "main": "assets/images/opere/hero/hero-positive.jpg",
-          "detail": "assets/images/opere/hero/hero-positive.jpg"
+          "main": "assets/images/opere/featured/positive-1.jpg",
+          "detail": "assets/images/opere/featured/positive-1.jpg"
         },
         "thumbnail": "assets/images/opere/featured/positive-1.jpg"
       },
@@ -116,13 +117,13 @@
       },
       "images": {
         "negative": {
-          "main": "assets/images/opere/hero/hero-negative.jpg",
-          "detail": "assets/images/opere/hero/hero-negative.jpg",
-          "process": "assets/images/opere/hero/hero-negative.jpg"
+          "main": "assets/images/opere/featured/negative-1.jpg",
+          "detail": "assets/images/opere/featured/negative-1.jpg",
+          "process": "assets/images/opere/featured/negative-1.jpg"
         },
         "positive": {
-          "main": "assets/images/opere/hero/hero-positive.jpg",
-          "detail": "assets/images/opere/hero/hero-positive.jpg"
+          "main": "assets/images/opere/featured/positive-1.jpg",
+          "detail": "assets/images/opere/featured/positive-1.jpg"
         },
         "thumbnail": "assets/images/opere/featured/positive-1.jpg"
       },
@@ -192,13 +193,13 @@
       },
       "images": {
         "negative": {
-          "main": "assets/images/opere/hero/hero-negative.jpg",
-          "detail": "assets/images/opere/hero/hero-negative.jpg",
-          "process": "assets/images/opere/hero/hero-negative.jpg"
+          "main": "assets/images/opere/featured/negative-1.jpg",
+          "detail": "assets/images/opere/featured/negative-1.jpg",
+          "process": "assets/images/opere/featured/negative-1.jpg"
         },
         "positive": {
-          "main": "assets/images/opere/hero/hero-positive.jpg",
-          "detail": "assets/images/opere/hero/hero-positive.jpg"
+          "main": "assets/images/opere/featured/positive-1.jpg",
+          "detail": "assets/images/opere/featured/positive-1.jpg"
         },
         "thumbnail": "assets/images/opere/featured/positive-1.jpg"
       },
@@ -268,13 +269,13 @@
       },
       "images": {
         "negative": {
-          "main": "assets/images/opere/hero/hero-negative.jpg",
-          "detail": "assets/images/opere/hero/hero-negative.jpg",
-          "process": "assets/images/opere/hero/hero-negative.jpg"
+          "main": "assets/images/opere/featured/negative-1.jpg",
+          "detail": "assets/images/opere/featured/negative-1.jpg",
+          "process": "assets/images/opere/featured/negative-1.jpg"
         },
         "positive": {
-          "main": "assets/images/opere/hero/hero-positive.jpg",
-          "detail": "assets/images/opere/hero/hero-positive.jpg"
+          "main": "assets/images/opere/featured/positive-1.jpg",
+          "detail": "assets/images/opere/featured/positive-1.jpg"
         },
         "thumbnail": "assets/images/opere/featured/positive-1.jpg"
       },
@@ -344,13 +345,13 @@
       },
       "images": {
         "negative": {
-          "main": "assets/images/opere/hero/hero-negative.jpg",
-          "detail": "assets/images/opere/hero/hero-negative.jpg",
-          "process": "assets/images/opere/hero/hero-negative.jpg"
+          "main": "assets/images/opere/featured/negative-1.jpg",
+          "detail": "assets/images/opere/featured/negative-1.jpg",
+          "process": "assets/images/opere/featured/negative-1.jpg"
         },
         "positive": {
-          "main": "assets/images/opere/hero/hero-positive.jpg",
-          "detail": "assets/images/opere/hero/hero-positive.jpg"
+          "main": "assets/images/opere/featured/positive-1.jpg",
+          "detail": "assets/images/opere/featured/positive-1.jpg"
         },
         "thumbnail": "assets/images/opere/featured/positive-1.jpg"
       },

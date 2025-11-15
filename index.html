@@ -42,6 +42,9 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="main.css">
   
+  <!-- Utility Classes -->
+  <link rel="stylesheet" href="assets/css/utilities.css">
+  
   <!-- Mobile App-like Animations -->
   <link rel="stylesheet" href="assets/css/mobile-animations.css">
   
@@ -213,9 +216,9 @@
     <section class="hero-section min-vh-100 d-flex align-items-center position-relative overflow-hidden" id="hero">
       
       <!-- Background Gradient -->
-      <div class="hero-bg position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(135deg, rgba(10,10,10,0.95) 0%, rgba(26,26,26,0.9) 100%); z-index: -1;"></div>
+      <div class="hero-bg position-absolute top-0 start-0 w-100 h-100 bg-hero-gradient z-n1"></div>
       
-      <div class="container position-relative" style="padding-top: 80px;">
+      <div class="container position-relative pt-navbar">
         <div class="row align-items-center g-5">
           
           <!-- Left Column: Content -->
@@ -225,23 +228,23 @@
             <div class="hero-badge mb-4" data-aos="fade-down" data-aos-delay="200">
               <span class="badge glass-badge fs-6 px-4 py-2 d-inline-flex align-items-center gap-2">
                 <i class="bi bi-award-fill"></i>
-                <span data-i18n="hero.badge">Tecnica Brevettata</span> #<span style="color: #0099FF;">negativo</span><span style="color: #FFD700;">è</span><span style="color: #FF6600;">positivo</span>®
+                <span data-i18n="hero.badge">Tecnica Brevettata</span> #<span class="color-negativo">negativo</span><span class="color-e">è</span><span class="color-positivo">positivo</span>®
               </span>
             </div>
             
             <!-- Main Title -->
-            <h1 class="hero-title display-1 fw-black mb-4" style="font-family: 'Playfair Display', serif; line-height: 1.1;" data-editable="hero-main-title">
+            <h1 class="hero-title display-1 fw-black mb-4 font-playfair lh-11" data-editable="hero-main-title">
               Mario <span class="text-gradient">Vetere</span>
             </h1>
             
             <!-- Subtitle -->
             <p class="hero-subtitle fs-2 fw-light mb-4 text-secondary" data-i18n="hero.subtitle" data-editable="hero-subtitle">
-              Arte dipinta in <span style="color: #0099FF; font-weight: 600;">negativo</span>,<br>
-              rivelata in <span style="color: #FF6600; font-weight: 600;">positivo</span>
+              Arte dipinta in <span class="color-negativo-bold">negativo</span>,<br>
+              rivelata in <span class="color-positivo-bold">positivo</span>
             </p>
             
             <!-- Description -->
-            <p class="lead fs-5 mb-5 text-secondary" style="max-width: 540px;" data-i18n="hero.description" data-editable="hero-description">
+            <p class="lead fs-5 mb-5 text-secondary mw-540" data-i18n="hero.description" data-editable="hero-description">
               Scopri l'unica tecnica al mondo che trasforma il modo di creare 
               e vivere l'arte contemporanea. Ogni opera è un viaggio sensoriale 
               tra luce e ombra.
@@ -262,24 +265,24 @@
             <!-- Stats -->
             <div class="hero-stats d-flex flex-wrap gap-5" data-aos="fade-up" data-aos-delay="400">
               <div class="stat-item">
-                <div class="stat-number display-4 fw-bold text-gradient mb-3" data-count="100" style="line-height: 1;">0</div>
-                <div class="stat-label text-secondary small text-uppercase" style="line-height: 1.4; letter-spacing: 0.05em;" data-i18n="hero.stats_artworks">Opere Realizzate</div>
+                <div class="stat-number display-4 fw-bold text-gradient mb-3 lh-1" data-count="100">0</div>
+                <div class="stat-label text-secondary small text-uppercase lh-14 letter-spacing-05" data-i18n="hero.stats_artworks">Opere Realizzate</div>
               </div>
               
               <div class="stat-item">
-                <div class="stat-number display-4 fw-bold text-gradient mb-3" style="line-height: 1;">100%</div>
-                <div class="stat-label text-secondary small text-uppercase" style="line-height: 1.4; letter-spacing: 0.05em;" data-i18n="hero.stats_unique">Unicità Garantita</div>
+                <div class="stat-number display-4 fw-bold text-gradient mb-3 lh-1">100%</div>
+                <div class="stat-label text-secondary small text-uppercase lh-14 letter-spacing-05" data-i18n="hero.stats_unique">Unicità Garantita</div>
               </div>
               
               <div class="stat-item">
-                <div class="stat-number display-4 fw-bold mb-3" style="line-height: 1;">
+                <div class="stat-number display-4 fw-bold mb-3 lh-1">
                   <svg width="60" height="40" viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg">
                     <rect width="20" height="40" x="0" y="0" fill="#009246"/>
                     <rect width="20" height="40" x="20" y="0" fill="#FFFFFF"/>
                     <rect width="20" height="40" x="40" y="0" fill="#CE2B37"/>
                   </svg>
                 </div>
-                <div class="stat-label text-secondary small text-uppercase" style="line-height: 1.4; letter-spacing: 0.05em;" data-i18n="hero.stats_madeinitaly">Made in Italy</div>
+                <div class="stat-label text-secondary small text-uppercase lh-14 letter-spacing-05" data-i18n="hero.stats_madeinitaly">Made in Italy</div>
               </div>
             </div>
             
@@ -294,7 +297,7 @@
               <div class="artwork-container glass-card p-4 rounded-4 shadow-lg">
                 
                 <!-- Canvas Reveal Effect -->
-                <div class="reveal-canvas-wrapper position-relative" style="aspect-ratio: 4/5;">
+                <div class="reveal-canvas-wrapper position-relative ratio-4-5">
                   
                   <!-- Negative Image (Default) -->
                   <img 
@@ -309,9 +312,8 @@
                   <img 
                     src="assets/images/opere/featured/positive-1.jpg" 
                     alt="Opera rivelata in positivo" 
-                    class="reveal-positive img-fluid w-100 h-100 object-fit-cover rounded-3 position-absolute top-0 start-0"
+                    class="reveal-positive img-fluid w-100 h-100 object-fit-cover rounded-3 position-absolute top-0 start-0 reveal-hidden"
                     id="heroPositive"
-                    style="opacity: 0; transition: opacity 0.6s ease;"
                     loading="eager"
                   >
                   
@@ -325,8 +327,8 @@
                 
                 <!-- Artwork Info -->
                 <div class="artwork-info mt-4">
-                  <h3 class="h5 mb-3 text-white" style="line-height: 1.3;" data-i18n="hero.artwork_featured">Opera in Evidenza</h3>
-                  <p class="text-secondary mb-3 small" style="line-height: 1.5;" data-i18n="hero.artwork_example">Esempio di tecnica</p>
+                  <h3 class="h5 mb-3 text-white lh-13" data-i18n="hero.artwork_featured">Opera in Evidenza</h3>
+                  <p class="text-secondary mb-3 small lh-15" data-i18n="hero.artwork_example">Esempio di tecnica</p>
                   <div class="d-flex align-items-center gap-2 flex-wrap">
                     <span class="badge bg-dark-subtle text-white px-3 py-2">50×70 cm</span>
                     <span class="badge bg-dark-subtle text-white px-3 py-2" data-i18n="artworks.material_full">Crete colorate su cartoncino</span>
@@ -337,10 +339,10 @@
               
               <!-- Floating Badge -->
               <div class="floating-badge position-absolute top-0 end-0 mt-n2 me-n2" data-aos="zoom-in" data-aos-delay="600">
-                <div class="badge-float glass-card p-3 rounded-circle" style="width: 80px; height: 80px;">
+                <div class="badge-float glass-card p-3 rounded-circle size-80">
                   <div class="d-flex flex-column align-items-center justify-content-center h-100">
                     <i class="bi bi-award-fill text-gradient fs-3" aria-hidden="true"></i>
-                    <small class="text-white-50 mt-1" style="font-size: 0.7rem;">Unico</small>
+                    <small class="text-white-50 mt-1 fs-07rem">Unico</small>
                   </div>
                 </div>
               </div>
@@ -378,7 +380,7 @@
           <h2 class="display-4 fw-bold mb-3">
             <span data-i18n="artworks.badge">Opere Selezionate</span>
           </h2>
-          <p class="lead text-secondary mx-auto" style="max-width: 700px;" data-i18n="artworks.title">
+          <p class="lead text-secondary mx-auto mw-700" data-i18n="artworks.title">
             Una selezione curata delle opere più significative, disponibili per l'acquisto immediato
           </p>
         </div>
@@ -425,7 +427,7 @@
             
             <h2 class="display-4 fw-bold mb-4" data-editable="technique-title">
               <span data-i18n="technique.title">La Tecnica</span><br>
-              <span>#<span style="color: #0099FF;">negativo</span><span style="color: #FFD700;">è</span><span style="color: #FF6600;">positivo</span>®</span>
+              <span>#<span class="color-negativo">negativo</span><span class="color-e">è</span><span class="color-positivo">positivo</span>®</span>
             </h2>
             
             <p class="lead fs-5 text-secondary mb-4" data-i18n="technique.intro_title" data-editable="technique-intro-title">
@@ -459,7 +461,7 @@
                 <i class="bi bi-check-circle-fill text-gradient fs-4 me-3 mt-1"></i>
                 <div>
                   <strong class="text-white" data-i18n="technique.point3_title">Doppia Visione</strong><br>
-                  <span class="text-secondary small"><span data-i18n="technique.point3_desc_part1">L'opera esiste sia in</span> <span style="color: #0099FF;">negativo</span> <span data-i18n="technique.point3_desc_part2">che in</span> <span style="color: #FF6600;">positivo</span></span>
+                  <span class="text-secondary small"><span data-i18n="technique.point3_desc_part1">L'opera esiste sia in</span> <span class="color-negativo">negativo</span> <span data-i18n="technique.point3_desc_part2">che in</span> <span class="color-positivo">positivo</span></span>
                 </div>
               </li>
             </ul>
@@ -510,10 +512,10 @@
               <img src="assets/images/artist/portrait-main.jpg" data-i18n-alt="artist.portrait_alt" alt="Mario Vetere nel suo studio" class="img-fluid rounded-4 shadow-lg w-100">
               
               <!-- Quote Card -->
-              <div class="quote-card glass-card p-4 position-absolute bottom-0 start-0 ms-4 mb-4" style="max-width: 280px;" data-aos="fade-up" data-aos-delay="200">
+              <div class="quote-card glass-card p-4 position-absolute bottom-0 start-0 ms-4 mb-4 mw-280" data-aos="fade-up" data-aos-delay="200">
                 <blockquote class="mb-0">
-                  <p class="fst-italic text-white mb-3 small" style="line-height: 1.6;" data-i18n="artist.quote">"L'arte è ciò che appare e ciò che si rivela"</p>
-                  <footer class="blockquote-footer text-secondary small mb-0" style="line-height: 1.4;">
+                  <p class="fst-italic text-white mb-3 small lh-16" data-i18n="artist.quote">"L'arte è ciò che appare e ciò che si rivela"</p>
+                  <footer class="blockquote-footer text-secondary small mb-0 lh-14">
                     Mario Vetere
                   </footer>
                 </blockquote>
@@ -564,9 +566,9 @@
                 <div class="achievement-card glass-card p-4 rounded-3 h-100">
                   <div class="d-flex align-items-center mb-3">
                     <i class="bi bi-trophy-fill text-gradient fs-3 me-3"></i>
-                    <h4 class="h5 mb-0 text-white" style="line-height: 1.2;">15+</h4>
+                    <h4 class="h5 mb-0 text-white lh-12">15+</h4>
                   </div>
-                  <p class="text-secondary small mb-0" style="line-height: 1.4;" data-i18n="artist.achievement_exhibitions">Mostre Internazionali</p>
+                  <p class="text-secondary small mb-0 lh-14" data-i18n="artist.achievement_exhibitions">Mostre Internazionali</p>
                 </div>
               </div>
               
@@ -574,9 +576,9 @@
                 <div class="achievement-card glass-card p-4 rounded-3 h-100">
                   <div class="d-flex align-items-center mb-3">
                     <i class="bi bi-award-fill text-gradient fs-3 me-3"></i>
-                    <h4 class="h5 mb-0 text-white" style="line-height: 1.2;">2016</h4>
+                    <h4 class="h5 mb-0 text-white lh-12">2016</h4>
                   </div>
-                  <p class="text-secondary small mb-0" style="line-height: 1.4;" data-i18n="hero.stats_patent">Anno del Brevetto</p>
+                  <p class="text-secondary small mb-0 lh-14" data-i18n="hero.stats_patent">Anno del Brevetto</p>
                 </div>
               </div>
               
@@ -584,9 +586,9 @@
                 <div class="achievement-card glass-card p-4 rounded-3 h-100">
                   <div class="d-flex align-items-center mb-3">
                     <i class="bi bi-palette-fill text-gradient fs-3 me-3"></i>
-                    <h4 class="h5 mb-0 text-white" style="line-height: 1.2;">100+</h4>
+                    <h4 class="h5 mb-0 text-white lh-12">100+</h4>
                   </div>
-                  <p class="text-secondary small mb-0" style="line-height: 1.4;" data-i18n="hero.stats_artworks">Opere Realizzate</p>
+                  <p class="text-secondary small mb-0 lh-14" data-i18n="hero.stats_artworks">Opere Realizzate</p>
                 </div>
               </div>
               
@@ -594,9 +596,9 @@
                 <div class="achievement-card glass-card p-4 rounded-3 h-100">
                   <div class="d-flex align-items-center mb-3">
                     <i class="bi bi-people-fill text-gradient fs-3 me-3"></i>
-                    <h4 class="h5 mb-0 text-white" style="line-height: 1.2;">500+</h4>
+                    <h4 class="h5 mb-0 text-white lh-12">500+</h4>
                   </div>
-                  <p class="text-secondary small mb-0" style="line-height: 1.4;" data-i18n="hero.stats_collectors">Collezionisti nel Mondo</p>
+                  <p class="text-secondary small mb-0 lh-14" data-i18n="hero.stats_collectors">Collezionisti nel Mondo</p>
                 </div>
               </div>
               
@@ -628,7 +630,7 @@
             
             <!-- Icon -->
             <div class="contact-icon mb-4">
-              <div class="icon-circle bg-gradient-gold d-inline-flex align-items-center justify-content-center rounded-circle" style="width: 80px; height: 80px;">
+              <div class="icon-circle bg-gradient-gold d-inline-flex align-items-center justify-content-center rounded-circle size-80">
                 <i class="bi bi-envelope-fill text-dark fs-1"></i>
               </div>
             </div>
@@ -637,7 +639,7 @@
               <span data-i18n="contact.title_part1">Hai Domande?</span> <span class="text-gradient" data-i18n="contact.title_part2">Contattami</span>
             </h2>
             
-            <p class="lead fs-5 text-secondary mb-5 mx-auto" style="max-width: 600px;" data-i18n="contact.description" data-editable="contact-description">
+            <p class="lead fs-5 text-secondary mb-5 mx-auto mw-600" data-i18n="contact.description" data-editable="contact-description">
               Che tu sia interessato ad acquistare un'opera, a commissioni personalizzate 
               o semplicemente a saperne di più sulla tecnica, sono qui per te.
             </p>
@@ -772,9 +774,9 @@
           </p>
           
           <form id="newsletterForm" class="mb-3">
-            <div class="input-group" style="height: 48px;">
-              <input type="email" class="form-control bg-transparent border-secondary" data-i18n-placeholder="footer.newsletter_placeholder" placeholder="La tua email" required id="newsletterEmail" aria-label="Email per newsletter" style="height: 48px; line-height: 1.5;">
-              <button class="btn btn-primary px-4" type="submit" aria-label="Iscriviti alla newsletter" style="height: 48px;">
+            <div class="input-group h-48">
+              <input type="email" class="form-control bg-transparent border-secondary h-48 lh-15" data-i18n-placeholder="footer.newsletter_placeholder" placeholder="La tua email" required id="newsletterEmail" aria-label="Email per newsletter">
+              <button class="btn btn-primary px-4 h-48" type="submit" aria-label="Iscriviti alla newsletter">
                 <i class="bi bi-send"></i>
               </button>
             </div>
@@ -788,7 +790,7 @@
         <div class="row align-items-center">
           <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
             <p class="text-secondary small mb-0">
-              © 2025 Mario Vetere. <span data-i18n="footer.rights">Tutti i diritti riservati</span>. #<span style="color: #0099FF;">negativo</span><span style="color: #FFD700;">è</span><span style="color: #FF6600;">positivo</span>® <span data-i18n="footer.trademark">è un marchio registrato</span>.
+              © 2025 Mario Vetere. <span data-i18n="footer.rights">Tutti i diritti riservati</span>. #<span class="color-negativo">negativo</span><span class="color-e">è</span><span class="color-positivo">positivo</span>® <span data-i18n="footer.trademark">è un marchio registrato</span>.
             </p>
           </div>
           <div class="col-md-6 text-center text-md-end">
@@ -827,7 +829,7 @@
     <div class="modal-dialog modal-dialog-centered modal-xl">
       <div class="modal-content bg-dark border-0">
         <div class="modal-header border-0">
-          <h5 class="modal-title" id="videoModalLabel"><span data-i18n="modal.video_title">La Tecnica</span> #<span style="color: #0099FF;">negativo</span><span style="color: #FFD700;">è</span><span style="color: #FF6600;">positivo</span>®</h5>
+          <h5 class="modal-title" id="videoModalLabel"><span data-i18n="modal.video_title">La Tecnica</span> #<span class="color-negativo">negativo</span><span class="color-e">è</span><span class="color-positivo">positivo</span>®</h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Chiudi"></button>
         </div>
         <div class="modal-body p-0">
@@ -953,6 +955,9 @@
   
   <!-- Artwork Translations Helper -->
   <script src="assets/js/artwork-i18n-helper.js"></script>
+  
+  <!-- Hero Artwork Component (Homepage) -->
+  <script src="assets/js/components/hero-artwork.js"></script>
   
   <!-- Featured Artworks Component (Homepage) -->
   <script src="assets/js/components/featured-artworks.js"></script>

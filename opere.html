@@ -32,6 +32,9 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="main.css">
   
+  <!-- Utility Classes -->
+  <link rel="stylesheet" href="assets/css/utilities.css">
+  
   <!-- Mobile App-like Animations -->
   <link rel="stylesheet" href="assets/css/mobile-animations.css">
 </head>
@@ -161,7 +164,7 @@
   <main id="main-content">
 
     <!-- Hero Section Opere -->
-    <section class="page-hero min-vh-50 d-flex align-items-center" style="padding-top: 120px; padding-bottom: 80px;">
+    <section class="page-hero min-vh-50 d-flex align-items-center py-hero">
       <div class="container">
         <div class="row justify-content-center text-center">
           <div class="col-lg-8" data-aos="fade-up">
@@ -198,7 +201,7 @@
     </section>
 
     <!-- Filters & Search Bar -->
-    <section class="filters-section py-4 bg-surface sticky-top" style="top: 80px; z-index: 1020;" data-aos="fade-down">
+    <section class="filters-section py-4 bg-surface sticky-top sticky-filters" data-aos="fade-down">
       <div class="container">
         <div class="row g-3 align-items-center">
           
@@ -409,9 +412,9 @@
           </p>
           
           <form id="newsletterForm" class="mb-3">
-            <div class="input-group" style="height: 48px;">
-              <input type="email" class="form-control bg-transparent border-secondary" data-i18n-placeholder="footer.newsletter_placeholder" placeholder="La tua email" required id="newsletterEmail" aria-label="Email per newsletter" style="height: 48px; line-height: 1.5;">
-              <button class="btn btn-primary px-4" type="submit" aria-label="Iscriviti alla newsletter" style="height: 48px;">
+            <div class="input-group h-48">
+              <input type="email" class="form-control bg-transparent border-secondary h-48 lh-15" data-i18n-placeholder="footer.newsletter_placeholder" placeholder="La tua email" required id="newsletterEmail" aria-label="Email per newsletter">
+              <button class="btn btn-primary px-4 h-48" type="submit" aria-label="Iscriviti alla newsletter">
                 <i class="bi bi-send"></i>
               </button>
             </div>
@@ -425,22 +428,15 @@
         <div class="row align-items-center">
           <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
             <p class="text-secondary small mb-0">
-              © 2025 Mario Vetere. <span data-i18n="footer.rights">Tutti i diritti riservati</span>. #<span style="color: #0099FF;">negativo</span><span style="color: #FFD700;">è</span><span style="color: #FF6600;">positivo</span>® <span data-i18n="footer.trademark">è un marchio registrato</span>.
+              © 2025 Mario Vetere. <span data-i18n="footer.rights">Tutti i diritti riservati</span>. #<span class="color-negativo">negativo</span><span class="color-e">è</span><span class="color-positivo">positivo</span>® <span data-i18n="footer.trademark">è un marchio registrato</span>.
             </p>
           </div>
           <div class="col-md-6 text-center text-md-end">
-            <p class="text-secondary small mb-2">
-              <a href="privacy-policy.html" class="text-secondary text-decoration-none me-2 me-md-3">Privacy Policy</a>
-              <span class="text-secondary">|</span>
-              <a href="cookie-policy.html" class="text-secondary text-decoration-none mx-2 mx-md-3">Cookie Policy</a>
-              <span class="text-secondary">|</span>
-              <a href="termini-condizioni.html" class="text-secondary text-decoration-none ms-2 ms-md-3">
-                <span class="d-none d-sm-inline">Termini e Condizioni</span>
-                <span class="d-inline d-sm-none">Termini</span>
-              </a>
-            </p>
             <p class="text-secondary small mb-0">
-              Made with <i class="bi bi-heart-fill text-danger"></i> in Italy
+              <a href="privacy-policy.html" class="text-secondary text-decoration-none me-3">Privacy Policy</a>
+              <a href="cookie-policy.html" class="text-secondary text-decoration-none me-3">Cookie Policy</a>
+              <span class="d-none d-md-inline">|</span>
+              <span class="d-block d-md-inline mt-2 mt-md-0 ms-md-3">Made with <i class="bi bi-heart-fill text-danger"></i> in Italy</span>
             </p>
           </div>
         </div>

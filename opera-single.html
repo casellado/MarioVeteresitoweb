@@ -30,6 +30,7 @@
   
   <!-- Custom CSS -->
   <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="assets/css/utilities.css">
   
   <!-- Mobile App-like Animations -->
   <link rel="stylesheet" href="assets/css/mobile-animations.css">
@@ -157,7 +158,7 @@
   </div>
 
   <!-- Main Content -->
-  <main id="main-content" style="padding-top: 100px;">
+  <main id="main-content" class="pt-main">
 
     <!-- Breadcrumb -->
     <section class="breadcrumb-section py-3 bg-surface">
@@ -184,7 +185,7 @@
             <div class="artwork-container glass-card p-4 rounded-4 shadow-lg mb-4" data-aos="fade-right">
               
               <!-- Canvas Reveal Effect -->
-              <div class="reveal-canvas-wrapper position-relative" style="aspect-ratio: 4/5;">
+              <div class="reveal-canvas-wrapper position-relative ratio-4-5">
                 
                 <!-- Negative Image (Default) -->
                 <img 
@@ -202,8 +203,7 @@
                   src="assets/images/opere/featured/positive-1.jpg" 
                   data-i18n-alt="opera.positive_image_alt"
                   alt="Opera rivelata in positivo" 
-                  class="reveal-positive img-fluid w-100 h-100 object-fit-cover rounded-3 position-absolute top-0 start-0"
-                  style="opacity: 0; transition: opacity 0.6s ease;"
+                  class="reveal-positive img-fluid w-100 h-100 object-fit-cover rounded-3 position-absolute top-0 start-0 reveal-hidden"
                   loading="eager"
                 >
                 
@@ -219,7 +219,7 @@
                 </button>
                 
                 <!-- Zoom Info Badge -->
-                <div class="zoom-info badge bg-dark position-absolute top-0 start-0 m-3" id="zoomInfo" style="display: none; opacity: 0.8;">
+                <div class="zoom-info badge bg-dark position-absolute top-0 start-0 m-3 d-none opacity-80" id="zoomInfo">
                   <span data-i18n="opera.zoom">Zoom</span>: <span id="zoomLevel">100</span>%
                 </div>
                 
@@ -241,7 +241,7 @@
             <div class="opera-header mb-4" data-aos="fade-left">
               <div class="d-flex align-items-center gap-2 mb-3">
                 <span class="badge bg-success" id="operaStatus" data-i18n="opera.status_available">Disponibile</span>
-                <span class="badge bg-warning text-dark" id="operaFeatured" style="display: none;" data-i18n="opera.status_featured">In Evidenza</span>
+                <span class="badge bg-warning text-dark d-none" id="operaFeatured" data-i18n="opera.status_featured">In Evidenza</span>
               </div>
               
               <h1 class="display-4 fw-bold mb-3" id="operaTitle">Caricamento...</h1>
@@ -284,7 +284,7 @@
               <div class="detail-row d-flex justify-content-between py-2 border-bottom border-secondary">
                 <span class="text-secondary" data-i18n="opera.technique_label">Tecnica:</span>
                 <span class="fw-semibold">
-                  #<span style="color: #0099FF;">negativo</span><span style="color: #FFD700;">è</span><span style="color: #FF6600;">positivo</span>®
+                  #<span class="color-negativo">negativo</span><span class="color-e">è</span><span class="color-positivo">positivo</span>®
                 </span>
               </div>
               
@@ -375,7 +375,7 @@
         <div class="row justify-content-center">
           <div class="col-lg-8" data-aos="fade-up">
             <h2 class="h3 fw-bold mb-4" data-i18n="opera.description_title">Descrizione</h2>
-            <div class="description-content text-secondary" id="operaDescription" style="line-height: 1.8;">
+            <div class="description-content text-secondary lh-18" id="operaDescription">
               Caricamento descrizione...
             </div>
           </div>
@@ -497,9 +497,9 @@
           </p>
           
           <form id="newsletterForm" class="mb-3">
-            <div class="input-group" style="height: 48px;">
-              <input type="email" class="form-control bg-transparent border-secondary" data-i18n-placeholder="footer.newsletter_placeholder" placeholder="La tua email" required id="newsletterEmail" aria-label="Email per newsletter" style="height: 48px; line-height: 1.5;">
-              <button class="btn btn-primary px-4" type="submit" aria-label="Iscriviti alla newsletter" style="height: 48px;">
+            <div class="input-group h-48">
+              <input type="email" class="form-control bg-transparent border-secondary h-48 lh-15" data-i18n-placeholder="footer.newsletter_placeholder" placeholder="La tua email" required id="newsletterEmail" aria-label="Email per newsletter">
+              <button class="btn btn-primary px-4 h-48" type="submit" aria-label="Iscriviti alla newsletter">
                 <i class="bi bi-send"></i>
               </button>
             </div>
@@ -513,22 +513,15 @@
         <div class="row align-items-center">
           <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
             <p class="text-secondary small mb-0">
-              © 2025 Mario Vetere. <span data-i18n="footer.rights">Tutti i diritti riservati</span>. #<span style="color: #0099FF;">negativo</span><span style="color: #FFD700;">è</span><span style="color: #FF6600;">positivo</span>® <span data-i18n="footer.trademark">è un marchio registrato</span>.
+              © 2025 Mario Vetere. <span data-i18n="footer.rights">Tutti i diritti riservati</span>. #<span class="color-negativo">negativo</span><span class="color-e">è</span><span class="color-positivo">positivo</span>® <span data-i18n="footer.trademark">è un marchio registrato</span>.
             </p>
           </div>
           <div class="col-md-6 text-center text-md-end">
-            <p class="text-secondary small mb-2">
-              <a href="privacy-policy.html" class="text-secondary text-decoration-none me-2 me-md-3">Privacy Policy</a>
-              <span class="text-secondary">|</span>
-              <a href="cookie-policy.html" class="text-secondary text-decoration-none mx-2 mx-md-3">Cookie Policy</a>
-              <span class="text-secondary">|</span>
-              <a href="termini-condizioni.html" class="text-secondary text-decoration-none ms-2 ms-md-3">
-                <span class="d-none d-sm-inline">Termini e Condizioni</span>
-                <span class="d-inline d-sm-none">Termini</span>
-              </a>
-            </p>
             <p class="text-secondary small mb-0">
-              <span data-i18n="footer.made_with">Made with</span> <i class="bi bi-heart-fill text-danger"></i> <span data-i18n="footer.in_italy">in Italy</span>
+              <a href="privacy-policy.html" class="text-secondary text-decoration-none me-3">Privacy Policy</a>
+              <a href="cookie-policy.html" class="text-secondary text-decoration-none me-3">Cookie Policy</a>
+              <span class="d-none d-md-inline">|</span>
+              <span class="d-block d-md-inline mt-2 mt-md-0 ms-md-3">Made with <i class="bi bi-heart-fill text-danger"></i> in Italy</span>
             </p>
           </div>
         </div>

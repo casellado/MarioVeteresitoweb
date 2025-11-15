@@ -1312,6 +1312,27 @@ a, button, .btn {
   .achievement-card {
     min-height: 140px !important;
   }
+  
+  /* ========================================
+     FEATURED SECTION - ALLINEAMENTO DESKTOP
+     Padding, typography e button identici a desktop
+  ======================================== */
+  .featured-section.py-6 {
+    padding-top: 6rem !important;    /* Identico desktop: 96px */
+    padding-bottom: 6rem !important;  /* Identico desktop: 96px */
+  }
+  
+  .featured-section .display-4 {
+    font-size: 3.5rem !important;    /* Identico desktop: 56px */
+  }
+  
+  .featured-section .lead {
+    font-size: 1.25rem !important;   /* Identico desktop: 20px */
+  }
+  
+  .featured-section .btn-lg {
+    font-size: 1.125rem !important;  /* Identico desktop: 18px */
+  }
 }
 
 /* === MOBILE MEDIUM (max 768px) - Landscape phones & small tablets === */
@@ -1529,6 +1550,27 @@ a, button, .btn {
   .py-6 {
     padding-top: 4rem !important;
     padding-bottom: 4rem !important;
+  }
+  
+  /* ========================================
+     FEATURED SECTION - ALLINEAMENTO DESKTOP
+     Padding, typography e button identici a desktop
+  ======================================== */
+  .featured-section.py-6 {
+    padding-top: 6rem !important;    /* Identico desktop: 96px */
+    padding-bottom: 6rem !important;  /* Identico desktop: 96px */
+  }
+  
+  .featured-section .display-4 {
+    font-size: 3.5rem !important;    /* Identico desktop: 56px */
+  }
+  
+  .featured-section .lead {
+    font-size: 1.25rem !important;   /* Identico desktop: 20px */
+  }
+  
+  .featured-section .btn-lg {
+    font-size: 1.125rem !important;  /* Identico desktop: 18px */
   }
   
   .py-8 {
@@ -1796,6 +1838,27 @@ a, button, .btn {
   .py-6 {
     padding-top: 3.5rem !important;
     padding-bottom: 3.5rem !important;
+  }
+  
+  /* ========================================
+     FEATURED SECTION - ALLINEAMENTO DESKTOP
+     Padding, typography e button identici a desktop
+  ======================================== */
+  .featured-section.py-6 {
+    padding-top: 6rem !important;    /* Identico desktop: 96px */
+    padding-bottom: 6rem !important;  /* Identico desktop: 96px */
+  }
+  
+  .featured-section .display-4 {
+    font-size: 3.5rem !important;    /* Identico desktop: 56px */
+  }
+  
+  .featured-section .lead {
+    font-size: 1.25rem !important;   /* Identico desktop: 20px */
+  }
+  
+  .featured-section .btn-lg {
+    font-size: 1.125rem !important;  /* Identico desktop: 18px */
   }
   
   /* Achievement cards - MANTENIAMO ALTEZZA MINIMA */
@@ -2734,7 +2797,7 @@ html {
     left: 12px !important;
     font-size: 0.8125rem !important;
     padding: 0.375rem 0.75rem !important;
-    z-index: 10;
+  z-index: 10;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   }
 }
