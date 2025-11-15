@@ -2016,6 +2016,30 @@ a, button, .btn {
     padding: 0.5rem 0 !important;    /* Identico desktop */
   }
   
+  /* ========================================
+     FOOTER NEWSLETTER - FIX MOBILE
+     Input group in colonna per visibilità bottone
+  ======================================== */
+  .footer .input-group {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+    width: 100% !important;
+    overflow: visible !important;
+  }
+  
+  .footer .input-group .form-control {
+    width: 100% !important;
+    border-radius: 0.5rem !important;
+    margin-bottom: 0 !important;
+  }
+  
+  .footer .input-group .btn {
+    width: 100% !important;
+    border-radius: 0.5rem !important;
+    margin-left: 0 !important;
+    flex-shrink: 0 !important;
+  }
+  
   /* Form ottimizzazioni */
   .form-label {
     font-size: 0.875rem !important;
@@ -3702,17 +3726,26 @@ html {
   }
 }
 
-/* CORREZIONE #3: Newsletter Input Group Mobile */
-@media (max-width: 576px) {
+/* CORREZIONE #3: Newsletter Input Group Mobile - Esteso a tutti i breakpoint mobile */
+@media (max-width: 991px) {
   .footer .input-group {
     flex-direction: column !important;
-    gap: 0.5rem;
+    gap: 0.75rem !important;
+    width: 100% !important;
+    overflow: visible !important;
   }
   
-  .footer .input-group .form-control,
+  .footer .input-group .form-control {
+    width: 100% !important;
+    border-radius: 0.5rem !important;
+    margin-bottom: 0 !important;
+  }
+  
   .footer .input-group .btn {
     width: 100% !important;
-    border-radius: 0.5rem !important; /* Ripristina border-radius */
+    border-radius: 0.5rem !important;
+    margin-left: 0 !important;
+    flex-shrink: 0 !important;
   }
 }
 
