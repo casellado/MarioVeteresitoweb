@@ -942,21 +942,26 @@ img, video, iframe {
 ======================================== */
 
 @media (max-width: 991px) {
+  /* ========================================
+     NAVBAR - ALLINEAMENTO DESKTOP
+     Height, logo e buttons identici a desktop
+  ======================================== */
   .glass-navbar {
-    height: 64px;
+    height: 80px !important;    /* Identico desktop: 80px */
   }
   
-  .hero-section {
-    padding-top: 64px;
-  }
-  
-  .navbar-actions {
-    gap: 0.5rem !important;
+  .navbar-brand img {
+    max-height: 40px !important; /* Identico desktop: 40px */
+    height: 40px !important;
   }
   
   .btn-icon {
-    width: 36px;
-    height: 36px;
+    width: 40px !important;     /* Identico desktop: 40px */
+    height: 40px !important;    /* Identico desktop: 40px */
+  }
+  
+  .hero-section {
+    padding-top: 80px !important; /* Allineato a navbar height */
   }
   
   .stat-item {
@@ -1242,37 +1247,105 @@ a, button, .btn {
     padding-right: 1rem !important;
   }
   
-  /* Navbar height - MANTENIAMO IDENTICO AL DESKTOP */
-  .navbar {
-    min-height: 80px;
-    height: 80px;
+  /* ========================================
+     NAVBAR - ALLINEAMENTO DESKTOP
+     Height, logo e buttons identici a desktop
+  ======================================== */
+  .glass-navbar {
+    height: 80px !important;    /* Identico desktop: 80px */
   }
   
   .navbar-brand img {
-    height: 36px; /* Riduzione minima per mobile */
+    max-height: 40px !important; /* Identico desktop: 40px */
+    height: 40px !important;
   }
   
-  /* Hero section - MANTENIAMO 100vh COME DESKTOP */
+  .btn-icon {
+    width: 40px !important;     /* Identico desktop: 40px */
+    height: 40px !important;    /* Identico desktop: 40px */
+  }
+  
+  /* ========================================
+     HERO SECTION - ALLINEAMENTO DESKTOP
+     Typography, padding, stats layout identici a desktop
+  ======================================== */
   .hero-section {
     min-height: 100vh !important;
-    padding: 80px 0 60px 0; /* Allineato a navbar height */
+    padding-top: 80px !important; /* Identico desktop: 80px */
+    align-items: center !important; /* Identico desktop: center */
   }
   
-  /* Typography - PROPORZIONI OTTIMIZZATE (più vicino a desktop) */
+  .hero-title {
+    font-size: clamp(2.5rem, 5vw, 4.5rem) !important; /* Identico desktop */
+    line-height: 1.1 !important; /* Identico desktop */
+    text-align: left !important; /* Identico desktop: left */
+    margin-bottom: 1rem !important; /* Identico desktop */
+  }
+  
+  .hero-subtitle {
+    font-size: clamp(1.25rem, 2.5vw, 2rem) !important; /* Identico desktop */
+    text-align: left !important; /* Identico desktop: left */
+  }
+  
+  .hero-section .lead {
+    font-size: 1.25rem !important; /* Identico desktop: fs-5 */
+    text-align: left !important; /* Identico desktop: left */
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  
+  .hero-badge {
+    text-align: left !important; /* Identico desktop: left */
+    margin-top: 0 !important;
+  }
+  
+  .hero-cta {
+    flex-direction: row !important; /* Identico desktop: row */
+    gap: 1rem !important; /* Identico desktop */
+  }
+  
+  .hero-cta .btn {
+    width: auto !important; /* Identico desktop: auto */
+  }
+  
+  .hero-stats {
+    display: flex !important; /* Identico desktop: flex */
+    flex-wrap: wrap !important;
+    gap: 3rem !important; /* Identico desktop */
+    justify-content: flex-start !important; /* Identico desktop: flex-start */
+  }
+  
+  .hero-stats .stat-item {
+    display: block !important; /* Identico desktop: block */
+    text-align: left !important; /* Identico desktop: left */
+    min-width: auto !important;
+  }
+  
+  .stat-number {
+    font-size: clamp(2rem, 3vw, 3rem) !important; /* Identico desktop */
+    margin-bottom: 0.75rem !important; /* Identico desktop */
+  }
+  
+  .stat-label {
+    font-size: inherit !important; /* Identico desktop */
+    line-height: inherit !important; /* Identico desktop */
+  }
+  
+  /* Typography generale - manteniamo per altre sezioni */
   .display-1 {
-    font-size: 3.5rem !important; /* Aumentato da 3rem per più impatto */
+    font-size: 3.5rem !important;
   }
   
   .display-2 {
-    font-size: 3rem !important; /* Aumentato da 2.5rem */
+    font-size: 3rem !important;
   }
   
   .display-3 {
-    font-size: 2.5rem !important; /* Aumentato da 2rem */
+    font-size: 2.5rem !important;
   }
   
   .display-4 {
-    font-size: 2rem !important; /* Aumentato da 1.75rem */
+    font-size: 2rem !important;
   }
   
   /* Lead text */
@@ -1292,11 +1365,6 @@ a, button, .btn {
     padding: 1.25rem !important;
   }
   
-  /* Stats - dimensioni ridotte */
-  .stat-number {
-    font-size: 2rem !important;
-  }
-  
   /* Spacing sezioni - AUMENTATO per proporzioni migliori */
   section {
     padding-top: 80px !important;
@@ -1304,8 +1372,8 @@ a, button, .btn {
   }
   
   .py-6 {
-    padding-top: 4.5rem !important;
-    padding-bottom: 4.5rem !important;
+    padding-top: 6rem !important;    /* Identico desktop: 96px */
+    padding-bottom: 6rem !important;  /* Identico desktop: 96px */
   }
   
   /* Achievement cards - MANTENIAMO ALTEZZA DESKTOP */
@@ -1332,6 +1400,88 @@ a, button, .btn {
   
   .featured-section .btn-lg {
     font-size: 1.125rem !important;  /* Identico desktop: 18px */
+  }
+  
+  /* ========================================
+     TECHNIQUE SECTION - ALLINEAMENTO DESKTOP
+     Padding, typography e button identici a desktop
+  ======================================== */
+  .technique-section.py-6 {
+    padding-top: 6rem !important;    /* Identico desktop: 96px */
+    padding-bottom: 6rem !important;  /* Identico desktop: 96px */
+  }
+  
+  .technique-section .display-4 {
+    font-size: 3.5rem !important;    /* Identico desktop: 56px */
+  }
+  
+  .technique-section .lead {
+    font-size: 1.25rem !important;   /* Identico desktop: 20px */
+  }
+  
+  .technique-section .btn-lg {
+    font-size: 1.125rem !important;  /* Identico desktop: 18px */
+  }
+  
+  /* ========================================
+     ARTIST SECTION - ALLINEAMENTO DESKTOP
+     Padding, typography e button identici a desktop
+  ======================================== */
+  .artist-section.py-6 {
+    padding-top: 6rem !important;    /* Identico desktop: 96px */
+    padding-bottom: 6rem !important;  /* Identico desktop: 96px */
+  }
+  
+  .artist-section .display-4 {
+    font-size: 3.5rem !important;    /* Identico desktop: 56px */
+  }
+  
+  .artist-section .lead {
+    font-size: 1.5rem !important;     /* Identico desktop: 24px (fs-4) */
+  }
+  
+  .artist-section .btn-lg {
+    font-size: 1.125rem !important;  /* Identico desktop: 18px */
+  }
+  
+  /* ========================================
+     CONTACT CTA SECTION - ALLINEAMENTO DESKTOP
+     Padding, typography e button identici a desktop
+  ======================================== */
+  .contact-cta.py-6 {
+    padding-top: 6rem !important;    /* Identico desktop: 96px */
+    padding-bottom: 6rem !important;  /* Identico desktop: 96px */
+  }
+  
+  .contact-cta .display-4 {
+    font-size: 3.5rem !important;    /* Identico desktop: 56px */
+  }
+  
+  .contact-cta .lead {
+    font-size: 1.25rem !important;     /* Identico desktop: 20px (fs-5) */
+  }
+  
+  .contact-cta .btn-lg {
+    font-size: 1.125rem !important;  /* Identico desktop: 18px */
+  }
+  
+  /* ========================================
+     FOOTER - ALLINEAMENTO DESKTOP
+     Padding, typography identici a desktop
+  ======================================== */
+  .footer.py-6 {
+    padding-top: 6rem !important;    /* Identico desktop: 96px */
+    padding-bottom: 6rem !important;  /* Identico desktop: 96px */
+  }
+  
+  .footer h6 {
+    font-size: 1.125rem !important;   /* Identico desktop */
+    margin-bottom: 1rem !important;   /* Identico desktop */
+  }
+  
+  .footer .footer-link {
+    font-size: 1rem !important;      /* Identico desktop */
+    padding: 0.5rem 0 !important;    /* Identico desktop */
   }
 }
 
@@ -1641,48 +1791,76 @@ a, button, .btn {
     line-height: 1.6 !important;
   }
   
-  /* Hero - FIX BADGE TAGLIATO: align-items flex-start + padding aumentato */
+  /* ========================================
+     HERO SECTION - ALLINEAMENTO DESKTOP
+     Typography, padding, stats layout identici a desktop
+  ======================================== */
   .hero-section {
     min-height: 100vh !important;
-    align-items: flex-start !important; /* Rimuove centering verticale che causava overlap */
-    padding: 100px 0 30px 0 !important; /* Aumentato da 80px a 100px per visibilità badge */
-  }
-  
-  /* Hero badge - extra margin per sicurezza */
-  .hero-badge {
-    margin-top: 10px !important;
-  }
-  
-  /* Hero container - rimuovi padding inline se presente */
-  .hero-section .container {
-    padding-top: 0 !important;
-  }
-  
-  /* LOOP 5: Centramento testi hero su mobile */
-  .hero-badge,
-  .hero-title,
-  .hero-subtitle {
-    text-align: center !important;
-  }
-  
-  .hero-section .lead {
-    margin-left: auto !important;
-    margin-right: auto !important;
-    text-align: center !important;
+    padding-top: 80px !important; /* Identico desktop: 80px */
+    align-items: center !important; /* Identico desktop: center */
   }
   
   .hero-title {
-    font-size: 2.5rem !important; /* Aumentato da 2rem */
-    margin-bottom: 1rem !important;
+    font-size: clamp(2.5rem, 5vw, 4.5rem) !important; /* Identico desktop */
+    line-height: 1.1 !important; /* Identico desktop */
+    text-align: left !important; /* Identico desktop: left */
+    margin-bottom: 1rem !important; /* Identico desktop */
   }
   
   .hero-subtitle {
-    font-size: 1.25rem !important; /* Manteniamo 1.125rem era troppo piccolo */
+    font-size: clamp(1.25rem, 2.5vw, 2rem) !important; /* Identico desktop */
+    text-align: left !important; /* Identico desktop: left */
+    margin-bottom: 1rem !important; /* Identico desktop */
+  }
+  
+  .hero-section .lead {
+    font-size: 1.25rem !important; /* Identico desktop: fs-5 */
+    text-align: left !important; /* Identico desktop: left */
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  
+  .hero-badge {
+    text-align: left !important; /* Identico desktop: left */
+    margin-top: 0 !important;
+  }
+  
+  .hero-cta {
+    flex-direction: row !important; /* Identico desktop: row */
+    gap: 1rem !important; /* Identico desktop */
+  }
+  
+  .hero-cta .btn {
+    width: auto !important; /* Identico desktop: auto */
+  }
+  
+  .hero-stats {
+    display: flex !important; /* Identico desktop: flex */
+    flex-wrap: wrap !important;
+    gap: 3rem !important; /* Identico desktop */
+    justify-content: flex-start !important; /* Identico desktop: flex-start */
+  }
+  
+  .hero-stats .stat-item {
+    display: block !important; /* Identico desktop: block */
+    text-align: left !important; /* Identico desktop: left */
+    min-width: auto !important;
+  }
+  
+  .stat-number {
+    font-size: clamp(2rem, 3vw, 3rem) !important; /* Identico desktop */
+    margin-bottom: 0.75rem !important; /* Identico desktop */
+  }
+  
+  .stat-label {
+    font-size: inherit !important; /* Identico desktop */
+    line-height: inherit !important; /* Identico desktop */
   }
   
   .hero-badge .badge {
-    font-size: 0.875rem !important; /* Aumentato da 0.75rem per leggibilità */
-    padding: 0.5rem 0.875rem !important;
+    font-size: inherit !important; /* Identico desktop */
+    padding: 0.5rem 1rem !important;
   }
   
   /* Stats compatti */
@@ -1726,13 +1904,22 @@ a, button, .btn {
     border-radius: 12px !important;
   }
   
-  /* Navbar brand - DIMENSIONI MIGLIORATE */
-  .navbar-brand {
-    font-size: 1rem !important;
+  /* ========================================
+     NAVBAR - ALLINEAMENTO DESKTOP
+     Height, logo e buttons identici a desktop
+  ======================================== */
+  .glass-navbar {
+    height: 80px !important;    /* Identico desktop: 80px */
   }
   
   .navbar-brand img {
-    height: 36px !important; /* Aumentato da 28px per migliore visibilità */
+    max-height: 40px !important; /* Identico desktop: 40px */
+    height: 40px !important;
+  }
+  
+  .btn-icon {
+    width: 40px !important;     /* Identico desktop: 40px */
+    height: 40px !important;    /* Identico desktop: 40px */
   }
   
   /* Offcanvas - quasi full width */
@@ -1740,29 +1927,86 @@ a, button, .btn {
     width: 90% !important;
   }
   
-  /* Footer - layout compatto */
-  .footer {
-    padding-top: 2rem !important;
-    padding-bottom: 2rem !important;
+  /* ========================================
+     TECHNIQUE SECTION - ALLINEAMENTO DESKTOP
+     Padding, typography e button identici a desktop
+  ======================================== */
+  .technique-section.py-6 {
+    padding-top: 6rem !important;    /* Identico desktop: 96px */
+    padding-bottom: 6rem !important;  /* Identico desktop: 96px */
   }
   
-  /* LOOP 5: Footer logo centrato su mobile */
-  .footer .col-lg-4:first-child {
-    text-align: center !important;
+  .technique-section .display-4 {
+    font-size: 3.5rem !important;    /* Identico desktop: 56px */
   }
   
-  .footer .col-lg-4:first-child a:first-child {
-    display: inline-block;
+  .technique-section .lead {
+    font-size: 1.25rem !important;   /* Identico desktop: 20px */
+  }
+  
+  .technique-section .btn-lg {
+    font-size: 1.125rem !important;  /* Identico desktop: 18px */
+  }
+  
+  /* ========================================
+     ARTIST SECTION - ALLINEAMENTO DESKTOP
+     Padding, typography e button identici a desktop
+  ======================================== */
+  .artist-section.py-6 {
+    padding-top: 6rem !important;    /* Identico desktop: 96px */
+    padding-bottom: 6rem !important;  /* Identico desktop: 96px */
+  }
+  
+  .artist-section .display-4 {
+    font-size: 3.5rem !important;    /* Identico desktop: 56px */
+  }
+  
+  .artist-section .lead {
+    font-size: 1.5rem !important;     /* Identico desktop: 24px (fs-4) */
+  }
+  
+  .artist-section .btn-lg {
+    font-size: 1.125rem !important;  /* Identico desktop: 18px */
+  }
+  
+  /* ========================================
+     CONTACT CTA SECTION - ALLINEAMENTO DESKTOP
+     Padding, typography e button identici a desktop
+  ======================================== */
+  .contact-cta.py-6 {
+    padding-top: 6rem !important;    /* Identico desktop: 96px */
+    padding-bottom: 6rem !important;  /* Identico desktop: 96px */
+  }
+  
+  .contact-cta .display-4 {
+    font-size: 3.5rem !important;    /* Identico desktop: 56px */
+  }
+  
+  .contact-cta .lead {
+    font-size: 1.25rem !important;     /* Identico desktop: 20px (fs-5) */
+  }
+  
+  .contact-cta .btn-lg {
+    font-size: 1.125rem !important;  /* Identico desktop: 18px */
+  }
+  
+  /* ========================================
+     FOOTER - ALLINEAMENTO DESKTOP
+     Padding, typography identici a desktop
+  ======================================== */
+  .footer.py-6 {
+    padding-top: 6rem !important;    /* Identico desktop: 96px */
+    padding-bottom: 6rem !important;  /* Identico desktop: 96px */
   }
   
   .footer h6 {
-    font-size: 1rem !important;
-    margin-bottom: 0.75rem !important;
+    font-size: 1.125rem !important;   /* Identico desktop */
+    margin-bottom: 1rem !important;   /* Identico desktop */
   }
   
-  .footer .nav-link {
-    padding: 0.375rem 0 !important;
-    font-size: 0.875rem !important;
+  .footer .footer-link {
+    font-size: 1rem !important;      /* Identico desktop */
+    padding: 0.5rem 0 !important;    /* Identico desktop */
   }
   
   /* Form ottimizzazioni */
@@ -1836,8 +2080,8 @@ a, button, .btn {
   }
   
   .py-6 {
-    padding-top: 3.5rem !important;
-    padding-bottom: 3.5rem !important;
+    padding-top: 6rem !important;    /* Identico desktop: 96px */
+    padding-bottom: 6rem !important;  /* Identico desktop: 96px */
   }
   
   /* ========================================
@@ -1859,6 +2103,88 @@ a, button, .btn {
   
   .featured-section .btn-lg {
     font-size: 1.125rem !important;  /* Identico desktop: 18px */
+  }
+  
+  /* ========================================
+     TECHNIQUE SECTION - ALLINEAMENTO DESKTOP
+     Padding, typography e button identici a desktop
+  ======================================== */
+  .technique-section.py-6 {
+    padding-top: 6rem !important;    /* Identico desktop: 96px */
+    padding-bottom: 6rem !important;  /* Identico desktop: 96px */
+  }
+  
+  .technique-section .display-4 {
+    font-size: 3.5rem !important;    /* Identico desktop: 56px */
+  }
+  
+  .technique-section .lead {
+    font-size: 1.25rem !important;   /* Identico desktop: 20px */
+  }
+  
+  .technique-section .btn-lg {
+    font-size: 1.125rem !important;  /* Identico desktop: 18px */
+  }
+  
+  /* ========================================
+     ARTIST SECTION - ALLINEAMENTO DESKTOP
+     Padding, typography e button identici a desktop
+  ======================================== */
+  .artist-section.py-6 {
+    padding-top: 6rem !important;    /* Identico desktop: 96px */
+    padding-bottom: 6rem !important;  /* Identico desktop: 96px */
+  }
+  
+  .artist-section .display-4 {
+    font-size: 3.5rem !important;    /* Identico desktop: 56px */
+  }
+  
+  .artist-section .lead {
+    font-size: 1.5rem !important;     /* Identico desktop: 24px (fs-4) */
+  }
+  
+  .artist-section .btn-lg {
+    font-size: 1.125rem !important;  /* Identico desktop: 18px */
+  }
+  
+  /* ========================================
+     CONTACT CTA SECTION - ALLINEAMENTO DESKTOP
+     Padding, typography e button identici a desktop
+  ======================================== */
+  .contact-cta.py-6 {
+    padding-top: 6rem !important;    /* Identico desktop: 96px */
+    padding-bottom: 6rem !important;  /* Identico desktop: 96px */
+  }
+  
+  .contact-cta .display-4 {
+    font-size: 3.5rem !important;    /* Identico desktop: 56px */
+  }
+  
+  .contact-cta .lead {
+    font-size: 1.25rem !important;     /* Identico desktop: 20px (fs-5) */
+  }
+  
+  .contact-cta .btn-lg {
+    font-size: 1.125rem !important;  /* Identico desktop: 18px */
+  }
+  
+  /* ========================================
+     FOOTER - ALLINEAMENTO DESKTOP
+     Padding, typography identici a desktop
+  ======================================== */
+  .footer.py-6 {
+    padding-top: 6rem !important;    /* Identico desktop: 96px */
+    padding-bottom: 6rem !important;  /* Identico desktop: 96px */
+  }
+  
+  .footer h6 {
+    font-size: 1.125rem !important;   /* Identico desktop */
+    margin-bottom: 1rem !important;   /* Identico desktop */
+  }
+  
+  .footer .footer-link {
+    font-size: 1rem !important;      /* Identico desktop */
+    padding: 0.5rem 0 !important;    /* Identico desktop */
   }
   
   /* Achievement cards - MANTENIAMO ALTEZZA MINIMA */
@@ -4008,8 +4334,23 @@ html {
 ======================================== */
 @media (max-height: 500px) and (orientation: landscape) {
   /* Riduci navbar height */
+  /* ========================================
+     NAVBAR - ALLINEAMENTO DESKTOP
+     Height, logo e buttons identici a desktop
+  ======================================== */
   .glass-navbar {
-    min-height: 60px !important;
+    height: 80px !important;    /* Identico desktop: 80px */
+    min-height: 80px !important;
+  }
+  
+  .navbar-brand img {
+    max-height: 40px !important; /* Identico desktop: 40px */
+    height: 40px !important;
+  }
+  
+  .btn-icon {
+    width: 40px !important;     /* Identico desktop: 40px */
+    height: 40px !important;    /* Identico desktop: 40px */
   }
   
   /* Riduci hero section padding */
