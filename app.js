@@ -72,6 +72,7 @@ function initNavigation() {
 
 function handleScroll(navbar, lastScrollTop) {
   const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+  const isMobile = window.innerWidth <= 991;
   
   // Add/remove glassmorphism on scroll
   if (currentScroll > 50) {
@@ -80,7 +81,13 @@ function handleScroll(navbar, lastScrollTop) {
     navbar.classList.remove('scrolled');
   }
   
-  // Hide/show navbar on scroll direction
+  // Su mobile, mantieni sempre la navbar visibile per evitare problemi di scroll
+  if (isMobile) {
+    navbar.style.transform = 'translateY(0)';
+    return;
+  }
+  
+  // Hide/show navbar on scroll direction (solo desktop)
   if (currentScroll > lastScrollTop && currentScroll > CONFIG.scrollThreshold) {
     // Scrolling down
     navbar.style.transform = 'translateY(-100%)';
@@ -480,12 +487,23 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     const targetElement = document.getElementById(targetId);
     
     if (targetElement) {
+      // Su mobile usa scroll immediato per evitare problemi
+      const isMobile = window.innerWidth <= 991;
       const offsetTop = targetElement.offsetTop - CONFIG.navbarHeight;
       
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth'
-      });
+      if (isMobile) {
+        // Scroll immediato su mobile
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'auto'
+        });
+      } else {
+        // Smooth scroll su desktop
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'smooth'
+        });
+      }
     }
   });
 });

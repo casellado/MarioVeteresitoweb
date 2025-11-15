@@ -482,6 +482,13 @@ html {
   max-width: 100%;
 }
 
+/* Disabilita smooth scroll su mobile per evitare problemi di scroll */
+@media (max-width: 991px) {
+  html {
+    scroll-behavior: auto !important;
+  }
+}
+
 body {
   overflow-x: hidden;
   max-width: 100%;
