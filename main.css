@@ -1576,26 +1576,18 @@ a, button, .btn {
     justify-content: center;
   }
   
-  /* Stats - layout GRID 2x2 (migliore impatto visivo) */
+  /* Stats - MANTENIAMO LAYOUT FLEX COME DESKTOP */
   .hero-stats {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem !important;
-    width: 100%;
+    display: flex !important; /* Identico desktop: flex */
+    flex-wrap: wrap !important;
+    gap: 3rem !important; /* Identico desktop */
+    justify-content: flex-start !important; /* Identico desktop: flex-start */
   }
   
-  /* LOOP 5: Centramento perfetto tutti gli stat items */
   .hero-stats .stat-item {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-  }
-  
-  /* Terzo stat (Made in Italy) span 2 columns per centratura */
-  .hero-stats .stat-item:nth-child(3) {
-    grid-column: 1 / -1;
-    justify-self: center;
+    display: block !important; /* Identico desktop: block */
+    text-align: left !important; /* Identico desktop: left */
+    min-width: auto !important;
   }
   
   .stat-number {
@@ -2038,6 +2030,13 @@ a, button, .btn {
     border-radius: 0.5rem !important;
     margin-left: 0 !important;
     flex-shrink: 0 !important;
+    display: inline-flex !important; /* FORZA VISIBILITÀ - inline-flex per bottone */
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    min-height: 48px !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
   
   /* Form ottimizzazioni */
@@ -3746,6 +3745,13 @@ html {
     border-radius: 0.5rem !important;
     margin-left: 0 !important;
     flex-shrink: 0 !important;
+    display: inline-flex !important; /* FORZA VISIBILITÀ - inline-flex per bottone */
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    min-height: 48px !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 }
 
